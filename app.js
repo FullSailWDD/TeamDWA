@@ -24,7 +24,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function (req, res) {
-  res.render('home');
+  res.render('homepage');
 });
 
 http.createServer(app).listen(app.get('port'), function(){
