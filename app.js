@@ -1,6 +1,7 @@
 
 //NPM MOdules
 var express 	= require('express'),
+	bodyParser  = require('body-parser');
  	http 		= require('http'),
  	exphbs 		= require('express-handlebars')
 	path 		= require('path');
