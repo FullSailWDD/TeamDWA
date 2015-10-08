@@ -1,8 +1,5 @@
 
-/**
- * Module dependencies.
- */
-
+//NPM MOdules
 var express 	= require('express'),
  	http 		= require('http'),
  	exphbs 		= require('express-handlebars')
@@ -10,15 +7,24 @@ var express 	= require('express'),
 
 var app = express();
 
-// all environments
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+
+// Port
+// =============================================================================
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
+
+
+
+// View engine
+// =============================================================================
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 // static file folders
+// =============================================================================
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
+
+app.set('views', path.join(__dirname, 'views'));
 
 // development only
 if ('development' == app.get('env')) {
@@ -26,8 +32,11 @@ if ('development' == app.get('env')) {
 }
 
 //Routes
+// =============================================================================
 require('./routes/routes')(app);
 
+// Start Server
+// =============================================================================
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
