@@ -3,6 +3,7 @@
 var express 	= require('express'),
 	bodyParser  = require('body-parser');
  	http 		= require('http'),
+ 	cookieParser = require('cookie-parser'),
     session     = require('express-session'),
     passport    = require('passport'),
     mongoose	= require('mongoose'),
@@ -40,13 +41,14 @@ app.set('views', path.join(__dirname, 'views'));
 
 // bodyparser
 // =============================================================================
+app.use(cookieParser()); //read cookies 
 app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // user sessions
 // =============================================================================
-app.use(session({ secret: 'developerswithattitude', resave: true, saveUninitialized: true})); // session secret
+app.use(session({ secret: 'developerswithattitude', resave: true, saveUninitialized: false})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session

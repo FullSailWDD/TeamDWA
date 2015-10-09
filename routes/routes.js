@@ -7,7 +7,9 @@ module.exports = function (app, passport) {
 
 	// LOGOUT =========================
     app.get('/logout', function(req, res) {
-        req.logout(); //passport function
+        // req.logout(); //passport function
+        // res.redirect('/');
+        req.session.destroy();
         res.redirect('/');
     }); 	
 
