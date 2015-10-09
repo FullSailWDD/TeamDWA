@@ -1,16 +1,13 @@
-	var db      = require('../config/db.js'),
+			var db 	= require('../config/db.js'),
         mongoose    = require('mongoose');
-
-	var bodyParser = require('body-parser');
-
-    var Schema   = mongoose.Schema;
+	var bodyParser  = require('body-parser');
+    var Schema  	= mongoose.Schema;
        
     var courseSchema = new mongoose.Schema({
 	    	course		: 	String,
 	    	Rubrics		:   {rubric: Object}
 	});
 
-	//mongoose.model( 'course', course );
 	_model = mongoose.model('course', courseSchema);
 
 	exports.addCourse = function ( req, res ){
@@ -29,6 +26,18 @@
 				};
     			
   			});
+
+	};
+
+
+
+	exports.findCourse = function( req, res) {
+        	course.findOne({title: 'DPW'}, function(err, DPW){
+        	if (err) return console.log(err);
+        	console.log(DPW);
+        	return (DPW);
+        })
+    };
+
 			
 
-};

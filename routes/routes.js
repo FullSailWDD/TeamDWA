@@ -4,6 +4,7 @@ module.exports = function (app, passport) {
 
 	app.get('/', function (req, res) {
         res.render('homepage');
+
     });    
 
 	// LOGOUT =========================
@@ -45,10 +46,12 @@ module.exports = function (app, passport) {
 	// LOGIN =========================
 
     // DASHBOARD =========================
-    var course = require('../models/course.js');
-
     app.get('/dashboard', isLoggedIn, function (req, res) {
         res.render('dashboard');
+        var Courses = new findCourse;
+        Courses.findCourse();
+        console.log(Courses);
+
     });
 
     app.get('/addCourse',function(req, res){

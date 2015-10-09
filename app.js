@@ -1,16 +1,17 @@
 
 //NPM MOdules
-var express 		= require('express'),
-	bodyParser  	= require('body-parser');
- 	http 			= require('http'),
- 	cookieParser	= require('cookie-parser'),
-    session     	= require('express-session'),
-    passport    	= require('passport'),
-    mongoose		= require('mongoose'),
-    flash    		= require('connect-flash'),
- 	exphbs 			= require('express-handlebars'),
-	path 			= require('path');
 
+var express 	= require('express'),
+	bodyParser  = require('body-parser');
+ 	http 		= require('http'),
+ 	cookieParser = require('cookie-parser'),
+    session     = require('express-session'),
+    passport    = require('passport'),
+    mongoose	= require('mongoose'),
+    course      = require('./models/course.js'),
+    flash    	= require('connect-flash'),
+ 	exphbs 		= require('express-handlebars'),
+	path 		= require('path');
 var app = express();
 
 
