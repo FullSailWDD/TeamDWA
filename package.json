@@ -12,7 +12,6 @@
     "cookie-parser": "^1.4.0",
     "express": "3.4.8",
     "express-handlebars": "^2.0.1",
-    "express-passport-logout": "^0.1.0",
     "express-session": "^1.11.3",
     "flash": "^1.1.0",
     "mongoose": "^4.1.10",

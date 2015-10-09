@@ -1,15 +1,15 @@
 
 //NPM MOdules
-var express 	= require('express'),
-	bodyParser  = require('body-parser');
- 	http 		= require('http'),
- 	cookieParser = require('cookie-parser'),
-    session     = require('express-session'),
-    passport    = require('passport'),
-    mongoose	= require('mongoose'),
-    flash    	= require('connect-flash'),
- 	exphbs 		= require('express-handlebars'),
-	path 		= require('path');
+var express 		= require('express'),
+	bodyParser  	= require('body-parser');
+ 	http 			= require('http'),
+ 	cookieParser	= require('cookie-parser'),
+    session     	= require('express-session'),
+    passport    	= require('passport'),
+    mongoose		= require('mongoose'),
+    flash    		= require('connect-flash'),
+ 	exphbs 			= require('express-handlebars'),
+	path 			= require('path');
 
 var app = express();
 
@@ -48,7 +48,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // user sessions
 // =============================================================================
-app.use(session({ secret: 'developerswithattitude', resave: true, saveUninitialized: false})); // session secret
+app.use(session({ 
+	secret: 'developerswithattitude', 
+	resave: true, 
+	saveUninitialized: true})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
