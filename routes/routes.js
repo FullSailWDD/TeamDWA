@@ -3,6 +3,7 @@ module.exports = function (app, passport) {
 	// HOME =========================	
 	app.get('/', function (req, res) {
         res.render('homepage');
+
     });    
 
 	// LOGOUT =========================
@@ -41,6 +42,10 @@ module.exports = function (app, passport) {
     // DASHBOARD =========================
     app.get('/dashboard', isLoggedIn, function (req, res) {
         res.render('dashboard');
+        var Courses = new findCourse;
+        Courses.findCourse();
+        console.log(Courses);
+
     });
 };
 
