@@ -3,7 +3,11 @@
 var express 	= require('express'),
 	bodyParser  = require('body-parser');
  	http 		= require('http'),
- 	exphbs 		= require('express-handlebars')
+    session     = require('express-session'),
+    passport    = require('passport'),
+    mongoose	= require('mongoose'),
+    flash    	= require('connect-flash'),
+ 	exphbs 		= require('express-handlebars'),
 	path 		= require('path');
 
 var app = express();
@@ -13,7 +17,14 @@ var app = express();
 // =============================================================================
 app.set('port', process.env.PORT || 3000);
 
+// Database connection
+// =============================================================================
+var configDB = require('./config/db.js');
+mongoose.connect(configDB.url); // connect to our database
 
+// passport config
+// =============================================================================
+require('./config/passport')(passport);
 
 // View engine
 // =============================================================================
@@ -27,6 +38,20 @@ app.use(express.static(path.join(__dirname, 'bower_components')));
 
 app.set('views', path.join(__dirname, 'views'));
 
+// bodyparser
+// =============================================================================
+app.use(bodyParser.json()); // get information from html forms
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+// user sessions
+// =============================================================================
+app.use(session({ secret: 'developerswithattitude', resave: true, saveUninitialized: true})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
+
+
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
@@ -34,7 +59,7 @@ if ('development' == app.get('env')) {
 
 //Routes
 // =============================================================================
-require('./routes/routes')(app);
+require('./routes/routes')(app, passport);
 
 // Start Server
 // =============================================================================

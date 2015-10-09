@@ -10,6 +10,10 @@
     "bower": "^1.5.3",
     "express": "3.4.8",
     "express-handlebars": "^2.0.1",
-    "mongoose": "^4.1.10"
+    "express-session": "^1.11.3",
+    "flash": "^1.1.0",
+    "mongoose": "^4.1.10",
+    "passport": "^0.3.0",
+    "passport-local": "^1.0.0"
   }
 }
