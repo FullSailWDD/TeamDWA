@@ -1,8 +1,8 @@
 	var db 			= require('../config/db.js'),
         mongoose    = require('mongoose');
-	var bodyParser  = require('body-parser');
-    var Schema  	= mongoose.Schema;
-       
+	//var bodyParser  = require('body-parser');
+    //var Schema  	= mongoose.Schema;
+    
     var courseSchema = new mongoose.Schema({
 	    	courseTitle		: 	String,
 	    	courseDes		: 	String,
@@ -34,12 +34,13 @@
 
 
 
-	exports.findCourse = function( req, res) {
+	exports.findCourse = function(callback) {
         	_model.find({}, function(err, courses){
-        	if (err) return console.log(err);
-        	console.log(courses);
-        	return (courses);
+        	if (err) throw(err);
+        	// console.log(courses);
+        	callback(courses); 
         })
+        	
     };
 
 			

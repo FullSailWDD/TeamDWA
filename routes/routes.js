@@ -61,12 +61,12 @@ module.exports = function (app, passport) {
 
 
     app.post('/jsonReceive', function(req, res){
-      var theCourse = course.findCourse();
-      res.json({course: theCourse});
-      // res.send(JSON.stringify(theCourse, null, 3));
-        console.log(theCourse);
-    
-    })
+ 		var theCourse = course.findCourse(function(result){
+ 			console.log(result);
+ 			//res.send(json.stringify())
+ 		});
+ 		// console.log(theCourse);
+    });
 
 	// app.post('/addRubric',function(req, res){
 	
