@@ -12,6 +12,8 @@
 	_model = mongoose.model('course', courseSchema);
 
 	exports.addCourse = function ( req, res ){
+
+		console.log(req.body);
  
 		var course = new _model({
             courseTitle		:   req.body.courseTitle,

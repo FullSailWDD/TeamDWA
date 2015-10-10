@@ -26,8 +26,8 @@ module.exports = function (app, passport) {
     // LOGIN =========================
 
     app.get('/login', function (req, res) {
-    	console.log(req);
         res.render('login');
+        console.log(res);
     });
 
     	// process the login form
@@ -35,6 +35,7 @@ module.exports = function (app, passport) {
             successRedirect : '/dashboard', // redirect to the secure profile section
             failureRedirect : '/login', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
+
         }));
 
 	// LOGIN =========================
