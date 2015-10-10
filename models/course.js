@@ -35,10 +35,10 @@
 
 
 	exports.findCourse = function( req, res) {
-        	_model.find({course: 'DDW'}, function(err, DDW){
+        	_model.find({}, function(err, courses){
         	if (err) return console.log(err);
-        	console.log(DDW);
-        	return (DDW);
+        	console.log(courses);
+        	return (courses);
         })
     };
 
