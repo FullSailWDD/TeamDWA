@@ -4,7 +4,6 @@ module.exports = function (app, passport) {
 
 	app.get('/', function (req, res) {
         res.render('homepage');
-
     });    
 
 	// LOGOUT =========================
@@ -16,16 +15,11 @@ module.exports = function (app, passport) {
 
     // SIGNUP =========================
 
-    app.get('/signup', function (req, res) {
-        res.render('/');
-    });
-
-		//process the signup form
-		app.post('/signup', passport.authenticate('local-signup', {
-		    successRedirect : '/dashboard', // redirect to the secure profile section
-		    failureRedirect : '/', // redirect back to the signup page if there is an error
-		    failureFlash : true // allow flash messages
-		}));
+    app.post('/signup', passport.authenticate('local-signup', {
+            successRedirect : '/dashboard', // redirect to the secure profile section
+            failureRedirect : '/', // redirect back to the signup page if there is an error
+            failureFlash : true // allow flash messages
+    }));
 
 	// SIGNUP =========================
 
