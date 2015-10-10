@@ -46,7 +46,7 @@ module.exports = function (app, passport) {
 
     app.get('/findCourse', function (req, res){
         res.render('dashboard');
-        var theCourse = course.findCourse();
+ 
         console.log(theCourse);
     });
 
@@ -57,8 +57,10 @@ module.exports = function (app, passport) {
 
 
 
-    app.get('/jsonReceive', function(req, res){
-    res.send(JSON.stringify({courses: req.user.preferences.theme }, null, 3));
+    app.post('/jsonReceive', function(req, res){
+    var theCourse = course.findCourse();
+    res.send(JSON.stringify({courses: theCourse }, null, 3));
+    res.redirect('/dashboard');
     })
 
 	// app.post('/addRubric',function(req, res){

@@ -7,14 +7,17 @@ var app = angular.module("app", ["ngRoute"]);
 
 	// CONTROLLERS -------------------------------
 
-app.controller('courseGenerator' function(){
-	$http.get('/json')
+app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGenData', function($scope, $http, $routeParams, courseGenData){
+	$scope.course = {};
+	$http.post('/jsonReceive', $scope.course)
 		.then(function(res){
 			$scope.course = res.data;
+			console.log($scope.course);
 		});
+		console.log($scope.course);
+		$scope.courseGeneratorData = new courseGen ($scope.course);
 
-
-})
+}])
 
 
 
@@ -31,7 +34,7 @@ app.controller('courseGenerator' function(){
 		return {
 			restrict: 'E',
 			scope: {
-				payload: '='
+				payload: '=',
 				callback: '&'
 			},
 			template: '<div ng-repeat="course in payload">'+
@@ -39,7 +42,7 @@ app.controller('courseGenerator' function(){
 			              '<li>{[{payload.course}]}</li>'+
 			          	  '<li><ul><li ng-repeat="rubrics in course.Rubrics">{[{rubrics.title}]}</li>'+
 			           '</ul></li>'+
-			          '</div>'+
+			          '</div>'
 		}
 	})
 
@@ -58,3 +61,12 @@ app.controller('courseGenerator' function(){
 
 	// SERVICES-----------------------------------
 	//  CREATING AND RETURNING NEW OBJECTS 
+
+	app.service('courseGenData', function(){
+		var courseGen = function(args){
+			this.course = args.course || '';
+			this.rubrics = args.Rubrics || {};
+		}
+		return courseGen;
+	})
+
