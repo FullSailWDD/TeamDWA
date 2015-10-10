@@ -8,13 +8,13 @@ var app = angular.module("app", ["ngRoute"]);
 	// CONTROLLERS -------------------------------
 
 app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGenData', function($scope, $http, $routeParams, courseGenData){
-	$scope.course = {};
+	// $scope.course = {};
 	$http.post('/jsonReceive', $scope.course)
 		.then(function(res){
-			$scope.course = res.data;
+			// $scope.course = res.data;
 			console.log($scope.course);
 		});
-		console.log($scope.course);
+		// console.log($scope.course);
 		$scope.courseGeneratorData = new courseGen ($scope.course);
 
 }])

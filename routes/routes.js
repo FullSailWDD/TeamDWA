@@ -41,13 +41,15 @@ module.exports = function (app, passport) {
 
     // DASHBOARD =========================
     app.get('/dashboard', isLoggedIn, function (req, res) {
+        // var theCourse = course.findCourse();
+        // 
+        // console.log(theCourse);
         res.render('dashboard');
     });
 
     app.get('/findCourse', function (req, res){
         res.render('dashboard');
- 
-        console.log(theCourse);
+      
     });
 
     app.post('/addCourse',function(req, res){
@@ -58,9 +60,11 @@ module.exports = function (app, passport) {
 
 
     app.post('/jsonReceive', function(req, res){
-    var theCourse = course.findCourse();
-    res.send(JSON.stringify({courses: theCourse }, null, 3));
-    res.redirect('/dashboard');
+      var theCourse = course.findCourse();
+      res.json({course: theCourse});
+      // res.send(JSON.stringify(theCourse, null, 3));
+        console.log(theCourse);
+    
     })
 
 	// app.post('/addRubric',function(req, res){
