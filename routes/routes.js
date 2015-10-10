@@ -55,6 +55,12 @@ module.exports = function (app, passport) {
 	res.redirect('/dashboard');
 	});
 
+
+
+    app.get('/jsonReceive', function(req, res){
+    res.send(JSON.stringify({courses: req.user.preferences.theme }, null, 3));
+    })
+
 	// app.post('/addRubric',function(req, res){
 	
 	// complaint.add(req, res);
