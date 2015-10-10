@@ -48,10 +48,12 @@ module.exports = function (app, passport) {
     // DASHBOARD =========================
     app.get('/dashboard', isLoggedIn, function (req, res) {
         res.render('dashboard');
-        var Courses = new findCourse;
-        Courses.findCourse();
-        console.log(Courses);
+    });
 
+    app.get('/findCourse', function (req, res){
+        res.render('dashboard');
+        var theCourse = course.findCourse();
+        console.log(theCourse);
     });
 
     app.get('/addCourse',function(req, res){
