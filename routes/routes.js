@@ -56,11 +56,16 @@ module.exports = function (app, passport) {
         console.log(theCourse);
     });
 
-    app.get('/addCourse',function(req, res){
-	course.addCourse();
-	console.log('Pushed to db');
-
+    app.post('/addCourse',function(req, res){
+	course.addCourse(req, res);
+	res.redirect('/dashboard');
 	});
+
+	// app.post('/addRubric',function(req, res){
+	
+	// complaint.add(req, res);
+
+	//});
 
            
 
