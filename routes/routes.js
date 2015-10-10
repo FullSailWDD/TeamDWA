@@ -62,8 +62,8 @@ module.exports = function (app, passport) {
 
     app.post('/jsonReceive', function(req, res){
  		var theCourse = course.findCourse(function(result){
- 			console.log(result);
- 			//res.send(json.stringify())
+ 			// console.log(result);
+ 			res.send(JSON.stringify({course: result}, null, 3));
  		});
  		// console.log(theCourse);
     });

@@ -8,14 +8,17 @@ var app = angular.module("app", ["ngRoute"]);
 	// CONTROLLERS -------------------------------
 
 app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGenData', function($scope, $http, $routeParams, courseGenData){
-	// $scope.course = {};
+    $scope.course = {}
 	$http.post('/jsonReceive', $scope.course)
 		.then(function(res){
-			// $scope.course = res.data;
-			console.log($scope.course);
+			$scope.course = res.data;
+			$scope.courseGeneratorData = new courseGenData (res.data);
+		console.log($scope.courseGeneratorData);
+		console.log($scope.course);	
 		});
-		// console.log($scope.course);
-		$scope.courseGeneratorData = new courseGen ($scope.course);
+		
+		
+		
 
 }])
 
@@ -39,8 +42,9 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 			},
 			template: '<div ng-repeat="course in payload">'+
 					  '<ul>'+
-			              '<li>{[{payload.course}]}</li>'+
-			          	  '<li><ul><li ng-repeat="rubrics in course.Rubrics">{[{rubrics.title}]}</li>'+
+			              '<li>{[{course.course}]}</li>'+
+			              '<li>{[{course.courseDesc}]}</li>'+
+			          	  '<li ng-if="course.rubric"><ul><li ng-repeat="rubrics in course.rubrics">{[{rubrics.title}]}</li>'+
 			           '</ul></li>'+
 			          '</div>'
 		}
@@ -64,8 +68,9 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 
 	app.service('courseGenData', function(){
 		var courseGen = function(args){
-			this.course = args.course || '';
-			this.rubrics = args.Rubrics || {};
+			this.course = args.course.courseTitle || '';
+			this.courseDesc = args.course.courseDes || '';
+			this.rubrics = args.course.Rubrics || {};
 		}
 		return courseGen;
 	})
