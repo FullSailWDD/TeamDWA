@@ -4,9 +4,11 @@
     //var Schema  	= mongoose.Schema;
     
     var courseSchema = new mongoose.Schema({
-	    	courseTitle		: 	String,
-	    	courseDes		: 	String,
-	    	Rubrics			:   { Rubric1 : Object }
+	    	theCourse			: [{
+	    		courseTitle: String,
+	    		courseDesc: String
+	    	}],
+	    	Rubrics			:   [{ Rubric1 : Object }]
 	}, {strict : false});
 
 	_model = mongoose.model('course', courseSchema);
@@ -16,9 +18,10 @@
 		console.log(req.body);
  
 		var course = new _model({
-            courseTitle		:   req.body.courseTitle,
-            courseDes		: 	req.body.courseDes,
-            Rubrics			:   {}
+            theCourse		: [{
+            	courseTitle : req.body.courseTitle,
+            	courseDesc : req.body.courseDes}],
+            Rubrics			:   [{}]
         	});
 			// Save to Database
 			course.save( function( err){

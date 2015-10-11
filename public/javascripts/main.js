@@ -16,14 +16,13 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 
 		for (var i = 0 ; i < $scope.course.course.length; i++) {
 			var eachCourse = $scope.course.course[i];
-	//		console.log(eachCourse);
 			getCourse(eachCourse);
 		};
 		});
 
 		
 		getCourse = function(data){
-		//console.log(data);
+		//console.log(data); 
 		$scope.courseGeneratorData = new courseGenData (data);
 		console.log($scope.courseGeneratorData);
 		}
@@ -31,15 +30,6 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 
 
 }]);
-
-
-
-
-
-
-
-
-
 	// DIRECTIVES --------------------------------
 	// CUSTOM HTML TEMPLATES
 
@@ -50,9 +40,9 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 				payload: '=',
 				callback: '&'
 			},
-			template: '<div ng-repeat="course in payload">'+
+			template: '<div ng-repeat="course in payload.course">'+
 					  '<ul>'+
-			              '<li>{[{course.title}]}</li>'+
+			              '<li>{[{course.courseTitle}]}</li>'+
 			              '<li>{[{course.courseDesc}]}</li>'+
 			          	  '<li ng-if="course.rubrics"><ul><li ng-repeat="rubrics in course.rubrics">{[{rubrics.title}]}</li>'+
 			           '</ul></li>'+
@@ -60,25 +50,14 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 		}
 	})
 
-
-
-
-
-
-
-
-
-
-
 	// SERVICES-----------------------------------
 	//  CREATING AND RETURNING NEW OBJECTS 
 
 	app.service('courseGenData', function(){
 		var courseGen = function(args){
-			//console.log(args.courseTitle);
+			console.log(args);
 			// console.log(args.courseDes);
-			this.title = args.courseTitle || '';
-			this.courseDesc = args.courseDes || '';
+			this.course = args.theCourse || [];
 			this.rubrics = args.Rubrics || [];
 		}
 		return courseGen;
