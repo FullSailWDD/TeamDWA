@@ -8,19 +8,38 @@ var app = angular.module("app", ["ngRoute"]);
 	// CONTROLLERS -------------------------------
 
 app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGenData', function($scope, $http, $routeParams, courseGenData){
-    $scope.course = {}
+    //$scope.course = {}
 	$http.post('/jsonReceive', $scope.course)
 		.then(function(res){
 			$scope.course = res.data;
-			$scope.courseGeneratorData = new courseGenData (res.data);
-		console.log($scope.courseGeneratorData);
-		console.log($scope.course);	
-		});
-		
-		
-		
+			//$scope.courseGeneratorData = new courseGenData (res.data);
+			//console.log($scope.courseGeneratorData);
+			console.log($scope.course.course);	
 
-}])
+		var allCourses = {};
+		    allCourses.0 = 'allCourses';
+		console.log(allCourses.0);
+
+		//for (var i = 0 ; i < $scope.course.course.length; i++) {
+			// var eachCourse = $scope.course.course[i];
+			 //var allCourses = $scope.course.course[0];
+			//eachCourse.push($scope.course.course[i]);
+			
+			// allCourses.push(eachCourse);
+
+
+		//};	
+		console.log(allCourses);	
+		$scope.courseGeneratorData = new courseGenData (allCourses);
+
+		
+		//console.log($scope.courseGeneratorData);
+		});
+
+
+
+
+}]);
 
 
 
@@ -60,17 +79,15 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 
 
 
-
-
-
 	// SERVICES-----------------------------------
 	//  CREATING AND RETURNING NEW OBJECTS 
 
 	app.service('courseGenData', function(){
 		var courseGen = function(args){
-			this.course = args.course.courseTitle || '';
-			this.courseDesc = args.course.courseDes || '';
-			this.rubrics = args.course.Rubrics || {};
+			console.log(args.courseTitle);
+			this.title = args.courseTitle || '';
+			this.courseDesc = args.courseDes || '';
+			this.rubrics = args.Rubrics || [];
 		}
 		return courseGen;
 	})
