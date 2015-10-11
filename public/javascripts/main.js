@@ -40,12 +40,13 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 				payload: '=',
 				callback: '&'
 			},
-			template: '<div ng-repeat="course in payload.course">'+
+			template: '<div ng-repeat="course in payload.course track by $index">'+
 					  '<ul>'+
-			              '<li>{[{course.theCourse.courseTitle}]}</li>'+
-			              '<li>{[{course.theCourse.courseDesc}]}</li>'+
+			              '<li>{[{course.theCourse[0].courseTitle}]}</li>'+
+			              '<li>{[{course.theCourse[0].courseDesc}]}</li>'+
 			          	  '<li ng-if="course.rubrics"><ul><li ng-repeat="rubrics in course.rubrics">{[{rubrics.title}]}</li>'+
 			           '</ul></li>'+
+			           '</ul>'+
 			          '</div>'
 		}
 	})
