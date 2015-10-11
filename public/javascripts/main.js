@@ -13,19 +13,19 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 		.then(function(res){
 		$scope.course = res.data;
 
-
+		theCourses = [];
+		// eachCourses = {};
 		for (var i = 0 ; i < $scope.course.course.length; i++) {
 			var eachCourse = $scope.course.course[i];
-			getCourse(eachCourse);
+			theCourses.push(eachCourse);
+
 		};
+		// console.log(theCourses);
+		$scope.courseGeneratorData = new courseGenData (theCourses);
+		console.log($scope.courseGeneratorData);
 		});
 
 		
-		getCourse = function(data){
-		//console.log(data); 
-		$scope.courseGeneratorData = new courseGenData (data);
-		console.log($scope.courseGeneratorData);
-		}
 
 
 
@@ -42,8 +42,8 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 			},
 			template: '<div ng-repeat="course in payload.course">'+
 					  '<ul>'+
-			              '<li>{[{course.courseTitle}]}</li>'+
-			              '<li>{[{course.courseDesc}]}</li>'+
+			              '<li>{[{course.theCourse.courseTitle}]}</li>'+
+			              '<li>{[{course.theCourse.courseDesc}]}</li>'+
 			          	  '<li ng-if="course.rubrics"><ul><li ng-repeat="rubrics in course.rubrics">{[{rubrics.title}]}</li>'+
 			           '</ul></li>'+
 			          '</div>'
@@ -54,11 +54,9 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 	//  CREATING AND RETURNING NEW OBJECTS 
 
 	app.service('courseGenData', function(){
-		var courseGen = function(args){
-			console.log(args);
-			// console.log(args.courseDes);
-			this.course = args.theCourse || [];
-			this.rubrics = args.Rubrics || [];
+		var courseGen = function(args){	
+			// console.log(args);
+			this.course = args || [];
 		}
 		return courseGen;
 	})
