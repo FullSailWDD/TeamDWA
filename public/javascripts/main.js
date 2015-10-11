@@ -25,7 +25,11 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 		console.log($scope.courseGeneratorData);
 		});
 
-		
+		$scope.addRubric = function(){
+			var addingRubric = function(course){
+				console.log(course);
+			}
+		}
 
 
 
@@ -47,9 +51,9 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 			              '<li>{[{course.theCourse[0].courseDesc}]}</li>'+
 			          	  '<li ng-if="course.rubrics"><ul><li ng-repeat="rubrics in course.rubrics">{[{rubrics.title}]}</li>'+
 			           								'</ul></li>'+
-			           	  '<li>Add A Rubric</li>'+
 			           '</ul>'+
-			          '</div>'
+			           	  '<button type="button" ng-click="addRubric(course)">Add Rubric</button>'+
+						'</div>'
 		}
 	})
 
