@@ -5,26 +5,25 @@ var app = angular.module("app", ["ngRoute"]);
 	}]);
 
 
-	// CONTROLLERS -------------------------------
+	// CONTROLLERS ---------------------------------------------
 
 app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGenData', function($scope, $http, $routeParams, courseGenData){
-	
+	// GETTING COURSES FROM NODE - DATABASE
 	$http.post('/jsonReceive', $scope.course)
 		.then(function(res){
 		$scope.course = res.data;
-
+	//LOOPING THROUGH THE RETURNED DATA AND PUSHING EACH OBJECT INDIVIDUALLY INTO theCourses ARRAY
 		theCourses = [];
-		// eachCourses = {};
 		for (var i = 0 ; i < $scope.course.course.length; i++) {
 			var eachCourse = $scope.course.course[i];
 			theCourses.push(eachCourse);
 
 		};
-		// console.log(theCourses);
+		// RUNNING THE courseGenData SERVICE WITH THE ARRAY OF theCourses
 		$scope.courseGeneratorData = new courseGenData (theCourses);
 		console.log($scope.courseGeneratorData);
 		});
-
+		// NOT WORKING YET
 		$scope.addRubric = function(){
 			var addingRubric = function(course){
 				console.log(course);
@@ -35,8 +34,9 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 
 }]);
 	// DIRECTIVES --------------------------------
-	// CUSTOM HTML TEMPLATES
+	// CUSTOM HTML or ATTRIBUTES TEMPLATES------------------------
 
+// ADDING AN HTML ELEMENT CALLED courses THAT RENDERS OUT AS THE TEMPLATE PROVIDED
 	app.directive('courses', function(){
 		return {
 			restrict: 'E',
@@ -57,8 +57,11 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 		}
 	})
 
-	// SERVICES-----------------------------------
-	//  CREATING AND RETURNING NEW OBJECTS 
+	// SERVICES-------------------------------------------------
+	//  CREATING AND RETURNING NEW OBJECTS ---------------------
+
+	//CREATING A SERVICE THAT TAKES IN AN OBJECT AND ALLOWS US TO DYNAMICALLY SAVE WHAT WE 
+	//RECEIVE INTO OUR OWN VARIABLE
 
 	app.service('courseGenData', function(){
 		var courseGen = function(args){	
