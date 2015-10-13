@@ -19,7 +19,7 @@
                                 itemName : String,
                                 itemWiki : String,
                                 itemComment : String,
-                                gradeOptions : Number
+                                gradeOptions : Array
                             }
                         }
                     }
@@ -34,11 +34,27 @@
 		console.log(req.body);
  
 		var course = new _model({
-            theCourse		: [{
-            	courseTitle : req.body.courseTitle,
-            	courseCode  : req.body.courseCode,
-            	Rubrics		: [{}]
-        	}]
+            Degrees: {
+                degreeAbbr: '',
+                degreeName : '',
+                courses : {
+                    courseAbbr : req.body.courseCode,
+                    courseName : req.body.courseTitle,
+                    rubrics : {
+                        rubricName : '',
+                        sections : {
+                            sectionName : '',
+                            sectionWeight : null,
+                            items : {
+                                itemName : '',
+                                itemWiki : '',
+                                itemComment : '',
+                                gradeOptions : [100, 75, 50, 0]
+                            }
+                        }
+                    }
+                }
+            }
         });
 			// Save to Database
 			course.save( function( err){
