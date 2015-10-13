@@ -1,25 +1,27 @@
-'use strict';
+var gulp = require('gulp'),
+	child_process = require('child_process'),
+	jeet = require('jeet'),
+	nodemon = require('gulp-nodemon'),
+	stylus = require('gulp-stylus'),
+	connect = require ('gulp-connect');
 
-var 
-    gulp            = require('gulp'),
-    child_process   = require('child_process'),
-    nodemon         = require('gulp-nodemon');
 
-// startup required services to run the app server
-gulp.task('mongod', function() {
-    // spawn in a child process mongodb
-    child_process.exec('mongod', function(err,stdout,stderr){
-    	console.log(stdout);
-    });
-});
 
-gulp.task('dev', function () {
-  nodemon({ script: 'app.js'
-          , ext: 'html js styl'
-          , ignore: ['ignored.js'] })
-    .on('restart', function () {
-      console.log('restarted!')
-    })
-});
- 
-gulp.task('myTasks', ['mongod', 'dev']);
+	gulp.task('dev', function(){
+		nodemon({
+			script: 'app.js',
+			ext: 'js handlebars'
+		})
+	})
+
+	gulp.task('mongod', function(){
+		child_process.exec('mongo', function(err, stdout, stderr){
+			console.log(stdout);		
+		})
+	})
+
+	gulp.task('all', ['mongod', 'dev']);
+
+	gulp.task('test', function(){
+		
+	})
