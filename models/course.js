@@ -4,11 +4,31 @@
     //var Schema  	= mongoose.Schema;
     
     var courseSchema = new mongoose.Schema({
-	    	theCourse: [{
-	    		courseTitle: String,
-	    		courseCode : String,
-	    		Rubrics	   :   [{ Rubric1 : Object }]
-	   		}]
+	    	degree: {
+    "degreeAbbr":degreeAbbr,
+    "degreeName":degreeName,
+    "degreeDesc":degreeDesc,
+    "courses":{
+        "courseAbbr":courseAbbr,
+        "courseName":courseName,
+        "courseDesc":courseDesc,
+        "rubrics":{
+            "rubricAbbr":rubricAbbr,
+            "rubricName":rubricName,
+            "rubricDesc":rubricDesc,
+            "sections":{
+                "sectionName":sectionName,
+                "sectionWeight":sectionWeight,
+                "items":{
+                    "itemName":itemName,
+                    "itemWiki":itemWiki,
+                    "itemComment":itemComment,
+                    "gradeOptions":gradeOptions
+                }
+            }
+        }
+    }
+}});
 	}, {strict : false});
 
 	_model = mongoose.model('course', courseSchema);
