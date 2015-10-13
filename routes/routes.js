@@ -68,11 +68,9 @@ module.exports = function (app, passport) {
  		// console.log(theCourse);
     });
 
-	// app.post('/addRubric',function(req, res){
-	
-	// complaint.add(req, res);
-
-	//});
+	 app.get('/addRubric',function(req, res){
+	   res.render('rubric');
+	 });
 
            
 

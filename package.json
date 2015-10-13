@@ -17,5 +17,8 @@
     "mongoose": "^4.1.10",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp-nodemon": "^2.0.4"
   }
 }
