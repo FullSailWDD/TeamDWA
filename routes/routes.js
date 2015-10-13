@@ -69,7 +69,7 @@ module.exports = function (app, passport) {
     });
 
 	 app.get('/addRubric',function(req, res){
-	   res.render('rubric');
+	   res.redirect('/rubric');
 	 });
 
            
