@@ -21,7 +21,3 @@ var gulp = require('gulp'),
 	})
 
 	gulp.task('all', ['mongod', 'dev']);
-
-	gulp.task('test', function(){
-		
-	})

@@ -20,16 +20,17 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 		for (var i = 0 ; i < $scope.course.course.length; i++) {
 			var eachCourse = $scope.course.course[i];
 			theCourses.push(eachCourse);
-
 		};
 		// RUNNING THE courseGenData SERVICE WITH THE ARRAY OF theCourses
 		$scope.courseGeneratorData = new courseGenData (theCourses);
-		console.log($scope.courseGeneratorData);
+		console.log(theCourses);
+		//console.log($scope.courseGeneratorData);
 		});
 		// NOT WORKING YET
 		$scope.addRubric = function(course){
-				console.log(course);
-			console.log('Button Clicked');
+			// console.log(course);
+			// console.log('Button Clicked');
+			$http.get('/addRubric', course);
 		}
 
 
@@ -50,7 +51,7 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 					  '<div ng-repeat="course in payload.course | filter:searchText" >'+
 					  '<ul>'+
 			              '<li>{[{course.theCourse[0].courseTitle}]}</li>'+
-			              '<li>{[{course.theCourse[0].courseDesc}]}</li>'+
+			              '<li>{[{course.theCourse[0].courseCode}]}</li>'+
 			          	  '<li ng-if="course.rubrics"><ul><li ng-repeat="rubrics in course.rubrics">{[{rubrics.title}]}</li>'+
 			           								'</ul></li>'+
 			           '</ul>'+
@@ -68,6 +69,7 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 	app.service('courseGenData', function(){
 		var courseGen = function(args){	
 			this.course = args || [];
+			//console.log(args);
 		}
 		return courseGen;
 	})
