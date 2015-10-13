@@ -52,7 +52,7 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 			          	  '<li ng-if="course.rubrics"><ul><li ng-repeat="rubrics in course.rubrics">{[{rubrics.title}]}</li>'+
 			           								'</ul></li>'+
 			           '</ul>'+
-			           	  '<button type="button" ng-click="addRubric(course)">Add Rubric</button>'+
+			           	  '<button type="button" ng-click="callback(payload)">Add Rubric</button>'+
 						'</div>'
 		}
 	})
