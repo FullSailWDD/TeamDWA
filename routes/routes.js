@@ -68,9 +68,14 @@ module.exports = function (app, passport) {
  		// console.log(theCourse);
     });
 
-	 app.get('/addRubric',function(req, res){
-	   res.redirect('/rubric');
-	 });
+	app.get('/addRubric', isLoggedIn, function(req, res){
+	   res.render('rubric');
+	}); 
+
+    app.post('/createRubric', isLoggedIn, function(req, res){
+        rubric.createRubric(req, res);
+        res.redirect('/dashboard');
+    });
 
            
 

@@ -5,6 +5,11 @@ var app = angular.module("app", ["ngRoute"]);
 	}]);
 
 
+	// requires
+	course         = require('../models/course.js');
+    //rubric         = require('../models/rubric.js');
+
+
 	// CONTROLLERS ---------------------------------------------
 
 app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGenData', function($scope, $http, $routeParams, courseGenData){
@@ -26,11 +31,9 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 		console.log(theCourses);
 		//console.log($scope.courseGeneratorData);
 		});
-		// NOT WORKING YET
+	
 		$scope.addRubric = function(course){
-			// console.log(course);
-			// console.log('Button Clicked');
-			$http.get('/addRubric', course);
+			location.assign('/addRubric',course);
 		}
 
 

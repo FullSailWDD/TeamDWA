@@ -2,10 +2,10 @@
 <a href="/logout" class="btn btn-default btn-sm">Logout</a>
 
 <h1>Rubric</h1>
-    <form action="/addRubric" method="post">
+    <form action="/createRubric" method="post">
         <div class="form-group">
             <label>Rubric Name</label>
-            
+            <input type="text" class="form-control" name="rubricName">
         </div>
         <div class="form-group">
             <label>Rubric Section</label>
@@ -15,14 +15,11 @@
             <label>Grade Options</label>
            <input type="text" class="form-control" name="rubricGrades">
         </div>
-        <button type="submit" class="btn btn-warning btn-lg">Add Course</button>
+        <button type="submit" class="btn btn-warning btn-lg">Create Rubric</button>
     </form>
 
-
-
-
-   <div ng-controller="courseGenerator"> 
+  <!--  <div ng-controller="courseGenerator"> 
         <courses data-payload='courseGeneratorData' data-callback='addRubric()'></courses>         
     </div>
-
+ -->
     </div>

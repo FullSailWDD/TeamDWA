@@ -1,17 +1,18 @@
 
 //NPM MOdules
 
-var express 	= require('express'),
-	  bodyParser  = require('body-parser');
- 	  http 		= require('http'),
- 	  cookieParser = require('cookie-parser'),
-    session     = require('express-session'),
-    passport    = require('passport'),
-    mongoose	= require('mongoose'),
-    course      = require('./models/course.js'),
- 	  exphbs 		= require('express-handlebars'),
-	  path 		= require('path');
-var app = express();
+var express 	     = require('express'),
+	  bodyParser     = require('body-parser');
+ 	  http 		       = require('http'),
+ 	  cookieParser   = require('cookie-parser'),
+    session        = require('express-session'),
+    passport       = require('passport'),
+    mongoose	     = require('mongoose'),
+    course         = require('./models/course.js'),
+    rubric         = require('./models/rubric.js'),
+ 	  exphbs 		     = require('express-handlebars'),
+	  path 		       = require('path');
+var app            = express();
 
 
 // Port
