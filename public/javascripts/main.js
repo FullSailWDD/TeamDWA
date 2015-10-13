@@ -6,8 +6,7 @@ var app = angular.module("app", ["ngRoute"]);
 
 
 	// requires
-	course         = require('../models/course.js');
-    //rubric         = require('../models/rubric.js');
+
 
 
 	// CONTROLLERS ---------------------------------------------

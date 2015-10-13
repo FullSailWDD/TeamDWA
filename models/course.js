@@ -1,15 +1,12 @@
 	//var db 			= require('../config/db.js'),
         mongoose    = require('mongoose');
-        //var bodyParser  = require('body-parser');
-
     
     var courseSchema = new mongoose.Schema({
 	    	theCourse			: [{
-	    		courseTitle: String,
-	    		courseCode: String,
-	    	
-	    	Rubrics			:   [{ Rubric1 : Object }]
-	    	}]
+	    		courseTitle		: String,
+	    		courseCode		: String
+	    	}],
+	    	Rubrics				: [{ Rubric1 : Object }]
 	}, {strict : false});
 
 	_model = mongoose.model('course', courseSchema);
@@ -21,9 +18,8 @@
 		var course = new _model({
             theCourse		: [{
             	courseTitle : req.body.courseTitle,
-            	courseCode : req.body.courseCode,
-            Rubrics			:   [{}]
-            }]
+            	courseCode  : req.body.courseCode}],
+            	Rubrics		: [{}]
         	});
 			// Save to Database
 			course.save( function( err){
