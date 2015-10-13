@@ -16,11 +16,15 @@
     "express-session": "^1.11.3",
     "flash": "^1.1.0",
     "inherits": "^2.0.1",
+    "jeet": "^6.1.2",
     "mongoose": "^4.1.10",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "gulp-nodemon": "^2.0.4"
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-stylus": "^2.1.0"
   }
 }
