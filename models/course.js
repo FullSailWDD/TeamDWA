@@ -3,13 +3,27 @@
     
     var courseSchema = new mongoose.Schema({
 
-	    	theCourse			: [{
-	    		courseTitle		: String,
-	    		courseCode		: String,
-	    		Rubrics				: [{ Rubric1 : Object }]
-	    	}],
-	    	
-
+            Degrees: {
+                degreeAbbr: String,
+                degreeName : String,
+                courses : {
+                    courseAbbr : String,
+                    courseName : String,
+                    rubrics : {
+                        rubricName : String,
+                        sections : {
+                            sectionName : String,
+                            sectionWeight : Number,
+                            items : {
+                                itemName : String,
+                                itemWiki : String,
+                                itemComment : String,
+                                gradeOptions : Number
+                            }
+                        }
+                    }
+                }
+            }
 	}, {strict : false});
 
 	_model = mongoose.model('course', courseSchema);
