@@ -2,11 +2,14 @@
         mongoose    = require('mongoose');
     
     var courseSchema = new mongoose.Schema({
+
 	    	theCourse			: [{
 	    		courseTitle		: String,
-	    		courseCode		: String
+	    		courseCode		: String,
+	    		Rubrics				: [{ Rubric1 : Object }]
 	    	}],
-	    	Rubrics				: [{ Rubric1 : Object }]
+	    	
+
 	}, {strict : false});
 
 	_model = mongoose.model('course', courseSchema);
@@ -18,8 +21,9 @@
 		var course = new _model({
             theCourse		: [{
             	courseTitle : req.body.courseTitle,
-            	courseCode  : req.body.courseCode}],
+            	courseCode  : req.body.courseCode,
             	Rubrics		: [{}]
+            }]
         	});
 			// Save to Database
 			course.save( function( err){
