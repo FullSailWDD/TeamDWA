@@ -4,11 +4,11 @@
     //var Schema  	= mongoose.Schema;
     
     var courseSchema = new mongoose.Schema({
-	    	theCourse: [{
+	    	theCourse: {
 	    		courseTitle: String,
 	    		courseCode : String,
 	    		Rubrics	   :   [{ Rubric1 : Object }]
-	   		}]
+	   		}
 	}, {strict : false});
 
 	_model = mongoose.model('course', courseSchema);
