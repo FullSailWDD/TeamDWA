@@ -1,0 +1,2322 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/KaseTebo/.nvm/versions/node/v4.1.1/bin/node',
+1 verbose cli   '/Users/KaseTebo/.nvm/versions/node/v4.1.1/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save-dev',
+1 verbose cli   'gulp-livereload' ]
+2 info using npm@2.14.4
+3 info using node@v4.1.1
+4 verbose install initial load of /Applications/MAMP/htdocs/DPW/ProRubrics/package.json
+5 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/abbrev/package.json
+6 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/ansi-green/package.json
+7 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/ansi-regex/package.json
+8 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/ansi-styles/package.json
+9 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/ansi-wrap/package.json
+10 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/anymatch/package.json
+11 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/archy/package.json
+12 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/arr-diff/package.json
+13 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/arr-flatten/package.json
+14 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/array-differ/package.json
+15 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/array-slice/package.json
+16 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/array-uniq/package.json
+17 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/array-unique/package.json
+18 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/arrify/package.json
+19 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/async-each/package.json
+20 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/balanced-match/package.json
+21 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/bcrypt-nodejs/package.json
+22 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/beeper/package.json
+23 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/binary-extensions/package.json
+24 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/body-parser/package.json
+25 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/bower/package.json
+26 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/brace-expansion/package.json
+27 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/braces/package.json
+28 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/browser-sync/package.json
+29 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/builtin-modules/package.json
+30 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/camelcase/package.json
+31 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/camelcase-keys/package.json
+32 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/chalk/package.json
+33 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/chokidar/package.json
+34 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/clone/package.json
+35 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/clone-stats/package.json
+36 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/colors/package.json
+37 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/concat-map/package.json
+38 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/configstore/package.json
+39 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/connect-redis/package.json
+40 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/cookie-parser/package.json
+41 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/core-util-is/package.json
+42 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/dateformat/package.json
+43 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/debug/package.json
+44 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/deep-extend/package.json
+45 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/defaults/package.json
+46 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/deprecated/package.json
+47 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/duplexer/package.json
+48 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/duplexer2/package.json
+49 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/duplexify/package.json
+50 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/end-of-stream/package.json
+51 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/error-ex/package.json
+52 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/escape-string-regexp/package.json
+53 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/event-stream/package.json
+54 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/expand-brackets/package.json
+55 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/expand-range/package.json
+56 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/express/package.json
+57 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/express-handlebars/package.json
+58 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/express-session/package.json
+59 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/extend/package.json
+60 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/extglob/package.json
+61 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/filename-regex/package.json
+62 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/fill-range/package.json
+63 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/find-index/package.json
+64 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/find-up/package.json
+65 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/findup-sync/package.json
+66 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/first-chunk-stream/package.json
+67 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/flagged-respawn/package.json
+68 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/flash/package.json
+69 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/for-in/package.json
+70 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/for-own/package.json
+71 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/from/package.json
+72 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/fsevents/package.json
+73 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gaze/package.json
+74 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/get-stdin/package.json
+75 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/glob/package.json
+76 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/glob-base/package.json
+77 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/glob-parent/package.json
+78 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/glob-stream/package.json
+79 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/glob-watcher/package.json
+80 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/glob2base/package.json
+81 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/globule/package.json
+82 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/got/package.json
+83 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/graceful-fs/package.json
+84 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp/package.json
+85 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-connect/package.json
+86 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-nodemon/package.json
+87 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-stylus/package.json
+88 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/has-ansi/package.json
+89 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/hosted-git-info/package.json
+90 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/indent-string/package.json
+91 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/infinity-agent/package.json
+92 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/inflight/package.json
+93 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/inherits/package.json
+94 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/ini/package.json
+95 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/interpret/package.json
+96 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/is-binary-path/package.json
+97 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/is-builtin-module/package.json
+98 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/is-dotfile/package.json
+99 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/is-equal-shallow/package.json
+100 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/is-extglob/package.json
+101 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/is-finite/package.json
+102 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/is-glob/package.json
+103 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/is-npm/package.json
+104 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/is-number/package.json
+105 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/is-primitive/package.json
+106 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/is-redirect/package.json
+107 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/is-stream/package.json
+108 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/is-utf8/package.json
+109 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/isarray/package.json
+110 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/isobject/package.json
+111 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/jeet/package.json
+112 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/kind-of/package.json
+113 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/latest-version/package.json
+114 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lazy-cache/package.json
+115 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/liftoff/package.json
+116 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/load-json-file/package.json
+117 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash/package.json
+118 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash._baseassign/package.json
+119 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash._basecopy/package.json
+120 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash._basetostring/package.json
+121 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash._basevalues/package.json
+122 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash._bindcallback/package.json
+123 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash._createassigner/package.json
+124 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash._getnative/package.json
+125 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash._isiterateecall/package.json
+126 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash._reescape/package.json
+127 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash._reevaluate/package.json
+128 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash._reinterpolate/package.json
+129 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash.assign/package.json
+130 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash.defaults/package.json
+131 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash.escape/package.json
+132 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash.isarguments/package.json
+133 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash.isarray/package.json
+134 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash.keys/package.json
+135 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash.restparam/package.json
+136 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash.template/package.json
+137 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lodash.templatesettings/package.json
+138 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/loud-rejection/package.json
+139 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lowercase-keys/package.json
+140 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/lru-cache/package.json
+141 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/map-obj/package.json
+142 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/map-stream/package.json
+143 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/meow/package.json
+144 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/micromatch/package.json
+145 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/minimatch/package.json
+146 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/minimist/package.json
+147 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/mkdirp/package.json
+148 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/mongoose/package.json
+149 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/multipipe/package.json
+150 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/nested-error-stacks/package.json
+151 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/nodemon/package.json
+152 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/nopt/package.json
+153 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/normalize-package-data/package.json
+154 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/number-is-nan/package.json
+155 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/object-assign/package.json
+156 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/object.omit/package.json
+157 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/once/package.json
+158 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/optimist/package.json
+159 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/orchestrator/package.json
+160 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/ordered-read-streams/package.json
+161 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/os-homedir/package.json
+162 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/os-tmpdir/package.json
+163 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/osenv/package.json
+164 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/package-json/package.json
+165 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/parse-glob/package.json
+166 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/parse-json/package.json
+167 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/passport/package.json
+168 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/passport-local/package.json
+169 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/passport-strategy/package.json
+170 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/path-exists/package.json
+171 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/path-is-absolute/package.json
+172 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/path-type/package.json
+173 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/pause-stream/package.json
+174 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/pify/package.json
+175 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/pinkie/package.json
+176 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/pinkie-promise/package.json
+177 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/prepend-http/package.json
+178 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/preserve/package.json
+179 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/pretty-hrtime/package.json
+180 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/process-nextick-args/package.json
+181 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/ps-tree/package.json
+182 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/randomatic/package.json
+183 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/rc/package.json
+184 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/read-all-stream/package.json
+185 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/read-pkg/package.json
+186 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/read-pkg-up/package.json
+187 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/readdirp/package.json
+188 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/rechoir/package.json
+189 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/redent/package.json
+190 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/regex-cache/package.json
+191 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/registry-url/package.json
+192 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/repeat-element/package.json
+193 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/repeat-string/package.json
+194 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/repeating/package.json
+195 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/replace-ext/package.json
+196 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/resolve/package.json
+197 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/semver/package.json
+198 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/semver-diff/package.json
+199 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/sequencify/package.json
+200 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/sigmund/package.json
+201 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/slide/package.json
+202 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/spdx-correct/package.json
+203 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/spdx-exceptions/package.json
+204 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/spdx-expression-parse/package.json
+205 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/spdx-license-ids/package.json
+206 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/split/package.json
+207 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/stream-combiner/package.json
+208 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/stream-consume/package.json
+209 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/string-length/package.json
+210 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/strip-ansi/package.json
+211 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/strip-bom/package.json
+212 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/strip-indent/package.json
+213 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/strip-json-comments/package.json
+214 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/success-symbol/package.json
+215 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/supports-color/package.json
+216 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/through/package.json
+217 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/through2/package.json
+218 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/tildify/package.json
+219 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/timed-out/package.json
+220 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/touch/package.json
+221 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/trim-newlines/package.json
+222 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/undefsafe/package.json
+223 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/unique-stream/package.json
+224 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/update-notifier/package.json
+225 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/user-home/package.json
+226 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/util-deprecate/package.json
+227 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/uuid/package.json
+228 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/v8flags/package.json
+229 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/validate-npm-package-license/package.json
+230 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/vinyl/package.json
+231 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/vinyl-fs/package.json
+232 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/wordwrap/package.json
+233 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/wrappy/package.json
+234 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/write-file-atomic/package.json
+235 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/xdg-basedir/package.json
+236 verbose installManyTop reading scoped package data from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/xtend/package.json
+237 info package.json bcrypt-nodejs@0.0.3 No license field.
+238 info package.json duplexer@0.1.1 No license field.
+239 info package.json globule@0.1.0 No license field.
+240 info package.json is-utf8@0.2.0 license should be a valid SPDX license expression
+241 info package.json passport-strategy@1.0.0 No license field.
+242 info package.json pause-stream@0.0.11 license should be a valid SPDX license expression
+243 info package.json sequencify@0.0.7 No license field.
+244 info package.json ansi-wrap@0.1.0 license should be a valid SPDX license expression
+245 info package.json arr-flatten@1.0.1 license should be a valid SPDX license expression
+246 info package.json array-slice@0.2.3 license should be a valid SPDX license expression
+247 info package.json array-unique@0.2.1 license should be a valid SPDX license expression
+248 info package.json dateformat@1.0.11 No license field.
+249 info package.json deprecated@0.0.1 No license field.
+250 info package.json duplexer2@0.0.2 license should be a valid SPDX license expression
+251 info package.json event-stream@3.3.1 No license field.
+252 info package.json expand-range@1.8.1 license should be a valid SPDX license expression
+253 info package.json filename-regex@2.0.0 license should be a valid SPDX license expression
+254 info package.json fill-range@2.2.2 license should be a valid SPDX license expression
+255 info package.json findup-sync@0.3.0 No license field.
+256 info package.json flagged-respawn@0.3.1 No license field.
+257 info package.json for-in@0.1.4 license should be a valid SPDX license expression
+258 info package.json for-own@0.1.3 license should be a valid SPDX license expression
+259 info package.json gaze@0.5.2 No license field.
+260 info package.json glob-base@0.3.0 license should be a valid SPDX license expression
+261 info package.json glob-stream@3.1.18 No license field.
+262 info package.json glob-watcher@0.0.6 No license field.
+263 info package.json glob2base@0.0.12 No license field.
+264 info package.json is-number@1.1.2 license should be a valid SPDX license expression
+265 info package.json is-primitive@2.0.0 license should be a valid SPDX license expression
+266 info package.json isobject@1.0.2 license should be a valid SPDX license expression
+267 info package.json kind-of@1.1.0 license should be a valid SPDX license expression
+268 info package.json map-stream@0.1.0 No license field.
+269 info package.json nopt@1.0.10 license should be a valid SPDX license expression
+270 info package.json object.omit@1.1.0 license should be a valid SPDX license expression
+271 info package.json optimist@0.2.8 license should be a valid SPDX license expression
+272 info package.json orchestrator@0.3.7 No license field.
+273 info package.json passport-local@1.0.0 No license field.
+274 info package.json preserve@0.2.0 license should be a valid SPDX license expression
+275 info package.json ps-tree@0.0.3 No license field.
+276 info package.json randomatic@1.1.0 license should be a valid SPDX license expression
+277 info package.json rechoir@0.6.2 No license field.
+278 info package.json regex-cache@0.4.2 license should be a valid SPDX license expression
+279 info package.json repeat-element@1.1.2 license should be a valid SPDX license expression
+280 info package.json repeat-string@1.5.2 license should be a valid SPDX license expression
+281 info package.json replace-ext@0.0.1 No license field.
+282 info package.json undefsafe@0.0.3 license should be a valid SPDX license expression
+283 info package.json unique-stream@1.0.0 license should be a valid SPDX license expression
+284 info package.json uuid@2.0.1 No license field.
+285 info package.json v8flags@2.0.10 No license field.
+286 info package.json vinyl-fs@0.3.14 No license field.
+287 info package.json xtend@4.0.0 No license field.
+288 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/package.json
+289 silly cache add args [ 'gulp-livereload', null ]
+290 verbose cache add spec gulp-livereload
+291 silly cache add parsed spec Result {
+291 silly cache add   raw: 'gulp-livereload',
+291 silly cache add   scope: null,
+291 silly cache add   name: 'gulp-livereload',
+291 silly cache add   rawSpec: '',
+291 silly cache add   spec: '*',
+291 silly cache add   type: 'range' }
+292 silly addNamed gulp-livereload@*
+293 verbose addNamed "*" is a valid semver range for gulp-livereload
+294 silly addNameRange { name: 'gulp-livereload', range: '*', hasData: false }
+295 silly mapToRegistry name gulp-livereload
+296 silly mapToRegistry using default registry
+297 silly mapToRegistry registry https://registry.npmjs.org/
+298 silly mapToRegistry uri https://registry.npmjs.org/gulp-livereload
+299 verbose addNameRange registry:https://registry.npmjs.org/gulp-livereload not in flight; fetching
+300 verbose request uri https://registry.npmjs.org/gulp-livereload
+301 verbose request no auth needed
+302 info attempt registry request try #1 at 2:23:26 AM
+303 verbose request id 65d489e6b21b709c
+304 http request GET https://registry.npmjs.org/gulp-livereload
+305 http 200 https://registry.npmjs.org/gulp-livereload
+306 silly get cb [ 200,
+306 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+306 silly get     etag: '"3XZNZQBM5W9VZRRMHHJVNEOCL"',
+306 silly get     'content-type': 'application/json',
+306 silly get     'cache-control': 'max-age=60',
+306 silly get     'content-length': '35965',
+306 silly get     'accept-ranges': 'bytes',
+306 silly get     date: 'Tue, 13 Oct 2015 06:18:02 GMT',
+306 silly get     via: '1.1 varnish',
+306 silly get     age: '0',
+306 silly get     connection: 'keep-alive',
+306 silly get     'x-served-by': 'cache-atl6230-ATL',
+306 silly get     'x-cache': 'HIT',
+306 silly get     'x-cache-hits': '1',
+306 silly get     'x-timer': 'S1444717082.771108,VS0,VE99',
+306 silly get     vary: 'Accept' } ]
+307 verbose get saving gulp-livereload to /Users/KaseTebo/.npm/registry.npmjs.org/gulp-livereload/.cache.json
+308 silly addNameRange number 2 { name: 'gulp-livereload', range: '*', hasData: true }
+309 silly addNameRange versions [ 'gulp-livereload',
+309 silly addNameRange   [ '0.1.1',
+309 silly addNameRange     '0.2.0',
+309 silly addNameRange     '0.3.0',
+309 silly addNameRange     '0.3.1',
+309 silly addNameRange     '0.3.2',
+309 silly addNameRange     '1.0.0',
+309 silly addNameRange     '1.0.1',
+309 silly addNameRange     '1.1.0',
+309 silly addNameRange     '1.1.1',
+309 silly addNameRange     '1.2.0',
+309 silly addNameRange     '1.3.1',
+309 silly addNameRange     '1.4.1',
+309 silly addNameRange     '1.4.2',
+309 silly addNameRange     '1.5.0',
+309 silly addNameRange     '2.0.0',
+309 silly addNameRange     '2.1.0',
+309 silly addNameRange     '2.1.1',
+309 silly addNameRange     '3.0.0',
+309 silly addNameRange     '3.0.1',
+309 silly addNameRange     '3.0.2',
+309 silly addNameRange     '3.1.0',
+309 silly addNameRange     '3.2.0',
+309 silly addNameRange     '3.3.0',
+309 silly addNameRange     '3.4.0',
+309 silly addNameRange     '3.5.0',
+309 silly addNameRange     '3.6.0',
+309 silly addNameRange     '3.7.0',
+309 silly addNameRange     '3.8.0',
+309 silly addNameRange     '3.8.1' ] ]
+310 silly addNamed gulp-livereload@3.8.1
+311 verbose addNamed "3.8.1" is a plain semver version for gulp-livereload
+312 silly mapToRegistry name gulp-livereload
+313 silly mapToRegistry using default registry
+314 silly mapToRegistry registry https://registry.npmjs.org/
+315 silly mapToRegistry uri https://registry.npmjs.org/gulp-livereload
+316 verbose addRemoteTarball https://registry.npmjs.org/gulp-livereload/-/gulp-livereload-3.8.1.tgz not in flight; adding
+317 verbose addRemoteTarball [ 'https://registry.npmjs.org/gulp-livereload/-/gulp-livereload-3.8.1.tgz',
+317 verbose addRemoteTarball   '00f744b2d749d3e9e3746589c8a44acac779b50f' ]
+318 info retry fetch attempt 1 at 2:23:27 AM
+319 info attempt registry request try #1 at 2:23:27 AM
+320 http fetch GET https://registry.npmjs.org/gulp-livereload/-/gulp-livereload-3.8.1.tgz
+321 http fetch 200 https://registry.npmjs.org/gulp-livereload/-/gulp-livereload-3.8.1.tgz
+322 silly fetchAndShaCheck shasum 00f744b2d749d3e9e3746589c8a44acac779b50f
+323 verbose addTmpTarball /var/folders/zr/db5lsyr90txf3t_3033dm5wh0000gn/T/npm-30146-0282f8a4/registry.npmjs.org/gulp-livereload/-/gulp-livereload-3.8.1.tgz not in flight; adding
+324 verbose addTmpTarball already have metadata; skipping unpack for gulp-livereload@3.8.1
+325 silly cache afterAdd gulp-livereload@3.8.1
+326 verbose afterAdd /Users/KaseTebo/.npm/gulp-livereload/3.8.1/package/package.json not in flight; writing
+327 verbose afterAdd /Users/KaseTebo/.npm/gulp-livereload/3.8.1/package/package.json written
+328 silly install resolved [ { name: 'gulp-livereload',
+328 silly install resolved     description: 'Gulp plugin for livereload.',
+328 silly install resolved     version: '3.8.1',
+328 silly install resolved     main: './index.js',
+328 silly install resolved     scripts: { test: 'mocha' },
+328 silly install resolved     repository:
+328 silly install resolved      { type: 'git',
+328 silly install resolved        url: 'git://github.com/vohof/gulp-livereload.git' },
+328 silly install resolved     license: 'MIT',
+328 silly install resolved     keywords: [ 'gulpplugin', 'livereload' ],
+328 silly install resolved     dependencies:
+328 silly install resolved      { chalk: '^0.5.1',
+328 silly install resolved        debug: '^2.1.0',
+328 silly install resolved        'event-stream': '^3.1.7',
+328 silly install resolved        'gulp-util': '^3.0.2',
+328 silly install resolved        'lodash.assign': '^3.0.0',
+328 silly install resolved        'mini-lr': '^0.1.8' },
+328 silly install resolved     devDependencies: { mocha: '^2.0.1', sinon: '^1.12.2' },
+328 silly install resolved     gitHead: '0debe6fc3f39560aaf7a79daed04fa4aa8080e75',
+328 silly install resolved     bugs: { url: 'https://github.com/vohof/gulp-livereload/issues' },
+328 silly install resolved     homepage: 'https://github.com/vohof/gulp-livereload#readme',
+328 silly install resolved     _id: 'gulp-livereload@3.8.1',
+328 silly install resolved     _shasum: '00f744b2d749d3e9e3746589c8a44acac779b50f',
+328 silly install resolved     _from: 'gulp-livereload@*',
+328 silly install resolved     _npmVersion: '2.11.3',
+328 silly install resolved     _nodeVersion: '2.3.3',
+328 silly install resolved     _npmUser: { name: 'vohof', email: 'david@jcyr.us' },
+328 silly install resolved     dist:
+328 silly install resolved      { shasum: '00f744b2d749d3e9e3746589c8a44acac779b50f',
+328 silly install resolved        tarball: 'http://registry.npmjs.org/gulp-livereload/-/gulp-livereload-3.8.1.tgz' },
+328 silly install resolved     maintainers: [ [Object] ],
+328 silly install resolved     directories: {},
+328 silly install resolved     _resolved: 'https://registry.npmjs.org/gulp-livereload/-/gulp-livereload-3.8.1.tgz' } ]
+329 info install gulp-livereload@3.8.1 into /Applications/MAMP/htdocs/DPW/ProRubrics
+330 info installOne gulp-livereload@3.8.1
+331 verbose installOne of gulp-livereload to /Applications/MAMP/htdocs/DPW/ProRubrics not in flight; installing
+332 verbose lock using /Users/KaseTebo/.npm/_locks/gulp-livereload-d6f6b11326111024.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload
+333 silly install write writing gulp-livereload 3.8.1 to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload
+334 verbose unbuild node_modules/gulp-livereload
+335 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload is being purged from base /Applications/MAMP/htdocs/DPW/ProRubrics
+336 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload
+337 verbose tar unpack /Users/KaseTebo/.npm/gulp-livereload/3.8.1/package.tgz
+338 verbose tar unpacking to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload
+339 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload is being purged
+340 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload
+341 silly gunzTarPerm modes [ '755', '644' ]
+342 silly gunzTarPerm extractEntry package.json
+343 silly gunzTarPerm extractEntry .npmignore
+344 silly gunzTarPerm extractEntry README.md
+345 silly gunzTarPerm extractEntry index.js
+346 silly gunzTarPerm extractEntry .jshintrc
+347 silly gunzTarPerm extractEntry .travis.yml
+348 silly gunzTarPerm extractEntry examples/basepath.js
+349 silly gunzTarPerm extractEntry examples/custom-port.js
+350 silly gunzTarPerm extractEntry examples/https.js
+351 silly gunzTarPerm extractEntry examples/static-server.js
+352 silly gunzTarPerm extractEntry examples/watch.js
+353 silly gunzTarPerm extractEntry examples/nodemon/app.js
+354 silly gunzTarPerm extractEntry examples/nodemon/gulpfile.js
+355 silly gunzTarPerm extractEntry examples/nodemon/index.js
+356 silly gunzTarPerm extractEntry test/index.js
+357 silly gunzTarPerm extractEntry test/dev.key
+358 silly gunzTarPerm extractEntry test/dev.pem
+359 verbose write writing to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/package.json
+360 info preinstall gulp-livereload@3.8.1
+361 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/package.json
+362 silly prepareForInstallMany adding chalk@^0.5.1 from gulp-livereload dependencies
+363 silly prepareForInstallMany adding gulp-util@^3.0.2 from gulp-livereload dependencies
+364 silly prepareForInstallMany adding mini-lr@^0.1.8 from gulp-livereload dependencies
+365 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/package.json
+366 silly cache add args [ 'chalk@^0.5.1', null ]
+367 verbose cache add spec chalk@^0.5.1
+368 silly cache add args [ 'gulp-util@^3.0.2', null ]
+369 verbose cache add spec gulp-util@^3.0.2
+370 silly cache add parsed spec Result {
+370 silly cache add   raw: 'chalk@^0.5.1',
+370 silly cache add   scope: null,
+370 silly cache add   name: 'chalk',
+370 silly cache add   rawSpec: '^0.5.1',
+370 silly cache add   spec: '>=0.5.1 <0.6.0',
+370 silly cache add   type: 'range' }
+371 silly addNamed chalk@>=0.5.1 <0.6.0
+372 verbose addNamed ">=0.5.1 <0.6.0" is a valid semver range for chalk
+373 silly addNameRange { name: 'chalk', range: '>=0.5.1 <0.6.0', hasData: false }
+374 silly mapToRegistry name chalk
+375 silly mapToRegistry using default registry
+376 silly mapToRegistry registry https://registry.npmjs.org/
+377 silly mapToRegistry uri https://registry.npmjs.org/chalk
+378 verbose addNameRange registry:https://registry.npmjs.org/chalk not in flight; fetching
+379 silly cache add parsed spec Result {
+379 silly cache add   raw: 'gulp-util@^3.0.2',
+379 silly cache add   scope: null,
+379 silly cache add   name: 'gulp-util',
+379 silly cache add   rawSpec: '^3.0.2',
+379 silly cache add   spec: '>=3.0.2 <4.0.0',
+379 silly cache add   type: 'range' }
+380 silly addNamed gulp-util@>=3.0.2 <4.0.0
+381 verbose addNamed ">=3.0.2 <4.0.0" is a valid semver range for gulp-util
+382 silly addNameRange { name: 'gulp-util', range: '>=3.0.2 <4.0.0', hasData: false }
+383 silly mapToRegistry name gulp-util
+384 silly mapToRegistry using default registry
+385 silly mapToRegistry registry https://registry.npmjs.org/
+386 silly mapToRegistry uri https://registry.npmjs.org/gulp-util
+387 verbose addNameRange registry:https://registry.npmjs.org/gulp-util not in flight; fetching
+388 silly cache add args [ 'mini-lr@^0.1.8', null ]
+389 verbose cache add spec mini-lr@^0.1.8
+390 silly cache add parsed spec Result {
+390 silly cache add   raw: 'mini-lr@^0.1.8',
+390 silly cache add   scope: null,
+390 silly cache add   name: 'mini-lr',
+390 silly cache add   rawSpec: '^0.1.8',
+390 silly cache add   spec: '>=0.1.8 <0.2.0',
+390 silly cache add   type: 'range' }
+391 silly addNamed mini-lr@>=0.1.8 <0.2.0
+392 verbose addNamed ">=0.1.8 <0.2.0" is a valid semver range for mini-lr
+393 silly addNameRange { name: 'mini-lr', range: '>=0.1.8 <0.2.0', hasData: false }
+394 silly mapToRegistry name mini-lr
+395 silly mapToRegistry using default registry
+396 silly mapToRegistry registry https://registry.npmjs.org/
+397 silly mapToRegistry uri https://registry.npmjs.org/mini-lr
+398 verbose addNameRange registry:https://registry.npmjs.org/mini-lr not in flight; fetching
+399 verbose request uri https://registry.npmjs.org/mini-lr
+400 verbose request no auth needed
+401 info attempt registry request try #1 at 2:23:27 AM
+402 http request GET https://registry.npmjs.org/mini-lr
+403 verbose request uri https://registry.npmjs.org/chalk
+404 verbose request no auth needed
+405 info attempt registry request try #1 at 2:23:27 AM
+406 verbose etag "A2WEERGFJ2K140CK2W4QXXB0P"
+407 http request GET https://registry.npmjs.org/chalk
+408 verbose request uri https://registry.npmjs.org/gulp-util
+409 verbose request no auth needed
+410 info attempt registry request try #1 at 2:23:27 AM
+411 verbose etag "B41Z8OJW3UEB6D8TQTV8K5LH4"
+412 http request GET https://registry.npmjs.org/gulp-util
+413 http 304 https://registry.npmjs.org/chalk
+414 silly get cb [ 304,
+414 silly get   { date: 'Tue, 13 Oct 2015 06:18:03 GMT',
+414 silly get     via: '1.1 varnish',
+414 silly get     'cache-control': 'max-age=60',
+414 silly get     etag: '"A2WEERGFJ2K140CK2W4QXXB0P"',
+414 silly get     age: '2',
+414 silly get     connection: 'keep-alive',
+414 silly get     'x-served-by': 'cache-atl6235-ATL',
+414 silly get     'x-cache': 'HIT',
+414 silly get     'x-cache-hits': '1',
+414 silly get     'x-timer': 'S1444717083.155717,VS0,VE0',
+414 silly get     vary: 'Accept' } ]
+415 verbose etag https://registry.npmjs.org/chalk from cache
+416 verbose get saving chalk to /Users/KaseTebo/.npm/registry.npmjs.org/chalk/.cache.json
+417 silly addNameRange number 2 { name: 'chalk', range: '>=0.5.1 <0.6.0', hasData: true }
+418 silly addNameRange versions [ 'chalk',
+418 silly addNameRange   [ '0.1.0',
+418 silly addNameRange     '0.1.1',
+418 silly addNameRange     '0.2.0',
+418 silly addNameRange     '0.2.1',
+418 silly addNameRange     '0.3.0',
+418 silly addNameRange     '0.4.0',
+418 silly addNameRange     '0.5.0',
+418 silly addNameRange     '0.5.1',
+418 silly addNameRange     '1.0.0',
+418 silly addNameRange     '1.1.0',
+418 silly addNameRange     '1.1.1' ] ]
+419 silly addNamed chalk@0.5.1
+420 verbose addNamed "0.5.1" is a plain semver version for chalk
+421 silly cache afterAdd chalk@0.5.1
+422 verbose afterAdd /Users/KaseTebo/.npm/chalk/0.5.1/package/package.json not in flight; writing
+423 verbose afterAdd /Users/KaseTebo/.npm/chalk/0.5.1/package/package.json written
+424 http 200 https://registry.npmjs.org/mini-lr
+425 silly get cb [ 200,
+425 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+425 silly get     etag: '"DD9OMULYU67LLX9GMUR17NVRE"',
+425 silly get     'content-type': 'application/json',
+425 silly get     'cache-control': 'max-age=60',
+425 silly get     'content-length': '13930',
+425 silly get     'accept-ranges': 'bytes',
+425 silly get     date: 'Tue, 13 Oct 2015 06:18:03 GMT',
+425 silly get     via: '1.1 varnish',
+425 silly get     age: '0',
+425 silly get     connection: 'keep-alive',
+425 silly get     'x-served-by': 'cache-atl6226-ATL',
+425 silly get     'x-cache': 'HIT',
+425 silly get     'x-cache-hits': '1',
+425 silly get     'x-timer': 'S1444717083.146920,VS0,VE95',
+425 silly get     vary: 'Accept' } ]
+426 verbose get saving mini-lr to /Users/KaseTebo/.npm/registry.npmjs.org/mini-lr/.cache.json
+427 silly addNameRange number 2 { name: 'mini-lr', range: '>=0.1.8 <0.2.0', hasData: true }
+428 silly addNameRange versions [ 'mini-lr', [ '0.1.7', '0.1.8' ] ]
+429 silly addNamed mini-lr@0.1.8
+430 verbose addNamed "0.1.8" is a plain semver version for mini-lr
+431 silly mapToRegistry name mini-lr
+432 silly mapToRegistry using default registry
+433 silly mapToRegistry registry https://registry.npmjs.org/
+434 silly mapToRegistry uri https://registry.npmjs.org/mini-lr
+435 verbose addRemoteTarball https://registry.npmjs.org/mini-lr/-/mini-lr-0.1.8.tgz not in flight; adding
+436 verbose addRemoteTarball [ 'https://registry.npmjs.org/mini-lr/-/mini-lr-0.1.8.tgz',
+436 verbose addRemoteTarball   '95e71a823272722b00064c2543b0c3d9d254474e' ]
+437 info retry fetch attempt 1 at 2:23:27 AM
+438 info attempt registry request try #1 at 2:23:27 AM
+439 http fetch GET https://registry.npmjs.org/mini-lr/-/mini-lr-0.1.8.tgz
+440 http 304 https://registry.npmjs.org/gulp-util
+441 silly get cb [ 304,
+441 silly get   { date: 'Tue, 13 Oct 2015 06:18:03 GMT',
+441 silly get     via: '1.1 varnish',
+441 silly get     'cache-control': 'max-age=60',
+441 silly get     etag: '"B41Z8OJW3UEB6D8TQTV8K5LH4"',
+441 silly get     age: '0',
+441 silly get     connection: 'keep-alive',
+441 silly get     'x-served-by': 'cache-atl6226-ATL',
+441 silly get     'x-cache': 'HIT',
+441 silly get     'x-cache-hits': '1',
+441 silly get     'x-timer': 'S1444717083.155082,VS0,VE95',
+441 silly get     vary: 'Accept' } ]
+442 verbose etag https://registry.npmjs.org/gulp-util from cache
+443 verbose get saving gulp-util to /Users/KaseTebo/.npm/registry.npmjs.org/gulp-util/.cache.json
+444 silly addNameRange number 2 { name: 'gulp-util', range: '>=3.0.2 <4.0.0', hasData: true }
+445 silly addNameRange versions [ 'gulp-util',
+445 silly addNameRange   [ '0.0.1',
+445 silly addNameRange     '1.0.0',
+445 silly addNameRange     '1.1.0',
+445 silly addNameRange     '1.1.1',
+445 silly addNameRange     '1.2.0',
+445 silly addNameRange     '1.3.0',
+445 silly addNameRange     '2.0.0',
+445 silly addNameRange     '2.1.1',
+445 silly addNameRange     '2.1.2',
+445 silly addNameRange     '2.1.3',
+445 silly addNameRange     '2.1.4',
+445 silly addNameRange     '2.2.0',
+445 silly addNameRange     '2.2.1',
+445 silly addNameRange     '2.2.2',
+445 silly addNameRange     '2.2.3',
+445 silly addNameRange     '2.2.5',
+445 silly addNameRange     '2.2.6',
+445 silly addNameRange     '2.2.7',
+445 silly addNameRange     '2.2.8',
+445 silly addNameRange     '2.2.9',
+445 silly addNameRange     '2.2.10',
+445 silly addNameRange     '2.2.11',
+445 silly addNameRange     '2.2.12',
+445 silly addNameRange     '2.2.13',
+445 silly addNameRange     '2.2.14',
+445 silly addNameRange     '2.2.15',
+445 silly addNameRange     '2.2.16',
+445 silly addNameRange     '2.2.17',
+445 silly addNameRange     '2.2.18',
+445 silly addNameRange     '2.2.19',
+445 silly addNameRange     '2.2.20',
+445 silly addNameRange     '3.0.0',
+445 silly addNameRange     '3.0.1',
+445 silly addNameRange     '3.0.2',
+445 silly addNameRange     '3.0.3',
+445 silly addNameRange     '3.0.4',
+445 silly addNameRange     '3.0.5',
+445 silly addNameRange     '3.0.6' ] ]
+446 silly addNamed gulp-util@3.0.6
+447 verbose addNamed "3.0.6" is a plain semver version for gulp-util
+448 silly cache afterAdd gulp-util@3.0.6
+449 verbose afterAdd /Users/KaseTebo/.npm/gulp-util/3.0.6/package/package.json not in flight; writing
+450 verbose afterAdd /Users/KaseTebo/.npm/gulp-util/3.0.6/package/package.json written
+451 http fetch 200 https://registry.npmjs.org/mini-lr/-/mini-lr-0.1.8.tgz
+452 silly fetchAndShaCheck shasum 95e71a823272722b00064c2543b0c3d9d254474e
+453 verbose addTmpTarball /var/folders/zr/db5lsyr90txf3t_3033dm5wh0000gn/T/npm-30146-0282f8a4/registry.npmjs.org/mini-lr/-/mini-lr-0.1.8.tgz not in flight; adding
+454 verbose addTmpTarball already have metadata; skipping unpack for mini-lr@0.1.8
+455 silly cache afterAdd mini-lr@0.1.8
+456 verbose afterAdd /Users/KaseTebo/.npm/mini-lr/0.1.8/package/package.json not in flight; writing
+457 verbose afterAdd /Users/KaseTebo/.npm/mini-lr/0.1.8/package/package.json written
+458 silly install resolved [ { name: 'chalk',
+458 silly install resolved     version: '0.5.1',
+458 silly install resolved     description: 'Terminal string styling done right. Created because the `colors` module does some really horrible things.',
+458 silly install resolved     license: 'MIT',
+458 silly install resolved     repository: { type: 'git', url: 'git://github.com/sindresorhus/chalk.git' },
+458 silly install resolved     maintainers: [ [Object], [Object] ],
+458 silly install resolved     engines: { node: '>=0.10.0' },
+458 silly install resolved     scripts: { test: 'mocha', bench: 'matcha benchmark.js' },
+458 silly install resolved     files: [ 'index.js' ],
+458 silly install resolved     keywords:
+458 silly install resolved      [ 'color',
+458 silly install resolved        'colour',
+458 silly install resolved        'colors',
+458 silly install resolved        'terminal',
+458 silly install resolved        'console',
+458 silly install resolved        'cli',
+458 silly install resolved        'string',
+458 silly install resolved        'ansi',
+458 silly install resolved        'styles',
+458 silly install resolved        'tty',
+458 silly install resolved        'formatting',
+458 silly install resolved        'rgb',
+458 silly install resolved        '256',
+458 silly install resolved        'shell',
+458 silly install resolved        'xterm',
+458 silly install resolved        'log',
+458 silly install resolved        'logging',
+458 silly install resolved        'command-line',
+458 silly install resolved        'text' ],
+458 silly install resolved     dependencies:
+458 silly install resolved      { 'ansi-styles': '^1.1.0',
+458 silly install resolved        'escape-string-regexp': '^1.0.0',
+458 silly install resolved        'has-ansi': '^0.1.0',
+458 silly install resolved        'strip-ansi': '^0.3.0',
+458 silly install resolved        'supports-color': '^0.2.0' },
+458 silly install resolved     devDependencies: { matcha: '^0.5.0', mocha: '*' },
+458 silly install resolved     gitHead: '994758f01293f1fdcf63282e9917cb9f2cfbdaac',
+458 silly install resolved     bugs: { url: 'https://github.com/sindresorhus/chalk/issues' },
+458 silly install resolved     homepage: 'https://github.com/sindresorhus/chalk',
+458 silly install resolved     _id: 'chalk@0.5.1',
+458 silly install resolved     _shasum: '663b3a648b68b55d04690d49167aa837858f2174',
+458 silly install resolved     _from: 'chalk@>=0.5.1 <0.6.0',
+458 silly install resolved     _npmVersion: '1.4.14',
+458 silly install resolved     _npmUser: { name: 'jbnicolai', email: 'jappelman@xebia.com' },
+458 silly install resolved     dist:
+458 silly install resolved      { shasum: '663b3a648b68b55d04690d49167aa837858f2174',
+458 silly install resolved        tarball: 'http://registry.npmjs.org/chalk/-/chalk-0.5.1.tgz' },
+458 silly install resolved     directories: {},
+458 silly install resolved     _resolved: 'https://registry.npmjs.org/chalk/-/chalk-0.5.1.tgz',
+458 silly install resolved     readme: 'ERROR: No README data found!' },
+458 silly install resolved   { name: 'gulp-util',
+458 silly install resolved     description: 'Utility functions for gulp plugins',
+458 silly install resolved     version: '3.0.6',
+458 silly install resolved     repository:
+458 silly install resolved      { type: 'git',
+458 silly install resolved        url: 'git+https://github.com/wearefractal/gulp-util.git' },
+458 silly install resolved     author:
+458 silly install resolved      { name: 'Fractal',
+458 silly install resolved        email: 'contact@wearefractal.com',
+458 silly install resolved        url: 'http://wearefractal.com/' },
+458 silly install resolved     files: [ 'index.js', 'lib' ],
+458 silly install resolved     dependencies:
+458 silly install resolved      { 'array-differ': '^1.0.0',
+458 silly install resolved        'array-uniq': '^1.0.2',
+458 silly install resolved        beeper: '^1.0.0',
+458 silly install resolved        chalk: '^1.0.0',
+458 silly install resolved        dateformat: '^1.0.11',
+458 silly install resolved        'lodash._reescape': '^3.0.0',
+458 silly install resolved        'lodash._reevaluate': '^3.0.0',
+458 silly install resolved        'lodash._reinterpolate': '^3.0.0',
+458 silly install resolved        'lodash.template': '^3.0.0',
+458 silly install resolved        minimist: '^1.1.0',
+458 silly install resolved        multipipe: '^0.1.2',
+458 silly install resolved        'object-assign': '^3.0.0',
+458 silly install resolved        'replace-ext': '0.0.1',
+458 silly install resolved        through2: '^2.0.0',
+458 silly install resolved        vinyl: '^0.5.0' },
+458 silly install resolved     devDependencies:
+458 silly install resolved      { 'buffer-equal': '^0.0.1',
+458 silly install resolved        coveralls: '^2.11.2',
+458 silly install resolved        'event-stream': '^3.1.7',
+458 silly install resolved        istanbul: '^0.3.5',
+458 silly install resolved        'istanbul-coveralls': '^1.0.1',
+458 silly install resolved        jshint: '^2.5.11',
+458 silly install resolved        'lodash.templatesettings': '^3.0.0',
+458 silly install resolved        mocha: '^2.0.1',
+458 silly install resolved        rimraf: '^2.2.8',
+458 silly install resolved        should: '^7.0.1' },
+458 silly install resolved     scripts:
+458 silly install resolved      { test: 'jshint *.js lib/*.js test/*.js && mocha',
+458 silly install resolved        coveralls: 'istanbul cover _mocha --report lcovonly && istanbul-coveralls' },
+458 silly install resolved     engines: { node: '>=0.10' },
+458 silly install resolved     license: 'MIT',
+458 silly install resolved     gitHead: '7e1336eb03409c14e80368b0464bc7cd793326b4',
+458 silly install resolved     bugs: { url: 'https://github.com/wearefractal/gulp-util/issues' },
+458 silly install resolved     homepage: 'https://github.com/wearefractal/gulp-util#readme',
+458 silly install resolved     _id: 'gulp-util@3.0.6',
+458 silly install resolved     _shasum: 'a0b4e99edbf239c8609573e485999ddfc13e1e4a',
+458 silly install resolved     _from: 'gulp-util@>=3.0.2 <4.0.0',
+458 silly install resolved     _npmVersion: '2.10.0',
+458 silly install resolved     _nodeVersion: '2.0.1',
+458 silly install resolved     _npmUser: { name: 'fractal', email: 'contact@wearefractal.com' },
+458 silly install resolved     maintainers: [ [Object], [Object] ],
+458 silly install resolved     dist:
+458 silly install resolved      { shasum: 'a0b4e99edbf239c8609573e485999ddfc13e1e4a',
+458 silly install resolved        tarball: 'http://registry.npmjs.org/gulp-util/-/gulp-util-3.0.6.tgz' },
+458 silly install resolved     directories: {},
+458 silly install resolved     _resolved: 'https://registry.npmjs.org/gulp-util/-/gulp-util-3.0.6.tgz',
+458 silly install resolved     readme: 'ERROR: No README data found!' },
+458 silly install resolved   { author: { name: 'mklabs' },
+458 silly install resolved     name: 'mini-lr',
+458 silly install resolved     description: 'Mini LiveReload server, background-friendly',
+458 silly install resolved     version: '0.1.8',
+458 silly install resolved     homepage: 'https://github.com/elwayman02/mini-lr',
+458 silly install resolved     bugs: { url: 'https://github.com/elwayman02/mini-lr/issues' },
+458 silly install resolved     repository: { type: 'git', url: 'git://github.com/elwayman02/mini-lr.git' },
+458 silly install resolved     contributors: [ [Object] ],
+458 silly install resolved     main: './lib',
+458 silly install resolved     scripts:
+458 silly install resolved      { 'prepublish:': 'npm test',
+458 silly install resolved        test: 'mocha --reporter spec test/wd test',
+458 silly install resolved        'test-debug': 'DEBUG=minilr:* mocha --reporter list',
+458 silly install resolved        'test-debug-all': 'DEBUG=* mocha --reporter list',
+458 silly install resolved        pretest: 'npm run phantom-start',
+458 silly install resolved        posttest: 'npm run phantom-stop',
+458 silly install resolved        'phantom-start': 'sh scripts/phantom-start',
+458 silly install resolved        'phantom-stop': 'sh scripts/phantom-stop',
+458 silly install resolved        serve: 'node examples/express/server.js',
+458 silly install resolved        'post-change': 'sh scripts/post-change',
+458 silly install resolved        'get-change': 'curl http://localhost:35729/changed?files=site.css' },
+458 silly install resolved     dependencies:
+458 silly install resolved      { 'body-parser': '~1.14.0',
+458 silly install resolved        debug: '~2.0.0',
+458 silly install resolved        'faye-websocket': '~0.7.2',
+458 silly install resolved        'livereload-js': '^2.2.0',
+458 silly install resolved        parseurl: '~1.3.0',
+458 silly install resolved        qs: '~2.2.3' },
+458 silly install resolved     devDependencies:
+458 silly install resolved      { connect: '^2.14.5',
+458 silly install resolved        express: '^4.1.1',
+458 silly install resolved        mocha: '^1.18.2',
+458 silly install resolved        phantomjs: '^1.9.7-5',
+458 silly install resolved        request: '^2.34.0',
+458 silly install resolved        supertest: '^0.12.0',
+458 silly install resolved        wd: '^0.2.21' },
+458 silly install resolved     config: { test_port: '9001' },
+458 silly install resolved     license: 'MIT',
+458 silly install resolved     gitHead: '2b54536cac17359afa075c2cbdca21c28c22ee82',
+458 silly install resolved     _id: 'mini-lr@0.1.8',
+458 silly install resolved     _shasum: '95e71a823272722b00064c2543b0c3d9d254474e',
+458 silly install resolved     _from: 'mini-lr@>=0.1.8 <0.2.0',
+458 silly install resolved     _npmVersion: '3.3.3',
+458 silly install resolved     _nodeVersion: '0.12.7',
+458 silly install resolved     _npmUser: { name: 'elwayman02', email: 'hawker.jordan@gmail.com' },
+458 silly install resolved     dist:
+458 silly install resolved      { shasum: '95e71a823272722b00064c2543b0c3d9d254474e',
+458 silly install resolved        tarball: 'http://registry.npmjs.org/mini-lr/-/mini-lr-0.1.8.tgz' },
+458 silly install resolved     maintainers: [ [Object] ],
+458 silly install resolved     directories: {},
+458 silly install resolved     _resolved: 'https://registry.npmjs.org/mini-lr/-/mini-lr-0.1.8.tgz' } ]
+459 info install chalk@0.5.1 into /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload
+460 info install gulp-util@3.0.6 into /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload
+461 info install mini-lr@0.1.8 into /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload
+462 info installOne chalk@0.5.1
+463 verbose installOne of chalk to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload not in flight; installing
+464 info installOne gulp-util@3.0.6
+465 verbose installOne of gulp-util to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload not in flight; installing
+466 info installOne mini-lr@0.1.8
+467 verbose installOne of mini-lr to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload not in flight; installing
+468 verbose lock using /Users/KaseTebo/.npm/_locks/chalk-02983024fb8ee281.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk
+469 silly install write writing chalk 0.5.1 to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk
+470 verbose lock using /Users/KaseTebo/.npm/_locks/mini-lr-a77eaac43b330fad.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/mini-lr
+471 verbose lock using /Users/KaseTebo/.npm/_locks/gulp-util-d62c35de1aef38e2.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util
+472 silly install write writing mini-lr 0.1.8 to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/mini-lr
+473 silly install write writing gulp-util 3.0.6 to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util
+474 verbose unbuild node_modules/gulp-livereload/node_modules/chalk
+475 verbose unbuild node_modules/gulp-livereload/node_modules/mini-lr
+476 verbose unbuild node_modules/gulp-livereload/node_modules/gulp-util
+477 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk is being purged from base /Applications/MAMP/htdocs/DPW/ProRubrics
+478 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk
+479 verbose tar unpack /Users/KaseTebo/.npm/chalk/0.5.1/package.tgz
+480 verbose tar unpacking to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk
+481 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk is being purged
+482 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk
+483 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/mini-lr is being purged from base /Applications/MAMP/htdocs/DPW/ProRubrics
+484 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/mini-lr
+485 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util is being purged from base /Applications/MAMP/htdocs/DPW/ProRubrics
+486 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util
+487 silly gunzTarPerm modes [ '755', '644' ]
+488 verbose tar unpack /Users/KaseTebo/.npm/mini-lr/0.1.8/package.tgz
+489 verbose tar unpacking to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/mini-lr
+490 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/mini-lr is being purged
+491 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/mini-lr
+492 verbose tar unpack /Users/KaseTebo/.npm/gulp-util/3.0.6/package.tgz
+493 verbose tar unpacking to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util
+494 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util is being purged
+495 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util
+496 silly gunzTarPerm modes [ '755', '644' ]
+497 silly gunzTarPerm modes [ '755', '644' ]
+498 silly gunzTarPerm extractEntry package.json
+499 silly gunzTarPerm extractEntry package.json
+500 silly gunzTarPerm extractEntry package.json
+501 silly gunzTarPerm extractEntry index.js
+502 silly gunzTarPerm extractEntry readme.md
+503 silly gunzTarPerm extractEntry .npmignore
+504 silly gunzTarPerm extractEntry lib/client.js
+505 silly gunzTarPerm extractEntry README.md
+506 silly gunzTarPerm extractEntry LICENSE
+507 silly gunzTarPerm extractEntry lib/index.js
+508 silly gunzTarPerm extractEntry lib/server.js
+509 silly gunzTarPerm extractEntry index.js
+510 silly gunzTarPerm extractEntry lib/PluginError.js
+511 silly gunzTarPerm extractEntry lib/middleware/query.js
+512 silly gunzTarPerm extractEntry .travis.yml
+513 silly gunzTarPerm extractEntry CHANGELOG.md
+514 silly gunzTarPerm extractEntry LICENSE-MIT
+515 silly gunzTarPerm extractEntry examples/express/package.json
+516 silly gunzTarPerm extractEntry examples/express/app.js
+517 silly gunzTarPerm extractEntry examples/express/server.js
+518 silly gunzTarPerm extractEntry examples/express/index.html
+519 silly gunzTarPerm extractEntry examples/express/styles/site.css
+520 silly gunzTarPerm extractEntry test/client.js
+521 silly gunzTarPerm extractEntry test/middleware.js
+522 silly gunzTarPerm extractEntry test/server.js
+523 silly gunzTarPerm extractEntry test/helpers/listen.js
+524 silly gunzTarPerm extractEntry test/wd/index.js
+525 silly gunzTarPerm extractEntry .idea/misc.xml
+526 silly gunzTarPerm extractEntry .idea/.name
+527 silly gunzTarPerm extractEntry .idea/inspectionProfiles/Project_Default.xml
+528 silly gunzTarPerm extractEntry .idea/inspectionProfiles/profiles_settings.xml
+529 silly gunzTarPerm extractEntry .idea/jsLibraryMappings.xml
+530 silly gunzTarPerm extractEntry .idea/jsLinters/jshint.xml
+531 silly gunzTarPerm extractEntry .idea/mini-lr.iml
+532 silly gunzTarPerm extractEntry .idea/dictionaries/jordan.xml
+533 silly gunzTarPerm extractEntry .idea/modules.xml
+534 silly gunzTarPerm extractEntry .idea/vcs.xml
+535 silly gunzTarPerm extractEntry .idea/watcherTasks.xml
+536 silly gunzTarPerm extractEntry .idea/webResources.xml
+537 silly gunzTarPerm extractEntry .idea/workspace.xml
+538 silly gunzTarPerm extractEntry readme.md
+539 silly gunzTarPerm extractEntry scripts/phantom-start
+540 silly gunzTarPerm extractEntry scripts/phantom-stop
+541 silly gunzTarPerm extractEntry scripts/post-change
+542 silly gunzTarPerm extractEntry tmp/.gitkeep
+543 silly gunzTarPerm extractEntry lib/buffer.js
+544 silly gunzTarPerm extractEntry lib/combine.js
+545 silly gunzTarPerm extractEntry lib/env.js
+546 silly gunzTarPerm extractEntry lib/isBuffer.js
+547 silly gunzTarPerm extractEntry lib/isNull.js
+548 silly gunzTarPerm extractEntry lib/isStream.js
+549 silly gunzTarPerm extractEntry lib/log.js
+550 silly gunzTarPerm extractEntry lib/noop.js
+551 silly gunzTarPerm extractEntry lib/template.js
+552 verbose write writing to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/package.json
+553 info preinstall chalk@0.5.1
+554 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/package.json
+555 silly prepareForInstallMany adding ansi-styles@^1.1.0 from chalk dependencies
+556 silly prepareForInstallMany adding has-ansi@^0.1.0 from chalk dependencies
+557 silly prepareForInstallMany adding strip-ansi@^0.3.0 from chalk dependencies
+558 silly prepareForInstallMany adding supports-color@^0.2.0 from chalk dependencies
+559 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/package.json
+560 silly cache add args [ 'ansi-styles@^1.1.0', null ]
+561 verbose cache add spec ansi-styles@^1.1.0
+562 silly cache add args [ 'has-ansi@^0.1.0', null ]
+563 verbose cache add spec has-ansi@^0.1.0
+564 silly cache add parsed spec Result {
+564 silly cache add   raw: 'ansi-styles@^1.1.0',
+564 silly cache add   scope: null,
+564 silly cache add   name: 'ansi-styles',
+564 silly cache add   rawSpec: '^1.1.0',
+564 silly cache add   spec: '>=1.1.0 <2.0.0',
+564 silly cache add   type: 'range' }
+565 silly addNamed ansi-styles@>=1.1.0 <2.0.0
+566 verbose addNamed ">=1.1.0 <2.0.0" is a valid semver range for ansi-styles
+567 silly addNameRange { name: 'ansi-styles', range: '>=1.1.0 <2.0.0', hasData: false }
+568 silly mapToRegistry name ansi-styles
+569 silly mapToRegistry using default registry
+570 silly mapToRegistry registry https://registry.npmjs.org/
+571 silly mapToRegistry uri https://registry.npmjs.org/ansi-styles
+572 verbose addNameRange registry:https://registry.npmjs.org/ansi-styles not in flight; fetching
+573 silly cache add parsed spec Result {
+573 silly cache add   raw: 'has-ansi@^0.1.0',
+573 silly cache add   scope: null,
+573 silly cache add   name: 'has-ansi',
+573 silly cache add   rawSpec: '^0.1.0',
+573 silly cache add   spec: '>=0.1.0 <0.2.0',
+573 silly cache add   type: 'range' }
+574 silly addNamed has-ansi@>=0.1.0 <0.2.0
+575 verbose addNamed ">=0.1.0 <0.2.0" is a valid semver range for has-ansi
+576 silly addNameRange { name: 'has-ansi', range: '>=0.1.0 <0.2.0', hasData: false }
+577 silly mapToRegistry name has-ansi
+578 silly mapToRegistry using default registry
+579 silly mapToRegistry registry https://registry.npmjs.org/
+580 silly mapToRegistry uri https://registry.npmjs.org/has-ansi
+581 verbose addNameRange registry:https://registry.npmjs.org/has-ansi not in flight; fetching
+582 silly cache add args [ 'strip-ansi@^0.3.0', null ]
+583 verbose cache add spec strip-ansi@^0.3.0
+584 silly cache add parsed spec Result {
+584 silly cache add   raw: 'strip-ansi@^0.3.0',
+584 silly cache add   scope: null,
+584 silly cache add   name: 'strip-ansi',
+584 silly cache add   rawSpec: '^0.3.0',
+584 silly cache add   spec: '>=0.3.0 <0.4.0',
+584 silly cache add   type: 'range' }
+585 silly addNamed strip-ansi@>=0.3.0 <0.4.0
+586 verbose addNamed ">=0.3.0 <0.4.0" is a valid semver range for strip-ansi
+587 silly addNameRange { name: 'strip-ansi', range: '>=0.3.0 <0.4.0', hasData: false }
+588 silly mapToRegistry name strip-ansi
+589 silly mapToRegistry using default registry
+590 silly mapToRegistry registry https://registry.npmjs.org/
+591 silly mapToRegistry uri https://registry.npmjs.org/strip-ansi
+592 verbose addNameRange registry:https://registry.npmjs.org/strip-ansi not in flight; fetching
+593 silly cache add args [ 'supports-color@^0.2.0', null ]
+594 verbose cache add spec supports-color@^0.2.0
+595 silly cache add parsed spec Result {
+595 silly cache add   raw: 'supports-color@^0.2.0',
+595 silly cache add   scope: null,
+595 silly cache add   name: 'supports-color',
+595 silly cache add   rawSpec: '^0.2.0',
+595 silly cache add   spec: '>=0.2.0 <0.3.0',
+595 silly cache add   type: 'range' }
+596 silly addNamed supports-color@>=0.2.0 <0.3.0
+597 verbose addNamed ">=0.2.0 <0.3.0" is a valid semver range for supports-color
+598 silly addNameRange { name: 'supports-color',
+598 silly addNameRange   range: '>=0.2.0 <0.3.0',
+598 silly addNameRange   hasData: false }
+599 silly mapToRegistry name supports-color
+600 silly mapToRegistry using default registry
+601 silly mapToRegistry registry https://registry.npmjs.org/
+602 silly mapToRegistry uri https://registry.npmjs.org/supports-color
+603 verbose addNameRange registry:https://registry.npmjs.org/supports-color not in flight; fetching
+604 verbose request uri https://registry.npmjs.org/has-ansi
+605 verbose request no auth needed
+606 info attempt registry request try #1 at 2:23:28 AM
+607 verbose etag "BBDMGI1OGAVY5ZWT2355AH7Y1"
+608 http request GET https://registry.npmjs.org/has-ansi
+609 verbose request uri https://registry.npmjs.org/ansi-styles
+610 verbose request no auth needed
+611 info attempt registry request try #1 at 2:23:28 AM
+612 verbose etag "5C4LQYKQ0TADX2RTLH5EQ6M10"
+613 http request GET https://registry.npmjs.org/ansi-styles
+614 verbose request uri https://registry.npmjs.org/strip-ansi
+615 verbose request no auth needed
+616 info attempt registry request try #1 at 2:23:28 AM
+617 verbose etag "RBPZS1J21XBKPHESKAG048ZH"
+618 http request GET https://registry.npmjs.org/strip-ansi
+619 verbose request uri https://registry.npmjs.org/supports-color
+620 verbose request no auth needed
+621 info attempt registry request try #1 at 2:23:28 AM
+622 verbose etag "AEN1WEU081MO2O8ZJXY4G7G8V"
+623 http request GET https://registry.npmjs.org/supports-color
+624 verbose write writing to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/package.json
+625 info preinstall gulp-util@3.0.6
+626 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/package.json
+627 silly prepareForInstallMany adding chalk@^1.0.0 from gulp-util dependencies
+628 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/package.json
+629 silly cache add args [ 'chalk@^1.0.0', null ]
+630 verbose cache add spec chalk@^1.0.0
+631 silly cache add parsed spec Result {
+631 silly cache add   raw: 'chalk@^1.0.0',
+631 silly cache add   scope: null,
+631 silly cache add   name: 'chalk',
+631 silly cache add   rawSpec: '^1.0.0',
+631 silly cache add   spec: '>=1.0.0 <2.0.0',
+631 silly cache add   type: 'range' }
+632 silly addNamed chalk@>=1.0.0 <2.0.0
+633 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for chalk
+634 silly addNameRange { name: 'chalk', range: '>=1.0.0 <2.0.0', hasData: false }
+635 silly mapToRegistry name chalk
+636 silly mapToRegistry using default registry
+637 silly mapToRegistry registry https://registry.npmjs.org/
+638 silly mapToRegistry uri https://registry.npmjs.org/chalk
+639 verbose addNameRange registry:https://registry.npmjs.org/chalk not in flight; fetching
+640 verbose get https://registry.npmjs.org/chalk not expired, no request
+641 silly addNameRange number 2 { name: 'chalk', range: '>=1.0.0 <2.0.0', hasData: true }
+642 silly addNameRange versions [ 'chalk',
+642 silly addNameRange   [ '0.1.0',
+642 silly addNameRange     '0.1.1',
+642 silly addNameRange     '0.2.0',
+642 silly addNameRange     '0.2.1',
+642 silly addNameRange     '0.3.0',
+642 silly addNameRange     '0.4.0',
+642 silly addNameRange     '0.5.0',
+642 silly addNameRange     '0.5.1',
+642 silly addNameRange     '1.0.0',
+642 silly addNameRange     '1.1.0',
+642 silly addNameRange     '1.1.1' ] ]
+643 silly addNamed chalk@1.1.1
+644 verbose addNamed "1.1.1" is a plain semver version for chalk
+645 http 304 https://registry.npmjs.org/has-ansi
+646 silly get cb [ 304,
+646 silly get   { date: 'Tue, 13 Oct 2015 06:18:03 GMT',
+646 silly get     via: '1.1 varnish',
+646 silly get     'cache-control': 'max-age=60',
+646 silly get     etag: '"BBDMGI1OGAVY5ZWT2355AH7Y1"',
+646 silly get     age: '42',
+646 silly get     connection: 'keep-alive',
+646 silly get     'x-served-by': 'cache-atl6234-ATL',
+646 silly get     'x-cache': 'HIT',
+646 silly get     'x-cache-hits': '4',
+646 silly get     'x-timer': 'S1444717083.453605,VS0,VE0',
+646 silly get     vary: 'Accept' } ]
+647 verbose etag https://registry.npmjs.org/has-ansi from cache
+648 verbose get saving has-ansi to /Users/KaseTebo/.npm/registry.npmjs.org/has-ansi/.cache.json
+649 http 304 https://registry.npmjs.org/ansi-styles
+650 silly get cb [ 304,
+650 silly get   { date: 'Tue, 13 Oct 2015 06:18:03 GMT',
+650 silly get     via: '1.1 varnish',
+650 silly get     'cache-control': 'max-age=60',
+650 silly get     etag: '"5C4LQYKQ0TADX2RTLH5EQ6M10"',
+650 silly get     age: '41',
+650 silly get     connection: 'keep-alive',
+650 silly get     'x-served-by': 'cache-atl6224-ATL',
+650 silly get     'x-cache': 'HIT',
+650 silly get     'x-cache-hits': '5',
+650 silly get     'x-timer': 'S1444717083.457376,VS0,VE0',
+650 silly get     vary: 'Accept' } ]
+651 verbose etag https://registry.npmjs.org/ansi-styles from cache
+652 verbose get saving ansi-styles to /Users/KaseTebo/.npm/registry.npmjs.org/ansi-styles/.cache.json
+653 http 304 https://registry.npmjs.org/strip-ansi
+654 silly get cb [ 304,
+654 silly get   { date: 'Tue, 13 Oct 2015 06:18:03 GMT',
+654 silly get     via: '1.1 varnish',
+654 silly get     'cache-control': 'max-age=60',
+654 silly get     etag: '"RBPZS1J21XBKPHESKAG048ZH"',
+654 silly get     age: '23',
+654 silly get     connection: 'keep-alive',
+654 silly get     'x-served-by': 'cache-atl6225-ATL',
+654 silly get     'x-cache': 'HIT',
+654 silly get     'x-cache-hits': '2',
+654 silly get     'x-timer': 'S1444717083.457736,VS0,VE0',
+654 silly get     vary: 'Accept' } ]
+655 verbose etag https://registry.npmjs.org/strip-ansi from cache
+656 verbose get saving strip-ansi to /Users/KaseTebo/.npm/registry.npmjs.org/strip-ansi/.cache.json
+657 http 304 https://registry.npmjs.org/supports-color
+658 silly get cb [ 304,
+658 silly get   { date: 'Tue, 13 Oct 2015 06:18:03 GMT',
+658 silly get     via: '1.1 varnish',
+658 silly get     'cache-control': 'max-age=60',
+658 silly get     etag: '"AEN1WEU081MO2O8ZJXY4G7G8V"',
+658 silly get     age: '21',
+658 silly get     connection: 'keep-alive',
+658 silly get     'x-served-by': 'cache-atl6230-ATL',
+658 silly get     'x-cache': 'HIT',
+658 silly get     'x-cache-hits': '1',
+658 silly get     'x-timer': 'S1444717083.457732,VS0,VE0',
+658 silly get     vary: 'Accept' } ]
+659 verbose etag https://registry.npmjs.org/supports-color from cache
+660 verbose get saving supports-color to /Users/KaseTebo/.npm/registry.npmjs.org/supports-color/.cache.json
+661 silly addNameRange number 2 { name: 'ansi-styles', range: '>=1.1.0 <2.0.0', hasData: true }
+662 silly addNameRange versions [ 'ansi-styles',
+662 silly addNameRange   [ '0.1.0',
+662 silly addNameRange     '0.1.1',
+662 silly addNameRange     '0.1.2',
+662 silly addNameRange     '0.2.0',
+662 silly addNameRange     '1.0.0',
+662 silly addNameRange     '1.1.0',
+662 silly addNameRange     '2.0.0',
+662 silly addNameRange     '2.0.1',
+662 silly addNameRange     '2.1.0' ] ]
+663 silly addNamed ansi-styles@1.1.0
+664 verbose addNamed "1.1.0" is a plain semver version for ansi-styles
+665 silly addNameRange number 2 { name: 'has-ansi', range: '>=0.1.0 <0.2.0', hasData: true }
+666 silly addNameRange versions [ 'has-ansi',
+666 silly addNameRange   [ '0.1.0', '1.0.0', '1.0.1', '1.0.2', '1.0.3', '2.0.0' ] ]
+667 silly addNamed has-ansi@0.1.0
+668 verbose addNamed "0.1.0" is a plain semver version for has-ansi
+669 silly addNameRange number 2 { name: 'strip-ansi', range: '>=0.3.0 <0.4.0', hasData: true }
+670 silly addNameRange versions [ 'strip-ansi',
+670 silly addNameRange   [ '0.1.0',
+670 silly addNameRange     '0.1.1',
+670 silly addNameRange     '0.2.0',
+670 silly addNameRange     '0.2.1',
+670 silly addNameRange     '0.2.2',
+670 silly addNameRange     '0.3.0',
+670 silly addNameRange     '1.0.0',
+670 silly addNameRange     '2.0.0',
+670 silly addNameRange     '2.0.1',
+670 silly addNameRange     '3.0.0' ] ]
+671 silly addNamed strip-ansi@0.3.0
+672 verbose addNamed "0.3.0" is a plain semver version for strip-ansi
+673 silly addNameRange number 2 { name: 'supports-color',
+673 silly addNameRange   range: '>=0.2.0 <0.3.0',
+673 silly addNameRange   hasData: true }
+674 silly addNameRange versions [ 'supports-color',
+674 silly addNameRange   [ '0.2.0',
+674 silly addNameRange     '1.0.0',
+674 silly addNameRange     '1.1.0',
+674 silly addNameRange     '1.2.0',
+674 silly addNameRange     '1.2.1',
+674 silly addNameRange     '1.3.0',
+674 silly addNameRange     '1.3.1',
+674 silly addNameRange     '2.0.0',
+674 silly addNameRange     '3.0.0',
+674 silly addNameRange     '3.0.1',
+674 silly addNameRange     '3.1.0',
+674 silly addNameRange     '3.1.1' ] ]
+675 silly addNamed supports-color@0.2.0
+676 verbose addNamed "0.2.0" is a plain semver version for supports-color
+677 silly cache afterAdd ansi-styles@1.1.0
+678 verbose afterAdd /Users/KaseTebo/.npm/ansi-styles/1.1.0/package/package.json not in flight; writing
+679 silly cache afterAdd has-ansi@0.1.0
+680 verbose afterAdd /Users/KaseTebo/.npm/has-ansi/0.1.0/package/package.json not in flight; writing
+681 silly cache afterAdd strip-ansi@0.3.0
+682 verbose afterAdd /Users/KaseTebo/.npm/strip-ansi/0.3.0/package/package.json not in flight; writing
+683 silly cache afterAdd supports-color@0.2.0
+684 verbose afterAdd /Users/KaseTebo/.npm/supports-color/0.2.0/package/package.json not in flight; writing
+685 verbose afterAdd /Users/KaseTebo/.npm/ansi-styles/1.1.0/package/package.json written
+686 verbose afterAdd /Users/KaseTebo/.npm/has-ansi/0.1.0/package/package.json written
+687 verbose afterAdd /Users/KaseTebo/.npm/strip-ansi/0.3.0/package/package.json written
+688 verbose afterAdd /Users/KaseTebo/.npm/supports-color/0.2.0/package/package.json written
+689 silly install resolved [ { name: 'ansi-styles',
+689 silly install resolved     version: '1.1.0',
+689 silly install resolved     description: 'ANSI escape codes for styling strings in the terminal',
+689 silly install resolved     license: 'MIT',
+689 silly install resolved     repository:
+689 silly install resolved      { type: 'git',
+689 silly install resolved        url: 'git://github.com/sindresorhus/ansi-styles.git' },
+689 silly install resolved     author:
+689 silly install resolved      { name: 'Sindre Sorhus',
+689 silly install resolved        email: 'sindresorhus@gmail.com',
+689 silly install resolved        url: 'http://sindresorhus.com' },
+689 silly install resolved     engines: { node: '>=0.10.0' },
+689 silly install resolved     scripts: { test: 'mocha' },
+689 silly install resolved     files: [ 'index.js' ],
+689 silly install resolved     keywords:
+689 silly install resolved      [ 'ansi',
+689 silly install resolved        'styles',
+689 silly install resolved        'color',
+689 silly install resolved        'colour',
+689 silly install resolved        'colors',
+689 silly install resolved        'terminal',
+689 silly install resolved        'console',
+689 silly install resolved        'cli',
+689 silly install resolved        'string',
+689 silly install resolved        'tty',
+689 silly install resolved        'escape',
+689 silly install resolved        'formatting',
+689 silly install resolved        'rgb',
+689 silly install resolved        '256',
+689 silly install resolved        'shell',
+689 silly install resolved        'xterm',
+689 silly install resolved        'log',
+689 silly install resolved        'logging',
+689 silly install resolved        'command-line',
+689 silly install resolved        'text' ],
+689 silly install resolved     devDependencies: { mocha: '*' },
+689 silly install resolved     bugs: { url: 'https://github.com/sindresorhus/ansi-styles/issues' },
+689 silly install resolved     homepage: 'https://github.com/sindresorhus/ansi-styles',
+689 silly install resolved     _id: 'ansi-styles@1.1.0',
+689 silly install resolved     _shasum: 'eaecbf66cd706882760b2f4691582b8f55d7a7de',
+689 silly install resolved     _from: 'ansi-styles@>=1.1.0 <2.0.0',
+689 silly install resolved     _npmVersion: '1.4.9',
+689 silly install resolved     _npmUser: { name: 'sindresorhus', email: 'sindresorhus@gmail.com' },
+689 silly install resolved     maintainers: [ [Object] ],
+689 silly install resolved     dist:
+689 silly install resolved      { shasum: 'eaecbf66cd706882760b2f4691582b8f55d7a7de',
+689 silly install resolved        tarball: 'http://registry.npmjs.org/ansi-styles/-/ansi-styles-1.1.0.tgz' },
+689 silly install resolved     directories: {},
+689 silly install resolved     _resolved: 'https://registry.npmjs.org/ansi-styles/-/ansi-styles-1.1.0.tgz',
+689 silly install resolved     readme: 'ERROR: No README data found!' },
+689 silly install resolved   { name: 'has-ansi',
+689 silly install resolved     version: '0.1.0',
+689 silly install resolved     description: 'Check if a string has ANSI escape codes',
+689 silly install resolved     license: 'MIT',
+689 silly install resolved     repository:
+689 silly install resolved      { type: 'git',
+689 silly install resolved        url: 'git://github.com/sindresorhus/has-ansi.git' },
+689 silly install resolved     bin: { 'has-ansi': 'cli.js' },
+689 silly install resolved     author:
+689 silly install resolved      { name: 'Sindre Sorhus',
+689 silly install resolved        email: 'sindresorhus@gmail.com',
+689 silly install resolved        url: 'http://sindresorhus.com' },
+689 silly install resolved     engines: { node: '>=0.10.0' },
+689 silly install resolved     scripts: { test: 'mocha' },
+689 silly install resolved     files: [ 'index.js', 'cli.js' ],
+689 silly install resolved     keywords:
+689 silly install resolved      [ 'cli',
+689 silly install resolved        'bin',
+689 silly install resolved        'ansi',
+689 silly install resolved        'styles',
+689 silly install resolved        'color',
+689 silly install resolved        'colour',
+689 silly install resolved        'colors',
+689 silly install resolved        'terminal',
+689 silly install resolved        'console',
+689 silly install resolved        'string',
+689 silly install resolved        'tty',
+689 silly install resolved        'escape',
+689 silly install resolved        'shell',
+689 silly install resolved        'xterm',
+689 silly install resolved        'command-line',
+689 silly install resolved        'text',
+689 silly install resolved        'regex',
+689 silly install resolved        'regexp',
+689 silly install resolved        're',
+689 silly install resolved        'match',
+689 silly install resolved        'test',
+689 silly install resolved        'find',
+689 silly install resolved        'pattern',
+689 silly install resolved        'has' ],
+689 silly install resolved     dependencies: { 'ansi-regex': '^0.2.0' },
+689 silly install resolved     devDependencies: { mocha: '*' },
+689 silly install resolved     bugs: { url: 'https://github.com/sindresorhus/has-ansi/issues' },
+689 silly install resolved     homepage: 'https://github.com/sindresorhus/has-ansi',
+689 silly install resolved     _id: 'has-ansi@0.1.0',
+689 silly install resolved     _shasum: '84f265aae8c0e6a88a12d7022894b7568894c62e',
+689 silly install resolved     _from: 'has-ansi@>=0.1.0 <0.2.0',
+689 silly install resolved     _npmVersion: '1.4.9',
+689 silly install resolved     _npmUser: { name: 'sindresorhus', email: 'sindresorhus@gmail.com' },
+689 silly install resolved     maintainers: [ [Object] ],
+689 silly install resolved     dist:
+689 silly install resolved      { shasum: '84f265aae8c0e6a88a12d7022894b7568894c62e',
+689 silly install resolved        tarball: 'http://registry.npmjs.org/has-ansi/-/has-ansi-0.1.0.tgz' },
+689 silly install resolved     directories: {},
+689 silly install resolved     _resolved: 'https://registry.npmjs.org/has-ansi/-/has-ansi-0.1.0.tgz',
+689 silly install resolved     readme: 'ERROR: No README data found!' },
+689 silly install resolved   { name: 'strip-ansi',
+689 silly install resolved     version: '0.3.0',
+689 silly install resolved     description: 'Strip ANSI escape codes',
+689 silly install resolved     license: 'MIT',
+689 silly install resolved     bin: { 'strip-ansi': 'cli.js' },
+689 silly install resolved     repository:
+689 silly install resolved      { type: 'git',
+689 silly install resolved        url: 'git://github.com/sindresorhus/strip-ansi.git' },
+689 silly install resolved     author:
+689 silly install resolved      { name: 'Sindre Sorhus',
+689 silly install resolved        email: 'sindresorhus@gmail.com',
+689 silly install resolved        url: 'http://sindresorhus.com' },
+689 silly install resolved     engines: { node: '>=0.10.0' },
+689 silly install resolved     scripts: { test: 'mocha' },
+689 silly install resolved     files: [ 'index.js', 'cli.js' ],
+689 silly install resolved     keywords:
+689 silly install resolved      [ 'strip',
+689 silly install resolved        'trim',
+689 silly install resolved        'remove',
+689 silly install resolved        'ansi',
+689 silly install resolved        'styles',
+689 silly install resolved        'color',
+689 silly install resolved        'colour',
+689 silly install resolved        'colors',
+689 silly install resolved        'terminal',
+689 silly install resolved        'console',
+689 silly install resolved        'cli',
+689 silly install resolved        'string',
+689 silly install resolved        'tty',
+689 silly install resolved        'escape',
+689 silly install resolved        'formatting',
+689 silly install resolved        'rgb',
+689 silly install resolved        '256',
+689 silly install resolved        'shell',
+689 silly install resolved        'xterm',
+689 silly install resolved        'log',
+689 silly install resolved        'logging',
+689 silly install resolved        'command-line',
+689 silly install resolved        'text' ],
+689 silly install resolved     dependencies: { 'ansi-regex': '^0.2.1' },
+689 silly install resolved     devDependencies: { mocha: '*' },
+689 silly install resolved     bugs: { url: 'https://github.com/sindresorhus/strip-ansi/issues' },
+689 silly install resolved     homepage: 'https://github.com/sindresorhus/strip-ansi',
+689 silly install resolved     _id: 'strip-ansi@0.3.0',
+689 silly install resolved     _shasum: '25f48ea22ca79187f3174a4db8759347bb126220',
+689 silly install resolved     _from: 'strip-ansi@>=0.3.0 <0.4.0',
+689 silly install resolved     _npmVersion: '1.4.9',
+689 silly install resolved     _npmUser: { name: 'sindresorhus', email: 'sindresorhus@gmail.com' },
+689 silly install resolved     maintainers: [ [Object] ],
+689 silly install resolved     dist:
+689 silly install resolved      { shasum: '25f48ea22ca79187f3174a4db8759347bb126220',
+689 silly install resolved        tarball: 'http://registry.npmjs.org/strip-ansi/-/strip-ansi-0.3.0.tgz' },
+689 silly install resolved     directories: {},
+689 silly install resolved     _resolved: 'https://registry.npmjs.org/strip-ansi/-/strip-ansi-0.3.0.tgz',
+689 silly install resolved     readme: 'ERROR: No README data found!' },
+689 silly install resolved   { name: 'supports-color',
+689 silly install resolved     version: '0.2.0',
+689 silly install resolved     description: 'Detect whether a terminal supports color',
+689 silly install resolved     license: 'MIT',
+689 silly install resolved     repository:
+689 silly install resolved      { type: 'git',
+689 silly install resolved        url: 'git://github.com/sindresorhus/supports-color.git' },
+689 silly install resolved     bin: { 'supports-color': 'cli.js' },
+689 silly install resolved     author:
+689 silly install resolved      { name: 'Sindre Sorhus',
+689 silly install resolved        email: 'sindresorhus@gmail.com',
+689 silly install resolved        url: 'http://sindresorhus.com' },
+689 silly install resolved     engines: { node: '>=0.10.0' },
+689 silly install resolved     scripts: { test: 'mocha' },
+689 silly install resolved     files: [ 'index.js', 'cli.js' ],
+689 silly install resolved     keywords:
+689 silly install resolved      [ 'cli',
+689 silly install resolved        'bin',
+689 silly install resolved        'color',
+689 silly install resolved        'colour',
+689 silly install resolved        'colors',
+689 silly install resolved        'terminal',
+689 silly install resolved        'console',
+689 silly install resolved        'cli',
+689 silly install resolved        'ansi',
+689 silly install resolved        'styles',
+689 silly install resolved        'tty',
+689 silly install resolved        'rgb',
+689 silly install resolved        '256',
+689 silly install resolved        'shell',
+689 silly install resolved        'xterm',
+689 silly install resolved        'command-line',
+689 silly install resolved        'support',
+689 silly install resolved        'supports',
+689 silly install resolved        'capability',
+689 silly install resolved        'detect' ],
+689 silly install resolved     devDependencies: { mocha: '*' },
+689 silly install resolved     bugs: { url: 'https://github.com/sindresorhus/supports-color/issues' },
+689 silly install resolved     homepage: 'https://github.com/sindresorhus/supports-color',
+689 silly install resolved     _id: 'supports-color@0.2.0',
+689 silly install resolved     _shasum: 'd92de2694eb3f67323973d7ae3d8b55b4c22190a',
+689 silly install resolved     _from: 'supports-color@>=0.2.0 <0.3.0',
+689 silly install resolved     _npmVersion: '1.4.9',
+689 silly install resolved     _npmUser: { name: 'sindresorhus', email: 'sindresorhus@gmail.com' },
+689 silly install resolved     maintainers: [ [Object] ],
+689 silly install resolved     dist:
+689 silly install resolved      { shasum: 'd92de2694eb3f67323973d7ae3d8b55b4c22190a',
+689 silly install resolved        tarball: 'http://registry.npmjs.org/supports-color/-/supports-color-0.2.0.tgz' },
+689 silly install resolved     directories: {},
+689 silly install resolved     _resolved: 'https://registry.npmjs.org/supports-color/-/supports-color-0.2.0.tgz',
+689 silly install resolved     readme: 'ERROR: No README data found!' } ]
+690 info install ansi-styles@1.1.0 into /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk
+691 info install has-ansi@0.1.0 into /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk
+692 info install strip-ansi@0.3.0 into /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk
+693 info install supports-color@0.2.0 into /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk
+694 info installOne ansi-styles@1.1.0
+695 verbose installOne of ansi-styles to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk not in flight; installing
+696 info installOne has-ansi@0.1.0
+697 verbose installOne of has-ansi to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk not in flight; installing
+698 info installOne strip-ansi@0.3.0
+699 verbose installOne of strip-ansi to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk not in flight; installing
+700 info installOne supports-color@0.2.0
+701 verbose installOne of supports-color to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk not in flight; installing
+702 verbose lock using /Users/KaseTebo/.npm/_locks/ansi-styles-7593682084a8b823.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/ansi-styles
+703 verbose lock using /Users/KaseTebo/.npm/_locks/has-ansi-472567c963f583df.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi
+704 verbose lock using /Users/KaseTebo/.npm/_locks/strip-ansi-341d8af63c442c71.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi
+705 silly install write writing ansi-styles 1.1.0 to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/ansi-styles
+706 silly install write writing has-ansi 0.1.0 to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi
+707 silly install write writing strip-ansi 0.3.0 to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi
+708 verbose lock using /Users/KaseTebo/.npm/_locks/supports-color-99cba1fa190311d8.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/supports-color
+709 silly install write writing supports-color 0.2.0 to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/supports-color
+710 silly cache afterAdd chalk@1.1.1
+711 verbose afterAdd /Users/KaseTebo/.npm/chalk/1.1.1/package/package.json not in flight; writing
+712 verbose unbuild node_modules/gulp-livereload/node_modules/chalk/node_modules/ansi-styles
+713 verbose unbuild node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi
+714 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/ansi-styles is being purged from base /Applications/MAMP/htdocs/DPW/ProRubrics
+715 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/ansi-styles
+716 verbose unbuild node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi
+717 verbose unbuild node_modules/gulp-livereload/node_modules/chalk/node_modules/supports-color
+718 verbose tar unpack /Users/KaseTebo/.npm/ansi-styles/1.1.0/package.tgz
+719 verbose tar unpacking to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/ansi-styles
+720 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/ansi-styles is being purged
+721 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/ansi-styles
+722 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi is being purged from base /Applications/MAMP/htdocs/DPW/ProRubrics
+723 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi
+724 silly gunzTarPerm modes [ '755', '644' ]
+725 verbose tar unpack /Users/KaseTebo/.npm/has-ansi/0.1.0/package.tgz
+726 verbose tar unpacking to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi
+727 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi is being purged
+728 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi
+729 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi is being purged from base /Applications/MAMP/htdocs/DPW/ProRubrics
+730 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi
+731 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/supports-color is being purged from base /Applications/MAMP/htdocs/DPW/ProRubrics
+732 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/supports-color
+733 silly gunzTarPerm modes [ '755', '644' ]
+734 verbose tar unpack /Users/KaseTebo/.npm/strip-ansi/0.3.0/package.tgz
+735 verbose tar unpacking to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi
+736 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi is being purged
+737 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi
+738 verbose tar unpack /Users/KaseTebo/.npm/supports-color/0.2.0/package.tgz
+739 verbose tar unpacking to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/supports-color
+740 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/supports-color is being purged
+741 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/supports-color
+742 silly gunzTarPerm modes [ '755', '644' ]
+743 verbose afterAdd /Users/KaseTebo/.npm/chalk/1.1.1/package/package.json written
+744 silly install resolved [ { name: 'chalk',
+744 silly install resolved     version: '1.1.1',
+744 silly install resolved     description: 'Terminal string styling done right. Much color.',
+744 silly install resolved     license: 'MIT',
+744 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/chalk/chalk.git' },
+744 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+744 silly install resolved     engines: { node: '>=0.10.0' },
+744 silly install resolved     scripts:
+744 silly install resolved      { test: 'xo && mocha',
+744 silly install resolved        bench: 'matcha benchmark.js',
+744 silly install resolved        coverage: 'nyc npm test && nyc report',
+744 silly install resolved        coveralls: 'nyc npm test && nyc report --reporter=text-lcov | coveralls' },
+744 silly install resolved     files: [ 'index.js' ],
+744 silly install resolved     keywords:
+744 silly install resolved      [ 'color',
+744 silly install resolved        'colour',
+744 silly install resolved        'colors',
+744 silly install resolved        'terminal',
+744 silly install resolved        'console',
+744 silly install resolved        'cli',
+744 silly install resolved        'string',
+744 silly install resolved        'str',
+744 silly install resolved        'ansi',
+744 silly install resolved        'style',
+744 silly install resolved        'styles',
+744 silly install resolved        'tty',
+744 silly install resolved        'formatting',
+744 silly install resolved        'rgb',
+744 silly install resolved        '256',
+744 silly install resolved        'shell',
+744 silly install resolved        'xterm',
+744 silly install resolved        'log',
+744 silly install resolved        'logging',
+744 silly install resolved        'command-line',
+744 silly install resolved        'text' ],
+744 silly install resolved     dependencies:
+744 silly install resolved      { 'ansi-styles': '^2.1.0',
+744 silly install resolved        'escape-string-regexp': '^1.0.2',
+744 silly install resolved        'has-ansi': '^2.0.0',
+744 silly install resolved        'strip-ansi': '^3.0.0',
+744 silly install resolved        'supports-color': '^2.0.0' },
+744 silly install resolved     devDependencies:
+744 silly install resolved      { coveralls: '^2.11.2',
+744 silly install resolved        matcha: '^0.6.0',
+744 silly install resolved        mocha: '*',
+744 silly install resolved        nyc: '^3.0.0',
+744 silly install resolved        'require-uncached': '^1.0.2',
+744 silly install resolved        'resolve-from': '^1.0.0',
+744 silly install resolved        semver: '^4.3.3',
+744 silly install resolved        xo: '*' },
+744 silly install resolved     xo: { envs: [Object] },
+744 silly install resolved     gitHead: '8b554e254e89c85c1fd04dcc444beeb15824e1a5',
+744 silly install resolved     bugs: { url: 'https://github.com/chalk/chalk/issues' },
+744 silly install resolved     homepage: 'https://github.com/chalk/chalk#readme',
+744 silly install resolved     _id: 'chalk@1.1.1',
+744 silly install resolved     _shasum: '509afb67066e7499f7eb3535c77445772ae2d019',
+744 silly install resolved     _from: 'chalk@>=1.0.0 <2.0.0',
+744 silly install resolved     _npmVersion: '2.13.5',
+744 silly install resolved     _nodeVersion: '0.12.7',
+744 silly install resolved     _npmUser: { name: 'sindresorhus', email: 'sindresorhus@gmail.com' },
+744 silly install resolved     dist:
+744 silly install resolved      { shasum: '509afb67066e7499f7eb3535c77445772ae2d019',
+744 silly install resolved        tarball: 'http://registry.npmjs.org/chalk/-/chalk-1.1.1.tgz' },
+744 silly install resolved     directories: {},
+744 silly install resolved     _resolved: 'https://registry.npmjs.org/chalk/-/chalk-1.1.1.tgz',
+744 silly install resolved     readme: 'ERROR: No README data found!' } ]
+745 info install chalk@1.1.1 into /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util
+746 info installOne chalk@1.1.1
+747 verbose installOne of chalk to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util not in flight; installing
+748 silly gunzTarPerm modes [ '755', '644' ]
+749 verbose lock using /Users/KaseTebo/.npm/_locks/chalk-b5357f4923a90607.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/node_modules/chalk
+750 silly gunzTarPerm extractEntry package.json
+751 silly install write writing chalk 1.1.1 to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/node_modules/chalk
+752 silly gunzTarPerm extractEntry package.json
+753 silly gunzTarPerm extractEntry package.json
+754 silly gunzTarPerm extractEntry package.json
+755 silly gunzTarPerm extractEntry index.js
+756 silly gunzTarPerm extractEntry readme.md
+757 verbose unbuild node_modules/gulp-livereload/node_modules/gulp-util/node_modules/chalk
+758 silly gunzTarPerm extractEntry cli.js
+759 silly gunzTarPerm extractEntry index.js
+760 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/node_modules/chalk is being purged from base /Applications/MAMP/htdocs/DPW/ProRubrics
+761 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/node_modules/chalk
+762 silly gunzTarPerm extractEntry cli.js
+763 silly gunzTarPerm extractEntry index.js
+764 silly gunzTarPerm extractEntry cli.js
+765 silly gunzTarPerm extractEntry index.js
+766 verbose tar unpack /Users/KaseTebo/.npm/chalk/1.1.1/package.tgz
+767 verbose tar unpacking to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/node_modules/chalk
+768 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/node_modules/chalk is being purged
+769 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/node_modules/chalk
+770 silly gunzTarPerm modes [ '755', '644' ]
+771 silly gunzTarPerm extractEntry readme.md
+772 silly gunzTarPerm extractEntry readme.md
+773 silly gunzTarPerm extractEntry readme.md
+774 verbose write writing to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/ansi-styles/package.json
+775 silly gunzTarPerm extractEntry package.json
+776 verbose write writing to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/package.json
+777 verbose write writing to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/package.json
+778 silly gunzTarPerm extractEntry index.js
+779 silly gunzTarPerm extractEntry license
+780 verbose write writing to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/supports-color/package.json
+781 info preinstall ansi-styles@1.1.0
+782 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/ansi-styles/package.json
+783 info preinstall strip-ansi@0.3.0
+784 info preinstall has-ansi@0.1.0
+785 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/package.json
+786 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/package.json
+787 info preinstall supports-color@0.2.0
+788 silly gunzTarPerm extractEntry readme.md
+789 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/ansi-styles/package.json
+790 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/supports-color/package.json
+791 silly prepareForInstallMany adding ansi-regex@^0.2.1 from strip-ansi dependencies
+792 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/package.json
+793 silly prepareForInstallMany adding ansi-regex@^0.2.0 from has-ansi dependencies
+794 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/package.json
+795 silly install resolved []
+796 verbose about to build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/ansi-styles
+797 info build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/ansi-styles
+798 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/supports-color/package.json
+799 info linkStuff ansi-styles@1.1.0
+800 silly linkStuff ansi-styles@1.1.0 has /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules as its parent node_modules
+801 silly cache add args [ 'ansi-regex@^0.2.1', null ]
+802 verbose cache add spec ansi-regex@^0.2.1
+803 silly cache add args [ 'ansi-regex@^0.2.0', null ]
+804 verbose cache add spec ansi-regex@^0.2.0
+805 silly cache add parsed spec Result {
+805 silly cache add   raw: 'ansi-regex@^0.2.1',
+805 silly cache add   scope: null,
+805 silly cache add   name: 'ansi-regex',
+805 silly cache add   rawSpec: '^0.2.1',
+805 silly cache add   spec: '>=0.2.1 <0.3.0',
+805 silly cache add   type: 'range' }
+806 silly addNamed ansi-regex@>=0.2.1 <0.3.0
+807 verbose addNamed ">=0.2.1 <0.3.0" is a valid semver range for ansi-regex
+808 silly addNameRange { name: 'ansi-regex', range: '>=0.2.1 <0.3.0', hasData: false }
+809 silly mapToRegistry name ansi-regex
+810 silly mapToRegistry using default registry
+811 silly mapToRegistry registry https://registry.npmjs.org/
+812 silly mapToRegistry uri https://registry.npmjs.org/ansi-regex
+813 verbose addNameRange registry:https://registry.npmjs.org/ansi-regex not in flight; fetching
+814 silly cache add parsed spec Result {
+814 silly cache add   raw: 'ansi-regex@^0.2.0',
+814 silly cache add   scope: null,
+814 silly cache add   name: 'ansi-regex',
+814 silly cache add   rawSpec: '^0.2.0',
+814 silly cache add   spec: '>=0.2.0 <0.3.0',
+814 silly cache add   type: 'range' }
+815 silly addNamed ansi-regex@>=0.2.0 <0.3.0
+816 verbose addNamed ">=0.2.0 <0.3.0" is a valid semver range for ansi-regex
+817 silly addNameRange { name: 'ansi-regex', range: '>=0.2.0 <0.3.0', hasData: false }
+818 silly mapToRegistry name ansi-regex
+819 silly mapToRegistry using default registry
+820 silly mapToRegistry registry https://registry.npmjs.org/
+821 silly mapToRegistry uri https://registry.npmjs.org/ansi-regex
+822 verbose addNameRange registry:https://registry.npmjs.org/ansi-regex already in flight; waiting
+823 silly install resolved []
+824 verbose about to build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/supports-color
+825 info build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/supports-color
+826 verbose request uri https://registry.npmjs.org/ansi-regex
+827 verbose request no auth needed
+828 info attempt registry request try #1 at 2:23:28 AM
+829 verbose etag "1MRHZG3BYMGFOFAI4EBGRPR9U"
+830 http request GET https://registry.npmjs.org/ansi-regex
+831 info linkStuff supports-color@0.2.0
+832 silly linkStuff supports-color@0.2.0 has /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules as its parent node_modules
+833 verbose linkBins ansi-styles@1.1.0
+834 verbose linkMans ansi-styles@1.1.0
+835 verbose rebuildBundles ansi-styles@1.1.0
+836 info install ansi-styles@1.1.0
+837 info postinstall ansi-styles@1.1.0
+838 verbose unlock done using /Users/KaseTebo/.npm/_locks/ansi-styles-7593682084a8b823.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/ansi-styles
+839 verbose linkBins supports-color@0.2.0
+840 verbose link bins [ { 'supports-color': 'cli.js' },
+840 verbose link bins   '/Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/.bin',
+840 verbose link bins   false ]
+841 verbose linkMans supports-color@0.2.0
+842 verbose rebuildBundles supports-color@0.2.0
+843 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/.bin/supports-color is being purged
+844 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/.bin/supports-color
+845 info install supports-color@0.2.0
+846 info postinstall supports-color@0.2.0
+847 verbose write writing to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/node_modules/chalk/package.json
+848 verbose unlock done using /Users/KaseTebo/.npm/_locks/supports-color-99cba1fa190311d8.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/supports-color
+849 info preinstall chalk@1.1.1
+850 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/node_modules/chalk/package.json
+851 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/node_modules/chalk/package.json
+852 silly install resolved []
+853 verbose about to build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/node_modules/chalk
+854 info build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/node_modules/chalk
+855 info linkStuff chalk@1.1.1
+856 silly linkStuff chalk@1.1.1 has /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/node_modules as its parent node_modules
+857 verbose linkBins chalk@1.1.1
+858 verbose linkMans chalk@1.1.1
+859 verbose rebuildBundles chalk@1.1.1
+860 info install chalk@1.1.1
+861 info postinstall chalk@1.1.1
+862 verbose unlock done using /Users/KaseTebo/.npm/_locks/chalk-b5357f4923a90607.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util/node_modules/chalk
+863 verbose about to build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util
+864 info build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util
+865 info linkStuff gulp-util@3.0.6
+866 silly linkStuff gulp-util@3.0.6 has /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules as its parent node_modules
+867 verbose linkBins gulp-util@3.0.6
+868 verbose linkMans gulp-util@3.0.6
+869 verbose rebuildBundles gulp-util@3.0.6
+870 verbose rebuildBundles [ 'chalk' ]
+871 info install gulp-util@3.0.6
+872 info postinstall gulp-util@3.0.6
+873 verbose unlock done using /Users/KaseTebo/.npm/_locks/gulp-util-d62c35de1aef38e2.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/gulp-util
+874 verbose write writing to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/mini-lr/package.json
+875 info preinstall mini-lr@0.1.8
+876 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/mini-lr/package.json
+877 silly prepareForInstallMany adding debug@~2.0.0 from mini-lr dependencies
+878 silly prepareForInstallMany adding faye-websocket@~0.7.2 from mini-lr dependencies
+879 silly prepareForInstallMany adding livereload-js@^2.2.0 from mini-lr dependencies
+880 silly prepareForInstallMany adding parseurl@~1.3.0 from mini-lr dependencies
+881 silly prepareForInstallMany adding qs@~2.2.3 from mini-lr dependencies
+882 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/mini-lr/package.json
+883 silly cache add args [ 'debug@~2.0.0', null ]
+884 verbose cache add spec debug@~2.0.0
+885 silly cache add args [ 'faye-websocket@~0.7.2', null ]
+886 verbose cache add spec faye-websocket@~0.7.2
+887 silly cache add parsed spec Result {
+887 silly cache add   raw: 'debug@~2.0.0',
+887 silly cache add   scope: null,
+887 silly cache add   name: 'debug',
+887 silly cache add   rawSpec: '~2.0.0',
+887 silly cache add   spec: '>=2.0.0 <2.1.0',
+887 silly cache add   type: 'range' }
+888 silly addNamed debug@>=2.0.0 <2.1.0
+889 verbose addNamed ">=2.0.0 <2.1.0" is a valid semver range for debug
+890 silly addNameRange { name: 'debug', range: '>=2.0.0 <2.1.0', hasData: false }
+891 silly mapToRegistry name debug
+892 silly mapToRegistry using default registry
+893 silly mapToRegistry registry https://registry.npmjs.org/
+894 silly mapToRegistry uri https://registry.npmjs.org/debug
+895 verbose addNameRange registry:https://registry.npmjs.org/debug not in flight; fetching
+896 silly cache add parsed spec Result {
+896 silly cache add   raw: 'faye-websocket@~0.7.2',
+896 silly cache add   scope: null,
+896 silly cache add   name: 'faye-websocket',
+896 silly cache add   rawSpec: '~0.7.2',
+896 silly cache add   spec: '>=0.7.2 <0.8.0',
+896 silly cache add   type: 'range' }
+897 silly addNamed faye-websocket@>=0.7.2 <0.8.0
+898 verbose addNamed ">=0.7.2 <0.8.0" is a valid semver range for faye-websocket
+899 silly addNameRange { name: 'faye-websocket',
+899 silly addNameRange   range: '>=0.7.2 <0.8.0',
+899 silly addNameRange   hasData: false }
+900 silly mapToRegistry name faye-websocket
+901 silly mapToRegistry using default registry
+902 silly mapToRegistry registry https://registry.npmjs.org/
+903 silly mapToRegistry uri https://registry.npmjs.org/faye-websocket
+904 verbose addNameRange registry:https://registry.npmjs.org/faye-websocket not in flight; fetching
+905 silly cache add args [ 'livereload-js@^2.2.0', null ]
+906 verbose cache add spec livereload-js@^2.2.0
+907 silly cache add parsed spec Result {
+907 silly cache add   raw: 'livereload-js@^2.2.0',
+907 silly cache add   scope: null,
+907 silly cache add   name: 'livereload-js',
+907 silly cache add   rawSpec: '^2.2.0',
+907 silly cache add   spec: '>=2.2.0 <3.0.0',
+907 silly cache add   type: 'range' }
+908 silly addNamed livereload-js@>=2.2.0 <3.0.0
+909 verbose addNamed ">=2.2.0 <3.0.0" is a valid semver range for livereload-js
+910 silly addNameRange { name: 'livereload-js',
+910 silly addNameRange   range: '>=2.2.0 <3.0.0',
+910 silly addNameRange   hasData: false }
+911 silly mapToRegistry name livereload-js
+912 silly mapToRegistry using default registry
+913 silly mapToRegistry registry https://registry.npmjs.org/
+914 silly mapToRegistry uri https://registry.npmjs.org/livereload-js
+915 verbose addNameRange registry:https://registry.npmjs.org/livereload-js not in flight; fetching
+916 silly cache add args [ 'parseurl@~1.3.0', null ]
+917 verbose cache add spec parseurl@~1.3.0
+918 silly cache add parsed spec Result {
+918 silly cache add   raw: 'parseurl@~1.3.0',
+918 silly cache add   scope: null,
+918 silly cache add   name: 'parseurl',
+918 silly cache add   rawSpec: '~1.3.0',
+918 silly cache add   spec: '>=1.3.0 <1.4.0',
+918 silly cache add   type: 'range' }
+919 silly addNamed parseurl@>=1.3.0 <1.4.0
+920 verbose addNamed ">=1.3.0 <1.4.0" is a valid semver range for parseurl
+921 silly addNameRange { name: 'parseurl', range: '>=1.3.0 <1.4.0', hasData: false }
+922 silly mapToRegistry name parseurl
+923 silly mapToRegistry using default registry
+924 silly mapToRegistry registry https://registry.npmjs.org/
+925 silly mapToRegistry uri https://registry.npmjs.org/parseurl
+926 verbose addNameRange registry:https://registry.npmjs.org/parseurl not in flight; fetching
+927 silly cache add args [ 'qs@~2.2.3', null ]
+928 verbose cache add spec qs@~2.2.3
+929 silly cache add parsed spec Result {
+929 silly cache add   raw: 'qs@~2.2.3',
+929 silly cache add   scope: null,
+929 silly cache add   name: 'qs',
+929 silly cache add   rawSpec: '~2.2.3',
+929 silly cache add   spec: '>=2.2.3 <2.3.0',
+929 silly cache add   type: 'range' }
+930 silly addNamed qs@>=2.2.3 <2.3.0
+931 verbose addNamed ">=2.2.3 <2.3.0" is a valid semver range for qs
+932 silly addNameRange { name: 'qs', range: '>=2.2.3 <2.3.0', hasData: false }
+933 silly mapToRegistry name qs
+934 silly mapToRegistry using default registry
+935 silly mapToRegistry registry https://registry.npmjs.org/
+936 silly mapToRegistry uri https://registry.npmjs.org/qs
+937 verbose addNameRange registry:https://registry.npmjs.org/qs not in flight; fetching
+938 verbose request uri https://registry.npmjs.org/livereload-js
+939 verbose request no auth needed
+940 info attempt registry request try #1 at 2:23:28 AM
+941 http request GET https://registry.npmjs.org/livereload-js
+942 http 304 https://registry.npmjs.org/ansi-regex
+943 silly get cb [ 304,
+943 silly get   { date: 'Tue, 13 Oct 2015 06:18:03 GMT',
+943 silly get     via: '1.1 varnish',
+943 silly get     'cache-control': 'max-age=60',
+943 silly get     etag: '"1MRHZG3BYMGFOFAI4EBGRPR9U"',
+943 silly get     age: '31',
+943 silly get     connection: 'keep-alive',
+943 silly get     'x-served-by': 'cache-atl6228-ATL',
+943 silly get     'x-cache': 'HIT',
+943 silly get     'x-cache-hits': '5',
+943 silly get     'x-timer': 'S1444717083.693730,VS0,VE0',
+943 silly get     vary: 'Accept' } ]
+944 verbose etag https://registry.npmjs.org/ansi-regex from cache
+945 verbose get saving ansi-regex to /Users/KaseTebo/.npm/registry.npmjs.org/ansi-regex/.cache.json
+946 verbose request uri https://registry.npmjs.org/debug
+947 verbose request no auth needed
+948 info attempt registry request try #1 at 2:23:28 AM
+949 verbose etag "727GCIX5DLGCQPXA201RDTI0Z"
+950 http request GET https://registry.npmjs.org/debug
+951 verbose request uri https://registry.npmjs.org/faye-websocket
+952 verbose request no auth needed
+953 info attempt registry request try #1 at 2:23:28 AM
+954 verbose etag "6IWLVLS53963B3DEA36MEAKHE"
+955 http request GET https://registry.npmjs.org/faye-websocket
+956 verbose request uri https://registry.npmjs.org/parseurl
+957 verbose request no auth needed
+958 info attempt registry request try #1 at 2:23:28 AM
+959 verbose etag "AZ14E10FS2KGEEAMHB22NHR02"
+960 http request GET https://registry.npmjs.org/parseurl
+961 verbose request uri https://registry.npmjs.org/qs
+962 verbose request no auth needed
+963 info attempt registry request try #1 at 2:23:28 AM
+964 verbose etag "6KQI4V6JMZD4N1L0LBY83LS6G"
+965 http request GET https://registry.npmjs.org/qs
+966 silly addNameRange number 2 { name: 'ansi-regex', range: '>=0.2.1 <0.3.0', hasData: true }
+967 silly addNameRange versions [ 'ansi-regex',
+967 silly addNameRange   [ '0.1.0', '0.2.0', '0.2.1', '1.0.0', '1.1.0', '1.1.1', '2.0.0' ] ]
+968 silly addNamed ansi-regex@0.2.1
+969 verbose addNamed "0.2.1" is a plain semver version for ansi-regex
+970 silly addNameRange number 2 { name: 'ansi-regex', range: '>=0.2.0 <0.3.0', hasData: true }
+971 silly addNameRange versions [ 'ansi-regex',
+971 silly addNameRange   [ '0.1.0', '0.2.0', '0.2.1', '1.0.0', '1.1.0', '1.1.1', '2.0.0' ] ]
+972 silly addNamed ansi-regex@0.2.1
+973 verbose addNamed "0.2.1" is a plain semver version for ansi-regex
+974 silly cache afterAdd ansi-regex@0.2.1
+975 verbose afterAdd /Users/KaseTebo/.npm/ansi-regex/0.2.1/package/package.json not in flight; writing
+976 silly cache afterAdd ansi-regex@0.2.1
+977 verbose afterAdd /Users/KaseTebo/.npm/ansi-regex/0.2.1/package/package.json already in flight; not writing
+978 verbose afterAdd /Users/KaseTebo/.npm/ansi-regex/0.2.1/package/package.json written
+979 silly install resolved [ { name: 'ansi-regex',
+979 silly install resolved     version: '0.2.1',
+979 silly install resolved     description: 'Regular expression for matching ANSI escape codes',
+979 silly install resolved     license: 'MIT',
+979 silly install resolved     repository:
+979 silly install resolved      { type: 'git',
+979 silly install resolved        url: 'git://github.com/sindresorhus/ansi-regex.git' },
+979 silly install resolved     author:
+979 silly install resolved      { name: 'Sindre Sorhus',
+979 silly install resolved        email: 'sindresorhus@gmail.com',
+979 silly install resolved        url: 'http://sindresorhus.com' },
+979 silly install resolved     engines: { node: '>=0.10.0' },
+979 silly install resolved     scripts: { test: 'mocha' },
+979 silly install resolved     files: [ 'index.js' ],
+979 silly install resolved     keywords:
+979 silly install resolved      [ 'ansi',
+979 silly install resolved        'styles',
+979 silly install resolved        'color',
+979 silly install resolved        'colour',
+979 silly install resolved        'colors',
+979 silly install resolved        'terminal',
+979 silly install resolved        'console',
+979 silly install resolved        'cli',
+979 silly install resolved        'string',
+979 silly install resolved        'tty',
+979 silly install resolved        'escape',
+979 silly install resolved        'formatting',
+979 silly install resolved        'rgb',
+979 silly install resolved        '256',
+979 silly install resolved        'shell',
+979 silly install resolved        'xterm',
+979 silly install resolved        'command-line',
+979 silly install resolved        'text',
+979 silly install resolved        'regex',
+979 silly install resolved        'regexp',
+979 silly install resolved        're',
+979 silly install resolved        'match',
+979 silly install resolved        'test',
+979 silly install resolved        'find',
+979 silly install resolved        'pattern' ],
+979 silly install resolved     devDependencies: { mocha: '*' },
+979 silly install resolved     bugs: { url: 'https://github.com/sindresorhus/ansi-regex/issues' },
+979 silly install resolved     homepage: 'https://github.com/sindresorhus/ansi-regex',
+979 silly install resolved     _id: 'ansi-regex@0.2.1',
+979 silly install resolved     _shasum: '0d8e946967a3d8143f93e24e298525fc1b2235f9',
+979 silly install resolved     _from: 'ansi-regex@>=0.2.1 <0.3.0',
+979 silly install resolved     _npmVersion: '1.4.9',
+979 silly install resolved     _npmUser: { name: 'sindresorhus', email: 'sindresorhus@gmail.com' },
+979 silly install resolved     maintainers: [ [Object] ],
+979 silly install resolved     dist:
+979 silly install resolved      { shasum: '0d8e946967a3d8143f93e24e298525fc1b2235f9',
+979 silly install resolved        tarball: 'http://registry.npmjs.org/ansi-regex/-/ansi-regex-0.2.1.tgz' },
+979 silly install resolved     directories: {},
+979 silly install resolved     _resolved: 'https://registry.npmjs.org/ansi-regex/-/ansi-regex-0.2.1.tgz',
+979 silly install resolved     readme: 'ERROR: No README data found!' } ]
+980 info install ansi-regex@0.2.1 into /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi
+981 info installOne ansi-regex@0.2.1
+982 verbose installOne of ansi-regex to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi not in flight; installing
+983 silly install resolved [ { name: 'ansi-regex',
+983 silly install resolved     version: '0.2.1',
+983 silly install resolved     description: 'Regular expression for matching ANSI escape codes',
+983 silly install resolved     license: 'MIT',
+983 silly install resolved     repository:
+983 silly install resolved      { type: 'git',
+983 silly install resolved        url: 'git://github.com/sindresorhus/ansi-regex.git' },
+983 silly install resolved     author:
+983 silly install resolved      { name: 'Sindre Sorhus',
+983 silly install resolved        email: 'sindresorhus@gmail.com',
+983 silly install resolved        url: 'http://sindresorhus.com' },
+983 silly install resolved     engines: { node: '>=0.10.0' },
+983 silly install resolved     scripts: { test: 'mocha' },
+983 silly install resolved     files: [ 'index.js' ],
+983 silly install resolved     keywords:
+983 silly install resolved      [ 'ansi',
+983 silly install resolved        'styles',
+983 silly install resolved        'color',
+983 silly install resolved        'colour',
+983 silly install resolved        'colors',
+983 silly install resolved        'terminal',
+983 silly install resolved        'console',
+983 silly install resolved        'cli',
+983 silly install resolved        'string',
+983 silly install resolved        'tty',
+983 silly install resolved        'escape',
+983 silly install resolved        'formatting',
+983 silly install resolved        'rgb',
+983 silly install resolved        '256',
+983 silly install resolved        'shell',
+983 silly install resolved        'xterm',
+983 silly install resolved        'command-line',
+983 silly install resolved        'text',
+983 silly install resolved        'regex',
+983 silly install resolved        'regexp',
+983 silly install resolved        're',
+983 silly install resolved        'match',
+983 silly install resolved        'test',
+983 silly install resolved        'find',
+983 silly install resolved        'pattern' ],
+983 silly install resolved     devDependencies: { mocha: '*' },
+983 silly install resolved     bugs: { url: 'https://github.com/sindresorhus/ansi-regex/issues' },
+983 silly install resolved     homepage: 'https://github.com/sindresorhus/ansi-regex',
+983 silly install resolved     _id: 'ansi-regex@0.2.1',
+983 silly install resolved     _shasum: '0d8e946967a3d8143f93e24e298525fc1b2235f9',
+983 silly install resolved     _from: 'ansi-regex@>=0.2.1 <0.3.0',
+983 silly install resolved     _npmVersion: '1.4.9',
+983 silly install resolved     _npmUser: { name: 'sindresorhus', email: 'sindresorhus@gmail.com' },
+983 silly install resolved     maintainers: [ [Object] ],
+983 silly install resolved     dist:
+983 silly install resolved      { shasum: '0d8e946967a3d8143f93e24e298525fc1b2235f9',
+983 silly install resolved        tarball: 'http://registry.npmjs.org/ansi-regex/-/ansi-regex-0.2.1.tgz' },
+983 silly install resolved     directories: {},
+983 silly install resolved     _resolved: 'https://registry.npmjs.org/ansi-regex/-/ansi-regex-0.2.1.tgz',
+983 silly install resolved     readme: 'ERROR: No README data found!' } ]
+984 info install ansi-regex@0.2.1 into /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi
+985 info installOne ansi-regex@0.2.1
+986 verbose installOne of ansi-regex to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi not in flight; installing
+987 verbose lock using /Users/KaseTebo/.npm/_locks/ansi-regex-458a206960e92823.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex
+988 silly install write writing ansi-regex 0.2.1 to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex
+989 verbose lock using /Users/KaseTebo/.npm/_locks/ansi-regex-2158a707a6f66e71.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex
+990 silly install write writing ansi-regex 0.2.1 to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex
+991 verbose unbuild node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex
+992 verbose unbuild node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex
+993 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex is being purged from base /Applications/MAMP/htdocs/DPW/ProRubrics
+994 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex
+995 verbose tar unpack /Users/KaseTebo/.npm/ansi-regex/0.2.1/package.tgz
+996 verbose tar unpacking to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex
+997 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex is being purged
+998 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex
+999 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex is being purged from base /Applications/MAMP/htdocs/DPW/ProRubrics
+1000 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex
+1001 silly gunzTarPerm modes [ '755', '644' ]
+1002 verbose tar unpack /Users/KaseTebo/.npm/ansi-regex/0.2.1/package.tgz
+1003 verbose tar unpacking to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex
+1004 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex is being purged
+1005 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex
+1006 silly gunzTarPerm modes [ '755', '644' ]
+1007 silly gunzTarPerm extractEntry package.json
+1008 silly gunzTarPerm extractEntry package.json
+1009 silly gunzTarPerm extractEntry index.js
+1010 silly gunzTarPerm extractEntry readme.md
+1011 silly gunzTarPerm extractEntry index.js
+1012 silly gunzTarPerm extractEntry readme.md
+1013 verbose write writing to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex/package.json
+1014 verbose write writing to /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/package.json
+1015 info preinstall ansi-regex@0.2.1
+1016 info preinstall ansi-regex@0.2.1
+1017 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/package.json
+1018 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex/package.json
+1019 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex/package.json
+1020 verbose readDependencies loading dependencies from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex/package.json
+1021 silly install resolved []
+1022 verbose about to build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex
+1023 info build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex
+1024 silly install resolved []
+1025 verbose about to build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex
+1026 info build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex
+1027 info linkStuff ansi-regex@0.2.1
+1028 silly linkStuff ansi-regex@0.2.1 has /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/node_modules as its parent node_modules
+1029 info linkStuff ansi-regex@0.2.1
+1030 silly linkStuff ansi-regex@0.2.1 has /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/node_modules as its parent node_modules
+1031 verbose linkBins ansi-regex@0.2.1
+1032 verbose linkMans ansi-regex@0.2.1
+1033 verbose rebuildBundles ansi-regex@0.2.1
+1034 verbose linkBins ansi-regex@0.2.1
+1035 verbose linkMans ansi-regex@0.2.1
+1036 verbose rebuildBundles ansi-regex@0.2.1
+1037 info install ansi-regex@0.2.1
+1038 info install ansi-regex@0.2.1
+1039 info postinstall ansi-regex@0.2.1
+1040 info postinstall ansi-regex@0.2.1
+1041 verbose unlock done using /Users/KaseTebo/.npm/_locks/ansi-regex-458a206960e92823.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi/node_modules/ansi-regex
+1042 verbose about to build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi
+1043 info build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi
+1044 verbose unlock done using /Users/KaseTebo/.npm/_locks/ansi-regex-2158a707a6f66e71.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi/node_modules/ansi-regex
+1045 verbose about to build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi
+1046 info build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi
+1047 info linkStuff strip-ansi@0.3.0
+1048 silly linkStuff strip-ansi@0.3.0 has /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules as its parent node_modules
+1049 info linkStuff has-ansi@0.1.0
+1050 silly linkStuff has-ansi@0.1.0 has /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules as its parent node_modules
+1051 verbose linkBins strip-ansi@0.3.0
+1052 verbose link bins [ { 'strip-ansi': 'cli.js' },
+1052 verbose link bins   '/Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/.bin',
+1052 verbose link bins   false ]
+1053 verbose linkMans strip-ansi@0.3.0
+1054 verbose rebuildBundles strip-ansi@0.3.0
+1055 verbose linkBins has-ansi@0.1.0
+1056 verbose link bins [ { 'has-ansi': 'cli.js' },
+1056 verbose link bins   '/Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/.bin',
+1056 verbose link bins   false ]
+1057 verbose linkMans has-ansi@0.1.0
+1058 verbose rebuildBundles has-ansi@0.1.0
+1059 verbose rebuildBundles [ 'ansi-regex' ]
+1060 verbose rebuildBundles [ 'ansi-regex' ]
+1061 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/.bin/strip-ansi is being purged
+1062 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/.bin/strip-ansi
+1063 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/.bin/has-ansi is being purged
+1064 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/.bin/has-ansi
+1065 info install strip-ansi@0.3.0
+1066 info install has-ansi@0.1.0
+1067 info postinstall strip-ansi@0.3.0
+1068 info postinstall has-ansi@0.1.0
+1069 verbose unlock done using /Users/KaseTebo/.npm/_locks/strip-ansi-341d8af63c442c71.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/strip-ansi
+1070 verbose unlock done using /Users/KaseTebo/.npm/_locks/has-ansi-472567c963f583df.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk/node_modules/has-ansi
+1071 verbose about to build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk
+1072 info build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk
+1073 info linkStuff chalk@0.5.1
+1074 silly linkStuff chalk@0.5.1 has /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules as its parent node_modules
+1075 verbose linkBins chalk@0.5.1
+1076 verbose linkMans chalk@0.5.1
+1077 verbose rebuildBundles chalk@0.5.1
+1078 verbose rebuildBundles [ '.bin',
+1078 verbose rebuildBundles   'ansi-styles',
+1078 verbose rebuildBundles   'has-ansi',
+1078 verbose rebuildBundles   'strip-ansi',
+1078 verbose rebuildBundles   'supports-color' ]
+1079 info install chalk@0.5.1
+1080 info postinstall chalk@0.5.1
+1081 verbose unlock done using /Users/KaseTebo/.npm/_locks/chalk-02983024fb8ee281.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/chalk
+1082 http 304 https://registry.npmjs.org/faye-websocket
+1083 silly get cb [ 304,
+1083 silly get   { date: 'Tue, 13 Oct 2015 06:18:03 GMT',
+1083 silly get     via: '1.1 varnish',
+1083 silly get     'cache-control': 'max-age=60',
+1083 silly get     etag: '"6IWLVLS53963B3DEA36MEAKHE"',
+1083 silly get     age: '16',
+1083 silly get     connection: 'keep-alive',
+1083 silly get     'x-served-by': 'cache-atl6224-ATL',
+1083 silly get     'x-cache': 'HIT',
+1083 silly get     'x-cache-hits': '1',
+1083 silly get     'x-timer': 'S1444717083.768125,VS0,VE0',
+1083 silly get     vary: 'Accept' } ]
+1084 verbose etag https://registry.npmjs.org/faye-websocket from cache
+1085 verbose get saving faye-websocket to /Users/KaseTebo/.npm/registry.npmjs.org/faye-websocket/.cache.json
+1086 http 304 https://registry.npmjs.org/qs
+1087 silly get cb [ 304,
+1087 silly get   { date: 'Tue, 13 Oct 2015 06:18:03 GMT',
+1087 silly get     via: '1.1 varnish',
+1087 silly get     'cache-control': 'max-age=60',
+1087 silly get     etag: '"6KQI4V6JMZD4N1L0LBY83LS6G"',
+1087 silly get     age: '11',
+1087 silly get     connection: 'keep-alive',
+1087 silly get     'x-served-by': 'cache-atl6234-ATL',
+1087 silly get     'x-cache': 'HIT',
+1087 silly get     'x-cache-hits': '3',
+1087 silly get     'x-timer': 'S1444717083.768135,VS0,VE0',
+1087 silly get     vary: 'Accept' } ]
+1088 verbose etag https://registry.npmjs.org/qs from cache
+1089 verbose get saving qs to /Users/KaseTebo/.npm/registry.npmjs.org/qs/.cache.json
+1090 http 304 https://registry.npmjs.org/parseurl
+1091 silly get cb [ 304,
+1091 silly get   { date: 'Tue, 13 Oct 2015 06:18:03 GMT',
+1091 silly get     via: '1.1 varnish',
+1091 silly get     'cache-control': 'max-age=60',
+1091 silly get     etag: '"AZ14E10FS2KGEEAMHB22NHR02"',
+1091 silly get     age: '17',
+1091 silly get     connection: 'keep-alive',
+1091 silly get     'x-served-by': 'cache-atl6235-ATL',
+1091 silly get     'x-cache': 'HIT',
+1091 silly get     'x-cache-hits': '1',
+1091 silly get     'x-timer': 'S1444717083.768489,VS0,VE0',
+1091 silly get     vary: 'Accept' } ]
+1092 verbose etag https://registry.npmjs.org/parseurl from cache
+1093 verbose get saving parseurl to /Users/KaseTebo/.npm/registry.npmjs.org/parseurl/.cache.json
+1094 http 304 https://registry.npmjs.org/debug
+1095 silly get cb [ 304,
+1095 silly get   { date: 'Tue, 13 Oct 2015 06:18:03 GMT',
+1095 silly get     via: '1.1 varnish',
+1095 silly get     'cache-control': 'max-age=60',
+1095 silly get     etag: '"727GCIX5DLGCQPXA201RDTI0Z"',
+1095 silly get     age: '2',
+1095 silly get     connection: 'keep-alive',
+1095 silly get     'x-served-by': 'cache-atl6229-ATL',
+1095 silly get     'x-cache': 'HIT',
+1095 silly get     'x-cache-hits': '1',
+1095 silly get     'x-timer': 'S1444717083.768450,VS0,VE0',
+1095 silly get     vary: 'Accept' } ]
+1096 verbose etag https://registry.npmjs.org/debug from cache
+1097 verbose get saving debug to /Users/KaseTebo/.npm/registry.npmjs.org/debug/.cache.json
+1098 silly addNameRange number 2 { name: 'parseurl', range: '>=1.3.0 <1.4.0', hasData: true }
+1099 silly addNameRange versions [ 'parseurl',
+1099 silly addNameRange   [ '1.0.0',
+1099 silly addNameRange     '1.0.1',
+1099 silly addNameRange     '1.1.0',
+1099 silly addNameRange     '1.1.1',
+1099 silly addNameRange     '1.1.2',
+1099 silly addNameRange     '1.1.3',
+1099 silly addNameRange     '1.2.0',
+1099 silly addNameRange     '1.3.0' ] ]
+1100 silly addNamed parseurl@1.3.0
+1101 verbose addNamed "1.3.0" is a plain semver version for parseurl
+1102 silly addNameRange number 2 { name: 'faye-websocket',
+1102 silly addNameRange   range: '>=0.7.2 <0.8.0',
+1102 silly addNameRange   hasData: true }
+1103 silly addNameRange versions [ 'faye-websocket',
+1103 silly addNameRange   [ '0.1.0',
+1103 silly addNameRange     '0.1.1',
+1103 silly addNameRange     '0.1.2',
+1103 silly addNameRange     '0.2.0',
+1103 silly addNameRange     '0.3.0',
+1103 silly addNameRange     '0.3.1',
+1103 silly addNameRange     '0.4.0',
+1103 silly addNameRange     '0.4.1',
+1103 silly addNameRange     '0.4.2',
+1103 silly addNameRange     '0.4.3',
+1103 silly addNameRange     '0.4.4',
+1103 silly addNameRange     '0.5.0',
+1103 silly addNameRange     '0.6.0',
+1103 silly addNameRange     '0.6.1',
+1103 silly addNameRange     '0.7.0',
+1103 silly addNameRange     '0.7.1',
+1103 silly addNameRange     '0.7.2',
+1103 silly addNameRange     '0.7.3',
+1103 silly addNameRange     '0.8.0',
+1103 silly addNameRange     '0.8.1',
+1103 silly addNameRange     '0.9.0',
+1103 silly addNameRange     '0.9.1',
+1103 silly addNameRange     '0.9.2',
+1103 silly addNameRange     '0.9.3',
+1103 silly addNameRange     '0.9.4',
+1103 silly addNameRange     '0.10.0' ] ]
+1104 silly addNamed faye-websocket@0.7.3
+1105 verbose addNamed "0.7.3" is a plain semver version for faye-websocket
+1106 silly mapToRegistry name faye-websocket
+1107 silly mapToRegistry using default registry
+1108 silly mapToRegistry registry https://registry.npmjs.org/
+1109 silly mapToRegistry uri https://registry.npmjs.org/faye-websocket
+1110 verbose addRemoteTarball https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.7.3.tgz not in flight; adding
+1111 verbose addRemoteTarball [ 'https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.7.3.tgz',
+1111 verbose addRemoteTarball   'cc4074c7f4a4dfd03af54dd65c354b135132ce11' ]
+1112 silly cache afterAdd parseurl@1.3.0
+1113 verbose afterAdd /Users/KaseTebo/.npm/parseurl/1.3.0/package/package.json not in flight; writing
+1114 silly addNameRange number 2 { name: 'qs', range: '>=2.2.3 <2.3.0', hasData: true }
+1115 silly addNameRange versions [ 'qs',
+1115 silly addNameRange   [ '0.0.1',
+1115 silly addNameRange     '0.0.2',
+1115 silly addNameRange     '0.0.3',
+1115 silly addNameRange     '0.0.4',
+1115 silly addNameRange     '0.0.5',
+1115 silly addNameRange     '0.0.6',
+1115 silly addNameRange     '0.0.7',
+1115 silly addNameRange     '0.1.0',
+1115 silly addNameRange     '0.2.0',
+1115 silly addNameRange     '0.3.0',
+1115 silly addNameRange     '0.3.1',
+1115 silly addNameRange     '0.3.2',
+1115 silly addNameRange     '0.4.0',
+1115 silly addNameRange     '0.4.1',
+1115 silly addNameRange     '0.4.2',
+1115 silly addNameRange     '0.5.0',
+1115 silly addNameRange     '0.5.1',
+1115 silly addNameRange     '0.5.2',
+1115 silly addNameRange     '0.5.3',
+1115 silly addNameRange     '0.5.4',
+1115 silly addNameRange     '0.5.5',
+1115 silly addNameRange     '0.5.6',
+1115 silly addNameRange     '0.6.0',
+1115 silly addNameRange     '0.6.1',
+1115 silly addNameRange     '0.6.2',
+1115 silly addNameRange     '0.6.3',
+1115 silly addNameRange     '0.6.4',
+1115 silly addNameRange     '0.6.5',
+1115 silly addNameRange     '0.6.6',
+1115 silly addNameRange     '1.0.0',
+1115 silly addNameRange     '1.0.1',
+1115 silly addNameRange     '1.0.2',
+1115 silly addNameRange     '1.1.0',
+1115 silly addNameRange     '1.2.0',
+1115 silly addNameRange     '1.2.1',
+1115 silly addNameRange     '1.2.2',
+1115 silly addNameRange     '2.0.0',
+1115 silly addNameRange     '2.1.0',
+1115 silly addNameRange     '2.2.0',
+1115 silly addNameRange     '2.2.1',
+1115 silly addNameRange     '2.2.2',
+1115 silly addNameRange     '2.2.3',
+1115 silly addNameRange     '2.2.4',
+1115 silly addNameRange     '2.2.5',
+1115 silly addNameRange     '2.3.0',
+1115 silly addNameRange     '2.3.1',
+1115 silly addNameRange     '2.3.2',
+1115 silly addNameRange     '2.3.3',
+1115 silly addNameRange     '2.4.0',
+1115 silly addNameRange     '2.4.1',
+1115 silly addNameRange     '2.4.2',
+1115 silly addNameRange     '3.0.0',
+1115 silly addNameRange     '3.1.0',
+1115 silly addNameRange     '4.0.0',
+1115 silly addNameRange     '5.0.0',
+1115 silly addNameRange     '5.1.0',
+1115 silly addNameRange     '5.2.0' ] ]
+1116 silly addNamed qs@2.2.5
+1117 verbose addNamed "2.2.5" is a plain semver version for qs
+1118 silly addNameRange number 2 { name: 'debug', range: '>=2.0.0 <2.1.0', hasData: true }
+1119 silly addNameRange versions [ 'debug',
+1119 silly addNameRange   [ '0.0.1',
+1119 silly addNameRange     '0.1.0',
+1119 silly addNameRange     '0.2.0',
+1119 silly addNameRange     '0.3.0',
+1119 silly addNameRange     '0.4.0',
+1119 silly addNameRange     '0.4.1',
+1119 silly addNameRange     '0.5.0',
+1119 silly addNameRange     '0.6.0',
+1119 silly addNameRange     '0.7.0',
+1119 silly addNameRange     '0.7.1',
+1119 silly addNameRange     '0.7.2',
+1119 silly addNameRange     '0.7.3',
+1119 silly addNameRange     '0.7.4',
+1119 silly addNameRange     '0.8.0',
+1119 silly addNameRange     '0.8.1',
+1119 silly addNameRange     '1.0.0',
+1119 silly addNameRange     '1.0.1',
+1119 silly addNameRange     '1.0.2',
+1119 silly addNameRange     '1.0.3',
+1119 silly addNameRange     '1.0.4',
+1119 silly addNameRange     '2.0.0',
+1119 silly addNameRange     '2.1.0',
+1119 silly addNameRange     '2.1.1',
+1119 silly addNameRange     '2.1.2',
+1119 silly addNameRange     '2.1.3',
+1119 silly addNameRange     '2.2.0' ] ]
+1120 silly addNamed debug@2.0.0
+1121 verbose addNamed "2.0.0" is a plain semver version for debug
+1122 silly mapToRegistry name qs
+1123 silly mapToRegistry using default registry
+1124 silly mapToRegistry registry https://registry.npmjs.org/
+1125 silly mapToRegistry uri https://registry.npmjs.org/qs
+1126 verbose addRemoteTarball https://registry.npmjs.org/qs/-/qs-2.2.5.tgz not in flight; adding
+1127 verbose addRemoteTarball [ 'https://registry.npmjs.org/qs/-/qs-2.2.5.tgz',
+1127 verbose addRemoteTarball   '1088abaf9dcc0ae5ae45b709e6c6b5888b23923c' ]
+1128 http 200 https://registry.npmjs.org/livereload-js
+1129 silly get cb [ 200,
+1129 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+1129 silly get     etag: '"9H24GZA2B40U2VH9MEVLXIW9L"',
+1129 silly get     'content-type': 'application/json',
+1129 silly get     'cache-control': 'max-age=60',
+1129 silly get     'content-length': '15006',
+1129 silly get     'accept-ranges': 'bytes',
+1129 silly get     date: 'Tue, 13 Oct 2015 06:18:03 GMT',
+1129 silly get     via: '1.1 varnish',
+1129 silly get     age: '1',
+1129 silly get     connection: 'keep-alive',
+1129 silly get     'x-served-by': 'cache-atl6224-ATL',
+1129 silly get     'x-cache': 'HIT',
+1129 silly get     'x-cache-hits': '1',
+1129 silly get     'x-timer': 'S1444717083.767647,VS0,VE1',
+1129 silly get     vary: 'Accept' } ]
+1130 verbose get saving livereload-js to /Users/KaseTebo/.npm/registry.npmjs.org/livereload-js/.cache.json
+1131 info retry fetch attempt 1 at 2:23:28 AM
+1132 info attempt registry request try #1 at 2:23:28 AM
+1133 http fetch GET https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.7.3.tgz
+1134 info retry fetch attempt 1 at 2:23:28 AM
+1135 info attempt registry request try #1 at 2:23:28 AM
+1136 http fetch GET https://registry.npmjs.org/qs/-/qs-2.2.5.tgz
+1137 verbose afterAdd /Users/KaseTebo/.npm/parseurl/1.3.0/package/package.json written
+1138 silly addNameRange number 2 { name: 'livereload-js', range: '>=2.2.0 <3.0.0', hasData: true }
+1139 silly addNameRange versions [ 'livereload-js', [ '2.2.0', '2.2.1', '2.2.2' ] ]
+1140 silly addNamed livereload-js@2.2.2
+1141 verbose addNamed "2.2.2" is a plain semver version for livereload-js
+1142 silly mapToRegistry name livereload-js
+1143 silly mapToRegistry using default registry
+1144 silly mapToRegistry registry https://registry.npmjs.org/
+1145 silly mapToRegistry uri https://registry.npmjs.org/livereload-js
+1146 verbose addRemoteTarball https://registry.npmjs.org/livereload-js/-/livereload-js-2.2.2.tgz not in flight; adding
+1147 verbose addRemoteTarball [ 'https://registry.npmjs.org/livereload-js/-/livereload-js-2.2.2.tgz',
+1147 verbose addRemoteTarball   '6c87257e648ab475bc24ea257457edcc1f8d0bc2' ]
+1148 info retry fetch attempt 1 at 2:23:28 AM
+1149 info attempt registry request try #1 at 2:23:28 AM
+1150 http fetch GET https://registry.npmjs.org/livereload-js/-/livereload-js-2.2.2.tgz
+1151 silly cache afterAdd debug@2.0.0
+1152 verbose afterAdd /Users/KaseTebo/.npm/debug/2.0.0/package/package.json not in flight; writing
+1153 verbose afterAdd /Users/KaseTebo/.npm/debug/2.0.0/package/package.json written
+1154 http fetch 200 https://registry.npmjs.org/faye-websocket/-/faye-websocket-0.7.3.tgz
+1155 silly fetchAndShaCheck shasum cc4074c7f4a4dfd03af54dd65c354b135132ce11
+1156 verbose addTmpTarball /var/folders/zr/db5lsyr90txf3t_3033dm5wh0000gn/T/npm-30146-0282f8a4/registry.npmjs.org/faye-websocket/-/faye-websocket-0.7.3.tgz not in flight; adding
+1157 verbose addTmpTarball already have metadata; skipping unpack for faye-websocket@0.7.3
+1158 silly cache afterAdd faye-websocket@0.7.3
+1159 verbose afterAdd /Users/KaseTebo/.npm/faye-websocket/0.7.3/package/package.json not in flight; writing
+1160 http fetch 200 https://registry.npmjs.org/qs/-/qs-2.2.5.tgz
+1161 verbose afterAdd /Users/KaseTebo/.npm/faye-websocket/0.7.3/package/package.json written
+1162 silly fetchAndShaCheck shasum 1088abaf9dcc0ae5ae45b709e6c6b5888b23923c
+1163 verbose addTmpTarball /var/folders/zr/db5lsyr90txf3t_3033dm5wh0000gn/T/npm-30146-0282f8a4/registry.npmjs.org/qs/-/qs-2.2.5.tgz not in flight; adding
+1164 verbose addTmpTarball already have metadata; skipping unpack for qs@2.2.5
+1165 http fetch 200 https://registry.npmjs.org/livereload-js/-/livereload-js-2.2.2.tgz
+1166 silly fetchAndShaCheck shasum 6c87257e648ab475bc24ea257457edcc1f8d0bc2
+1167 verbose addTmpTarball /var/folders/zr/db5lsyr90txf3t_3033dm5wh0000gn/T/npm-30146-0282f8a4/registry.npmjs.org/livereload-js/-/livereload-js-2.2.2.tgz not in flight; adding
+1168 verbose addTmpTarball already have metadata; skipping unpack for livereload-js@2.2.2
+1169 silly cache afterAdd livereload-js@2.2.2
+1170 verbose afterAdd /Users/KaseTebo/.npm/livereload-js/2.2.2/package/package.json not in flight; writing
+1171 verbose afterAdd /Users/KaseTebo/.npm/livereload-js/2.2.2/package/package.json written
+1172 verbose about to build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/mini-lr
+1173 verbose unlock done using /Users/KaseTebo/.npm/_locks/mini-lr-a77eaac43b330fad.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/mini-lr
+1174 verbose about to build /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload
+1175 verbose unlock done using /Users/KaseTebo/.npm/_locks/gulp-livereload-d6f6b11326111024.lock for /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload
+1176 verbose stack Error: EACCES: permission denied, mkdir '/Users/KaseTebo/.npm/qs/2.2.5'
+1176 verbose stack     at Error (native)
+1177 verbose cwd /Applications/MAMP/htdocs/DPW/ProRubrics
+1178 error Darwin 14.5.0
+1179 error argv "/Users/KaseTebo/.nvm/versions/node/v4.1.1/bin/node" "/Users/KaseTebo/.nvm/versions/node/v4.1.1/bin/npm" "install" "--save-dev" "gulp-livereload"
+1180 error node v4.1.1
+1181 error npm  v2.14.4
+1182 error path /Users/KaseTebo/.npm/qs/2.2.5
+1183 error code EACCES
+1184 error errno -13
+1185 error syscall mkdir
+1186 error Error: EACCES: permission denied, mkdir '/Users/KaseTebo/.npm/qs/2.2.5'
+1186 error     at Error (native)
+1186 error  { [Error: EACCES: permission denied, mkdir '/Users/KaseTebo/.npm/qs/2.2.5']
+1186 error   errno: -13,
+1186 error   code: 'EACCES',
+1186 error   syscall: 'mkdir',
+1186 error   path: '/Users/KaseTebo/.npm/qs/2.2.5',
+1186 error   parent: 'mini-lr' }
+1187 error Please try running this command again as root/Administrator.
+1188 verbose exit [ -13, true ]
+1189 verbose unbuild node_modules/gulp-livereload/node_modules/mini-lr
+1190 info preuninstall mini-lr@0.1.8
+1191 info uninstall mini-lr@0.1.8
+1192 verbose unbuild rmStuff mini-lr@0.1.8 from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules
+1193 verbose unbuild rmStuff in /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules
+1194 info postuninstall mini-lr@0.1.8
+1195 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/mini-lr is being purged from base /Applications/MAMP/htdocs/DPW/ProRubrics
+1196 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/mini-lr
+1197 silly vacuum-fs purging /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules/mini-lr
+1198 silly vacuum-fs quitting because other entries in /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload/node_modules
+1199 verbose unbuild node_modules/gulp-livereload
+1200 info preuninstall gulp-livereload@3.8.1
+1201 info uninstall gulp-livereload@3.8.1
+1202 verbose unbuild rmStuff gulp-livereload@3.8.1 from /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules
+1203 info postuninstall gulp-livereload@3.8.1
+1204 silly gentlyRm /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload is being purged from base /Applications/MAMP/htdocs/DPW/ProRubrics
+1205 verbose gentlyRm don't care about contents; nuking /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload
+1206 silly vacuum-fs purging /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules/gulp-livereload
+1207 silly vacuum-fs quitting because other entries in /Applications/MAMP/htdocs/DPW/ProRubrics/node_modules

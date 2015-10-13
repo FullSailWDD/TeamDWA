@@ -1,16 +1,19 @@
 <div ng-app='app'>
 <a href="/logout" class="btn btn-default btn-sm">Logout</a>
 
-<h1>courses</h1>
-    <form action="/addCourse" method="post">
+<h1>Rubric</h1>
+    <form action="/addRubric" method="post">
         <div class="form-group">
-            <label>Course Title</label>
-            <input type="text" class="form-control" name="courseTitle">
+            <label>Rubric Name</label>
+            
         </div>
         <div class="form-group">
-            <label>Description</label>
-            <textarea class="form-control" name="courseDes">
-            </textarea>
+            <label>Rubric Section</label>
+            <input type="text" class="form-control" name="rubricSection">
+        </div>
+        <div class="form-group">
+            <label>Grade Options</label>
+           <input type="text" class="form-control" name="rubricGrades">
         </div>
         <button type="submit" class="btn btn-warning btn-lg">Add Course</button>
     </form>
@@ -21,4 +24,5 @@
    <div ng-controller="courseGenerator"> 
         <courses data-payload='courseGeneratorData' data-callback='addRubric()'></courses>         
     </div>
+
     </div>
