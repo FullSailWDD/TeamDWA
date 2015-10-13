@@ -8,11 +8,14 @@ var app = angular.module("app", ["ngRoute"]);
 	// CONTROLLERS ---------------------------------------------
 
 app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGenData', function($scope, $http, $routeParams, courseGenData){
-	// GETTING COURSES FROM NODE - DATABASE
+// GETTING COURSES FROM NODE - DATABASE
 	$http.post('/jsonReceive', $scope.course)
 		.then(function(res){
 		$scope.course = res.data;
-	//LOOPING THROUGH THE RETURNED DATA AND PUSHING EACH OBJECT INDIVIDUALLY INTO theCourses ARRAY
+
+
+
+//LOOPING THROUGH THE RETURNED DATA AND PUSHING EACH OBJECT INDIVIDUALLY INTO theCourses ARRAY
 		theCourses = [];
 		for (var i = 0 ; i < $scope.course.course.length; i++) {
 			var eachCourse = $scope.course.course[i];
@@ -24,8 +27,9 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 		console.log($scope.courseGeneratorData);
 		});
 		// NOT WORKING YET
-		$scope.addRubric = function(){
-		$http.post('/addRubric', results);
+		$scope.addRubric = function(course){
+				console.log(course);
+			console.log('Button Clicked');
 		}
 
 
@@ -50,7 +54,7 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 			          	  '<li ng-if="course.rubrics"><ul><li ng-repeat="rubrics in course.rubrics">{[{rubrics.title}]}</li>'+
 			           								'</ul></li>'+
 			           '</ul>'+
-			           	  '<button type="button" ng-click="callback(payload)">Add Rubric</button>'+
+			           	  '<button type="button" ng-click="callback(course)">Add Rubric</button>'+
 						'</div>'
 		}
 	})
@@ -63,7 +67,6 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 
 	app.service('courseGenData', function(){
 		var courseGen = function(args){	
-			// console.log(args);
 			this.course = args || [];
 		}
 		return courseGen;
