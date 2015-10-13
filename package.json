@@ -6,6 +6,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.14.1",
     "bower": "^1.5.3",
     "connect-redis": "^3.0.0",
@@ -14,6 +15,7 @@
     "express-handlebars": "^2.0.1",
     "express-session": "^1.11.3",
     "flash": "^1.1.0",
+    "inherits": "^2.0.1",
     "mongoose": "^4.1.10",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0"
