@@ -1,0 +1,23 @@
+{
+  "name": "bower",
+  "version": "0.0.0",
+  "homepage": "https://github.com/KaseKreative/ProRubrics",
+  "authors": [
+    "KaseKreative <KaseKreative@fullsail.edu>"
+  ],
+  "description": "Bower Json",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7"
+  }
+}
