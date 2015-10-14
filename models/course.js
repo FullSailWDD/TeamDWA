@@ -28,7 +28,6 @@
 
 	_model = mongoose.model('course', courseSchema);
 
-
 // 					ADD COURSE 				       //
 //================================================//
 
@@ -60,6 +59,13 @@
             }
         });
 
+
+
+// 					ADD COURSE 				       //
+//================================================//
+
+	exports.addCourse = function ( req, res ){
+		console.log('degree name ', req.body.degreeName, 'course code ', req.body.courseCode, 'course title ', req.body.courseTitle);
 	var course = new _model({
 		Degrees: {
 			degreeName  		: req.body.degreeName,
@@ -82,6 +88,10 @@
     			
   			});
   			};
+
+
+	};
+
 
 // 					FIND COURSE 			       //
 //================================================//
