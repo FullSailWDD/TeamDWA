@@ -45,10 +45,6 @@ module.exports = function (app, passport) {
         res.render('dashboard');
     });
 
-    // app.get('/findCourse', function (req, res){
-    //     res.render('dashboard');
-      
-    // });
 
     app.post('/addCourse',function(req, res){
 	course.addCourse(req, res);
@@ -69,10 +65,10 @@ module.exports = function (app, passport) {
 	   res.render('rubric');
 	}); 
 
-    app.post('/createRubric', isLoggedIn, function(req, res){
-        course.createRubric(req, res);
-        res.redirect('/dashboard');
-    });
+    // app.post('/createRubric', isLoggedIn, function(req, res){
+    //     course.createRubric(req, res);
+    //     res.redirect('/dashboard');
+    // });
 
            
 

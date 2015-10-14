@@ -19,13 +19,12 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 			console.log($scope.courseGeneratorData.course);
 			//LOOPING THROUGH THE RETURNED DATA AND PUSHING EACH OBJECT INDIVIDUALLY INTO theCourses ARRAY
 		});
-	
-		$scope.addRubric = function(course){
-			location.assign('/addRubric',course);
-			console.log('Course Data ', course);
-		}
 
 
+	$scope.addRubric = function(course){
+		location.assign('/addRubric', course);
+		console.log('Course Data ', course);
+	}
 
 }]);
 	// DIRECTIVES --------------------------------
@@ -48,7 +47,7 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 			          	  '<li ng-if="course.rubrics"><ul><li ng-repeat="rubrics in course.rubrics">{[{rubrics.title}]}</li>'+
 			           						'</ul></li>'+
 			           '</ul>'+
-			           	  '<button type="button" ng-click="callback(course)">Add Rubric</button>'+
+			           	  '<button type="button" ng-click="callback(payload)">Add Rubric</button>'+
 						'</div>'
 		}
 	})
