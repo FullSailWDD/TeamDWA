@@ -2,26 +2,26 @@
     //var db 			= require('../config/db.js'),
         
     var courseSchema = new mongoose.Schema({
-
+// WATCH OUT FOR THE ARRAYS OF OBJECTS -----------------------
             Degrees: {
             	degreeAbbr : String,
                 degreeName : String,
                 courses : {
                     courseAbbr : String,
                     courseName : String,
-                    rubrics : {
+                    rubrics : [{
                         rubricName : String,
-                        sections : {
+                        sections : [{
                             sectionName : String,
                             sectionWeight : Number,
-                            items : {
+                            items : [{
                                 itemName : String,
                                 itemWiki : String,
                                 itemComment : String,
                                 gradeOptions : Array
-                            }
-                        }
-                    }
+                            }]
+                        }]
+                    }]
                 }
             }
 	}, {strict : false});
@@ -42,9 +42,9 @@
                 courses : {
                     courseAbbr : req.body.courseCode,
                     courseName : req.body.courseTitle,
-                    rubrics : {
+                    rubrics : [{
                         rubricName : '',
-                        sections : {
+                        sections : [{
                             sectionName : '',
                             sectionWeight : null,
                             items : {
@@ -53,8 +53,8 @@
                                 itemComment : '',
                                 gradeOptions : [100, 75, 50, 0]
                             }
-                        }
-                    }
+                        }]
+                    }]
                 }
             }
         });
