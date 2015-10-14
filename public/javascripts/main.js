@@ -27,7 +27,7 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 		});
 	
 		$scope.addRubric = function(course){
-			location.assign('/addRubric',course);
+			location.assign('/addRubric', course);
 			console.log('Course Data ', course);
 		}
 
