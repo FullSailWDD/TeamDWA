@@ -22,13 +22,16 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "browser-sync": "^2.9.11",
-=======
     "gulp": "^3.9.0",
->>>>>>> 2661404944ada14dcfca96860e91f6d8c80b029f
+    "gulp-concat": "^2.6.0",
     "gulp-connect": "^2.2.0",
+    "gulp-html-minifier": "^0.1.6",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-ng-annotate": "^1.1.0",
     "gulp-nodemon": "^2.0.4",
-    "gulp-stylus": "^2.1.0"
+    "gulp-stylus": "^2.1.0",
+    "gulp-uglify": "^1.4.2"
   }
 }
