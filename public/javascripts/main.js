@@ -27,7 +27,7 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 		});
 	
 		$scope.addRubric = function(course){
-			location.assign('/addRubric', course);
+			location.assign('/addRubric',course);
 			console.log('Course Data ', course);
 		}
 
@@ -48,7 +48,7 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 			template: '<input type="text" ng-model="searchText">'+
 					  '<div ng-repeat="course in payload.course | filter:searchText" >'+
 					  '<ul>'+
-					  	  '<li>{[{Degrees.DegreeName}]}</li>'+
+					  	  '<li>{[{course.Degrees.Degree}]}</li>'+
 			              '<li>{[{course[i]._id}]}</li>'+
 			              '<li>{[{course.theCourse[0].courseCode}]}</li>'+
 			          	  '<li ng-if="course.rubrics"><ul><li ng-repeat="rubrics in course.rubrics">{[{rubrics.title}]}</li>'+

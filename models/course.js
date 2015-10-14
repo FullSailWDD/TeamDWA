@@ -74,9 +74,7 @@
 
     exports.createRubric = function ( req, res ){
 
-    	console.log(req);
-
-	var course = new _model({
+	var rubric = new _model({
 
 		rubricName  	: req.body.rubricName,
 		sectionName 	: req.body.sectionName,
@@ -84,7 +82,7 @@
 
     	});
 		// Save to Database NOT SAVE BUT UPDATE 
-		course.update( function( err){
+		course.insert(rubric, {rubrics:1}, function( err){
 			if (err) {
 				console.log('err err saving');
 			}else{
