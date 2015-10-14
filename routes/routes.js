@@ -42,16 +42,13 @@ module.exports = function (app, passport) {
 
     // DASHBOARD =========================
     app.get('/dashboard', isLoggedIn, function (req, res) {
-        // var theCourse = course.findCourse();
-        // 
-        // console.log(theCourse);
         res.render('dashboard');
     });
 
-    app.get('/findCourse', function (req, res){
-        res.render('dashboard');
+    // app.get('/findCourse', function (req, res){
+    //     res.render('dashboard');
       
-    });
+    // });
 
     app.post('/addCourse',function(req, res){
 	course.addCourse(req, res);
@@ -68,9 +65,14 @@ module.exports = function (app, passport) {
  		// console.log(theCourse);
     });
 
-	 app.get('/addRubric',function(req, res){
-	   res.redirect('/rubric');
-	 });
+	app.get('/addRubric', isLoggedIn, function(req, res){
+	   res.render('rubric');
+	}); 
+
+    app.post('/createRubric', isLoggedIn, function(req, res){
+        course.createRubric(req, res);
+        res.redirect('/dashboard');
+    });
 
            
 
