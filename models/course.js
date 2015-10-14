@@ -28,37 +28,6 @@
 
 	_model = mongoose.model('course', courseSchema);
 
-// 					ADD COURSE 				       //
-//================================================//
-
-	// exports.addCourse = function ( req, res ){
-	// 	console.log('degree name ', req.body.degreeName, 'course code ', req.body.courseCode, 'course title ', req.body.courseTitle);
-	// 	// console.log(req.body);
- 
-	// 	var course = new _model({
- //            Degrees: {
- //                degreeAbbr: '',
- //                degreeName : '',
- //                courses : {
- //                    courseAbbr : req.body.courseCode,
- //                    courseName : req.body.courseTitle,
- //                    rubrics : [{
- //                        rubricName : '',
- //                        sections : [{
- //                            sectionName : '',
- //                            sectionWeight : null,
- //                            items : {
- //                                itemName : '',
- //                                itemWiki : '',
- //                                itemComment : '',
- //                                gradeOptions : [100, 75, 50, 0]
- //                            }
- //                        }]
- //                    }]
- //                }
- //            }
- //        });
-	// };
 
 // 					ADD COURSE 				       //
 //================================================//
