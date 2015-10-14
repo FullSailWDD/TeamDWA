@@ -5,34 +5,30 @@ var app = angular.module("app", ["ngRoute"]);
 	}]);
 
 
-	// requires
-
-
-
-	// CONTROLLERS ---------------------------------------------
 
 app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGenData', function($scope, $http, $routeParams, courseGenData){
+
 // GETTING COURSES FROM NODE - DATABASE
 	$http.post('/jsonReceive', $scope.course)
 		.then(function(res){
-		$scope.course = res.data;
+			$scope.course = res.data;
 
+			//LOOPING THROUGH THE RETURNED DATA AND PUSHING EACH OBJECT INDIVIDUALLY INTO theCourses ARRAY
+			theCourses = [];
+			for (var i = 0 ; i < $scope.course.course.length; i++) {
+				var eachCourse = $scope.course.course[i];
+				theCourses.push(eachCourse);
+			};
 
-
-//LOOPING THROUGH THE RETURNED DATA AND PUSHING EACH OBJECT INDIVIDUALLY INTO theCourses ARRAY
-		theCourses = [];
-		for (var i = 0 ; i < $scope.course.course.length; i++) {
-			var eachCourse = $scope.course.course[i];
-			theCourses.push(eachCourse);
-		};
-		// RUNNING THE courseGenData SERVICE WITH THE ARRAY OF theCourses
-		$scope.courseGeneratorData = new courseGenData (theCourses);
-		console.log(theCourses);
-		//console.log($scope.courseGeneratorData);
+			// RUNNING THE courseGenData SERVICE WITH THE ARRAY OF theCourses
+			$scope.courseGeneratorData = new courseGenData (theCourses);
+			console.log($scope.courseGeneratorData);
+			//console.log($scope.courseGeneratorData.course[0].Degrees.courses.courseName);
 		});
 	
 		$scope.addRubric = function(course){
 			location.assign('/addRubric',course);
+			console.log('Course Data ', course);
 		}
 
 
@@ -52,10 +48,11 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 			template: '<input type="text" ng-model="searchText">'+
 					  '<div ng-repeat="course in payload.course | filter:searchText" >'+
 					  '<ul>'+
-			              '<li>{[{course.theCourse[0].courseTitle}]}</li>'+
+					  	  '<li>{[{Degrees.DegreeName}]}</li>'+
+			              '<li>{[{course[i]._id}]}</li>'+
 			              '<li>{[{course.theCourse[0].courseCode}]}</li>'+
 			          	  '<li ng-if="course.rubrics"><ul><li ng-repeat="rubrics in course.rubrics">{[{rubrics.title}]}</li>'+
-			           								'</ul></li>'+
+			           						'</ul></li>'+
 			           '</ul>'+
 			           	  '<button type="button" ng-click="callback(course)">Add Rubric</button>'+
 						'</div>'
@@ -71,7 +68,15 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 	app.service('courseGenData', function(){
 		var courseGen = function(args){	
 			this.course = args || [];
-			//console.log(args);
+			//this.courseTitle = args[i].Degrees.courses.courseName;
+			
+			//for (var i = 0; i < args.length; i ++) {
+
+			// 	this.courseId    = args[i]._id;
+			// 	this.courseTitle = args[i].Degrees.courses.courseName;
+			// 	this.courseCode  = args[i].Degrees.courses.courseAbbr;
+			// 	//console.log(args[i].Degrees.courses.courseName);
+			// };
 		}
 		return courseGen;
 	})
