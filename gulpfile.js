@@ -42,8 +42,8 @@ var gulp = require('gulp'),
 
 	gulp.task('jsCompress', function () {
     gulp.src('./app/js/**/*.js')
-        .pipe(ngAnnotate())
-        .pipe(uglify())
+        //.pipe(ngAnnotate())
+        //.pipe(uglify())
         .pipe(gulp.dest('./public/js/build'))
         .pipe(livereload())
         //.on('error', gutil.log);

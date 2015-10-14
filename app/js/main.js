@@ -4,16 +4,16 @@ var app = angular.module("app", ["ngRoute"]);
 		$interpolateProvider.endSymbol('}]}');
 
 		$routeProvider.when("/",{
-	        templateUrl: "/views/index.html",
-	        controller: "homeController"
+	        templateUrl: "views/index.html",
+	        controller: "courseGenerator"
 	    }).when("/dashboard",{
 	        templateUrl: "views/dashboard.html",
-	        controller: "dashboard"
+	        controller: "courseGenerator"
 	    }).when("/addRubric",{
 	        templateUrl: "views/rubric.html",
-	        controller: "rubricController"
+	        controller: "courseGenerator"
 	    }).otherwise({
-	        redirectTo: "/dashboard"
+	        redirectTo: "/"
 	    })
 
 	}]);
@@ -21,6 +21,8 @@ var app = angular.module("app", ["ngRoute"]);
 
 
 app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGenData', function($scope, $http, $routeParams, courseGenData){
+
+console.log("ATHE APP");
 
 // GETTING COURSES FROM NODE - DATABASE
 	$http.post('/jsonReceive', $scope.course)

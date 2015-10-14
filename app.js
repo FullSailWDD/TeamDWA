@@ -35,19 +35,16 @@ app.set('view engine', 'handlebars');
 // static file folders
 // =============================================================================
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'app')));
 
 app.use(express.static(path.join(__dirname, 'bower_components')));
 
-//app.use('/views', express.static('app/views'));
-//app.use('/views', express.static(__dirname, 'app/views'));
+//app.use('/views', express.static('./app/views'));
 
   
-app.get('/', function (req, res) {
-        res.render('index');
-    });    
+// app.get('/', function (req, res) {
+//         res.render('index');
+//     });    
 
-//app.set('views', path.join(__dirname, 'views'));
 
 // bodyparser
 // =============================================================================
@@ -73,7 +70,7 @@ if ('development' == app.get('env')) {
 
 //Routes
 // =============================================================================
-//require('./routes/routes')(app, passport);
+require('./routes/routes')(app, passport);
 
 // Start Server
 // =============================================================================
