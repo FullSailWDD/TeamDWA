@@ -66,4 +66,36 @@ db.courses.save(
     }
 }
 );
+
+
+
+
+
+// MONGOOSE SCHEMA
+
+    var courseSchema = new mongoose.Schema({
+            Degrees: {
+                degreeAbbr: String,
+                degreeName : String,
+                courses : {
+                    courseAbbr : String,
+                    courseName : String,
+                    rubrics : {
+                        rubricName : String,
+                        sections : {
+                            sectionName : String,
+                            sectionWeight : Number,
+                            items : {
+                                itemName : String,
+                                itemWiki : String,
+                                itemComment : String,
+                                gradeOptions : Number
+                            }
+                        }
+                    }
+                }
+            }
+    }, {strict : false});
+
+
 //=============================
