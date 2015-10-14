@@ -4,7 +4,7 @@ var app = angular.module("app", ["ngRoute"]);
 		$interpolateProvider.endSymbol('}]}');
 
 		$routeProvider.when("/",{
-	        templateUrl: "views/index.html",
+	        templateUrl: "views/dashboard.html",
 	        controller: "courseGenerator"
 	    }).when("/dashboard",{
 	        templateUrl: "views/dashboard.html",
@@ -17,6 +17,18 @@ var app = angular.module("app", ["ngRoute"]);
 	    })
 
 	}]);
+
+
+
+	app.controller('homeController', ['$scope', '$http', '$routeParams','$location', function($scope, $http, $routeParams, $location){
+
+		// $scope.login = function(){
+		// 	$http.post('/login'); 
+		// 	$location.path('/dashboard');
+
+	 //  	}
+	}]);
+
 
 
 
