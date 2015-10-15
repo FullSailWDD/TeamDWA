@@ -1,6 +1,9 @@
 module.exports = function (app, passport) {
 
-	// HOME =========================	
+	// HOME =========================
+
+    var  course  = require('../models/course.js');	
+
 
     app.get('/', function (req, res) {
         res.render('index');
@@ -23,14 +26,10 @@ module.exports = function (app, passport) {
 
 	// // SIGNUP =========================
 
- //    // LOGIN =========================
+    // LOGIN =========================
 
- //    app.get('/login', function (req, res) {
- //        res.render('login');
- //        console.log(res);
- //    });
 
- //    	// process the login form
+     	// process the login form
         app.post('/login', passport.authenticate('local-login', {
             successRedirect : '/dashboard', // redirect to the secure profile section
             failureRedirect : '/login', // redirect back to the signup page if there is an error
@@ -45,15 +44,11 @@ module.exports = function (app, passport) {
         res.render('dashboard');
     });
 
- //    // app.get('/findCourse', function (req, res){
- //    //     res.render('dashboard');
-      
- //    // });
 
- //    app.post('/addCourse',function(req, res){
-	// course.addCourse(req, res);
-	// res.redirect('/dashboard');
-	// });
+    app.post('/addCourse',function(req, res){
+	course.addCourse(req, res);
+	res.redirect('/dashboard');
+	});
 
 
 

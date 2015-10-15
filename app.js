@@ -6,7 +6,6 @@ var express 	     = require('express'),
  	  http 		       = require('http'),
  	  cookieParser   = require('cookie-parser'),
     session        = require('express-session'),
-    //course         = require('./models/course.js'),
     passport       = require('passport'),
     mongoose	     = require('mongoose'),
  	  exphbs 		     = require('express-handlebars'),
@@ -36,14 +35,7 @@ app.set('view engine', 'handlebars');
 // =============================================================================
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.static(path.join(__dirname, 'bower_components')));
-
-//app.use('/views', express.static('./app/views'));
-
-  
-// app.get('/', function (req, res) {
-//         res.render('index');
-//     });    
+app.use(express.static(path.join(__dirname, 'bower_components')));  
 
 
 // bodyparser

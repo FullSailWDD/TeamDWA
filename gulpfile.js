@@ -49,4 +49,12 @@ var gulp = require('gulp'),
         //.on('error', gutil.log);
 	});
 
+	gulp.task('watch', function () {
+    livereload.listen();
+    gulp.watch([        
+        './app/**/*', 
+        './test/*'
+    ],['build']);
+	});
+
 	gulp.task('all', ['mongod', 'dev', 'htmlCompress', 'jsCompress']);
