@@ -14,12 +14,10 @@ _model = mongoose.model('degree', degreeSchema);
 
 // Add Degrees ====================
 	_save = function ( req, success, fail ){
-		console.log(req.body);
+		console.log(req.degreeName);
 	var degree = new _model({
-				degreeName 		: req.body.degreeName
+				degreeName 		: req.degreeName
 		});
-	
-
 			// Save to Database
 			degree.save( function( err){
 				if (err) {
@@ -28,15 +26,16 @@ _model = mongoose.model('degree', degreeSchema);
 					console.log('You are Awesome');
 				};
     			
-  			});
-  			};
+  				});
+  	};
 //  Add Degrees End =================
 //  Find All Degrees ===============
-	_findAll = function( req, success, fail ){
+	_findAll = function(success, fail ){
 		_model.find({}, function(err, doc){
 			if(err){
 				fail(err);
 			}else{
+				console.log(doc);
 				success(doc);
 			}
 		})
@@ -52,6 +51,7 @@ _model = mongoose.model('degree', degreeSchema);
 
 
 return {
+		schema  : degreeSchema,
 		add 	: _save,
 	    findAll : _findAll
 	   };

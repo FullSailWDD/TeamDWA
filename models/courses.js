@@ -11,32 +11,31 @@ var courseSchema = new mongoose.Schema({
 })
 
 // making our schema a model variable to create new courses using the schema
-_model = mongoose.model('course', courseSchema);
+_model = mongoose.model('courses', courseSchema);
 
 
 // Add Course ====================
 	_save = function ( req, success, fail ){
-		console.log(req.body);
-	var course = new _model({
+	var newCourse = new _model({
 			//	degreeID		: ''
-				courseAbbr  	: req.body.courseAbbr,
-				courseName 		: req.body.courseTitle
+				courseAbbr  	: req.courseAbbr,
+				courseName 		: req.courseTitle
 		});
 	
 
 			// Save to Database
-			course.save( function( err){
+			newCourse.save( function( err){
 				if (err) {
-					console.log('You Suck');
+					console.log('You Suck -- Courses');
 				}else{
-					console.log('You are Awesome');
+					console.log('You are Awesome -- Courses');
 				};
     			
   			});
   			};
 //  Add Course End =================
 //  Find All Courses ===============
-	_findAll = function(req, success, fail){
+	_findAll = function(success, fail){
 		_model.find({}, function(err, doc){
 			if(err){
 				fail(err);
@@ -49,6 +48,7 @@ _model = mongoose.model('course', courseSchema);
 
 
 return {
+		schema  : courseSchema,
 		add 	: _save,
 	    findAll : _findAll
 	   };

@@ -33,12 +33,10 @@
     // -------------------------------------------------------------
     // Json Receive Route - Sending Data to Angular
         app.post('/jsonReceive', isLoggedIn, function (req, res) {
-            allCourses = master.find(null, function(result){
-                // console.log(result);
-            });
-            // console.log(allCourses);
-
-            
+            // degreeName = {'degreeName':'KaseDegree'};
+            // degrees.add(degreeName);    
+            course = {'courseName': 'KasesCourse', 'courseAbbr': 'KcK'};
+            courses.add(course);
        });
     // -------------------------------------------------------------
     // Add Course JSON Route - Receiving Data From Angular 

@@ -15,7 +15,7 @@ var app            		= express();
 
 
 
-app.set('port', process.env.PORT || 5000); // Setting the Port
+app.set('port', process.env.PORT || 3000); // Setting the Port
 var configDB		= require('./config/db.js');
 mongoose.connect(configDB.url); // connect to our database
 require('./config/passport')(passport); // Passport Config File

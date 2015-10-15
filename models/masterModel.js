@@ -12,7 +12,7 @@ module.exports = function(){
 	}
 
 
-	_findCourse = function(req, success){
+	_findCourse = function(success){
 		var Data = [];
 		courses.findAll(req, function(result){
 			Data['courses'] = result;
