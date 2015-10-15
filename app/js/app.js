@@ -4,16 +4,16 @@ var app = angular.module('app', ['ngRoute']);
 		$interpolateProvider.endSymbol('}]}');
 
 		$routeProvider.when("/",{
-	        templateUrl: "views/dashboard.html",
+	        templateUrl: "templates/dashboard.html",
 	        controller: "dashboardCtrl"
 	    }).when("/addCourse",{
-	        templateUrl: "views/.html",
-	        controller: "courseGenerator"
+	        templateUrl: "templates/addCourse.html",
+	        controller: "addCourseCtrl"
 	    }).when("/addDegree",{
-	        templateUrl: "views/dashboard.html",
+	        templateUrl: "templates/dashboard.html",
 	        controller: "courseGenerator"
 	    }).when("/addRubric",{
-	        templateUrl: "views/rubric.html",
+	        templateUrl: "templates/rubric.html",
 	        controller: "courseGenerator"
 	    }).otherwise({
 	        redirectTo: "/"
@@ -21,7 +21,47 @@ var app = angular.module('app', ['ngRoute']);
 
 	}]);
 
-	app.controller('dashboardCtrl', ['$scope', '$http', '$routeParams','$location', function($scope, $http, $routeParams, $location){
 
-  console.log('wow');
-}]);
+// Controllers ===========================
+		//Dashboard Controller============
+	app.controller('dashboardCtrl', ['$scope', '$http', '$routeParams','$location', function($scope, $http, $routeParams, $location){
+		$http.post('/jsonReceive', $scope.allCourses)
+			.then(function(res){
+				console.log('Ran');
+			});
+  			console.log('wow');
+	}]);
+		// Dashboard Controller End ==========
+		// Add Course Controller
+	app.controller('addCourseCtrl', ['$scope', '$http', '$routeParams','$location', function($scope, $http, $routeParams, $location){
+		$scope.newCourse = {};
+		$scope.addCourse = function(){
+			$location.path('/');
+			$http.post('/addCourseJSON', $scope.newCourse)
+			console.log($scope.newCourse);
+		}
+	}]);
+		// Add Course Controller End =========
+	// Controllers End ===================
+	// Directives ========================
+
+
+
+
+
+
+
+
+	// Directives End =====================
+	// Services ===========================
+
+
+
+
+
+
+
+
+
+
+	// Services End =====================

@@ -17,7 +17,7 @@
     "flash": "^1.1.0",
     "inherits": "^2.0.1",
     "jeet": "^6.1.2",
-    "mongoose": "^4.1.10",
+    "mongoose": "^4.1.11",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0"
   },

@@ -23,21 +23,34 @@
             failureFlash : true // allow flash messages
 
         }));
-
-
 // Passport --
 
 
 	// DASHBOARD WHICH CONTAINS NG-VIEW FOR OUR APP - The One and Only
 	   app.get('/dashboard', isLoggedIn, function (req, res) {
-        res.render('dashboard');
+            res.render('dashboard');
        });
-   // -------------------------------------------------------------
-}
+    // -------------------------------------------------------------
+    // Json Receive Route - Sending Data to Angular
+        app.post('/jsonReceive', isLoggedIn, function (req, res) {
+            allCourses = master.find(null, function(result){
+                // console.log(result);
+            });
+            // console.log(allCourses);
 
+            
+       });
+    // -------------------------------------------------------------
+    // Add Course JSON Route - Receiving Data From Angular 
+         app.post('/addCourseJSON', isLoggedIn, function (req, res) {
+            console.log(req.body);
+            
+       });
+    // -------------------------------------------------------------
 
         function isLoggedIn(req, res, next) {
     		if (req.isAuthenticated())
         		return next();
 				res.redirect('/');
+}
 }

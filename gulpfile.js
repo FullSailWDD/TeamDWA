@@ -47,7 +47,8 @@ var gulp 			= require('gulp'),
     livereload.listen();
     gulp.watch([        
         './app/**/*', 
-        './test/*'
+        './routes/**/*',
+        './models/**/*'
     ],['all']);
 	});
 

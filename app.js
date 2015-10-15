@@ -7,21 +7,29 @@ var 	express 	    = require('express'),
     	mongoose	    = require('mongoose'),
  	  	exphbs 		    = require('express-handlebars'),
 	  	path 		    = require('path'),
-	  	configDB		= require('./config/db.js');
+	  	courses			= require('./models/courses.js'),
+	  	degrees			= require('./models/degrees.js'),
+	  	master			= require('./models/masterModel.js');
+
 var app            		= express();
 
 
 
-app.set('port', process.env.PORT || 3000); // Setting the Port
+app.set('port', process.env.PORT || 5000); // Setting the Port
+var configDB		= require('./config/db.js');
 mongoose.connect(configDB.url); // connect to our database
 require('./config/passport')(passport); // Passport Config File
+
 app.engine('handlebars', exphbs({defaultLayout: 'main'})); // view Engine
 app.set('view engine', 'handlebars'); //view Engine
+
 app.use(express.static(path.join(__dirname, 'public'))); // Static Public directory For The Server
 app.use(express.static(path.join(__dirname, 'bower_components')));  // Static bower_components directory for the server
+app.use(express.static(path.join(__dirname, 'app'))); // Static app directory
 app.use(cookieParser()); //read cookies -- for Passport
 app.use(bodyParser.json()); // get information from html forms -- for Passport
 app.use(bodyParser.urlencoded({ extended: true })); // -- for Passport
+// SESSIONS----------------------------
 app.use(session({   
 	secret: 'developerswithattitude', 
 	resave: true, 
