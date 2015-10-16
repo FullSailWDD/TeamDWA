@@ -65,7 +65,6 @@ var gulp 			= require('gulp'),
     livereload.listen();
     gulp.watch([        
         './app/**/*', 
-        './routes/**/*',
         './models/**/*'
     ],['all']);
 	});
