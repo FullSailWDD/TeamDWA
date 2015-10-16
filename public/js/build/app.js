@@ -28,16 +28,8 @@ var app = angular.module('app', ['ngRoute']);
 			$scope.courses = {};
 			$http.post('/getDashboard', $scope.allCourses)
 			.then(function(res){
-				// console.log(res.data);
 				$scope.courses = res.data;
-				// console.log($scope.courses);
-				// console.log($scope.courses.courses)
 				$scope.courseTile = new courseTileGenerator($scope.courses.courses);
-				// console.log($scope.courseTile , '-------------');
-				// console.log($scope.courseTile.course , '+++++++++++++');
-				// console.log($scope.courseTile.course[0] , '@@@@@@@@@@@@@');
-				// console.log($scope.courseTile.course[0].courseName , '^^^^^^^^^^^^^^');
-
 			});	
 			$scope.addRubric = function(course){
 				console.log(course);
@@ -63,13 +55,11 @@ var app = angular.module('app', ['ngRoute']);
 	app.controller('courseAddedCtrl', ['$scope', '$http', '$routeParams','$location', 'courseTileGenerator', function($scope, $http, $routeParams, $location, courseTileGenerator){
 			$scope.courses = [];
 			$http.post('/getDashboard', $scope.allCourses)
-			.then(function(res){
-				console.log(res.data);
-				$scope.courses = res.data;
-				$scope.courseTile = new courseTileGenerator($scope.courses.courses);
-				// console.log($scope.courseTile.course, '----------');
-				$location.path('/');
-			});
+				.then(function(res){
+					$scope.courses = res.data;
+					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
+					$location.path('/')
+				})	
 
 			$scope.addRubric = function(course){
 				$location.path('/addRubric', course)
@@ -99,15 +89,8 @@ var app = angular.module('app', ['ngRoute']);
 			template: 
 				'<input class="dashsearch" type="text" name="search" size="35" placeholder="Search for a Degree, Course or Rubric" ng-model="searchText">'+
 					'<div class="dashresults" >'+
-					  '<ul>'+
-						'<li ng-repeat="course in payload.course | filter:searchText track by $index">'+
-						'<ul>'+
-							'<li>{[{course.courseAbbr}]}</li>'+
-							'<li>{[{course.courseName}]}</li>'+
-							'<li></li>'+
-							'<li></li>'+	
-						'</ul>'+
-						'</li>'+
+					  '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
+							'<li>Course Abbreviation : <span id="courseAbbr">{[{course.courseAbbr}]}</span><br/> -- Course Name : <span id="courseName">{[{course.courseName}]}</span><br/> -- ID : <span>{[{course._id}]}</span></li>'+
 					  '</ul>'+
 						'<button ng-click="callback(course)">Add Rubric</button>'+
 					'</div>'
