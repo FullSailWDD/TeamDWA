@@ -6,10 +6,8 @@ var 	express 	    = require('express'),
     	passport       	= require('passport'),
     	mongoose	    = require('mongoose'),
  	  	exphbs 		    = require('express-handlebars'),
-	  	path 		    = require('path'),
-	  	courses			= require('./models/courses.js'),
-	  	degrees			= require('./models/degrees.js'),
-	  	master			= require('./models/masterModel.js');
+	  	path 		    = require('path');
+	  	// master			= require('./models/masterModel.js');
 
 var app            		= express();
 

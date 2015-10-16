@@ -9,9 +9,9 @@ var app = angular.module('app', ['ngRoute']);
 	    }).when("/addCourse",{
 	        templateUrl: "templates/addCourse.html",
 	        controller: "addCourseCtrl"
-	    }).when("/addDegree",{
+	    }).when("/courseAdded",{
 	        templateUrl: "templates/dashboard.html",
-	        controller: "courseGenerator"
+	        controller: "courseAddedCtrl"
 	    }).when("/addRubric",{
 	        templateUrl: "templates/rubric.html",
 	        controller: "courseGenerator"
@@ -24,44 +24,81 @@ var app = angular.module('app', ['ngRoute']);
 
 // Controllers ===========================
 		//Dashboard Controller============
-	app.controller('dashboardCtrl', ['$scope', '$http', '$routeParams','$location', function($scope, $http, $routeParams, $location){
-		$http.post('/jsonReceive', $scope.allCourses)
+	app.controller('dashboardCtrl', ['$scope', '$http', '$routeParams','$location', 'courseTileGenerator', function($scope, $http, $routeParams, $location, courseTileGenerator){
+			$scope.courses = {};
+			$http.post('/getDashboard', $scope.allCourses)
 			.then(function(res){
-				console.log('Ran');
+				// console.log(res.data);
+				$scope.courses = res.data;
+				// console.log($scope.courses.courses);
+				$scope.courseTile = new courseTileGenerator($scope.courses.courses);
+				console.log($scope.courseTile , '-------------');
+				console.log($scope.courseTile.course , '+++++++++++++');
+				console.log($scope.courseTile.course[0] , '@@@@@@@@@@@@@');
+				console.log($scope.courseTile.course[0].courseName , '^^^^^^^^^^^^^^');
 			});
-  			console.log('wow');
+  			// console.log('wow');
 	}]);
 		// Dashboard Controller End ==========
-		// Add Course Controller
+		// ===================================
+		// Add Course Controller =============
 	app.controller('addCourseCtrl', ['$scope', '$http', '$routeParams','$location', function($scope, $http, $routeParams, $location){
 		$scope.newCourse = {};
 		$scope.addCourse = function(){
-			$location.path('/');
+			$location.path('/courseAdded');
 			$http.post('/addCourseJSON', $scope.newCourse)
-			console.log($scope.newCourse);
 		}
 	}]);
 		// Add Course Controller End =========
+		// ===================================
+		// Course Added Controller -- Dashboard View
+	app.controller('courseAddedCtrl', ['$scope', '$http', '$routeParams','$location', 'courseTileGenerator', function($scope, $http, $routeParams, $location, courseTileGenerator){
+			$scope.courses = {};
+			$http.post('/getDashboard', $scope.allCourses)
+			.then(function(res){
+				// console.log(res.data);
+				$scope.courses = res.data;
+				$scope.courseTile = new courseTileGenerator($scope.courses);
+				// console.log($scope.courseTile.course, '----------');
+				$location.path('/');
+			});
+
+
+  			// console.log($scope.courses);
+	}]);
+
+
+	// Course Added Controller Ends ======
 	// Controllers End ===================
 	// Directives ========================
 
-
-
-
-
-
-
+	app.directive('courseTileElement', function(){
+		return {
+			restrict: 'E',
+			scope: {
+				payload: '=',
+				callback: '&'
+			}, 
+			template: 
+				'<input type="text" ng-model="searchText">'+
+					'<div class="courseTile" ng-repeat="course in payload | filter:searchText track by $index">'+
+					  '<ul>'+
+						'<li>Hello</li>'+
+						'<li>Howdy</li>'+
+						'<li>blah</li>'+
+						'<li>blah</li>'+
+					  '</ul>'+
+						'<button type="submit" ng-click="callback(course)">Submit</button>'+
+					'</div>'+
+		}
+	})
 
 	// Directives End =====================
 	// Services ===========================
-
-
-
-
-
-
-
-
-
-
+	app.service('courseTileGenerator', function(){
+		var courseTileGen = function(args){	
+			this.course = args || [];
+		}
+		return courseTileGen;
+	})
 	// Services End =====================

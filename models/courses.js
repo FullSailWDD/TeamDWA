@@ -19,7 +19,7 @@ _model = mongoose.model('courses', courseSchema);
 	var newCourse = new _model({
 			//	degreeID		: ''
 				courseAbbr  	: req.courseAbbr,
-				courseName 		: req.courseTitle
+				courseName 		: req.courseName
 		});
 	
 

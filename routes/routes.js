@@ -7,15 +7,15 @@
 // Passport --
 // Logout
         app.get('/logout', function(req, res) {
-        req.logout(); //passport function
-        res.redirect('/');
-    }); 	
+            req.logout(); //passport function
+            res.redirect('/');
+        }); 	
 // Signup
-    app.post('/signup', passport.authenticate('local-signup', {
+        app.post('/signup', passport.authenticate('local-signup', {
             successRedirect : '/dashboard', // redirect to the secure profile section
             failureRedirect : '/', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
-    }));
+        }));
 // Login
         app.post('/login', passport.authenticate('local-login', {
             successRedirect : '/dashboard', // redirect to the secure profile section
@@ -32,16 +32,17 @@
        });
     // -------------------------------------------------------------
     // Json Receive Route - Sending Data to Angular
-        app.post('/jsonReceive', isLoggedIn, function (req, res) {
-            // degreeName = {'degreeName':'KaseDegree'};
-            // degrees.add(degreeName);    
-            course = {'courseName': 'KasesCourse', 'courseAbbr': 'KcK'};
-            courses.add(course);
+        app.post('/getDashboard', isLoggedIn, function (req, res) {
+            courses         = require('../models/courses.js');
+            allCourse = courses.findAll(function(result){
+                res.send(JSON.stringify({courses: result}, null, 3));
+            });
        });
     // -------------------------------------------------------------
     // Add Course JSON Route - Receiving Data From Angular 
          app.post('/addCourseJSON', isLoggedIn, function (req, res) {
-            console.log(req.body);
+                courses         = require('../models/courses.js');
+                courses.add(req.body);
             
        });
     // -------------------------------------------------------------

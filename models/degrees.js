@@ -5,6 +5,7 @@ mongoose = require('mongoose');
 // Creating the Degrees schema for the DB
 var degreeSchema = new mongoose.Schema({
     	degreeName : String,
+    	degreeAbbr : String,
     	courseIDs : { type: Array, required: false }
 })
 
