@@ -1,6 +1,7 @@
 var gulp 			= require('gulp'),
 	child_process 	= require('child_process'),
 	jeet 			= require('jeet'),
+	mocha			= require('gulp-mocha'),
 	nodemon 		= require('gulp-nodemon'),
 	browserSync 	= require('browser-sync'),
 	stylus 			= require('gulp-stylus'),
@@ -31,6 +32,22 @@ var gulp 			= require('gulp'),
             collapseWhitespace: true
         }))
         .pipe(gulp.dest('./public/views'));
+	});
+
+	gulp.task('test', function () {
+    return gulp.src(['./test/*.js'], {
+            read: false
+        })
+        .pipe(mocha({
+            reporter: 'spec',
+            timeout: 2000
+        }))
+        .on('error', util.log)
+
+    // exit on end
+    .once('end', function () {
+        process.exit();
+    });
 	});
 
 
