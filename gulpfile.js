@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var gulp = require('gulp'),
 	child_process = require('child_process'),
 	jeet = require('jeet'),
@@ -6,7 +5,7 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync'),
 	stylus = require('gulp-stylus'),
 	connect = require ('gulp-connect');
-=======
+
 var gulp 			= require('gulp'),
 	child_process 	= require('child_process'),
 	jeet 			= require('jeet'),
@@ -20,7 +19,7 @@ var gulp 			= require('gulp'),
     ngAnnotate      = require('gulp-ng-annotate'),
     htmlmin         = require('gulp-html-minifier'),
     livereload      = require('gulp-livereload');
->>>>>>> 36fcc81f2e4b7bec7ae11a43a350df06f179dedc
+
 
 	gulp.task('dev', function(){
 		nodemon({
@@ -35,9 +34,6 @@ var gulp 			= require('gulp'),
 		})
 	})
 
-<<<<<<< HEAD
-	gulp.task('all', ['mongod', 'dev']);
-=======
 	gulp.task('htmlCompress', function () {
     gulp.src('./app/views/*.html')
         .pipe(htmlmin({
@@ -65,4 +61,3 @@ var gulp 			= require('gulp'),
 	});
 
 	gulp.task('all', ['mongod', 'dev', 'htmlCompress', 'jsCompress', 'watch']);
->>>>>>> 36fcc81f2e4b7bec7ae11a43a350df06f179dedc
