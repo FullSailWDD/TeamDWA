@@ -17,7 +17,8 @@ _model = mongoose.model('degree', degreeSchema);
 	_save = function ( req, success, fail ){
 		console.log(req.degreeName);
 	var degree = new _model({
-				degreeName 		: req.degreeName
+				degreeName 		: req.degreeName,
+				degreeAbbr 		: req.degreeAbbr
 		});
 			// Save to Database
 			degree.save( function( err){

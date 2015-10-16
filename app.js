@@ -33,6 +33,8 @@ app.use(session({
 	saveUninitialized: true})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // login sessions
+
+
 //SESSIONS END--------------------------
 if ('development' == app.get('env')) { 
   app.use(express.errorHandler());

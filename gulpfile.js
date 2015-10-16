@@ -1,3 +1,11 @@
+var gulp = require('gulp'),
+	child_process = require('child_process'),
+	jeet = require('jeet'),
+	nodemon = require('gulp-nodemon'),
+	browserSync = require('browser-sync'),
+	stylus = require('gulp-stylus'),
+	connect = require ('gulp-connect');
+
 var gulp 			= require('gulp'),
 	child_process 	= require('child_process'),
 	jeet 			= require('jeet'),
@@ -13,6 +21,7 @@ var gulp 			= require('gulp'),
     ngAnnotate      = require('gulp-ng-annotate'),
     htmlmin         = require('gulp-html-minifier'),
     livereload      = require('gulp-livereload');
+
 
 	gulp.task('dev', function(){
 		nodemon({
