@@ -30,12 +30,12 @@ var app = angular.module('app', ['ngRoute']);
 			.then(function(res){
 				// console.log(res.data);
 				$scope.courses = res.data;
-				// console.log($scope.courses.courses);
-				$scope.courseTile = new courseTileGenerator($scope.courses.courses);
+				console.log($scope.courses);
+				$scope.courseTile = new courseTileGenerator($scope.courses);
 				console.log($scope.courseTile , '-------------');
-				console.log($scope.courseTile.course , '+++++++++++++');
-				console.log($scope.courseTile.course[0] , '@@@@@@@@@@@@@');
-				console.log($scope.courseTile.course[0].courseName , '^^^^^^^^^^^^^^');
+				// console.log($scope.courseTile.course , '+++++++++++++');
+				// console.log($scope.courseTile.course[0] , '@@@@@@@@@@@@@');
+				// console.log($scope.courseTile.course[0].courseName , '^^^^^^^^^^^^^^');
 			});
   			// console.log('wow');
 	}]);
@@ -53,10 +53,10 @@ var app = angular.module('app', ['ngRoute']);
 		// ===================================
 		// Course Added Controller -- Dashboard View
 	app.controller('courseAddedCtrl', ['$scope', '$http', '$routeParams','$location', 'courseTileGenerator', function($scope, $http, $routeParams, $location, courseTileGenerator){
-			$scope.courses = {};
+			$scope.courses = [];
 			$http.post('/getDashboard', $scope.allCourses)
 			.then(function(res){
-				// console.log(res.data);
+				console.log(res.data);
 				$scope.courses = res.data;
 				$scope.courseTile = new courseTileGenerator($scope.courses);
 				// console.log($scope.courseTile.course, '----------');
@@ -71,8 +71,8 @@ var app = angular.module('app', ['ngRoute']);
 	// Course Added Controller Ends ======
 	// Controllers End ===================
 	// Directives ========================
-
-	app.directive('courseTileElement', function(){
+	// ng-repeat="course in payload | filter:searchText track by $index"
+	app.directive('courseElement', function(){
 		return {
 			restrict: 'E',
 			scope: {
@@ -81,15 +81,15 @@ var app = angular.module('app', ['ngRoute']);
 			}, 
 			template: 
 				'<input type="text" ng-model="searchText">'+
-					'<div class="courseTile" ng-repeat="course in payload | filter:searchText track by $index">'+
+					'<div class="courseTile">'+
 					  '<ul>'+
-						'<li>Hello</li>'+
+						'<li>{[{course[0]}]}</li>'+
 						'<li>Howdy</li>'+
 						'<li>blah</li>'+
 						'<li>blah</li>'+
 					  '</ul>'+
 						'<button type="submit" ng-click="callback(course)">Submit</button>'+
-					'</div>'+
+					'</div>'
 		}
 	})
 
