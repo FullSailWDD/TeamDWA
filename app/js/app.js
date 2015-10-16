@@ -31,7 +31,8 @@ var app = angular.module('app', ['ngRoute']);
 				// console.log(res.data);
 				$scope.courses = res.data;
 				console.log($scope.courses);
-				$scope.courseTile = new courseTileGenerator($scope.courses);
+				console.log($scope.courses.courses)
+				$scope.courseTile = new courseTileGenerator($scope.courses.courses);
 				console.log($scope.courseTile , '-------------');
 				// console.log($scope.courseTile.course , '+++++++++++++');
 				// console.log($scope.courseTile.course[0] , '@@@@@@@@@@@@@');
@@ -58,7 +59,7 @@ var app = angular.module('app', ['ngRoute']);
 			.then(function(res){
 				console.log(res.data);
 				$scope.courses = res.data;
-				$scope.courseTile = new courseTileGenerator($scope.courses);
+				$scope.courseTile = new courseTileGenerator($scope.courses.courses);
 				// console.log($scope.courseTile.course, '----------');
 				$location.path('/');
 			});
@@ -81,7 +82,7 @@ var app = angular.module('app', ['ngRoute']);
 			}, 
 			template: 
 				'<input type="text" ng-model="searchText">'+
-					'<div class="courseTile">'+
+					'<div class="courseTile" ng-repeat="course in payload.course | filter:searchText track by $index">'+
 					  '<ul>'+
 						'<li>{[{course[0]}]}</li>'+
 						'<li>Howdy</li>'+
