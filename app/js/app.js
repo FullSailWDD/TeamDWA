@@ -97,12 +97,17 @@ var app = angular.module('app', ['ngRoute']);
 				callback: '&'
 			}, 
 			template: 
-				'<input type="text" ng-model="searchText">'+
-					'<div class="courseTile" ng-repeat="course in payload.course | filter:searchText track by $index">'+
+				'<input class="dashsearch" type="text" name="search" size="35" placeholder="Search for a Degree, Course or Rubric" ng-model="searchText">'+
+					'<div class="dashresults" >'+
 					  '<ul>'+
-						'<li>{[{course.courseName}]}</li>'+
-						'<li>{[{course.courseAbbr}]}</li>'+
-						'<li>{[{course._id}]}</li>'+
+						'<li ng-repeat="course in payload.course | filter:searchText track by $index">'+
+						'<ul>'+
+							'<li>{[{course.courseAbbr}]}</li>'+
+							'<li>{[{course.courseName}]}</li>'+
+							'<li></li>'+
+							'<li></li>'+	
+						'</ul>'+
+						'</li>'+
 					  '</ul>'+
 						'<button ng-click="callback(course)">Add Rubric</button>'+
 					'</div>'
