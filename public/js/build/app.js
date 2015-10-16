@@ -50,9 +50,11 @@ var app = angular.module('app', ['ngRoute'])
 					$scope.degrees = myService.getItem();
 					// console.log($scope.degrees);
 					$scope.courses = res.data;
-					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
 					$scope.degreesData = new degreeGenerator($scope.degrees);
-					// console.log($scope.degreesData);
+					// $scope.courses.courses.degreeData = $scope.degreesData.degree[0].degrees;
+					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
+					
+					console.log($scope.courses.courses);
 			});
 
 			$scope.addRubric = function(course){
@@ -73,7 +75,6 @@ var app = angular.module('app', ['ngRoute'])
 			if(!$scope.newCourse.degreeID){
 				console.log('Error');
 			}else{
-			
 			console.log($scope.newCourse);
 			$http.post('/addCourseJSON', $scope.newCourse);
 			$location.path('/dashboard');
@@ -113,6 +114,7 @@ var app = angular.module('app', ['ngRoute'])
 		return {
 			restrict: 'E',
 			scope: {
+				// rubrics: '=',
 				payload: '=',
 				callback: '&'
 			}, 
@@ -122,7 +124,15 @@ var app = angular.module('app', ['ngRoute'])
 				'</div>'+	
 					'<div class="dashresults" >'+
 					  '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
-							'<li>DegreeID : <span id="degreeID">{[{course.degreeID}]}</span><br/>Course Abbreviation : <span id="courseAbbr">{[{course.courseAbbr}]}</span><br/> -- Course Name : <span id="courseName">{[{course.courseName}]}</span><br/> -- ID : <span>{[{course._id}]}</span><button ng-click="callback({course:course})">Add Rubric</button></li>'+
+						'<li>'+
+							'-- DegreeID : <span id="degreeID">{[{course.degreeID}]}</span><br/>'+
+							'-- Degree Abbreviation : <span id="degreeID">{[{course.degreeAbbr}]}</span><br/>'+
+							'-- Degree Name : <span id="degreeID">{[{course.degreeName}]}</span><br/>'+
+							'-- Course Abbreviation : <span id="courseAbbr">{[{course.courseAbbr}]}</span><br/>'+
+							'-- Course Name : <span id="courseName">{[{course.courseName}]}</span><br/>'+
+							'-- ID : <span>{[{course._id}]}</span>'+
+							'<button ng-click="callback({course:course})">Add Rubric</button>'+
+						'</li>'+
 					  '</ul>'+
 					'</div>'
 		}
