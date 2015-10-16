@@ -4,6 +4,9 @@ var app = angular.module('app', ['ngRoute']);
 		$interpolateProvider.endSymbol('}]}');
 
 		$routeProvider.when("/",{
+			templateUrl: "templates/dashboard.html",
+	        controller: "getDegrees"
+		}).when("/dashboard",{
 	        templateUrl: "templates/dashboard.html",
 	        controller: "dashboardCtrl"
 	    }).when("/addCourse",{
@@ -11,7 +14,7 @@ var app = angular.module('app', ['ngRoute']);
 	        controller: "addCourseCtrl"
 	    }).when("/courseAdded",{
 	        templateUrl: "templates/dashboard.html",
-	        controller: "courseAddedCtrl"
+	        controller: "dashboardCtrl"
 	    }).when("/addRubric",{
 	        templateUrl: "templates/rubric.html",
 	        controller: "rubricCtrl"
@@ -23,14 +26,26 @@ var app = angular.module('app', ['ngRoute']);
 
 
 // Controllers ===========================
+	app.controller('getDegrees', ['$scope', '$http', '$routeParams','$location', 'degreeGenerator', function($scope, $http, $routeParams, $location, degreeGenerator){
+			$http.post('/getDegrees', $scope.allDegrees)
+				.then(function(res){
+					$scope.degrees = res.data;
+					console.log($scope.degrees);
+					$location.path('/dashboard');
+					// $scope.courseTile = new courseTileGenerator($scope.courses.courses);
+			});
+	}]);
 		//Dashboard Controller============
 	app.controller('dashboardCtrl', ['$scope', '$http', '$routeParams','$location', 'courseTileGenerator', function($scope, $http, $routeParams, $location, courseTileGenerator){
 			$scope.courses = {};
 			$http.post('/getDashboard', $scope.allCourses)
-			.then(function(res){
-				$scope.courses = res.data;
-				$scope.courseTile = new courseTileGenerator($scope.courses.courses);
-			});	
+				.then(function(res){
+					$scope.courses = res.data;
+					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
+				console.log(localStorage['degrees']);
+			});
+
+
 			$scope.addRubric = function(course){
 				console.log(course);
 				$location.path('/addRubric')
@@ -45,31 +60,21 @@ var app = angular.module('app', ['ngRoute']);
 	app.controller('addCourseCtrl', ['$scope', '$http', '$routeParams','$location', function($scope, $http, $routeParams, $location){
 		$scope.newCourse = {};
 		$scope.addCourse = function(){
-			$location.path('/courseAdded');
+			$location.path('/dashboard');
 			$http.post('/addCourseJSON', $scope.newCourse)
 		}
 	}]);
 		// Add Course Controller End =========
 		// ===================================
 		// Course Added Controller -- Dashboard View
-	app.controller('courseAddedCtrl', ['$scope', '$http', '$routeParams','$location', 'courseTileGenerator', function($scope, $http, $routeParams, $location, courseTileGenerator){
-			$scope.courses = [];
-			$http.post('/getDashboard', $scope.allCourses)
-				.then(function(res){
-					$scope.courses = res.data;
-					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
-					$location.path('/')
-				})	
+	// app.controller('courseAddedCtrl', ['$scope', '$http', '$routeParams','$location', 'courseTileGenerator', function($scope, $http, $routeParams, $location, courseTileGenerator){
+	// 		$scope.courses = [];
+	// 		$http.post('/getDashboard', $scope.allCourses)
+			
+	// 				$location.path('/')
+	// 			})
 
-			$scope.addRubric = function(course){
-				$location.path('/addRubric', course)
-				console.log(course.courseName);
-				
-			}
-
-
-  			// console.log($scope.courses);
-	}]);
+	// }]);
 
 
 	// Course Added Controller Ends ======
@@ -87,18 +92,26 @@ var app = angular.module('app', ['ngRoute']);
 				callback: '&'
 			}, 
 			template: 
+				'<div class="dashsearchcontainer">'+
 				'<input class="dashsearch" type="text" name="search" size="35" placeholder="Search for a Degree, Course or Rubric" ng-model="searchText">'+
+				'</div>'+	
 					'<div class="dashresults" >'+
 					  '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
-							'<li>Course Abbreviation : <span id="courseAbbr">{[{course.courseAbbr}]}</span><br/> -- Course Name : <span id="courseName">{[{course.courseName}]}</span><br/> -- ID : <span>{[{course._id}]}</span></li>'+
+							'<li>Course Abbreviation : <span id="courseAbbr">{[{course.courseAbbr}]}</span><br/> -- Course Name : <span id="courseName">{[{course.courseName}]}</span><br/> -- ID : <span>{[{course._id}]}</span><button ng-click="callback(course)">Add Rubric</button></li>'+
 					  '</ul>'+
-						'<button ng-click="callback(course)">Add Rubric</button>'+
 					'</div>'
 		}
 	})
 
 	// Directives End =====================
 	// Services ===========================
+	app.service('degreeGenerator', function(){
+		var degreeGen = function(args){
+			this.degree = args || [];
+		}
+		return degreeGen;
+	});
+
 	app.service('courseTileGenerator', function(){
 		var courseTileGen = function(args){	
 			this.course = args || [];
