@@ -13,7 +13,7 @@ var courseSchema = new mongoose.Schema({
 })
 
 // making our schema a model variable to create new courses using the schema
-_model = mongoose.model('courses', courseSchema);
+var _model = mongoose.model('courses', courseSchema);
 
 
 // Add Course ====================
@@ -31,8 +31,10 @@ _model = mongoose.model('courses', courseSchema);
 			newCourse.save( function( err){
 				if (err) {
 					console.log('You Suck -- Courses');
+					fail(err)
 				}else{
 					console.log('You are Awesome -- Courses');
+					success(newCourse);
 				};
     			
   			});

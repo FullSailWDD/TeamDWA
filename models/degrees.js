@@ -10,7 +10,7 @@ var degreeSchema = new mongoose.Schema({
 })
 
 // making our schema a model variable to create new Degrees using the schema
-_model = mongoose.model('degree', degreeSchema);
+var _model = mongoose.model('degree', degreeSchema);
 
 
 // Add Degrees ====================
