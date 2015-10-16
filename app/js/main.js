@@ -1,12 +1,40 @@
 var app = angular.module("app", ["ngRoute"]);
-	app.config(['$interpolateProvider', function ($interpolateProvider){
+	app.config(['$interpolateProvider','$routeProvider', function ($interpolateProvider, $routeProvider){
 		$interpolateProvider.startSymbol('{[{');
 		$interpolateProvider.endSymbol('}]}');
+
+		$routeProvider.when("/",{
+	        templateUrl: "views/dashboard.html",
+	        controller: "courseGenerator"
+	    }).when("/dashboard",{
+	        templateUrl: "views/dashboard.html",
+	        controller: "courseGenerator"
+	    }).when("/addRubric",{
+	        templateUrl: "views/rubric.html",
+	        controller: "courseGenerator"
+	    }).otherwise({
+	        redirectTo: "/"
+	    })
+
 	}]);
 
 
 
+	app.controller('homeController', ['$scope', '$http', '$routeParams','$location', function($scope, $http, $routeParams, $location){
+
+		// $scope.login = function(){
+		// 	$http.post('/login'); 
+		// 	$location.path('/dashboard');
+
+	 //  	}
+	}]);
+
+
+
+
 app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGenData', function($scope, $http, $routeParams, courseGenData){
+
+console.log("ATHE APP");
 
 // GETTING COURSES FROM NODE - DATABASE
 	$http.post('/jsonReceive', $scope.course)
@@ -19,13 +47,13 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 			console.log($scope.courseGeneratorData.course);
 			//LOOPING THROUGH THE RETURNED DATA AND PUSHING EACH OBJECT INDIVIDUALLY INTO theCourses ARRAY
 		});
-	
-		$scope.addRubric = function(course){
-			location.assign('/addRubric', course);
-			console.log('Course Data ', course);
-		}
 
 
+	$scope.addRubric = function(course){
+		//location.assign('/addRubric', course);
+		window.location.hash = "/addRubric";
+		console.log('Course Data ', course);
+	}
 
 }]);
 	// DIRECTIVES --------------------------------
@@ -45,7 +73,6 @@ app.controller('courseGenerator', ['$scope', '$http', '$routeParams', 'courseGen
 					  	  '<li>{[{course.Degrees.degreeName}]}</li>'+
 			              '<li>{[{course.Degrees.courses.courseName}]}</li>'+
 			              '<li>{[{course.Degrees.courses.courseAbbr}]}</li>'+
-
 			          	  '<li ng-if="course.rubrics"><ul><li ng-repeat="rubrics in course.rubrics">{[{rubrics.title}]}</li>'+
 			           						'</ul></li>'+
 			           '</ul>'+
