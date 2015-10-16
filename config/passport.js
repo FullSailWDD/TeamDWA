@@ -1,3 +1,8 @@
+
+var db = require('../config/db.js'),
+    mongoose    = require('mongoose');
+
+
 // load all the things we need
 var LocalStrategy    = require('passport-local').Strategy;
 

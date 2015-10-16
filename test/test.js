@@ -1,14 +1,21 @@
-var expect          = require("chai").expect,
-    assert          = require('assert'),
- 
-describe('homepage', function(){
-  it('should respond to GET',function(done){
-    superagent
-      .get('http://localhost:'+3000)
-      .end(function(res){
-        expect(res.status).to.equal(200);
-        done();
-    })
-  })
-});
 
+    var expect          = require("chai").expect,
+    assert          = require("assert"),
+    course          = require('../models/courses.js');
+
+describe('course', function() {
+    // test user created before each test
+    var testcourse = null;
+
+    beforeEach(function (done) {
+        course.add({
+            courseAbbr:               "test",
+            courseName:                "course name"
+        }, function (doc) {
+            testcourse = doc;
+            doc.courseAbbr.should.equal('test');
+            done();
+        })
+    });
+
+});

@@ -33,7 +33,7 @@
     // -------------------------------------------------------------
     // Json Receive Route - Sending Data to Angular
         app.post('/getDashboard', isLoggedIn, function (req, res) {
-            courses = require('../models/courses.js');
+            courses   = require('../models/courses.js');
             allCourse = courses.findAll(function(result){
                 res.send(JSON.stringify({courses: result}, null, 3));
             });

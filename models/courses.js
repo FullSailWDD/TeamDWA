@@ -1,6 +1,8 @@
 module.exports = function(){
 // declaring mongoose in the model
-mongoose = require('mongoose');
+var db = require('../config/db.js'),
+    mongoose    = require('mongoose');
+
 
 // Creating the course schema for the DB
 var courseSchema = new mongoose.Schema({
@@ -24,12 +26,14 @@ _model = mongoose.model('courses', courseSchema);
 	
 
 			// Save to Database
-			newCourse.save( function( err){
-				if (err) {
-					console.log('You Suck -- Courses');
-				}else{
-					console.log('You are Awesome -- Courses');
-				};
+			newCourse.save( function( err, success, doc){
+			if(err){
+				fail(err);
+				console.log('You Suck -- Courses');
+			}else{
+				success(doc);
+				console.log('You are Awesome -- Courses');
+			}
     			
   			});
   			};
@@ -53,3 +57,4 @@ return {
 	    findAll : _findAll
 	   };
 }();
+
