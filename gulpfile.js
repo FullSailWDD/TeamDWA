@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var gulp = require('gulp'),
 	child_process = require('child_process'),
 	jeet = require('jeet'),
@@ -5,6 +6,21 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync'),
 	stylus = require('gulp-stylus'),
 	connect = require ('gulp-connect');
+=======
+var gulp 			= require('gulp'),
+	child_process 	= require('child_process'),
+	jeet 			= require('jeet'),
+	nodemon 		= require('gulp-nodemon'),
+	browserSync 	= require('browser-sync'),
+	stylus 			= require('gulp-stylus'),
+	connect 		= require ('gulp-connect'),
+	connect         = require('gulp-connect'),
+    uglify          = require('gulp-uglify'),
+    concat          = require('gulp-concat'),
+    ngAnnotate      = require('gulp-ng-annotate'),
+    htmlmin         = require('gulp-html-minifier'),
+    livereload      = require('gulp-livereload');
+>>>>>>> 36fcc81f2e4b7bec7ae11a43a350df06f179dedc
 
 	gulp.task('dev', function(){
 		nodemon({
@@ -19,4 +35,34 @@ var gulp = require('gulp'),
 		})
 	})
 
+<<<<<<< HEAD
 	gulp.task('all', ['mongod', 'dev']);
+=======
+	gulp.task('htmlCompress', function () {
+    gulp.src('./app/views/*.html')
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        }))
+        .pipe(gulp.dest('./public/views'));
+	});
+
+
+	gulp.task('jsCompress', function () {
+    gulp.src('./app/js/**/*.js')
+        //.pipe(ngAnnotate())
+        //.pipe(uglify())
+        .pipe(gulp.dest('./public/js/build'))
+        .pipe(livereload())
+        //.on('error', gutil.log);
+	});
+
+	gulp.task('watch', function () {
+    livereload.listen();
+    gulp.watch([        
+        './app/**/*', 
+        './models/**/*'
+    ],['all']);
+	});
+
+	gulp.task('all', ['mongod', 'dev', 'htmlCompress', 'jsCompress', 'watch']);
+>>>>>>> 36fcc81f2e4b7bec7ae11a43a350df06f179dedc
