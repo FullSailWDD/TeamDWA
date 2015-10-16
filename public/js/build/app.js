@@ -93,11 +93,9 @@ var app = angular.module('app', ['ngRoute']);
 '<div class="dashresults" >'+
    '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
     '<li>'+
-            '<p class="degreeAbbr">WDD</p>'+
-            '<span class="degreeName">Web Design and Development</span>'+
+            '<p class="degreeAbbr">WDD<span class="degreeName">Web Design and Development</span></p>'+
             '<p class="rubric"></p>'+
-            '<p id="courseAbbr" class="courseAbbr">{[{course.courseAbbr}]}</p>'+
-            '<p id="courseName" class="courseName">{[{course.courseName}]}</p>'+
+            '<p id="courseAbbr" class="courseAbbr">{[{course.courseAbbr}]}<span id="courseName" class="courseName">{[{course.courseName}]}</span></p>'+
             '<p class="hideme">{[{course._id}]}</p>'+
             '<button ng-click="callback(course)">Add Rubric</button></li>'+
   '</ul>'+	

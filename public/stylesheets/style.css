@@ -136,15 +136,40 @@ body {
   font-size: 31px;
   padding-top: 12px;
   padding-left: 22px;
+  color: #2c242f;
 }
 .degreeName {
-  color: #008000;
+  color: #2c242f;
+  font-size: 14px;
+  font-family: arialround;
+  display: inline-block;
+  vertical-align: top;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  zoom: 1;
+  padding-top: 9px;
+  padding-left: 9px;
+  *display: inline;
 }
 .courseAbbr {
-  color: #00f;
+  font-family: arialround;
+  font-size: 31px;
+  padding-top: 5px;
+  padding-left: 22px;
+  color: #2c242f;
 }
 .courseName {
-  color: #ffa500;
+  color: #2c242f;
+  font-size: 14px;
+  font-family: arialround;
+  display: inline-block;
+  vertical-align: top;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  zoom: 1;
+  padding-top: 3px;
+  padding-left: 17px;
+  *display: inline;
 }
 .rubric {
   color: #ff0;
