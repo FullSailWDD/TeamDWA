@@ -42,7 +42,7 @@ body {
   right: 0px;
 }
 .dashbody {
-  padding-top: 163px;
+  padding-top: 179px;
   padding-right: 160px;
 }
 .header {
@@ -130,6 +130,24 @@ body {
   text-align: center;
   padding-top: 35px;
   padding-bottom: 35px;
+}
+.degreeAbbr {
+  font-family: arialround;
+  font-size: 31px;
+  padding-top: 12px;
+  padding-left: 22px;
+}
+.degreeName {
+  color: #008000;
+}
+.courseAbbr {
+  color: #00f;
+}
+.courseName {
+  color: #ffa500;
+}
+.rubric {
+  color: #ff0;
 }
 @media (min-width: 1px) {
   .dashresults {
@@ -310,4 +328,7 @@ body {
   .dashsearch {
     font-size: 32px;
   }
+}
+.hideme {
+  display: none;
 }
