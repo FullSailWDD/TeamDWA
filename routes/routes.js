@@ -48,8 +48,17 @@
     // -------------------------------------------------------------
     // Add Course JSON Route - Receiving Data From Angular 
          app.post('/addCourseJSON', isLoggedIn, function (req, res) {
-                courses         = require('../models/courses.js');
+                courses = require('../models/courses.js');
+                console.log(req.body);
                 courses.add(req.body);
+
+            
+       });
+          app.post('/addRubric', isLoggedIn, function (req, res) {
+                rubrics = require('../models/rubrics.js');
+                console.log(req.body);
+                rubrics.add(req.body);
+
             
        });
     // -------------------------------------------------------------

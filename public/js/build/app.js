@@ -1,11 +1,14 @@
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app', ['ngRoute'])
+		.run(function($rootScope){
+			$rootScope.test = "Hello World!";
+		})
 		app.config(['$interpolateProvider','$routeProvider', function ($interpolateProvider, $routeProvider){
 		$interpolateProvider.startSymbol('{[{');
 		$interpolateProvider.endSymbol('}]}');
 
 		$routeProvider.when("/",{
 			templateUrl: "templates/dashboard.html",
-	        controller: "getDegrees"
+	        controller: "getDegreesCtrl"
 		}).when("/dashboard",{
 	        templateUrl: "templates/dashboard.html",
 	        controller: "dashboardCtrl"
@@ -15,9 +18,15 @@ var app = angular.module('app', ['ngRoute']);
 	    }).when("/courseAdded",{
 	        templateUrl: "templates/dashboard.html",
 	        controller: "dashboardCtrl"
+	    }).when("/changeDegree",{
+	        templateUrl: "templates/dashboard.html",
+	        controller: "changeDegreeCtrl"
 	    }).when("/addRubric",{
 	        templateUrl: "templates/rubric.html",
 	        controller: "rubricCtrl"
+	    }).when("/createRubric",{
+	        templateUrl: "templates/dashboard.html",
+	        controller: "rubricCreateCtrl"
 	    }).otherwise({
 	        redirectTo: "/"
 	    })
@@ -26,64 +35,80 @@ var app = angular.module('app', ['ngRoute']);
 
 
 // Controllers ===========================
-	app.controller('getDegrees', ['$scope', '$http', '$routeParams','$location', 'degreeGenerator', function($scope, $http, $routeParams, $location, degreeGenerator){
+	app.controller('getDegreesCtrl', ['$scope', '$http', '$routeParams','$location', 'myService', function($scope, $http, $routeParams, $location, myService){
 			$http.post('/getDegrees', $scope.allDegrees)
 				.then(function(res){
-					$scope.degrees = res.data;
-					console.log($scope.degrees);
+					myService.addItem(res.data);
 					$location.path('/dashboard');
-					// $scope.courseTile = new courseTileGenerator($scope.courses.courses);
 			});
 	}]);
 		//Dashboard Controller============
-	app.controller('dashboardCtrl', ['$scope', '$http', '$routeParams','$location', 'courseTileGenerator', function($scope, $http, $routeParams, $location, courseTileGenerator){
+	app.controller('dashboardCtrl', ['$scope','$rootScope', '$http', '$routeParams','$location', 'courseTileGenerator', 'degreeGenerator', 'myService', function($scope, $rootScope, $http, $routeParams, $location, courseTileGenerator, degreeGenerator, myService){
 			$scope.courses = {};
 			$http.post('/getDashboard', $scope.allCourses)
 				.then(function(res){
+					$scope.degrees = myService.getItem();
+					// console.log($scope.degrees);
 					$scope.courses = res.data;
 					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
-				console.log(localStorage['degrees']);
+					$scope.degreesData = new degreeGenerator($scope.degrees);
+					// console.log($scope.degreesData);
 			});
 
-
 			$scope.addRubric = function(course){
-				console.log(course);
+				$rootScope.test = course;
 				$location.path('/addRubric')
 			}
-
-
-  			// console.log('wow');
+			$scope.changeDegree = function(degree){
+				$rootScope.test = degree;
+			}
 	}]);
 		// Dashboard Controller End ==========
 		// ===================================
 		// Add Course Controller =============
-	app.controller('addCourseCtrl', ['$scope', '$http', '$routeParams','$location', function($scope, $http, $routeParams, $location){
-		$scope.newCourse = {};
+	app.controller('addCourseCtrl', ['$scope', '$rootScope', '$http', '$routeParams','$location', 'myService', function($scope, $rootScope, $http, $routeParams, $location, myService){
+			$scope.newCourse = {};
 		$scope.addCourse = function(){
+			$scope.newCourse.degreeID = $scope.test;
+			if(!$scope.newCourse.degreeID){
+				console.log('Error');
+			}else{
+			
+			console.log($scope.newCourse);
+			$http.post('/addCourseJSON', $scope.newCourse);
 			$location.path('/dashboard');
-			$http.post('/addCourseJSON', $scope.newCourse)
+			}
 		}
 	}]);
 		// Add Course Controller End =========
 		// ===================================
-		// Course Added Controller -- Dashboard View
-	// app.controller('courseAddedCtrl', ['$scope', '$http', '$routeParams','$location', 'courseTileGenerator', function($scope, $http, $routeParams, $location, courseTileGenerator){
-	// 		$scope.courses = [];
-	// 		$http.post('/getDashboard', $scope.allCourses)
+		// Rubric Controller ==========
+
+	app.controller('rubricCtrl', ['$scope', '$rootScope', '$http', '$routeParams','$location', function($scope, $rootScope, $http, $routeParams, $location){
+				$scope.newRubric = {};
+			$scope.createRubric = function(){
+				// console.log($scope.test);
+				$scope.newRubric.courseID = $scope.test._id;
+				console.log($scope.newRubric);
+				$http.post('/addRubric', $scope.newRubric);
+
+				$location.path('/createRubric');
+			}
+			// console.log($scope.newRubric);
 			
-	// 				$location.path('/')
-	// 			})
+	}]);
 
-	// }]);
+	app.controller('rubricCreateCtrl', ['$scope', '$rootScope', '$http', '$routeParams','$location', function($scope, $rootScope, $http, $routeParams, $location){
+			// $scope.newRubric = {};
+				// console.log($scope.newRubric);
 
-
-	// Course Added Controller Ends ======
-		app.controller('rubricCtrl', ['$scope', '$http', '$routeParams','$location', function($scope, $http, $routeParams, $location){
 	}]);
 
 	// Controllers End ===================
 	// Directives ========================
-	// ng-repeat="course in payload | filter:searchText track by $index"
+
+
+
 	app.directive('courseElement', function(){
 		return {
 			restrict: 'E',
@@ -97,17 +122,93 @@ var app = angular.module('app', ['ngRoute']);
 				'</div>'+	
 					'<div class="dashresults" >'+
 					  '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
-							'<li>Course Abbreviation : <span id="courseAbbr">{[{course.courseAbbr}]}</span><br/> -- Course Name : <span id="courseName">{[{course.courseName}]}</span><br/> -- ID : <span>{[{course._id}]}</span><button ng-click="callback(course)">Add Rubric</button></li>'+
+							'<li>DegreeID : <span id="degreeID">{[{course.degreeID}]}</span><br/>Course Abbreviation : <span id="courseAbbr">{[{course.courseAbbr}]}</span><br/> -- Course Name : <span id="courseName">{[{course.courseName}]}</span><br/> -- ID : <span>{[{course._id}]}</span><button ng-click="callback({course:course})">Add Rubric</button></li>'+
 					  '</ul>'+
 					'</div>'
 		}
 	})
 
+
+	app.directive('degrees', function(){
+		return{
+			restrict: 'E',
+			scope: {
+				payload: '=',
+				callback: '&'
+			},
+			template: 
+				'<div>'+
+				'<ul ng-repeat="degree in payload.degree[0].degrees track by $index">'+
+					'<li>'+
+					'<p ng-click="callback({degree: degree})">{[{degree._id}]}</p>'+
+					'<input ng-hide="true" type="text" ng-model="degreeModel.ID" value="{[{degree._id}]}"/>'+
+					'<p ng-click="callback({degree: degree})">{[{degree.degreeAbbr}]}</p>'+
+					'<p ng-click="callback({degree: degree})">{[{degree.degreeName}]}</p><br/>'+
+					'</li>'+
+				'</ul>'+
+				'</div>'
+		}
+	})
+
+
+	app.directive('addRubrics', function(){
+		return{
+			restrict: 'E',
+			scope: {
+				model: '=',
+				callback: '&'
+			},
+			template:
+			    '<form >'+
+        			'<div class="form-group">'+
+            			'<label>Rubric Name</label>'+
+            			'<input type="text" class="form-control" name="rubricName" ng-model="model.rubricName">'+
+        			'</div>'+
+        			'<div class="form-group">'+
+            			'<label>Rubric Section</label>'+
+           				'<input type="text" class="form-control" name="sectionName" ng-model="model.rubricSections">'+
+        			'</div>'+
+						'<button ng-click="callback()" class="btn btn-warning btn-lg">Create Rubric</button>'+
+    			'</form>'
+		}
+	})
+
 	// Directives End =====================
 	// Services ===========================
+	app.service('myService', function(){
+		var itemArray = [];
+
+		this.getItem = function(){
+			var str = localStorage.getItem('data');
+			itemArray = JSON.parse(str) || itemArray
+			return itemArray
+		}
+
+		this.addItem = function(item){
+			itemArray.push(item);
+		
+		var str = JSON.stringify(itemArray);
+		localStorage.setItem('data', str);
+		}
+	});
+
+	app.service('sendData', function(){
+		var newData = function(args){
+
+		}
+		return newData;
+	})
+
+	// app.service('rubricCourseMerger', function(){
+	// 	var rubricCourse = function(args){
+	// 		this.course = args || {};
+	// 	}
+	// 	return rubricCourse
+	// })
+
 	app.service('degreeGenerator', function(){
 		var degreeGen = function(args){
-			this.degree = args || [];
+			this.degree = args || {};
 		}
 		return degreeGen;
 	});

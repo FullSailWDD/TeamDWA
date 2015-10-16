@@ -3,32 +3,31 @@ module.exports = function(){
 mongoose = require('mongoose');
 
 // Creating the course schema for the DB
-var courseSchema = new mongoose.Schema({
-		degreeID : { type: String, required: false },
-		courseAbbr : String,
-    	courseName : String,
-    	rubricIDs : { type: Array, required: false }
+var rubricSchema = new mongoose.Schema({
+		courseID 		: { type: String, required: false },
+    	rubricName 		: String,
+    	rubricSections  : String
 })
 
 // making our schema a model variable to create new courses using the schema
-_model = mongoose.model('courses', courseSchema);
+_model = mongoose.model('rubrics', rubricSchema);
 
 
 // Add Course ====================
 	_save = function ( req, success, fail ){
-	var newCourse = new _model({
-				degreeID		: req.degreeID._id,
-				courseAbbr  	: req.courseAbbr,
-				courseName 		: req.courseName
+	var newRubric = new _model({
+				courseID		: req.courseID,
+				rubricName 		: req.rubricName,
+				rubricSections  : req.rubricSections
 		});
 	
 
 			// Save to Database
-			newCourse.save( function( err){
+			newRubric.save( function( err){
 				if (err) {
-					console.log('You Suck -- Courses');
+					console.log('You Suck -- Rubrics');
 				}else{
-					console.log('You are Awesome -- Courses');
+					console.log('You are Awesome -- Rubrics');
 				};
     			
   			});
@@ -48,7 +47,7 @@ _model = mongoose.model('courses', courseSchema);
 
 
 return {
-		schema  : courseSchema,
+		schema  : rubricSchema,
 		add 	: _save,
 	    findAll : _findAll
 	   };
