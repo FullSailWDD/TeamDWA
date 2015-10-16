@@ -14,7 +14,7 @@ var app = angular.module('app', ['ngRoute']);
 	        controller: "courseAddedCtrl"
 	    }).when("/addRubric",{
 	        templateUrl: "templates/rubric.html",
-	        controller: "courseGenerator"
+	        controller: "rubricCtrl"
 	    }).otherwise({
 	        redirectTo: "/"
 	    })
@@ -30,14 +30,21 @@ var app = angular.module('app', ['ngRoute']);
 			.then(function(res){
 				// console.log(res.data);
 				$scope.courses = res.data;
-				console.log($scope.courses);
-				console.log($scope.courses.courses)
+				// console.log($scope.courses);
+				// console.log($scope.courses.courses)
 				$scope.courseTile = new courseTileGenerator($scope.courses.courses);
-				console.log($scope.courseTile , '-------------');
+				// console.log($scope.courseTile , '-------------');
 				// console.log($scope.courseTile.course , '+++++++++++++');
 				// console.log($scope.courseTile.course[0] , '@@@@@@@@@@@@@');
 				// console.log($scope.courseTile.course[0].courseName , '^^^^^^^^^^^^^^');
-			});
+
+			});	
+			$scope.addRubric = function(course){
+				console.log(course);
+				$location.path('/addRubric')
+			}
+
+
   			// console.log('wow');
 	}]);
 		// Dashboard Controller End ==========
@@ -64,12 +71,21 @@ var app = angular.module('app', ['ngRoute']);
 				$location.path('/');
 			});
 
+			$scope.addRubric = function(course){
+				$location.path('/addRubric', course)
+				console.log(course.courseName);
+				
+			}
+
 
   			// console.log($scope.courses);
 	}]);
 
 
 	// Course Added Controller Ends ======
+		app.controller('rubricCtrl', ['$scope', '$http', '$routeParams','$location', function($scope, $http, $routeParams, $location){
+	}]);
+
 	// Controllers End ===================
 	// Directives ========================
 	// ng-repeat="course in payload | filter:searchText track by $index"
@@ -84,12 +100,11 @@ var app = angular.module('app', ['ngRoute']);
 				'<input type="text" ng-model="searchText">'+
 					'<div class="courseTile" ng-repeat="course in payload.course | filter:searchText track by $index">'+
 					  '<ul>'+
-						'<li>{[{course[0]}]}</li>'+
-						'<li>Howdy</li>'+
-						'<li>blah</li>'+
-						'<li>blah</li>'+
+						'<li>{[{course.courseName}]}</li>'+
+						'<li>{[{course.courseAbbr}]}</li>'+
+						'<li>{[{course._id}]}</li>'+
 					  '</ul>'+
-						'<button type="submit" ng-click="callback(course)">Submit</button>'+
+						'<button ng-click="callback(course)">Add Rubric</button>'+
 					'</div>'
 		}
 	})
