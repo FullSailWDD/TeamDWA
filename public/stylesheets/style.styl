@@ -1,11 +1,13 @@
 @import 'jeet'
 
 //color variables
+dinoblue = #5B83C2
 lightGreen = #A6CE3D
 darkGreen = #6FBE44
 darkPurple = #2C242F
 darkGrey = #A5A1A1
 lightGrey = #ABA7A7
+rubricRounding = 5px
 
 //custom stuff
 ::-webkit-scrollbar
@@ -151,7 +153,20 @@ body
     *display inline
 
 .rubric
-    color yellow
+    color darkPurple
+    font-family arialround
+    font-size 9px
+    padding 15px 5px
+    background-color dinoblue
+    border-radius rubricRounding rubricRounding rubricRounding rubricRounding
+    -moz-border-radius rubricRounding rubricRounding rubricRounding rubricRounding
+    -webkit-border-radius rubricRounding rubricRounding rubricRounding rubricRounding
+    float left
+    margin-right 8px
+    
+.rubricholder
+    padding-left 103px
+    margin-top -3px
     
 //##############
 //@MEDIA QUERIES

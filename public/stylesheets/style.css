@@ -172,7 +172,20 @@ body {
   *display: inline;
 }
 .rubric {
-  color: #ff0;
+  color: #2c242f;
+  font-family: arialround;
+  font-size: 9px;
+  padding: 15px 5px;
+  background-color: #5b83c2;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  float: left;
+  margin-right: 8px;
+}
+.rubricholder {
+  padding-left: 103px;
+  margin-top: -3px;
 }
 @media (min-width: 1px) {
   .dashresults {

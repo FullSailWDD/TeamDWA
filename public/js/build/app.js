@@ -94,8 +94,12 @@ var app = angular.module('app', ['ngRoute']);
    '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
     '<li>'+
             '<p class="degreeAbbr">WDD<span class="degreeName">Web Design and Development</span></p>'+
-            '<p class="rubric"></p>'+
             '<p id="courseAbbr" class="courseAbbr">{[{course.courseAbbr}]}<span id="courseName" class="courseName">{[{course.courseName}]}</span></p>'+
+            '<div class="rubricholder">'+
+            '<p class="rubric">Welcome to DWP!</p>'+
+            '<p class="rubric">Professionalism</p>'+
+            '<p class="rubric">Development Guidelines</p>'+
+            '</div>'+
             '<p class="hideme">{[{course._id}]}</p>'+
             '<button ng-click="callback(course)">Add Rubric</button></li>'+
   '</ul>'+	
