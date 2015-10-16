@@ -45,6 +45,13 @@
                 res.send(JSON.stringify({degrees: result}, null, 3));
             });    
        });
+
+        app.post('/getRubrics', isLoggedIn, function (req, res) {
+            degrees = require('../models/degrees.js');
+            allDegrees = degrees.findAll(function(result){
+                res.send(JSON.stringify({degrees: result}, null, 3));
+            });    
+       });
     // -------------------------------------------------------------
     // Add Course JSON Route - Receiving Data From Angular 
          app.post('/addCourseJSON', isLoggedIn, function (req, res) {

@@ -4,10 +4,12 @@ mongoose = require('mongoose');
 
 // Creating the course schema for the DB
 var courseSchema = new mongoose.Schema({
-		degreeID : { type: String, required: false },
-		courseAbbr : String,
-    	courseName : String,
-    	rubricIDs : { type: Array, required: false }
+		degreeID    : { type: String, required: false },
+		degreeName  : { type: String, required: false },
+		degreeAbbr  : { type: String, required: false },
+		courseAbbr  : String,
+    	courseName  : String,
+    	rubricIDs   : { type: Array, required: false }
 })
 
 // making our schema a model variable to create new courses using the schema
@@ -18,6 +20,8 @@ _model = mongoose.model('courses', courseSchema);
 	_save = function ( req, success, fail ){
 	var newCourse = new _model({
 				degreeID		: req.degreeID._id,
+				degreeName      : req.degreeID.degreeName,
+				degreeAbbr	    : req.degreeID.degreeAbbr,
 				courseAbbr  	: req.courseAbbr,
 				courseName 		: req.courseName
 		});
