@@ -1,12 +1,9 @@
 module.exports = function (app, passport) {
 
-	// HOME =========================
+	// HOME =========================	
 
-    var  course  = require('../models/course.js');	
-
-
-    app.get('/', function (req, res) {
-        res.render('index');
+	app.get('/', function (req, res) {
+        res.render('homepage');
     });    
 
 	// LOGOUT =========================
@@ -24,12 +21,16 @@ module.exports = function (app, passport) {
             failureFlash : true // allow flash messages
     }));
 
-	// // SIGNUP =========================
+	// SIGNUP =========================
 
     // LOGIN =========================
 
+    app.get('/login', function (req, res) {
+        res.render('login');
+        console.log(res);
+    });
 
-     	// process the login form
+    	// process the login form
         app.post('/login', passport.authenticate('local-login', {
             successRedirect : '/dashboard', // redirect to the secure profile section
             failureRedirect : '/login', // redirect back to the signup page if there is an error
@@ -37,13 +38,17 @@ module.exports = function (app, passport) {
 
         }));
 
-	// // LOGIN =========================
+	// LOGIN =========================
 
     // DASHBOARD =========================
     app.get('/dashboard', isLoggedIn, function (req, res) {
         res.render('dashboard');
     });
 
+    // app.get('/findCourse', function (req, res){
+    //     res.render('dashboard');
+      
+    // });
 
     app.post('/addCourse',function(req, res){
 	course.addCourse(req, res);
@@ -55,7 +60,7 @@ module.exports = function (app, passport) {
     app.post('/jsonReceive', function(req, res){
  		var theCourse = course.findCourse(function(result){
  			// console.log(result);
- 		res.send(JSON.stringify({course: result}, null, 3));
+ 			res.send(JSON.stringify({course: result}, null, 3));
  		});
  		// console.log(theCourse);
     });

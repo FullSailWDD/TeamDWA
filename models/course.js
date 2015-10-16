@@ -2,31 +2,63 @@
     //var db 			= require('../config/db.js'),
         
     var courseSchema = new mongoose.Schema({
-// WATCH OUT FOR THE ARRAYS OF OBJECTS -----------------------
+
             Degrees: {
             	degreeAbbr : String,
                 degreeName : String,
                 courses : {
                     courseAbbr : String,
                     courseName : String,
-                    rubrics : [{
+                    rubrics : {
                         rubricName : String,
-                        sections : [{
+                        sections : {
                             sectionName : String,
                             sectionWeight : Number,
-                            items : [{
+                            items : {
                                 itemName : String,
                                 itemWiki : String,
                                 itemComment : String,
                                 gradeOptions : Array
-                            }]
-                        }]
-                    }]
+                            }
+                        }
+                    }
                 }
             }
 	}, {strict : false});
 
 	_model = mongoose.model('course', courseSchema);
+
+// 					ADD COURSE 				       //
+//================================================//
+
+	exports.addCourse = function ( req, res ){
+		console.log('degree name ', req.body.degreeName, 'course code ', req.body.courseCode, 'course title ', req.body.courseTitle);
+		// console.log(req.body);
+ 
+		var course = new _model({
+            Degrees: {
+                degreeAbbr: '',
+                degreeName : '',
+                courses : {
+                    courseAbbr : req.body.courseCode,
+                    courseName : req.body.courseTitle,
+                    rubrics : {
+                        rubricName : '',
+                        sections : {
+                            sectionName : '',
+                            sectionWeight : null,
+                            items : {
+                                itemName : '',
+                                itemWiki : '',
+                                itemComment : '',
+                                gradeOptions : [100, 75, 50, 0]
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
 
 
 // 					ADD COURSE 				       //
@@ -58,7 +90,7 @@
   			};
 
 
-
+	};
 
 
 // 					FIND COURSE 			       //
@@ -78,7 +110,9 @@
 
     exports.createRubric = function ( req, res ){
 
-	var rubric = new _model({
+    	console.log(req);
+
+	var course = new _model({
 
 		rubricName  	: req.body.rubricName,
 		sectionName 	: req.body.sectionName,
@@ -86,7 +120,7 @@
 
     	});
 		// Save to Database NOT SAVE BUT UPDATE 
-		rubric.insert(function( err){
+		course.update( function( err){
 			if (err) {
 				console.log('err err saving');
 			}else{

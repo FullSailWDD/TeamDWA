@@ -6,6 +6,7 @@ var express 	     = require('express'),
  	  http 		       = require('http'),
  	  cookieParser   = require('cookie-parser'),
     session        = require('express-session'),
+    course         = require('./models/course.js'),
     passport       = require('passport'),
     mongoose	     = require('mongoose'),
  	  exphbs 		     = require('express-handlebars'),
@@ -34,9 +35,9 @@ app.set('view engine', 'handlebars');
 // static file folders
 // =============================================================================
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'bower_components')));
 
-app.use(express.static(path.join(__dirname, 'bower_components')));  
-
+app.set('views', path.join(__dirname, 'views'));
 
 // bodyparser
 // =============================================================================
