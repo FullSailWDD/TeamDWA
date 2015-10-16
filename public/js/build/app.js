@@ -96,9 +96,9 @@ var app = angular.module('app', ['ngRoute']);
             '<p class="degreeAbbr">WDD<span class="degreeName">Web Design and Development</span></p>'+
             '<p id="courseAbbr" class="courseAbbr">{[{course.courseAbbr}]}<span id="courseName" class="courseName">{[{course.courseName}]}</span></p>'+
             '<div class="rubricholder">'+
-            '<p class="rubric">Welcome to DWP!</p>'+
-            '<p class="rubric">Professionalism</p>'+
-            '<p class="rubric">Development Guidelines</p>'+
+            '<p class="rubric">Welcome to DWP!Welcome to DWP!Welcome to DWP!Welcome to DWP!Welcome to DWP!Welcome to DWP!</p>'+
+            '<p class="rubric">ProfessionalismWelcome to DWP!Welcome to DWP!Welcome to DWP!Welcome to DWP!Welcome to DWP!</p>'+
+            '<p class="rubric">Development GuidelinesWelcome to DWP!Welcome to DWP!Welcome to DWP!Welcome to DWP!</p>'+
             '</div>'+
             '<p class="hideme">{[{course._id}]}</p>'+
             '<button ng-click="callback(course)">Add Rubric</button></li>'+
