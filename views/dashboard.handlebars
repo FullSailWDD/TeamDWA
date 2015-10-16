@@ -1,2 +1,85 @@
-<div ng-view></div> 
-
+<div class="dashboard">
+    <div ng-app='app'>
+        <!--fixed interface-->
+        <img class="bg bgtop" src="img/bg-top-long.png">
+        <img class="bg bgcorner" src="img/bg-corner.png">
+        <img class="bg bgright" src="img/bg-right.png">
+        <!--header-->
+        <img class="header headerlogo" src="img/header-logo.png">
+        <a class="logoutbutton" href="/logout">logout</a>
+        <div class="dashbody">
+            <!--search-->
+            <div class="dashsearchcontainer">
+                <input class="dashsearch" type="text" name="search" size="35" placeholder="Search for a Degree, Course or Rubric">
+            </div>
+            <!--results test-->
+            <div class="dashresults">
+                <ul>
+                    <li>
+                        <p>hello</p>
+                    </li>
+                    <li>
+                        <p>hello</p>
+                    </li>
+                    <li>
+                        <p>hello</p>
+                    </li>
+                    <li>
+                        <p>hello</p>
+                    </li>
+                    <li>
+                        <p>hello</p>
+                    </li>
+                    <li>
+                        <p>hello</p>
+                    </li>
+                    <li>
+                        <p>hello</p>
+                    </li>
+                    <li>
+                        <p>hello</p>
+                    </li>
+                    <li>
+                        <p>hello</p>
+                    </li>
+                    <li>
+                        <p>hello</p>
+                    </li>
+                    <li>
+                        <p>hello</p>
+                    </li>
+                    <li>
+                        <p>hello</p>
+                    </li>
+                </ul>
+            </div>
+            <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+            <h1>courses</h1>
+            <form action="/addCourse" method="post">
+                <div class="form-group">
+                    <label>Degree</label>
+                    <select name="degreeName">
+                    <option value="" selected>---Select Option---</option>
+                    <option value="Recording Arts">Recording Arts</option>
+                    <option value="Web Design">Web Design</option>
+                    <option value="Mobile Technology">Mobile Technology</option>
+                    <option value="Graphic Design">Graphic Design</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Course Title</label>
+                    <input type="text" class="form-control" name="courseTitle">
+                </div>
+                <div class="form-group">
+                    <label>Course Code</label>
+                    <input type="text" class="form-control" name="courseCode">
+                </div>
+                <button type="submit" class="btn btn-warning btn-lg">Add Course</button>
+            </form>
+            <a href='http://www.youtube.com'> click here</a>
+            <div ng-controller="courseGenerator"> 
+                <courses data-payload='courseGeneratorData' data-callback='addRubric(course)'></courses>
+            </div>
+        </div>
+    </div>
+</div>

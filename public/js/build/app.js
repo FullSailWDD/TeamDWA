@@ -81,7 +81,7 @@ var app = angular.module('app', ['ngRoute']);
 			}, 
 			template: 
 				'<input type="text" ng-model="searchText">'+
-					'<div>'+
+					'<div class="courseTile" ng-repeat="course in payload | filter:searchText track by $index">'+
 					  '<ul>'+
 						'<li>Hello</li>'+
 						'<li>Howdy</li>'+
@@ -89,7 +89,7 @@ var app = angular.module('app', ['ngRoute']);
 						'<li>blah</li>'+
 					  '</ul>'+
 						'<button type="submit" ng-click="callback(course)">Submit</button>'+
-					'</div>'
+					'</div>'+
 		}
 	})
 
