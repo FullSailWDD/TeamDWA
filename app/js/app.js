@@ -101,7 +101,7 @@ var app = angular.module('app', ['ngRoute']);
             '<p class="rubric">Development GuidelinesWelcome to DWP!Welcome to DWP!Welcome to DWP!Welcome to DWP!</p>'+
             '</div>'+
             '<p class="hideme">{[{course._id}]}</p>'+
-            '<button ng-click="callback(course)">Add Rubric</button></li>'+
+            '<button class="addrubric" ng-click="callback(course)">+</button></li>'+
   '</ul>'+	
 '</div>'
             

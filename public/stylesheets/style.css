@@ -191,6 +191,20 @@ body {
   padding-left: 103px;
   margin-top: -3px;
 }
+.addrubric {
+  display: inline-block;
+  cursor: pointer;
+  font-family: arialround;
+  font-size: 16px;
+}
+.addrubric background-color red {
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+}
+.addrubric padding 0px 5px {
+  border: none;
+}
 @media (min-width: 1px) {
   .dashresults {
     display: none;
