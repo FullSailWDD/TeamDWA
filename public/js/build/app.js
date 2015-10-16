@@ -50,6 +50,7 @@ var app = angular.module('app', ['ngRoute'])
 					$scope.degrees = myService.getItem();
 					// console.log($scope.degrees);
 					$scope.courses = res.data;
+					console.log($scope.courses);
 					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
 					$scope.degreesData = new degreeGenerator($scope.degrees);
 					// console.log($scope.degreesData);
