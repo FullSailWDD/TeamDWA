@@ -90,7 +90,7 @@ var app = angular.module('app', ['ngRoute']);
 '<div class="dashsearchcontainer">'+
     '<input class="dashsearch" type="text" name="search" size="35" placeholder="Search for a Degree, Course or Rubric" ng-model="searchText">'+
 '</div>'+
-'<div class="dashresults" >'+
+'<div class="dashresults">'+
    '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
     '<li>'+
             '<p class="degreeAbbr">WDD<span class="degreeName">Web Design and Development</span></p>'+
@@ -101,8 +101,10 @@ var app = angular.module('app', ['ngRoute']);
             '<p class="rubric">Development GuidelinesWelcome to DWP!Welcome to DWP!Welcome to DWP!Welcome to DWP!</p>'+
             '</div>'+
             '<p class="hideme">{[{course._id}]}</p>'+
-            '<button class="addrubric" ng-click="callback(course)">+</button></li>'+
-  '</ul>'+	
+            '<button class="addrubric" ng-click="callback(course)">+</button>'+
+            '<img class="dots" width="20" src="img/dots.png">'+
+            '</li>'+
+  '</ul>'+
 '</div>'
             
 		}

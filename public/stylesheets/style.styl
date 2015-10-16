@@ -29,14 +29,15 @@ rubricRounding = 5px
 @font-face
     font-family arialround
     src url("../fonts/arialround.ttf")
-
+    
+//main style
 body
     color darkPurple
     background-color lightGreen
     
 .dashboard
-    background-image: url("../img/ui-background.png");
-    background-repeat: repeat;
+    background-image url("../img/ui-background.png")
+    background-repeat repeat
     min-height 2000px
     
 .bg
@@ -73,14 +74,7 @@ body
     font-size 24px
     cursor pointer
     
-.dashsearch
-    font-size 32px
-    outline none
-    background-color lightGrey
-    border none
-    padding 5px 20px
-    color darkPurple
-    
+//logout button style
 .logoutbutton:link
     color darkPurple
 .logoutbutton:visited
@@ -89,13 +83,41 @@ body
     color darkPurple
 .logoutbutton:active
     color darkPurple
-
+    
+//search area
+.dashsearch
+    font-size 32px
+    outline none
+    background-color lightGrey
+    border none
+    padding 5px 20px
+    color darkPurple
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        display none
+    @media screen and (min-width: 790px) and (max-width: 1149px)
+        display initial
+        font-size 24px
+    @media screen and (min-width: 1150px) and (max-width: 1599px)
+        display initial
+    @media screen and (min-width: 1600px)
+        display initial
+    
+//results div
 .dashresults
-    col (2/3)
-    center 955px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        display none
+    @media screen and (min-width: 790px) and (max-width: 1149px)
+        display initial
+        center(450px)
+    @media screen and (min-width: 1150px) and (max-width: 1599px)
+        display initial
+        center(955px)
+    @media screen and (min-width: 1600px)
+        display initial
+        center(1450px)
     
 .dashresults li
-    background-image: url("../img/result-bg.png")
+    background-image url("../img/result-bg.png")
     height 129px
     width 450px
     padding-right 26px
@@ -185,55 +207,23 @@ body
 	padding 0px 5px
     border none
     
-//##############
-//@MEDIA QUERIES
-//##############
+.dots
+    margin-right 8px
+    padding-left 3px
 
-//mobile
-@media (min-width: 1px)
-    .dashresults
-        display none
-    .dashsearchcontainer
-        display none
-        
-//before mobile
-@media (min-width: 790px)    
-    .dashsearch
-        font-size 27px
-    .dashresults
-        col(2/3)
-        center 450px
-        display block
-    .dashsearchcontainer
-        display block
-        
-//shorten search
-@media (min-width: 850px)
-    .dashresults
-        col(2/3)
-        center 450px
-    .dashsearch
-        font-size 27px
-        
-//desktop
-@media (min-width: 1150px)
-    .dashresults
-        col(2/3)
-        center 955px
-    .dashsearch
-        font-size 32px
-        
-//large desktop
-@media (min-width: 1600px)
-    .dashresults
-        col(7/8)
-        center 1450px
-    .dashsearch
-        font-size 32px
-        
 //############
 //util classes
 //############
 
 .hideme
     display none
+    
+//.fixme
+//    display none
+    
+//##########
+//!IMPORTANTS
+//##########
+    
+//.dashresults:last-child
+//    margin-right 0%
