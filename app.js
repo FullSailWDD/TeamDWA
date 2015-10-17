@@ -14,8 +14,6 @@ var app            		= express();
 
 
 app.set('port', process.env.PORT || 3000); // Setting the Port
-var configDB		= require('./config/db.js');
-mongoose.connect(configDB.url); // connect to our database
 require('./config/passport')(passport); // Passport Config File
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'})); // view Engine

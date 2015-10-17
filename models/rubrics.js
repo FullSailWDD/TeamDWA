@@ -1,6 +1,7 @@
 module.exports = function(){
 // declaring mongoose in the model
-mongoose = require('mongoose');
+  var db = require('../config/db.js'),
+ 	  mongoose    = require('mongoose');  
 
 // Creating the course schema for the DB
 var rubricSchema = new mongoose.Schema({
@@ -10,24 +11,28 @@ var rubricSchema = new mongoose.Schema({
 })
 
 // making our schema a model variable to create new courses using the schema
-_model = mongoose.model('rubrics', rubricSchema);
+var _model = mongoose.model('rubrics', rubricSchema);
 
 
 // Add Course ====================
 	_save = function ( req, success, fail ){
+		console.log(req, '-----------');
+		console.log(req.courseID, '----------');
 	var newRubric = new _model({
 				courseID		: req.courseID,
 				rubricName 		: req.rubricName,
 				rubricSections  : req.rubricSections
 		});
-	
-
+		
+		console.log(newRubric);
 			// Save to Database
-			newRubric.save( function( err){
+			newRubric.save( function(err){
 				if (err) {
 					console.log('You Suck -- Rubrics');
+					fail(err);
 				}else{
 					console.log('You are Awesome -- Rubrics');
+					success(newRubric);
 				};
     			
   			});

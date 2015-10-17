@@ -1,7 +1,4 @@
 var app = angular.module('app', ['ngRoute'])
-		.run(function($rootScope){
-			$rootScope.test = "Hello World!";
-		})
 		app.config(['$interpolateProvider','$routeProvider', function ($interpolateProvider, $routeProvider){
 		$interpolateProvider.startSymbol('{[{');
 		$interpolateProvider.endSymbol('}]}');
@@ -9,7 +6,10 @@ var app = angular.module('app', ['ngRoute'])
 		$routeProvider.when("/",{
 			templateUrl: "templates/dashboard.html",
 	        controller: "getDegreesCtrl"
-		}).when("/dashboard",{
+		}).when("/getRubrics",{
+	        templateUrl: "templates/dashboard.html",
+	        controller: "getRubricsCtrl"
+	    }).when("/dashboard",{
 	        templateUrl: "templates/dashboard.html",
 	        controller: "dashboardCtrl"
 	    }).when("/addCourse",{
@@ -24,6 +24,9 @@ var app = angular.module('app', ['ngRoute'])
 	    }).when("/addRubric",{
 	        templateUrl: "templates/rubric.html",
 	        controller: "rubricCtrl"
+	    }).when("/studentAudit",{
+	        templateUrl: "templates/rubricAudit.html",
+	        controller: "rubricAudit"
 	    }).when("/createRubric",{
 	        templateUrl: "templates/dashboard.html",
 	        controller: "rubricCreateCtrl"
@@ -39,6 +42,13 @@ var app = angular.module('app', ['ngRoute'])
 			$http.post('/getDegrees', $scope.allDegrees)
 				.then(function(res){
 					myService.addItem(res.data);
+					$location.path('/getRubrics');
+			});
+	}]);
+	app.controller('getRubricsCtrl', ['$scope', '$rootScope', '$http','$location', function($scope, $rootScope, $http, $location){
+			$http.post('/getRubrics', $scope.allRubrics)
+				.then(function(res){
+					$rootScope.rootRubrics = res.data;
 					$location.path('/dashboard');
 			});
 	}]);
@@ -47,8 +57,10 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.courses = {};
 			$http.post('/getDashboard', $scope.allCourses)
 				.then(function(res){
+					// console.log($scope.rootRubrics.rubrics);
+					$scope.courseRubrics = $scope.rootRubrics.rubrics;
 					$scope.degrees = myService.getItem();
-					// console.log($scope.degrees);
+					// console.log($scope.courseRubrics);
 					$scope.courses = res.data;
 					$scope.degreesData = new degreeGenerator($scope.degrees);
 					// $scope.courses.courses.degreeData = $scope.degreesData.degree[0].degrees;
@@ -56,6 +68,12 @@ var app = angular.module('app', ['ngRoute'])
 					
 					console.log($scope.courses.courses);
 			});
+
+			$scope.select = function(rubric){
+				$rootScope.rubric = rubric;
+				$location.path('/studentAudit');
+				console.log($rootScope.rubric);
+			}
 
 			$scope.addRubric = function(course){
 				$rootScope.test = course;
@@ -93,16 +111,10 @@ var app = angular.module('app', ['ngRoute'])
 				console.log($scope.newRubric);
 				$http.post('/addRubric', $scope.newRubric);
 
-				$location.path('/createRubric');
+				$location.path('/');
 			}
 			// console.log($scope.newRubric);
 			
-	}]);
-
-	app.controller('rubricCreateCtrl', ['$scope', '$rootScope', '$http', '$routeParams','$location', function($scope, $rootScope, $http, $routeParams, $location){
-			// $scope.newRubric = {};
-				// console.log($scope.newRubric);
-
 	}]);
 
 	// Controllers End ===================
@@ -114,8 +126,9 @@ var app = angular.module('app', ['ngRoute'])
 		return {
 			restrict: 'E',
 			scope: {
-				// rubrics: '=',
+				rubrics: '=',
 				payload: '=',
+				rubricSelect: '&',
 				callback: '&'
 			}, 
 			template: 
@@ -124,14 +137,14 @@ var app = angular.module('app', ['ngRoute'])
 				'</div>'+	
 					'<div class="dashresults" >'+
 					  '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
-						'<li>'+
-							'-- DegreeID : <span id="degreeID">{[{course.degreeID}]}</span><br/>'+
-							'-- Degree Abbreviation : <span id="degreeID">{[{course.degreeAbbr}]}</span><br/>'+
-							'-- Degree Name : <span id="degreeID">{[{course.degreeName}]}</span><br/>'+
-							'-- Course Abbreviation : <span id="courseAbbr">{[{course.courseAbbr}]}</span><br/>'+
-							'-- Course Name : <span id="courseName">{[{course.courseName}]}</span><br/>'+
-							'-- ID : <span>{[{course._id}]}</span>'+
-							'<button ng-click="callback({course:course})">Add Rubric</button>'+
+							'<li>DegreeID : <span id="degreeID">{[{course.degreeID}]}</span><br/>'+
+							'DegreeName : <span id="degreeID">{[{course.degreeName}]}</span><br/>'+
+							'DegreeAbbr : <span id="degreeID">{[{course.degreeAbbr}]}</span><br/>'+
+							'Course Abbreviation : <span id="courseAbbr">{[{course.courseAbbr}]}</span><br/>'+
+							' -- Course Name : <span id="courseName">{[{course.courseName}]}</span><br/>'+
+							' -- ID : <span>{[{course._id}]}</span><br/>'+
+							' -- Rubrics : <span ng-repeat="theRubrics in rubrics"><div ng-click="rubricSelect({theRubrics: theRubrics})" ng-if="course._id == theRubrics.courseID">{[{theRubrics}]}</div></span><br/>'+
+							'<button ng-click="callback({course:course})">Add Rubric</button></li>'+
 						'</li>'+
 					  '</ul>'+
 					'</div>'
