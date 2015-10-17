@@ -22,9 +22,9 @@ var _model = mongoose.model('courses', courseSchema);
 // Add Course ====================
 	_save = function ( req, success, fail ){
 	var newCourse = new _model({
-				degreeID		: req._id,
-				degreeName      : req.degreeName,
-				degreeAbbr	    : req.degreeAbbr,
+				degreeID		: req.degreeID._id,
+				degreeName      : req.degreeID.degreeName,
+				degreeAbbr	    : req.degreeID.degreeAbbr,
 		});
 	
 
