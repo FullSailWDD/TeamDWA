@@ -27,6 +27,9 @@ var app = angular.module('app', ['ngRoute'])
 	    }).when("/addRubric",{
 	        templateUrl: "templates/rubric.html",
 	        controller: "rubricCtrl"
+	    }).when("/studentAudit",{
+	        templateUrl: "templates/rubricAudit.html",
+	        controller: "rubricAudit"
 	    }).when("/createRubric",{
 	        templateUrl: "templates/dashboard.html",
 	        controller: "rubricCreateCtrl"
@@ -60,13 +63,19 @@ var app = angular.module('app', ['ngRoute'])
 					// console.log($scope.rootRubrics.rubrics);
 					$scope.courseRubrics = $scope.rootRubrics.rubrics;
 					$scope.degrees = myService.getItem();
-					console.log($scope.courseRubrics);
+					// console.log($scope.courseRubrics);
 					$scope.courses = res.data;
 					// console.log($scope.courses);
 					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
 					$scope.degreesData = new degreeGenerator($scope.degrees);
 					// console.log($scope.degreesData);
 			});
+
+			$scope.select = function(rubric){
+				$rootScope.rubric = rubric;
+				$location.path('/studentAudit');
+				console.log($rootScope.rubric);
+			}
 
 			$scope.addRubric = function(course){
 				$rootScope.test = course;
@@ -111,12 +120,6 @@ var app = angular.module('app', ['ngRoute'])
 			
 	}]);
 
-	app.controller('rubricCreateCtrl', ['$scope', '$rootScope', '$http', '$routeParams','$location', function($scope, $rootScope, $http, $routeParams, $location){
-			// $scope.newRubric = {};
-				// console.log($scope.newRubric);
-
-	}]);
-
 	// Controllers End ===================
 	// Directives ========================
 
@@ -128,6 +131,7 @@ var app = angular.module('app', ['ngRoute'])
 			scope: {
 				rubrics: '=',
 				payload: '=',
+				rubricSelect: '&',
 				callback: '&'
 			}, 
 			template: 
@@ -142,7 +146,7 @@ var app = angular.module('app', ['ngRoute'])
 							'Course Abbreviation : <span id="courseAbbr">{[{course.courseAbbr}]}</span><br/>'+
 							' -- Course Name : <span id="courseName">{[{course.courseName}]}</span><br/>'+
 							' -- ID : <span>{[{course._id}]}</span><br/>'+
-							' -- Rubrics : <span ng-repeat="theRubrics in rubrics"><div ng-if="course._id == theRubrics.courseID">{[{theRubrics}]}</div></span><br/>'+
+							' -- Rubrics : <span ng-repeat="theRubrics in rubrics"><div ng-click="rubricSelect({theRubrics: theRubrics})" ng-if="course._id == theRubrics.courseID">{[{theRubrics}]}</div></span><br/>'+
 							'<button ng-click="callback({course:course})">Add Rubric</button></li>'+
 					  '</ul>'+
 					'</div>'
