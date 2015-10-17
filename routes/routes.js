@@ -32,36 +32,46 @@
        });
     // -------------------------------------------------------------
     // Json Receive Route - Sending Data to Angular
-        app.post('/getDashboard', isLoggedIn, function (req, res) {
-            courses   = require('../models/courses.js');
+
+        app.post('/getDashboard',  function (req, res) {
+            courses = require('../models/courses.js');
             allCourse = courses.findAll(function(result){
                 res.send(JSON.stringify({courses: result}, null, 3));
             });
         });
 
-        app.post('/getDegrees', isLoggedIn, function (req, res) {
+        app.post('/getDegrees',  function (req, res) {
             degrees = require('../models/degrees.js');
             allDegrees = degrees.findAll(function(result){
                 res.send(JSON.stringify({degrees: result}, null, 3));
             });    
        });
+
+        app.post('/getRubrics', function (req, res) {
+            rubrics = require('../models/rubrics.js');
+            allrubrics = rubrics.findAll(function(result){
+                res.send(JSON.stringify({rubrics: result}, null, 3));
+            });    
+       });
     // -------------------------------------------------------------
     // Add Course JSON Route - Receiving Data From Angular 
+
          app.post('/addCourseJSON', isLoggedIn, function (req, res) {
-                console.log(req.body);
                 courses = require('../models/courses.js');
-                
-                courses.add(req.body, function(doc){
-                    //send to moca 
-                });
-            
-       });
-          app.post('/addRubric', isLoggedIn, function (req, res) {
-                rubrics = require('../models/rubrics.js');
                 console.log(req.body);
-                rubrics.add(req.body);
+                courses.add(req.body, function(doc){
+                    res.send(doc);
+                });
 
             
+       });
+          app.post('/addRubric', function (req, res) {
+                rubrics = require('../models/rubrics.js');
+                console.log(req.body);
+                rubrics.add(req.body, function(doc){
+                    res.send(doc);
+                }); 
+
        });
     // -------------------------------------------------------------
 

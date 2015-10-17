@@ -7,7 +7,6 @@ var 	express 	    = require('express'),
     	mongoose	    = require('mongoose'),
  	  	exphbs 		    = require('express-handlebars'),
 	  	path 		    = require('path');
-	  	// master			= require('./models/masterModel.js');
 
 var app            		= express();
 

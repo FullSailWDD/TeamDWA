@@ -1,5 +1,7 @@
 module.exports = function(){
-	mongoose = require('mongoose');
+
+var db = require('../config/db.js'),
+    mongoose    = require('mongoose');
 	// Requiring outside models for use
 	courses			= require('./courses.js');
 	degrees			= require('./degrees.js');
