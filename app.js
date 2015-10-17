@@ -4,6 +4,7 @@ var 	express 	    = require('express'),
  	  	cookieParser   	= require('cookie-parser'),
     	session        	= require('express-session'),
     	passport       	= require('passport'),
+    	flash     		= require('flash'),
     	mongoose	    = require('mongoose'),
  	  	exphbs 		    = require('express-handlebars'),
 	  	path 		    = require('path');
