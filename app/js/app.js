@@ -48,7 +48,7 @@ var app = angular.module('app', ['ngRoute'])
 					$location.path('/getRubrics');
 			});
 	}]);
-	app.controller('getRubricsCtrl', ['$scope', '$rootScope', '$http','$location', function($scope, $rootScope, $http, $routeParams, $location, myService){
+	app.controller('getRubricsCtrl', ['$scope', '$rootScope', '$http','$location', function($scope, $rootScope, $http, $location){
 			$http.post('/getRubrics', $scope.allRubrics)
 				.then(function(res){
 					$rootScope.rootRubrics = res.data;
