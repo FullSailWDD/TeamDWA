@@ -41,6 +41,16 @@ var _model = mongoose.model('degree', degreeSchema);
 			}
 		})
 	}
+	_findOne = function(id ,success, fail){
+		objectID = 'ObjectId("'+id+'")';
+		_model.findOne({'_id': objectID}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				success(doc);
+			}
+		})
+	}
 // Find All Degrees End ============
 // Modify To Add Course ID =========
 	// _courseID = function(){
@@ -54,6 +64,7 @@ var _model = mongoose.model('degree', degreeSchema);
 return {
 		schema  : degreeSchema,
 		add 	: _save,
-	    findAll : _findAll
+	    findAll : _findAll,
+	    findOne : _findOne
 	   };
 }();

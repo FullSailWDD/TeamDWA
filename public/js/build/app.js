@@ -65,10 +65,16 @@ var app = angular.module('app', ['ngRoute'])
 					$scope.degrees = myService.getItem();
 					// console.log($scope.courseRubrics);
 					$scope.courses = res.data;
+<<<<<<< HEAD
 					// console.log($scope.courses);
 					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
+=======
+>>>>>>> 616df92b5d16dedb2582f80b9363f4a53e07d9cc
 					$scope.degreesData = new degreeGenerator($scope.degrees);
-					// console.log($scope.degreesData);
+					// $scope.courses.courses.degreeData = $scope.degreesData.degree[0].degrees;
+					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
+					
+					console.log($scope.courses.courses);
 			});
 
 			$scope.select = function(rubric){
@@ -95,7 +101,6 @@ var app = angular.module('app', ['ngRoute'])
 			if(!$scope.newCourse.degreeID){
 				console.log('Error');
 			}else{
-			
 			console.log($scope.newCourse);
 			$http.post('/addCourseJSON', $scope.newCourse);
 			$location.path('/dashboard');
@@ -129,7 +134,11 @@ var app = angular.module('app', ['ngRoute'])
 		return {
 			restrict: 'E',
 			scope: {
+<<<<<<< HEAD
 				rubrics: '=',
+=======
+				// rubrics: '=',
+>>>>>>> 616df92b5d16dedb2582f80b9363f4a53e07d9cc
 				payload: '=',
 				rubricSelect: '&',
 				callback: '&'
@@ -140,6 +149,7 @@ var app = angular.module('app', ['ngRoute'])
 				'</div>'+	
 					'<div class="dashresults" >'+
 					  '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
+<<<<<<< HEAD
 							'<li>DegreeID : <span id="degreeID">{[{course.degreeID}]}</span><br/>'+
 							'DegreeName : <span id="degreeID">{[{course.degreeName}]}</span><br/>'+
 							'DegreeAbbr : <span id="degreeID">{[{course.degreeAbbr}]}</span><br/>'+
@@ -148,6 +158,17 @@ var app = angular.module('app', ['ngRoute'])
 							' -- ID : <span>{[{course._id}]}</span><br/>'+
 							' -- Rubrics : <span ng-repeat="theRubrics in rubrics"><div ng-click="rubricSelect({theRubrics: theRubrics})" ng-if="course._id == theRubrics.courseID">{[{theRubrics}]}</div></span><br/>'+
 							'<button ng-click="callback({course:course})">Add Rubric</button></li>'+
+=======
+						'<li>'+
+							'-- DegreeID : <span id="degreeID">{[{course.degreeID}]}</span><br/>'+
+							'-- Degree Abbreviation : <span id="degreeID">{[{course.degreeAbbr}]}</span><br/>'+
+							'-- Degree Name : <span id="degreeID">{[{course.degreeName}]}</span><br/>'+
+							'-- Course Abbreviation : <span id="courseAbbr">{[{course.courseAbbr}]}</span><br/>'+
+							'-- Course Name : <span id="courseName">{[{course.courseName}]}</span><br/>'+
+							'-- ID : <span>{[{course._id}]}</span>'+
+							'<button ng-click="callback({course:course})">Add Rubric</button>'+
+						'</li>'+
+>>>>>>> 616df92b5d16dedb2582f80b9363f4a53e07d9cc
 					  '</ul>'+
 					'</div>'
 		}

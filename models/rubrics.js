@@ -47,6 +47,7 @@ var _model = mongoose.model('rubrics', rubricSchema);
 			}
 		})
 	}
+	
 // Find All Courses End ============
 
 

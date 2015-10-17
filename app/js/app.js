@@ -65,10 +65,11 @@ var app = angular.module('app', ['ngRoute'])
 					$scope.degrees = myService.getItem();
 					// console.log($scope.courseRubrics);
 					$scope.courses = res.data;
-					// console.log($scope.courses);
-					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
 					$scope.degreesData = new degreeGenerator($scope.degrees);
-					// console.log($scope.degreesData);
+					// $scope.courses.courses.degreeData = $scope.degreesData.degree[0].degrees;
+					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
+					
+					console.log($scope.courses.courses);
 			});
 
 			$scope.select = function(rubric){
@@ -95,7 +96,6 @@ var app = angular.module('app', ['ngRoute'])
 			if(!$scope.newCourse.degreeID){
 				console.log('Error');
 			}else{
-			
 			console.log($scope.newCourse);
 			$http.post('/addCourseJSON', $scope.newCourse);
 			$location.path('/dashboard');
@@ -148,6 +148,7 @@ var app = angular.module('app', ['ngRoute'])
 							' -- ID : <span>{[{course._id}]}</span><br/>'+
 							' -- Rubrics : <span ng-repeat="theRubrics in rubrics"><div ng-click="rubricSelect({theRubrics: theRubrics})" ng-if="course._id == theRubrics.courseID">{[{theRubrics}]}</div></span><br/>'+
 							'<button ng-click="callback({course:course})">Add Rubric</button></li>'+
+						'</li>'+
 					  '</ul>'+
 					'</div>'
 		}
