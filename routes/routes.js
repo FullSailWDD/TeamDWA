@@ -48,10 +48,12 @@
     // -------------------------------------------------------------
     // Add Course JSON Route - Receiving Data From Angular 
          app.post('/addCourseJSON', isLoggedIn, function (req, res) {
-                courses = require('../models/courses.js');
                 console.log(req.body);
-                courses.add(req.body);
-
+                courses = require('../models/courses.js');
+                
+                courses.add(req.body, function(doc){
+                    //send to moca 
+                });
             
        });
           app.post('/addRubric', isLoggedIn, function (req, res) {

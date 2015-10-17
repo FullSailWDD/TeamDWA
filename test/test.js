@@ -1,21 +1,32 @@
 
-    var expect          = require("chai").expect,
+    var expect      = require("chai").expect,
     assert          = require("assert"),
     course          = require('../models/courses.js');
 
-describe('course', function() {
-    // test user created before each test
-    var testcourse = null;
+describe('Course', function() {
+  describe('#add()', function() {
+    it('should save without error', function(done) {
 
-    beforeEach(function (done) {
-        course.add({
-            courseAbbr:               "test",
-            courseName:                "course name"
-        }, function (doc) {
-            testcourse = doc;
-            doc.courseAbbr.should.equal('test');
-            done();
-        })
+      var obj = {  	"degreeName" : "Web Design",
+      				"degreeAbbr" : "mochadegreeAbbr", 
+      				"courseAbbr" : "mochacourseAbbr", 
+      				"courseName" : "mochacourseName" 
+				}
+
+      course.add(obj, function(doc) {
+      	expect(doc.degreeAbbr).is.equal('mochadegreeAbbr');
+        done();
+      });
     });
-
+  });
 });
+
+
+
+
+
+
+
+
+
+

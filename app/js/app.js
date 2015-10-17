@@ -93,7 +93,7 @@ var app = angular.module('app', ['ngRoute'])
 				console.log($scope.newRubric);
 				$http.post('/addRubric', $scope.newRubric);
 
-				$location.path('/createRubric');
+				$location.path('/dashboard');
 			}
 			// console.log($scope.newRubric);
 			

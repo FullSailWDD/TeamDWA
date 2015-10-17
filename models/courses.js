@@ -21,22 +21,20 @@ _model = mongoose.model('courses', courseSchema);
 // Add Course ====================
 	_save = function ( req, success, fail ){
 	var newCourse = new _model({
-				degreeID		: req.degreeID._id,
-				degreeName		: req.degreeID.degreeName,
-				degreeAbbr		: req.degreeID.degreeAbbr,
+				// degreeID		: req.degreeID._id,
+				degreeName		: req.degreeName,
+				degreeAbbr		: req.degreeAbbr,
 				courseAbbr  	: req.courseAbbr,
 				courseName 		: req.courseName
 		});
 	
 
 			// Save to Database
-			newCourse.save( function( err, success, doc){
+			newCourse.save( function(err){
 			if(err){
 				fail(err);
-				console.log('You Suck -- Courses');
 			}else{
-				success(doc);
-				console.log('You are Awesome -- Courses');
+				success(newCourse);
 			}
     			
   			});
