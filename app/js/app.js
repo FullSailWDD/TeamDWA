@@ -1,7 +1,4 @@
 var app = angular.module('app', ['ngRoute'])
-		.run(function($rootScope){
-			$rootScope.test = "Hello World!";
-		})
 		app.config(['$interpolateProvider','$routeProvider', function ($interpolateProvider, $routeProvider){
 		$interpolateProvider.startSymbol('{[{');
 		$interpolateProvider.endSymbol('}]}');
