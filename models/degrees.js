@@ -1,6 +1,7 @@
 module.exports = function(){
 // declaring mongoose in the model
-mongoose = require('mongoose');
+  var db = require('../config/db.js'),
+ 	  mongoose    = require('mongoose');  
 
 // Creating the Degrees schema for the DB
 var degreeSchema = new mongoose.Schema({
