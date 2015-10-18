@@ -152,7 +152,7 @@ body, html
     -moz-box-orient vertical
     zoom: 1
     padding-top 9px
-    padding-left 9px
+    padding-left 13px
     *display inline
 
 .courseAbbr
@@ -191,11 +191,18 @@ body, html
     white-space nowrap
     overflow hidden
     
+.rubric:nth-child(5)
+    display none
+    
 .rubricholder
     padding-left 103px
     margin-top -3px
     
-//good in chrome tools but bad in build
+.addcontainer {
+    width 0px
+    padding-left 106px
+}
+    
 .addrubric
 	background-color red
     border-radius rubricRounding rubricRounding rubricRounding rubricRounding

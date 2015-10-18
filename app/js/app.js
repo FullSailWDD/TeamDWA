@@ -145,8 +145,10 @@ var app = angular.module('app', ['ngRoute'])
                         '</div>'+
                         '<p class="hideme">{[{course._id}]}</p>'+
                         '<p class="hideme">{[{course.degreeID}]}</p>'+
+                        '<div class="addcontainer">'+
                         '<button class="addrubric" ng-click="callback({course:course})">+</button>'+
                         '<img class="dots" width="20" src="img/dots.png">'+
+                        '</div>'+
                     '</li>'+
                 '</ul>'+
             '</div>'                 
