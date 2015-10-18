@@ -1,6 +1,7 @@
 module.exports = function(){
 // declaring mongoose in the model
-mongoose = require('mongoose');
+  var db = require('../config/db.js'),
+ 	  mongoose    = require('mongoose');  
 
 // Creating the Degrees schema for the DB
 var degreeSchema = new mongoose.Schema({
@@ -10,7 +11,7 @@ var degreeSchema = new mongoose.Schema({
 })
 
 // making our schema a model variable to create new Degrees using the schema
-_model = mongoose.model('degree', degreeSchema);
+var _model = mongoose.model('degree', degreeSchema);
 
 
 // Add Degrees ====================
@@ -41,6 +42,16 @@ _model = mongoose.model('degree', degreeSchema);
 			}
 		})
 	}
+	_findOne = function(id ,success, fail){
+		objectID = 'ObjectId("'+id+'")';
+		_model.findOne({'_id': objectID}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				success(doc);
+			}
+		})
+	}
 // Find All Degrees End ============
 // Modify To Add Course ID =========
 	// _courseID = function(){
@@ -54,6 +65,7 @@ _model = mongoose.model('degree', degreeSchema);
 return {
 		schema  : degreeSchema,
 		add 	: _save,
-	    findAll : _findAll
+	    findAll : _findAll,
+	    findOne : _findOne
 	   };
 }();

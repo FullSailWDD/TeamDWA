@@ -4,6 +4,7 @@ var 	express 	    = require('express'),
  	  	cookieParser   	= require('cookie-parser'),
     	session        	= require('express-session'),
     	passport       	= require('passport'),
+    	flash     		= require('connect-flash'),
     	mongoose	    = require('mongoose'),
  	  	exphbs 		    = require('express-handlebars'),
 	  	path 		    = require('path');
@@ -14,8 +15,6 @@ var app            		= express();
 
 
 app.set('port', process.env.PORT || 3000); // Setting the Port
-var configDB		= require('./config/db.js');
-mongoose.connect(configDB.url); // connect to our database
 require('./config/passport')(passport); // Passport Config File
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'})); // view Engine
@@ -25,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // Static Public direct
 app.use(express.static(path.join(__dirname, 'bower_components')));  // Static bower_components directory for the server
 app.use(express.static(path.join(__dirname, 'app'))); // Static app directory
 app.use(cookieParser()); //read cookies -- for Passport
+app.use(flash());
 app.use(bodyParser.json()); // get information from html forms -- for Passport
 app.use(bodyParser.urlencoded({ extended: true })); // -- for Passport
 // SESSIONS----------------------------

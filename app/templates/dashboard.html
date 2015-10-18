@@ -1,5 +1,4 @@
 <div class="dashboard">
-    <div ng-app='app'>
         <!--fixed interface-->
         <img class="bg bgtop" src="img/bg-top-long.png">
         <img class="bg bgcorner" src="img/bg-corner.png">
@@ -8,7 +7,6 @@
         <img class="header headerlogo" src="img/header-logo.png">
         <a class="logoutbutton" href="/logout">logout</a>
         <div class="dashbody">
-            <!--results test-->
-            <course-element data-payload='courseTile' data-callback='addRubric(course)'></course-element>
-<!-- <degrees></degrees> -->
-<a class="addCourseButton" href='#/addCourse'>Add Course</a>
+        <course-element data-payload='courseTile' data-rubrics="courseRubrics" data-select="rubricSelect(rubric)" data-callback='addRubric(course)'></course-element>
+        <degrees data-payload="degreesData"  data-callback="changeDegree(degree)"></degrees>
+        <a class="addCourseButton" href='#/addCourse'>Add Course</a>
