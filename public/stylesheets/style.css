@@ -31,17 +31,92 @@ html {
 .bg {
   position: fixed;
 }
+.mobile-top {
+  top: 0px;
+  left: 165px;
+}
+.mobile-right {
+  top: 0px;
+  right: 0px;
+}
+.mobile-left {
+  top: 0px;
+  left: 0px;
+}
 .bgtop {
   top: 0px;
   right: 248px;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .bgtop {
+    display: none;
+  }
+}
+@media screen and (min-width: 790px) and (max-width: 1149px) {
+  .bgtop {
+    display: initial;
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1150px) and (max-width: 1599px) {
+  .bgtop {
+    display: initial;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .bgtop {
+    display: initial;
+  }
 }
 .bgcorner {
   top: 0px;
   right: 0px;
 }
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .bgcorner {
+    display: none;
+  }
+}
+@media screen and (min-width: 790px) and (max-width: 1149px) {
+  .bgcorner {
+    display: initial;
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1150px) and (max-width: 1599px) {
+  .bgcorner {
+    display: initial;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .bgcorner {
+    display: initial;
+  }
+}
 .bgright {
   top: 270px;
   right: 0px;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .bgright {
+    display: none;
+  }
+}
+@media screen and (min-width: 790px) and (max-width: 1149px) {
+  .bgright {
+    display: initial;
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1150px) and (max-width: 1599px) {
+  .bgright {
+    display: initial;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .bgright {
+    display: initial;
+  }
 }
 .dashbody {
   padding-top: 179px;
@@ -53,6 +128,29 @@ html {
 .headerlogo {
   top: 16px;
   left: 15px;
+  z-index: 2;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .headerlogo {
+    width: 279px;
+    top: 12px;
+    left: 71px;
+  }
+}
+@media screen and (min-width: 790px) and (max-width: 1149px) {
+  .headerlogo {
+    width: initial;
+  }
+}
+@media screen and (min-width: 1150px) and (max-width: 1599px) {
+  .headerlogo {
+    width: initial;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .headerlogo {
+    width: initial;
+  }
 }
 .logoutbutton {
   position: fixed;
