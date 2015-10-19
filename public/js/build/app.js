@@ -71,7 +71,7 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.courses = {};
 			$http.post('/getDashboard', $scope.allCourses)
 				.then(function(res){
-					$scope.courseRubrics = $scope.rootRubrics.rubrics;
+					 $scope.courseRubrics = $scope.rootRubrics.rubrics;
 					//console.log($scope.rootRubrics.rubrics);
 					$scope.degrees = myService.getItem();
 					$scope.courses = res.data;
@@ -347,7 +347,7 @@ var app = angular.module('app', ['ngRoute'])
 			},
 			template:
 
-            //use rubric button
+            //use rubric button - turn off edit mode
 			'<p class="use-button" ng-click="callback({rubric: payload})">Use Rubric</p>'+
             //rubric stuff
 			'<div class="rubric-stuff">'+
@@ -385,8 +385,9 @@ var app = angular.module('app', ['ngRoute'])
                         //actual input
                         '<input class="rubric-section-edit-input-input" type="text" ng-model="section.sectionName" placeholder="{[{section.sectionName}]}"/>'+
                     '</div>'+
-                    //
+                    //item container
                     '<div class="add-item-container" ng-show="itemadd">'+
+                        //add item thing
                         '<p class="add-item" ng-click="item({rubric: payload, rubricSection: section})">Add Item</p>'+
                     '</div>'+
                 '</div>'+
