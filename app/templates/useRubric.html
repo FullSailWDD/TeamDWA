@@ -12,17 +12,11 @@
     <!--body-->
     <div class="usebody">
         <div class="sheet-top">
-            <p>hello</p>
         </div>
         <div class="rubric-container-use">
-            <div class="rubric-header">
-                <p class="rubric-name">({(db.rubrics.rubricName)})</p>
-                <p class="rubric-degree">({(db.courses.degreeName)})</p>
-                <p class="rubric-course">({(db.courses.courseName)})</p>
-            </div>
             <div class="rubric-body">
-            <!--ng-repeat section is sections-->
-                <p class="rubric-section">({(rubricSections[i].sectionName)})</p>
+                <!--ng-repeat section is sections-->
+                <use-rubric data-payload="usedRubric" data-callback="editRubric(rubric)"></use-rubric>
                 <!--ng-repeat item in items-->
                 <div class="rubric-item">
                     <div class="rubric-buttons">
@@ -48,5 +42,3 @@
     </div>
 <!--end userubric-->
 </div>
-<!--need this? i think yes-->
-<use-rubric data-payload="usedRubric" data-callback="editRubric(rubric)"></use-rubric>

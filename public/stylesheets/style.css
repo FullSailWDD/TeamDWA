@@ -509,6 +509,7 @@ html {
   background-image: url("../img/ui-background.png");
   background-repeat: repeat;
   min-height: 1000px;
+  font-family: arialround;
 }
 .usebody {
   margin-left: 155px;
@@ -526,13 +527,14 @@ html {
   max-width: 755px;
   min-height: 1000px;
 }
-.rubric-header {
-  background-color: #ffffe0;
-  margin-left: 20px;
-}
 .rubric-body {
   background-color: #90ee90;
   margin-left: 30px;
+}
+.edit-button {
+  position: fixed;
+  top: 191px;
+  right: 247px;
 }
 .rubric-buttons {
   background-color: #ffa500;

@@ -247,11 +247,11 @@ var app = angular.module('app', ['ngRoute'])
 				callback: '&'
 			},
 			template:
-			'<p ng-click="callback({rubric: payload})">Edit Rubric</p>'+
-			'<div>'+
-			'<div>{[{payload.rubricName}]}</div>'+
-			'<div ng-repeat="section in payload.rubricSections">{[{section.sectionName}]}</div>'+
-			'</div>'
+			'<p class="edit-button" ng-click="callback({rubric: payload})">Edit Rubric</p>'+
+			'<p class="rubric-name">{[{payload.rubricName}]}</p>'+
+            '<p class="rubric-degree">Degree Name</p>'+
+            '<p class="rubric-course">Course Name</p>'+
+			'<div class="rubric-section" ng-repeat="section in payload.rubricSections">{[{section.sectionName}]}</div>'
 		}
 	})
 
