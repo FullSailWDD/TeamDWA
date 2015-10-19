@@ -280,11 +280,31 @@ var app = angular.module('app', ['ngRoute'])
 				callback: '&'
 			},
 			template:
-			'<p ng-click="callback({rubric: payload})">Edit Rubric</p>'+
-			'<div>'+
-			'<div>{[{payload.rubricName}]}</div>'+
-			'<div ng-repeat="section in payload.rubricSections">{[{section.sectionName}]}</div>'+
-			'</div>'
+			'<p class="edit-button" ng-click="callback({rubric: payload})">Edit Rubric</p>'+
+            '<div class="rubric-stuff">'+
+                '<p class="rubric-degree">Degree Name</p>'+
+                '<p class="rubric-course">Course Name</p>'+
+                '<p class="rubric-name">{[{payload.rubricName}]}</p>'+
+                '<div class="rubric-section" ng-repeat="section in payload.rubricSections">'+
+                    '<p class="rubric-section-title">{[{section.sectionName}]}<p>'+
+                    '<p class="section-weight">80%</p>'+
+                    '<div class="rubric-item">'+
+                        '<div class="rubric-buttons">'+
+                            '<ul class="button-list">'+
+                                '<li class="button-actual"><button type="button" onclick="">100</button></li>'+
+                                '<li class="button-actual"><button type="button" onclick="">75</button></li>'+
+                                '<li class="button-actual"><button type="button" onclick="">50</button></li>'+
+                                '<li class="button-actual"><button type="button" onclick="">25</button></li>'+
+                                '<li class="button-actual"><button type="button" onclick="">0</button></li>'+
+                            '</ul>'+
+                        '</div>'+
+                        '<p class="rubric-item ri-name">Item Name</p>'+
+                        '<p class="rubric-item ri-wiki">Item Wiki</p>'+
+                        '<p class="rubric-item ri-desc">Item Description</p>'+
+                        '<p class="rubric-item ri-comment">Item Comment</p>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'
 		}
 	})
 

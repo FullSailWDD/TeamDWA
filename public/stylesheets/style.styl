@@ -43,6 +43,7 @@ body, html
     
 .bg
     position fixed
+    z-index 2
     
 .mobile-top
     top 0px
@@ -126,6 +127,7 @@ body, html
     font-family arialround
     font-size 24px
     cursor pointer
+    z-index 2
     
 //logout button style
 .logoutbutton:link
@@ -358,9 +360,18 @@ body, html
 .userubric
     background-image url("../img/ui-background.png")
     background-repeat repeat
-    min-height 1000px
+    font-family arialround
     
 .usebody
+    margin-left 155px
+    padding-top 200px
+    
+.editrubric
+    background-image url("../img/ui-background.png")
+    background-repeat repeat
+    font-family arialround
+    
+.editbody
     margin-left 155px
     padding-top 200px
 
@@ -376,66 +387,97 @@ body, html
     background-image url("../img/sheet-bg.png")
     background-repeat repeat-y
     max-width 755px
-    min-height 1000px
-    
-.rubric-header
-    background-color lightyellow
-    margin-left 20px
+    min-height 685px
     
 .rubric-body
-    background-color lightgreen
-    margin-left 30px
+    margin-left 191px
+    
+.rubric-stuff
+    position relative
+    top -42px
+    
+.sheet-bottom
+    background-image url("../img/sheet-bottom.png")
+    background-repeat none !important
+    max-width 755px
+    min-height 128px
+    margin-top -9px
+    margin-bottom 30px
     
 //parts
 
+.edit-button
+    position fixed
+    top 191px
+    right 247px
+
 .rubric-buttons
-    background-color orange
     float right
 
 .rubric-name
-    background-color red
-    margin-left 10px
+    font-size 42px
+    margin-bottom 11px
     
 .rubric-degree
-    background-color green
-    margin-left 20px
+    font-size 16px
+    display none
     
 .rubric-course
-    background-color blue
-    margin-left 30px
+    font-size 16px
+    margin-bottom 9px
     
 .rubric-section
-    background-color purple
-    margin-left 40px
+    font-size 16px
+    background-color white
+    border: 3px solid black
+    border-radius 15px
+    min-height 170px
+    width 519px
+    margin-bottom 9px
     
-.rubric-item
-    background-color yellow
-    margin-left 50px
+.rubric-section-title
+    padding-top 8px
+    padding-left 14px
+    padding-bottom 0px
+    font-size 25px
+    
+.section-weight
+    float right
+    margin-top -21px
+    margin-right 7px
     
 //items
 
+.rubric-item
+    font-size 16px
+    padding-top 8px
+    padding-left 14px
+    padding-bottom 8px
+
 .ri-name
-    margin-left 10px
+    margin-left 0px
     
 .ri-wiki
-    margin-left 20px
+    margin-left 0px
     
 .ri-desc
-    margin-left 30px
+    margin-left 0px
     
 .ri-comment
-    margin-left 40px
+    margin-left 0px
     
 //buttons
 
 .rubric-buttons
-    background-color magenta
+    color blue
     
 .button-list
-    background-color pink
+    color blue
     
-.button-actual
-    color green
+.button-actual button
+    width 41px
+    height 25px
+    margin-right 6px
     
 //############
 //util classes
