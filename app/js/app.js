@@ -35,7 +35,7 @@ var app = angular.module('app', ['ngRoute'])
 	        controller: "rubricEditCtrl"
 	    }).when("/addItem",{
 	        templateUrl: "templates/addItem.html",
-	        controller: "rubricEditCtrl"
+	        controller: "addItemCtrl"
 	    }).otherwise({
 	        redirectTo: "/"
 	    })
@@ -145,7 +145,7 @@ var app = angular.module('app', ['ngRoute'])
 
 	app.controller('rubricEditCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
 			console.log($scope.editRubric);
-			$scope.itemModel = {};
+	
 			$scope.edit = true;
 			$scope.itemAdd = true;
 			console.log($scope.itemAdd, 'before Anything');
@@ -154,19 +154,19 @@ var app = angular.module('app', ['ngRoute'])
 			console.log(rubric);
 			$scope.edit =! $scope.edit;
 			console.log(rubric);
-			$http.post('/editRubric', rubric)
+			$http.post('/editRubric', rubric);
 		}
 
 		$scope.addRubricItem = function(rubric, rubricSection){
 			$scope.itemAdd =! $scope.itemAdd;
-			$scope.selectedRubric = rubric;
-			$scope.selectedSection = rubricSection;
-			console.log($scope.itemAdd);
-			// console.log(rubricSection);
-			// console.log(rubric);
+			$rootScope.selectedRubric = rubric;
+			$rootScope.selectedSection = rubricSection;
 			$scope.newItem ={};
+			$location.path('/addItem');
 
 		}
+
+
 
 		$scope.useFromEditRubric = function(rubric){
 			console.log(rubric);
@@ -174,18 +174,20 @@ var app = angular.module('app', ['ngRoute'])
 			$location.path('/useRubric');
 		}
 
-		$scope.createItem = function(){
-			$scope.itemAdd =! $scope.itemAdd;
-			console.log('bloop');
-			console.log($scope.selectedRubric);
-			console.log($scope.selectedSection);
-			console.log($scope.itemModel);
-			var theItem = {};
-			theItem.item = $scope.itemModel;
-			theItem.section = $scope.selectedSection;
-			theItem.rubric = $scope.selectedRubric._id;
 
-			$http.post('/createRubricItem', theItem);
+	}]);
+
+
+	app.controller('addItemCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
+			$scope.newItem = {};
+			$scope.createItem = function(){
+			$scope.newItem.selectedRubric = $scope.selectedRubric; 
+			$scope.newItem.selectedSection = $rootScope.selectedSection
+			console.log('bloop');
+			console.log($scope.newItem);
+			$location.path('/editRubric');
+			$http.post('/createRubricItem', $scope.newItem);
+			
 		}
 	}]);
 
@@ -246,6 +248,28 @@ var app = angular.module('app', ['ngRoute'])
 					'</li>'+
 				'</ul>'+
 				'</div>'
+		}
+	})
+
+	app.directive('addItem', function(){
+		return{
+			restrict: 'E',
+			scope: {
+				model: '=',
+				callback: '&'
+			},
+			template:
+					'<form>'+
+        					'<div class="form-group">'+
+            					'<label>Item Name</label>'+
+            					'<input type="text" class="form-control" name="itemName" ng-model="model.itemName">'+
+        					'</div>'+
+        					'<div class="form-group">'+
+            					'<label>Item Description</label>'+
+           						'<input type="text" class="form-control" name="sections" ng-model="model.itemDes">'+
+        					'</div>'+
+							'<button ng-click="callback()" class="btn btn-warning btn-lg">Add Item</button>'+
+    					'</form>'
 		}
 	})
 
@@ -345,17 +369,6 @@ var app = angular.module('app', ['ngRoute'])
 					'<span ng-show="itemadd">'+
 						'<p ng-click="item({rubric: payload, rubricSection: section})"><span> -- Add Item --</span></p>'+
 					'</span>'+
-						'<form ng-hide="itemadd">'+
-        					'<div class="form-group">'+
-            					'<label>Item Name</label>'+
-            					'<input type="text" class="form-control" name="itemName" ng-model="model.itemName[$index]">'+
-        					'</div>'+
-        					'<div class="form-group">'+
-            					'<label>Item Description</label>'+
-           						'<input type="text" class="form-control" name="sections" ng-model="model.itemDes[$index]">'+
-        					'</div>'+
-							'<button ng-click="itemcreate()" class="btn btn-warning btn-lg">Add Item</button>'+
-    					'</form>'+
 				'</li>'+
 			'</ul>'+
 			'</div>'
