@@ -71,7 +71,7 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.courses = {};
 			$http.post('/getDashboard', $scope.allCourses)
 				.then(function(res){
-					$scope.courseRubrics = $scope.rootRubrics.rubrics;
+					// $scope.courseRubrics = $scope.rootRubrics.rubrics;
 					//console.log($scope.rootRubrics.rubrics);
 					$scope.degrees = myService.getItem();
 					$scope.courses = res.data;
