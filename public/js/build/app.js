@@ -30,6 +30,9 @@ var app = angular.module('app', ['ngRoute'])
 	    }).when("/createRubric",{
 	        templateUrl: "templates/dashboard.html",
 	        controller: "rubricCreateCtrl"
+	    }).when("/editRubric",{
+	        templateUrl: "templates/editRubric.html",
+	        controller: "rubricEditCtrl"
 	    }).otherwise({
 	        redirectTo: "/"
 	    })
@@ -125,13 +128,32 @@ var app = angular.module('app', ['ngRoute'])
 			
 	}]);
 
-	app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $routeParams, $location){
-			// console.log($scope.selectedRubric);
-			$http.get('/useRubric/'+$scope.selectedRubric._id)
-				.then(function(res){
-					$scope.usedRubric = res.data;
-					// console.log($scope.usedRubric);
-			});
+	app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
+		$scope.usedRubric = $rootScope.selectedRubric;
+		console.log($scope.usedRubric);
+
+		$scope.editRubric = function(rubric){
+			console.log(rubric);
+			$rootScope.editRubric = rubric;
+			console.log($rootScope.editRubric);
+			$location.path('/editRubric');
+		}
+	}]);
+
+	app.controller('rubricEditCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
+			console.log($scope.editRubric);
+
+		$scope.addRubricItem = function(rubric, rubricSection){
+			console.log(rubricSection);
+			console.log('Hello World!');
+			console.log(rubric);
+		}
+
+		$scope.useFromEditRubric = function(rubric){
+			console.log(rubric);
+			$rootScope.selectedRubric = rubric;
+			$location.path('/useRubric');
+		}
 	}]);
 
 	// Controllers End ===================
@@ -217,6 +239,42 @@ var app = angular.module('app', ['ngRoute'])
 		}
 	})
 
+	app.directive('useRubric', function(){
+		return{
+			restrict: 'E',
+			scope: {
+				payload: '=',
+				callback: '&'
+			},
+			template:
+			'<p ng-click="callback({rubric: payload})">Edit Rubric</p>'+
+			'<div>'+
+			'<div>{[{payload.rubricName}]}</div>'+
+			'<div ng-repeat="section in payload.rubricSections">{[{section.sectionName}]}</div>'+
+			'</div>'
+		}
+	})
+
+	app.directive('editRubric', function(){
+		return{
+			restrict: 'E',
+			scope: {
+				payload: '=',
+				item: '&',
+				callback: '&'
+			},
+			template:
+			'<p ng-click="callback({rubric: payload})">Use Rubric</p>'+
+			'<div>'+
+			'<div>{[{payload.rubricName}]}</div>'+
+			'<ul ng-repeat="section in payload.rubricSections">'+
+			'<li>{[{section.sectionName}]}</li>'+
+			'<li><p ng-click="item({rubric: payload, rubricSection: section})"> -- Add Item -- </p></li>'+
+			'</ul>'+
+			'</div>'
+		}
+	})
+
 	// Directives End =====================
 	// Services ===========================
 	app.service('myService', function(){
@@ -249,6 +307,13 @@ var app = angular.module('app', ['ngRoute'])
 	// 	}
 	// 	return rubricCourse
 	// })
+
+	app.service('rubricGenerator', function(){
+		var rubricGen = function(args){
+			this.rubric = args || [];
+		}
+		return rubricGen;
+	})
 
 	app.service('degreeGenerator', function(){
 		var degreeGen = function(args){
