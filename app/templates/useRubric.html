@@ -1,27 +1,52 @@
-<div class="rubric-container-use">
-    <div class="rubric-header">
-        <p class="rubric-name">({(db.rubrics.rubricName)})</p>
-        <p class="rubric-degree">({(db.courses.degreeName)})</p>
-        <p class="rubric-course">({(db.courses.courseName)})</p>
-    </div>
-    <div class="rubric-body">
-        <p class="rubric-section" ng-repeat section is sections>({(rubricSections[i].sectionName)})</p>
-        <div class="rubric-item" ng-repeat item in items>
-            <div class="rubric-buttons">
-                <ul class="button-list">
-                <li class="button-actual"><button type="button" onclick="myFunction()">100</button></li>
-                <li class="button-actual"><button type="button" onclick="myFunction()">75</button></li>
-                <li class="button-actual"><button type="button" onclick="myFunction()">50</button></li>
-                <li class="button-actual"><button type="button" onclick="myFunction()">25</button></li>
-                <li class="button-actual"><button type="button" onclick="myFunction()">0</button></li>
-                </ul>
-            </div>
-            <p class="rubric-item ri-name">({(rubricSections[i].items[i].itemName)})</p>
-            <p class="rubric-item ri-wiki">({(rubricSections[i].items[i].itemWiki)})</p>
-            <p class="rubric-item ri-desc">({(rubricSections[i].items[i].itemDesc)})</p>
-            <p class="rubric-item ri-comment">({(rubricSections[i].items[i].itemComment)})</p>
+<div class="userubric">
+    <!--fixed interface-->
+    <img class="bg mobile-top" src="img/mobile-top.png">
+    <img class="bg mobile-right" src="img/mobile-right.png">
+    <img class="bg mobile-left" src="img/mobile-left.png">
+    <img class="bg bgtop" src="img/bg-top-long.png">
+    <img class="bg bgcorner" src="img/bg-corner.png">
+    <img class="bg bgright" src="img/bg-right.png">
+    <!--header-->
+    <img class="header headerlogo" src="img/header-logo.png">
+    <a class="logoutbutton" href="/logout">logout</a>
+    <!--body-->
+    <div class="usebody">
+        <div class="sheet-top">
+            <p>hello</p>
         </div>
+        <div class="rubric-container-use">
+            <div class="rubric-header">
+                <p class="rubric-name">({(db.rubrics.rubricName)})</p>
+                <p class="rubric-degree">({(db.courses.degreeName)})</p>
+                <p class="rubric-course">({(db.courses.courseName)})</p>
+            </div>
+            <div class="rubric-body">
+            <!--ng-repeat section is sections-->
+                <p class="rubric-section">({(rubricSections[i].sectionName)})</p>
+                <!--ng-repeat item in items-->
+                <div class="rubric-item">
+                    <div class="rubric-buttons">
+                        <ul class="button-list">
+                        <li class="button-actual"><button type="button" onclick="">100</button></li>
+                        <li class="button-actual"><button type="button" onclick="">75</button></li>
+                        <li class="button-actual"><button type="button" onclick="">50</button></li>
+                        <li class="button-actual"><button type="button" onclick="">25</button></li>
+                        <li class="button-actual"><button type="button" onclick="">0</button></li>
+                        </ul>
+                    </div>
+                    <p class="rubric-item ri-name">({(rubricSections[i].items[i].itemName)})</p>
+                    <p class="rubric-item ri-wiki">({(rubricSections[i].items[i].itemWiki)})</p>
+                    <p class="rubric-item ri-desc">({(rubricSections[i].items[i].itemDesc)})</p>
+                    <p class="rubric-item ri-comment">({(rubricSections[i].items[i].itemComment)})</p>
+                <!--end rubric-item-->
+                </div>
+            <!--end ribric-body-->
+            </div>
+        <!--end rubric-container-use-->
+        </div>
+    <!--end usebody-->
     </div>
+<!--end userubric-->
 </div>
-
+<!--need this? i think yes-->
 <use-rubric data-payload="usedRubric" data-callback="editRubric(rubric)"></use-rubric>
