@@ -1,11 +1,13 @@
 @import 'jeet'
 
 //color variables
+dinoblue = #5B83C2
 lightGreen = #A6CE3D
 darkGreen = #6FBE44
 darkPurple = #2C242F
 darkGrey = #A5A1A1
 lightGrey = #ABA7A7
+rubricRounding = 5px
 
 //custom stuff
 ::-webkit-scrollbar
@@ -27,15 +29,17 @@ lightGrey = #ABA7A7
 @font-face
     font-family arialround
     src url("../fonts/arialround.ttf")
-
-body
+    
+//main style
+body, html
+    height 100%
     color darkPurple
-    background-color lightGreen
+    background-color grey
     
 .dashboard
-    background-image: url("../img/ui-background.png");
-    background-repeat: repeat;
-    min-height 2000px
+    background-image url("../img/ui-background.png")
+    background-repeat repeat
+    min-height 1000px
     
 .bg
     position fixed
@@ -53,7 +57,7 @@ body
     right 0px
     
 .dashbody
-    padding-top 163px
+    padding-top 179px
     padding-right 160px
     
 .header
@@ -71,14 +75,7 @@ body
     font-size 24px
     cursor pointer
     
-.dashsearch
-    font-size 32px
-    outline none
-    background-color lightGrey
-    border none
-    padding 5px 20px
-    color darkPurple
-    
+//logout button style
 .logoutbutton:link
     color darkPurple
 .logoutbutton:visited
@@ -87,72 +84,147 @@ body
     color darkPurple
 .logoutbutton:active
     color darkPurple
-
+    
+//search area
+.dashsearch
+    font-size 32px
+    outline none
+    background-color lightGrey
+    border none
+    padding 5px 20px
+    color darkPurple
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        display none
+    @media screen and (min-width: 790px) and (max-width: 1149px)
+        display initial
+        font-size 24px
+    @media screen and (min-width: 1150px) and (max-width: 1599px)
+        display initial
+    @media screen and (min-width: 1600px)
+        display initial
+    
+//results div
 .dashresults
-    col (2/3)
-    center 955px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        display none
+    @media screen and (min-width: 790px) and (max-width: 1149px)
+        display initial
+        center(450px)
+    @media screen and (min-width: 1150px) and (max-width: 1599px)
+        display initial
+        center(955px)
+    @media screen and (min-width: 1600px)
+        display initial
+        center(1450px)
     
 .dashresults li
-    background-image: url("../img/result-bg.png")
+    background-image url("../img/result-bg.png")
     height 129px
     width 450px
     padding-right 26px
     background-repeat no-repeat
     padding-bottom 26px
-    
     float left
     
 .dashsearchcontainer
     text-align center
     padding-top 35px
     padding-bottom 35px
+    
+//##############
+//RESULT STYLING
+//##############
 
-//media queries
-//@media screen and (min-width: 500px) and (max-device-width: 1150px)
-//    .dashresults
-//        col(1/3)
-//        center 450px
+.degreeAbbr
+    font-family arialround
+    font-size 31px
+    padding-top 12px
+    padding-left 22px
+    color darkPurple
+    
+.degreeName
+    color darkPurple
+    font-size 14px
+    font-family arialround
+    display inline-block
+    vertical-align top
+    display -moz-inline-box
+    -moz-box-orient vertical
+    zoom: 1
+    padding-top 9px
+    padding-left 9px
+    *display inline
 
-//mobile
-@media (min-width: 1px)
-    .dashresults
-        display none
-    .dashsearchcontainer
-        display none
-        
-//before mobile
-@media (min-width: 790px)
-    .dashsearch
-        font-size 27px
-    .dashresults
-        col(2/3)
-        center 450px
-        display block
-    .dashsearchcontainer
-        display block
-        
-//shorten search
-@media (min-width: 850px)
-    .dashresults
-        col(2/3)
-        center 450px
-    .dashsearch
-        font-size 27px
-        
-@media (min-width: 1150px)
-    .dashresults
-        col(2/3)
-        center 955px
-    .dashsearch
-        font-size 32px
-        
-@media (min-width: 1600px)
-    .dashresults
-        col(7/8)
-        center 1450px
-    .dashsearch
-        font-size 32px
+.courseAbbr
+    font-family arialround
+    font-size 31px
+    padding-top 5px
+    padding-left 22px
+    color darkPurple
+    
+.courseName
+    color darkPurple
+    font-size 14px
+    font-family arialround
+    display inline-block
+    vertical-align top
+    display -moz-inline-box
+    -moz-box-orient vertical
+    zoom: 1
+    padding-top 3px
+    padding-left 17px
+    *display inline
 
-//@media (min-width: 100px), (min-height: 200px)
-//.foo
-//  color: #100
+.rubric
+    color darkPurple
+    font-family arialround
+    font-size 9px
+    padding 15px 5px
+    background-color dinoblue
+    border-radius rubricRounding rubricRounding rubricRounding rubricRounding
+    -moz-border-radius rubricRounding rubricRounding rubricRounding rubricRounding
+    -webkit-border-radius rubricRounding rubricRounding rubricRounding rubricRounding
+    float left
+    margin-right 8px
+    max-width 80px
+    text-overflow ellipsis
+    white-space nowrap
+    overflow hidden
+    
+.rubricholder
+    padding-left 103px
+    margin-top -3px
+    
+//good in chrome tools but bad in build
+.addrubric
+	background-color red
+    border-radius rubricRounding rubricRounding rubricRounding rubricRounding
+    -moz-border-radius rubricRounding rubricRounding rubricRounding rubricRounding
+    -webkit-border-radius rubricRounding rubricRounding rubricRounding rubricRounding
+	display inline-block
+	cursor pointer
+	font-family arialround
+	font-size 16px
+	padding 0px 5px
+    border none
+    
+.dots
+    margin-right 8px
+    padding-left 3px
+
+//############
+//util classes
+//############
+
+.hideme
+    display none
+    
+//.fixme
+//    display none
+    
+//##########
+//!IMPORTANTS
+//##########
+    
+//.dashresults:last-child
+//    margin-right 0%

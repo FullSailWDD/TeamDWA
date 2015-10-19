@@ -37,7 +37,7 @@ var gulp 			= require('gulp'),
 	gulp.task('jsCompress', function () {
     gulp.src('./app/js/**/*.js')
         //.pipe(ngAnnotate())
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest('./public/js/build'))
         .pipe(livereload())
         //.on('error', gutil.log);
@@ -46,7 +46,8 @@ var gulp 			= require('gulp'),
 	gulp.task('watch', function () {
     livereload.listen();
     gulp.watch([        
-        './app/**/*', 
+        './app/**/*',
+        './routes/**/*',
         './models/**/*'
     ],['all']);
 	});

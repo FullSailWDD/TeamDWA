@@ -19,9 +19,8 @@
 // Login
         app.post('/login', passport.authenticate('local-login', {
             successRedirect : '/dashboard', // redirect to the secure profile section
-            failureRedirect : '/login', // redirect back to the signup page if there is an error
+            failureRedirect : '/', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
-
         }));
 // Passport --
 
@@ -47,16 +46,39 @@
        });
 
         app.post('/getRubrics', function (req, res) {
+            //console.log('working here');
             rubrics = require('../models/rubrics.js');
             allrubrics = rubrics.findAll(function(result){
                 res.send(JSON.stringify({rubrics: result}, null, 3));
-            });    
-       });
+                //console.log(result);
+            });  
+        });
+
+       
+        app.post('/editRubric', function (req, res){
+            rubrics = require('../models/rubrics.js');
+            // console.log(req.body, '--------------------');
+            // rubrics.edit();
+            rubrics.update(req.body, function(doc){
+                    res.send(doc);
+                });
+            //req,id,success,fail
+        
+        });
+
+        app.post('/createRubricItem', function (req, res){
+            item = require('../models/items.js');
+            //console.log(req.body.selectedRubric.rubricSections, "------------++-----------");
+            item.add(req.body, function(doc){
+                    res.send(doc);
+                }); 
+        })
+       
     // -------------------------------------------------------------
     // Add Course JSON Route - Receiving Data From Angular 
          app.post('/addCourseJSON', function (req, res) {
                 courses = require('../models/courses.js');
-                console.log(req.body);
+                //console.log(req.body);
                 courses.add(req.body, function(doc){
                     res.send(doc);
                 });
@@ -65,7 +87,7 @@
        });
           app.post('/addRubric', function (req, res) {
                 rubrics = require('../models/rubrics.js');
-                console.log(req.body);
+                //console.log(req.body);
                 rubrics.add(req.body, function(doc){
                     res.send(doc);
                 }); 
