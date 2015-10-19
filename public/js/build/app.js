@@ -129,11 +129,8 @@ var app = angular.module('app', ['ngRoute'])
 	}]);
 
 	app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
-			// console.log($scope.selectedRubric);
-			$http.get('/useRubric/'+$scope.selectedRubric._id)
-				.then(function(res){
-					$scope.usedRubric = res.data;
-			});
+		$scope.usedRubric = $rootScope.selectedRubric;
+		console.log($scope.usedRubric);
 
 		$scope.editRubric = function(rubric){
 			console.log(rubric);
@@ -143,11 +140,19 @@ var app = angular.module('app', ['ngRoute'])
 		}
 	}]);
 
-	app.controller('rubricEditCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $routeParams, $location){
+	app.controller('rubricEditCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
 			console.log($scope.editRubric);
 
-		$scope.useFromEdit = function(rubric){
+		$scope.addRubricItem = function(rubric, rubricSection){
+			console.log(rubricSection);
+			console.log('Hello World!');
 			console.log(rubric);
+		}
+
+		$scope.useFromEditRubric = function(rubric){
+			console.log(rubric);
+			$rootScope.selectedRubric = rubric;
+			$location.path('/useRubric');
 		}
 	}]);
 
@@ -244,24 +249,28 @@ var app = angular.module('app', ['ngRoute'])
 			template:
 			'<p ng-click="callback({rubric: payload})">Edit Rubric</p>'+
 			'<div>'+
-			'<div>{[{payload.usedRubric[0].rubricName}]}</div>'+
-			'<div ng-repeat="section in payload.usedRubric[0].rubricSections">{[{section.sectionName}]}</div>'+
+			'<div>{[{payload.rubricName}]}</div>'+
+			'<div ng-repeat="section in payload.rubricSections">{[{section.sectionName}]}</div>'+
 			'</div>'
 		}
 	})
 
-	app.directive('useRubric', function(){
+	app.directive('editRubric', function(){
 		return{
 			restrict: 'E',
 			scope: {
 				payload: '=',
+				item: '&',
 				callback: '&'
 			},
 			template:
 			'<p ng-click="callback({rubric: payload})">Use Rubric</p>'+
 			'<div>'+
-			'<div>{[{payload.usedRubric[0].rubricName}]}</div>'+
-			'<div ng-repeat="section in payload.usedRubric[0].rubricSections">{[{section.sectionName}]}</div>'+
+			'<div>{[{payload.rubricName}]}</div>'+
+			'<ul ng-repeat="section in payload.rubricSections">'+
+			'<li>{[{section.sectionName}]}</li>'+
+			'<li><p ng-click="item({rubric: payload, rubricSection: section})"> -- Add Item -- </p></li>'+
+			'</ul>'+
 			'</div>'
 		}
 	})
