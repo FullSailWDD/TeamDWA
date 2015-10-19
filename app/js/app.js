@@ -71,7 +71,7 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.courses = {};
 			$http.post('/getDashboard', $scope.allCourses)
 				.then(function(res){
-					// $scope.courseRubrics = $scope.rootRubrics.rubrics;
+					$scope.courseRubrics = $scope.rootRubrics.rubrics;
 					//console.log($scope.rootRubrics.rubrics);
 					$scope.degrees = myService.getItem();
 					$scope.courses = res.data;
@@ -88,7 +88,7 @@ var app = angular.module('app', ['ngRoute'])
 
 			$scope.addRubric = function(course){
 				$rootScope.test = course;
-				$location.path('/addRubric')
+				$location.path('/addRubric');
 			}
 			$scope.changeDegree = function(degree){
 				$rootScope.test = degree;
@@ -277,7 +277,7 @@ var app = angular.module('app', ['ngRoute'])
            						'<input type="text" class="form-control" name="sections" ng-model="model.itemWiki">'+
         					'</div>'+
         					'<div class="form-group">'+
-            					'<label>Item Weight</label>'+
+            					'<label>Comment</label>'+
            						'<input type="text" class="form-control" name="sections" ng-model="model.itemComment">'+
         					'</div>'+
 							'<button ng-click="callback()" class="btn btn-warning btn-lg">Add Item</button>'+
