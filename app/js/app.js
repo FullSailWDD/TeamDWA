@@ -42,12 +42,14 @@ var app = angular.module('app', ['ngRoute'])
 			$http.post('/getDegrees', $scope.allDegrees)
 				.then(function(res){
 					$rootScope.theSession = 0;
+					console.log($scope.theSession);
 					myService.addItem(res.data);
 					$location.path('/getRubrics');
 			});
 	}]);
 	app.controller('getRubricsCtrl', ['$scope', '$rootScope', '$http','$location', function($scope, $rootScope, $http, $location){
 			$rootScope.theSession ++;
+			console.log($scope.theSession);
 			$http.post('/getRubrics', $scope.allRubrics)
 				.then(function(res){
 					$rootScope.rootRubrics = res.data;
@@ -59,12 +61,16 @@ var app = angular.module('app', ['ngRoute'])
 			$rootScope.theSession++;
 			console.log($scope.theSession);
 			console.log($rootScope.theSession);
-			$rootScope.$on("$routeChangeStart", function(event, next, curent){
-				if($rootScope.theSession != 2){
-					console.log('Refresh');
+			if($rootScope.theSession != 2){
+				console.log('Refresh -- Solo If');
 					$location.path('/');
-				} 
-			})
+			};
+			// $rootScope.$on("$routeChangeStart", function(event, next, curent){
+			// 	if($rootScope.theSession != 2){
+			// 		console.log('Refresh');
+			// 		$location.path('/');
+			// 	} 
+			// })
 			
 			$scope.courses = {};
 			$http.post('/getDashboard', $scope.allCourses)
@@ -77,9 +83,6 @@ var app = angular.module('app', ['ngRoute'])
 					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
 			});
 
-			$scope.refresh = function(){
-				$location.path('/');
-			}
 
 			$scope.rubricSelect = function(rubric){
 				$rootScope.selectedRubric = rubric;
