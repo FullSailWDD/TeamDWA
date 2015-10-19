@@ -505,9 +505,26 @@ html {
   top: 0;
   right: 0;
 }
+.userubric {
+  background-image: url("../img/ui-background.png");
+  background-repeat: repeat;
+  min-height: 1000px;
+}
+.usebody {
+  margin-left: 155px;
+  padding-top: 200px;
+}
+.sheet-top {
+  background-image: url("../img/sheet-top.png");
+  background-repeat: none;
+  max-width: 755px;
+  min-height: 128px;
+}
 .rubric-container-use {
-  background-color: #add8e6;
-  margin-left: 10px;
+  background-image: url("../img/sheet-bg.png");
+  background-repeat: repeat-y;
+  max-width: 755px;
+  min-height: 1000px;
 }
 .rubric-header {
   background-color: #ffffe0;
@@ -516,6 +533,10 @@ html {
 .rubric-body {
   background-color: #90ee90;
   margin-left: 30px;
+}
+.rubric-buttons {
+  background-color: #ffa500;
+  float: right;
 }
 .rubric-name {
   background-color: #f00;
@@ -548,6 +569,15 @@ html {
 }
 .ri-comment {
   margin-left: 40px;
+}
+.rubric-buttons {
+  background-color: #f0f;
+}
+.button-list {
+  background-color: #ffc0cb;
+}
+.button-actual {
+  color: #008000;
 }
 .hideme {
   display: none;
