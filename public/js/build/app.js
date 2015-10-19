@@ -145,7 +145,10 @@ var app = angular.module('app', ['ngRoute'])
 
 	app.controller('rubricEditCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
 			console.log($scope.editRubric);
+			$scope.itemModel = {};
 			$scope.edit = true;
+			$scope.itemAdd = true;
+			console.log($scope.itemAdd, 'before Anything');
 
 		$scope.theEditRubric = function(rubric){
 			console.log(rubric);
@@ -155,14 +158,13 @@ var app = angular.module('app', ['ngRoute'])
 		}
 
 		$scope.addRubricItem = function(rubric, rubricSection){
-			console.log(rubricSection);
-			console.log(rubric);
+			$scope.itemAdd =! $scope.itemAdd;
+			$scope.selectedRubric = rubric;
+			$scope.selectedSection = rubricSection;
+			console.log($scope.itemAdd);
+			// console.log(rubricSection);
+			// console.log(rubric);
 			$scope.newItem ={};
-
-		var itemName = $scope.newItem.itemName;
-
-		console.log(itemName);
-
 
 		}
 
@@ -170,6 +172,20 @@ var app = angular.module('app', ['ngRoute'])
 			console.log(rubric);
 			$rootScope.selectedRubric = rubric;
 			$location.path('/useRubric');
+		}
+
+		$scope.createItem = function(){
+			$scope.itemAdd =! $scope.itemAdd;
+			console.log('bloop');
+			console.log($scope.selectedRubric);
+			console.log($scope.selectedSection);
+			console.log($scope.itemModel);
+			var theItem = {};
+			theItem.item = $scope.itemModel;
+			theItem.section = $scope.selectedSection;
+			theItem.rubric = $scope.selectedRubric._id;
+
+			$http.post('/createRubricItem', theItem);
 		}
 	}]);
 
@@ -234,33 +250,6 @@ var app = angular.module('app', ['ngRoute'])
 	})
 
 
-	app.directive('addItem', function(){
-		return{
-			restrict: 'E',
-			scope: {
-				model: '=',
-				callback: '&'
-			},
-			template:
-			    '<form >'+
-        			'<div class="form-group">'+
-            			'<label>Rubric Name</label>'+
-            			'<input type="text" class="form-control" name="rubricName" ng-model="item.itemName">'+
-        			'</div>'+
-        			'<div class="form-group">'+
-            			'<label>Item Description</label>'+
-           				'<input type="text" class="form-control" name="sections" ng-model="item.itemDes">'+
-        			'</div>'+
-        			'<div class="form-group">'+
-            			'<label>Item Weight</label>'+
-           				'<input type="text" class="form-control" name="weight" ng-model="item.itemweight">'+
-        			'</div>'+
-						'<button ng-click="callback()" class="btn btn-warning btn-lg">Add Item</button>'+
-    			'</form>'
-		}
-	})
-
-
 	app.directive('addRubrics', function(){
 		return{
 			restrict: 'E',
@@ -307,7 +296,10 @@ var app = angular.module('app', ['ngRoute'])
 				item: '&',
 				callback: '&',
 				clicked : '=',
-				editrubric: '&'
+				editrubric: '&',
+				itemcreate: '&',
+				model: '=',
+				itemadd: '=' 
 			},
 			template:
 			'<p ng-click="callback({rubric: payload})">Use Rubric</p>'+
@@ -320,7 +312,7 @@ var app = angular.module('app', ['ngRoute'])
 						'<input type="text" ng-model="payload.rubricName" placeholder="{[{payload.rubricName}]}"/>'+
 					'</span>'+
 				'</div>'+
-			'<ul ng-repeat="section in payload.rubricSections">'+
+			'<ul ng-repeat="section in payload.rubricSections track by $index">'+
 				'<li>'+
 					'<span ng-show="clicked">'+
 						'{[{section.sectionName}]}</span>'+
@@ -329,7 +321,22 @@ var app = angular.module('app', ['ngRoute'])
 						'<input type="text" ng-model="section.sectionName" placeholder="{[{section.sectionName}]}"/>'+
 					'</span>'+
 				'</li>'+
-				'<li><p ng-click="item({rubric: payload, rubricSection: section})"> -- Add Item -- </p></li>'+
+				'<li>'+
+					'<span ng-show="itemadd">'+
+						'<p ng-click="item({rubric: payload, rubricSection: section})"><span> -- Add Item --</span></p>'+
+					'</span>'+
+						'<form ng-hide="itemadd">'+
+        					'<div class="form-group">'+
+            					'<label>Item Name</label>'+
+            					'<input type="text" class="form-control" name="itemName" ng-model="model.itemName[$index]">'+
+        					'</div>'+
+        					'<div class="form-group">'+
+            					'<label>Item Description</label>'+
+           						'<input type="text" class="form-control" name="sections" ng-model="model.itemDes[$index]">'+
+        					'</div>'+
+							'<button ng-click="itemcreate()" class="btn btn-warning btn-lg">Add Item</button>'+
+    					'</form>'+
+				'</li>'+
 			'</ul>'+
 			'</div>'
 		}

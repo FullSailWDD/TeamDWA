@@ -68,9 +68,15 @@
         app.post('/editRubric', function (req, res){
             rubrics = require('../models/rubrics.js');
             console.log(req.body, '--------------------');
+            rubrics.edit()
         
         
         });
+
+        app.post('/createRubricItem', function (req, res){
+            rubrics = require('../models/rubrics.js');
+            console.log(req.body);
+        })
        
     // -------------------------------------------------------------
     // Add Course JSON Route - Receiving Data From Angular 
