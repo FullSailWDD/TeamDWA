@@ -313,7 +313,42 @@ body, html
 .dots
     margin-right 8px
     padding-left 3px
+    
+//###########
+//mobile menu
+//###########
 
+.mobile-menu
+    background-image url("../img/mobile-menu-top.png")
+    background-size 80%
+    background-repeat repeat-x
+    background-color lightGreen
+    min-height 705px
+    height 705px
+    max-height 705px
+    min-width 315px
+    width 315px
+    max-width 315px
+    margin 0 auto
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        display none
+    @media screen and (min-width: 790px) and (max-width: 1149px)
+        display none
+    @media screen and (min-width: 1150px) and (max-width: 1599px)
+        display none
+    @media screen and (min-width: 1600px)
+        display none
+
+.mobile-menu-left
+    position absolute
+    top 0
+    left 0
+    
+.mobile-menu-right
+    position absolute
+    top 0
+    right 0
+    
 //############
 //util classes
 //############
