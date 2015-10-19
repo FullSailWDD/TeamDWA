@@ -53,9 +53,7 @@ var _model = mongoose.model('item', itemSchema);
   		};
 
 
-  		//  Find All Courses ===============
-	_findAll = function(success, fail){
-		//console.log('firing here');
+  	_findAllByRubricID = function(success, fail){
 		_model.find({}, function(err, doc){
 			if(err){
 				fail(err);
@@ -64,7 +62,7 @@ var _model = mongoose.model('item', itemSchema);
 			}
 		})
 	};
-
+	
 	_findOne = function(id, success, fail){
 		// console.log(id, '-----------');
 		_model.find({_id: id}, function(err, doc){
@@ -96,13 +94,11 @@ var _model = mongoose.model('item', itemSchema);
         });
         
 	}
-
-
 return {
 		schema  : itemSchema,
 		add 	: _save,
 		update  : _update,
-	    findAll : _findAll,
+	    findByRubric : _findAllByRubricID,
 	    findOne : _findOne
 	   };
 }();
