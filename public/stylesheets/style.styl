@@ -44,21 +44,62 @@ body, html
 .bg
     position fixed
     
+.mobile-top
+    top 0px
+    left 165px
+
+.mobile-right
+    top 0px
+    right 0px
+    
+.mobile-left
+    top 0px
+    left 0px
+
 .bgtop
     top 0px
     right 248px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        display none
+    @media screen and (min-width: 790px) and (max-width: 1149px)
+        display initial
+        font-size 24px
+    @media screen and (min-width: 1150px) and (max-width: 1599px)
+        display initial
+    @media screen and (min-width: 1600px)
+        display initial
     
 .bgcorner
     top 0px
     right 0px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        display none
+    @media screen and (min-width: 790px) and (max-width: 1149px)
+        display initial
+        font-size 24px
+    @media screen and (min-width: 1150px) and (max-width: 1599px)
+        display initial
+    @media screen and (min-width: 1600px)
+        display initial
     
 .bgright
     top 270px
     right 0px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        display none
+    @media screen and (min-width: 790px) and (max-width: 1149px)
+        display initial
+        font-size 24px
+    @media screen and (min-width: 1150px) and (max-width: 1599px)
+        display initial
+    @media screen and (min-width: 1600px)
+        display initial
     
 .dashbody
     padding-top 179px
     padding-right 160px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        padding-right 0px
     
 .header
     position fixed
@@ -66,6 +107,17 @@ body, html
 .headerlogo
     top 16px
     left 15px
+    z-index 2
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        width 279px
+        top 12px
+        left 71px
+    @media screen and (min-width: 790px) and (max-width: 1149px)
+        width initial
+    @media screen and (min-width: 1150px) and (max-width: 1599px)
+        width initial
+    @media screen and (min-width: 1600px)
+        width initial
     
 .logoutbutton
     position fixed
@@ -86,6 +138,16 @@ body, html
     color darkPurple
     
 //search area
+.dashsearchcontainer
+    text-align center
+    padding-top 35px
+    padding-bottom 35px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        padding-top 0px
+        width 70%
+        margin -60px auto
+        z-index 2
+        
 .dashsearch
     font-size 32px
     outline none
@@ -94,7 +156,9 @@ body, html
     padding 5px 20px
     color darkPurple
     @media screen and (min-width: 1px) and (max-width: 789px)
-        display none
+        display initial
+        width 60%
+        font-size 29px
     @media screen and (min-width: 790px) and (max-width: 1149px)
         display initial
         font-size 24px
@@ -106,7 +170,10 @@ body, html
 //results div
 .dashresults
     @media screen and (min-width: 1px) and (max-width: 789px)
-        display none
+        display initial
+        center(450px)
+        margin-top 80px
+        max-width 480px
     @media screen and (min-width: 790px) and (max-width: 1149px)
         display initial
         center(450px)
@@ -125,11 +192,10 @@ body, html
     background-repeat no-repeat
     padding-bottom 26px
     float left
-    
-.dashsearchcontainer
-    text-align center
-    padding-top 35px
-    padding-bottom 35px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        background-image url("../img/mobile-result-bg.png")
+        width 146px
+        padding-right 12px
     
 //##############
 //RESULT STYLING
@@ -141,6 +207,9 @@ body, html
     padding-top 12px
     padding-left 22px
     color darkPurple
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        padding-top 14px
+        padding-left 41px
     
 .degreeName
     color darkPurple
@@ -152,8 +221,10 @@ body, html
     -moz-box-orient vertical
     zoom: 1
     padding-top 9px
-    padding-left 9px
+    padding-left 13px
     *display inline
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        display none
 
 .courseAbbr
     font-family arialround
@@ -161,6 +232,11 @@ body, html
     padding-top 5px
     padding-left 22px
     color darkPurple
+    padding-top 5px
+    padding-left 23px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        padding-top 12px
+        padding-left 40px
     
 .courseName
     color darkPurple
@@ -174,6 +250,21 @@ body, html
     padding-top 3px
     padding-left 17px
     *display inline
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        display none
+        
+.rubricnumber
+    font-family arialround
+    font-size 31px
+    padding-top 5px
+    padding-left 22px
+    color darkPurple
+    padding-top 9px
+    padding-left 46px
+    position absolute
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        padding-top 15px
+        padding-left 32px
 
 .rubric
     color darkPurple
@@ -191,11 +282,20 @@ body, html
     white-space nowrap
     overflow hidden
     
+.rubric:nth-child(5)
+    display none
+    
 .rubricholder
     padding-left 103px
     margin-top -3px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        display none
     
-//good in chrome tools but bad in build
+.addcontainer {
+    width 0px
+    padding-left 106px
+}
+    
 .addrubric
 	background-color red
     border-radius rubricRounding rubricRounding rubricRounding rubricRounding
@@ -207,11 +307,102 @@ body, html
 	font-size 16px
 	padding 0px 5px
     border none
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        margin-top 17px
     
 .dots
     margin-right 8px
     padding-left 3px
+    
+//###########
+//mobile menu
+//###########
 
+.mobile-menu
+    background-image url("../img/mobile-menu-top.png")
+    background-size 80%
+    background-repeat repeat-x
+    background-color lightGreen
+    min-height 705px
+    height 705px
+    max-height 705px
+    min-width 315px
+    width 315px
+    max-width 315px
+    margin 0 auto
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        display none
+    @media screen and (min-width: 790px) and (max-width: 1149px)
+        display none
+    @media screen and (min-width: 1150px) and (max-width: 1599px)
+        display none
+    @media screen and (min-width: 1600px)
+        display none
+
+.mobile-menu-left
+    position absolute
+    top 0
+    left 0
+    
+.mobile-menu-right
+    position absolute
+    top 0
+    right 0
+    
+//############################
+// /ROUTES THAT ARNT DASHBOARD
+//############################
+
+//containers
+
+.rubric-container-use
+    background-color lightblue
+    margin-left 10px
+    
+.rubric-header
+    background-color lightyellow
+    margin-left 20px
+    
+.rubric-body
+    background-color lightgreen
+    margin-left 30px
+    
+//parts
+
+.rubric-name
+    background-color red
+    margin-left 10px
+    
+.rubric-degree
+    background-color green
+    margin-left 20px
+    
+.rubric-course
+    background-color blue
+    margin-left 30px
+    
+.rubric-section
+    background-color purple
+    margin-left 40px
+    
+.rubric-item
+    background-color yellow
+    margin-left 50px
+    
+//items
+
+.ri-name
+    margin-left 10px
+    
+.ri-wiki
+    margin-left 20px
+    
+.ri-desc
+    margin-left 30px
+    
+.ri-comment
+    margin-left 40px
+    
 //############
 //util classes
 //############

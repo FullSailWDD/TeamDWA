@@ -31,21 +31,101 @@ html {
 .bg {
   position: fixed;
 }
+.mobile-top {
+  top: 0px;
+  left: 165px;
+}
+.mobile-right {
+  top: 0px;
+  right: 0px;
+}
+.mobile-left {
+  top: 0px;
+  left: 0px;
+}
 .bgtop {
   top: 0px;
   right: 248px;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .bgtop {
+    display: none;
+  }
+}
+@media screen and (min-width: 790px) and (max-width: 1149px) {
+  .bgtop {
+    display: initial;
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1150px) and (max-width: 1599px) {
+  .bgtop {
+    display: initial;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .bgtop {
+    display: initial;
+  }
 }
 .bgcorner {
   top: 0px;
   right: 0px;
 }
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .bgcorner {
+    display: none;
+  }
+}
+@media screen and (min-width: 790px) and (max-width: 1149px) {
+  .bgcorner {
+    display: initial;
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1150px) and (max-width: 1599px) {
+  .bgcorner {
+    display: initial;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .bgcorner {
+    display: initial;
+  }
+}
 .bgright {
   top: 270px;
   right: 0px;
 }
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .bgright {
+    display: none;
+  }
+}
+@media screen and (min-width: 790px) and (max-width: 1149px) {
+  .bgright {
+    display: initial;
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1150px) and (max-width: 1599px) {
+  .bgright {
+    display: initial;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .bgright {
+    display: initial;
+  }
+}
 .dashbody {
   padding-top: 179px;
   padding-right: 160px;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .dashbody {
+    padding-right: 0px;
+  }
 }
 .header {
   position: fixed;
@@ -53,6 +133,29 @@ html {
 .headerlogo {
   top: 16px;
   left: 15px;
+  z-index: 2;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .headerlogo {
+    width: 279px;
+    top: 12px;
+    left: 71px;
+  }
+}
+@media screen and (min-width: 790px) and (max-width: 1149px) {
+  .headerlogo {
+    width: initial;
+  }
+}
+@media screen and (min-width: 1150px) and (max-width: 1599px) {
+  .headerlogo {
+    width: initial;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .headerlogo {
+    width: initial;
+  }
 }
 .logoutbutton {
   position: fixed;
@@ -74,6 +177,19 @@ html {
 .logoutbutton:active {
   color: #2c242f;
 }
+.dashsearchcontainer {
+  text-align: center;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .dashsearchcontainer {
+    padding-top: 0px;
+    width: 70%;
+    margin: -60px auto;
+    z-index: 2;
+  }
+}
 .dashsearch {
   font-size: 32px;
   outline: none;
@@ -84,7 +200,9 @@ html {
 }
 @media screen and (min-width: 1px) and (max-width: 789px) {
   .dashsearch {
-    display: none;
+    display: initial;
+    width: 60%;
+    font-size: 29px;
   }
 }
 @media screen and (min-width: 790px) and (max-width: 1149px) {
@@ -105,7 +223,26 @@ html {
 }
 @media screen and (min-width: 1px) and (max-width: 789px) {
   .dashresults {
-    display: none;
+    display: initial;
+    *zoom: 1;
+    width: auto;
+    max-width: 450px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 80px;
+    max-width: 480px;
+  }
+  .dashresults:before,
+  .dashresults:after {
+    content: '';
+    display: table;
+  }
+  .dashresults:after {
+    clear: both;
   }
 }
 @media screen and (min-width: 790px) and (max-width: 1149px) {
@@ -183,10 +320,12 @@ html {
   padding-bottom: 26px;
   float: left;
 }
-.dashsearchcontainer {
-  text-align: center;
-  padding-top: 35px;
-  padding-bottom: 35px;
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .dashresults li {
+    background-image: url("../img/mobile-result-bg.png");
+    width: 146px;
+    padding-right: 12px;
+  }
 }
 .degreeAbbr {
   font-family: arialround;
@@ -194,6 +333,12 @@ html {
   padding-top: 12px;
   padding-left: 22px;
   color: #2c242f;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .degreeAbbr {
+    padding-top: 14px;
+    padding-left: 41px;
+  }
 }
 .degreeName {
   color: #2c242f;
@@ -205,8 +350,13 @@ html {
   -moz-box-orient: vertical;
   zoom: 1;
   padding-top: 9px;
-  padding-left: 9px;
+  padding-left: 13px;
   *display: inline;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .degreeName {
+    display: none;
+  }
 }
 .courseAbbr {
   font-family: arialround;
@@ -214,6 +364,14 @@ html {
   padding-top: 5px;
   padding-left: 22px;
   color: #2c242f;
+  padding-top: 5px;
+  padding-left: 23px;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .courseAbbr {
+    padding-top: 12px;
+    padding-left: 40px;
+  }
 }
 .courseName {
   color: #2c242f;
@@ -227,6 +385,27 @@ html {
   padding-top: 3px;
   padding-left: 17px;
   *display: inline;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .courseName {
+    display: none;
+  }
+}
+.rubricnumber {
+  font-family: arialround;
+  font-size: 31px;
+  padding-top: 5px;
+  padding-left: 22px;
+  color: #2c242f;
+  padding-top: 9px;
+  padding-left: 46px;
+  position: absolute;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .rubricnumber {
+    padding-top: 15px;
+    padding-left: 32px;
+  }
 }
 .rubric {
   color: #2c242f;
@@ -244,9 +423,21 @@ html {
   white-space: nowrap;
   overflow: hidden;
 }
+.rubric:nth-child(5) {
+  display: none;
+}
 .rubricholder {
   padding-left: 103px;
   margin-top: -3px;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .rubricholder {
+    display: none;
+  }
+}
+.addcontainer {
+  width: 0px;
+  padding-left: 106px;
 }
 .addrubric {
   display: inline-block;
@@ -262,9 +453,101 @@ html {
 .addrubric padding 0px 5px {
   border: none;
 }
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .addrubric padding 0px 5px {
+    margin-top: 17px;
+  }
+}
 .dots {
   margin-right: 8px;
   padding-left: 3px;
+}
+.mobile-menu {
+  background-image: url("../img/mobile-menu-top.png");
+  background-size: 80%;
+  background-repeat: repeat-x;
+  background-color: #a6ce3d;
+  min-height: 705px;
+  height: 705px;
+  max-height: 705px;
+  min-width: 315px;
+  width: 315px;
+  max-width: 315px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+@media screen and (min-width: 790px) and (max-width: 1149px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+@media screen and (min-width: 1150px) and (max-width: 1599px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+.mobile-menu-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.mobile-menu-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.rubric-container-use {
+  background-color: #add8e6;
+  margin-left: 10px;
+}
+.rubric-header {
+  background-color: #ffffe0;
+  margin-left: 20px;
+}
+.rubric-body {
+  background-color: #90ee90;
+  margin-left: 30px;
+}
+.rubric-name {
+  background-color: #f00;
+  margin-left: 10px;
+}
+.rubric-degree {
+  background-color: #008000;
+  margin-left: 20px;
+}
+.rubric-course {
+  background-color: #00f;
+  margin-left: 30px;
+}
+.rubric-section {
+  background-color: #800080;
+  margin-left: 40px;
+}
+.rubric-item {
+  background-color: #ff0;
+  margin-left: 50px;
+}
+.ri-name {
+  margin-left: 10px;
+}
+.ri-wiki {
+  margin-left: 20px;
+}
+.ri-desc {
+  margin-left: 30px;
+}
+.ri-comment {
+  margin-left: 40px;
 }
 .hideme {
   display: none;
