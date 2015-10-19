@@ -50,40 +50,27 @@
             rubrics = require('../models/rubrics.js');
             allrubrics = rubrics.findAll(function(result){
                 res.send(JSON.stringify({rubrics: result}, null, 3));
-                console.log(result);
+                //console.log(result);
             });  
         });
-
-
-        // app.get('/useRubric/:id', function (req, res){
-        //     var rubricID = req.param("id");
-        //     console.log(rubricID);
-        //     rubrics = require('../models/rubrics.js');
-        //     usedRubric = rubrics.findOne(rubricID, function(result){
-        //         res.send(JSON.stringify({usedRubric: result},null, 3));
-        //     });
-        // }); 
 
        
         app.post('/editRubric', function (req, res){
             rubrics = require('../models/rubrics.js');
-<<<<<<< HEAD
-            // console.log(req.body, '--------------------');
-            // rubrics.edit();
-        
-=======
+
             //console.log(req.body, '--------------------');
             rubrics.update(req.body, function(doc){
                     res.send(doc);
                 });
-//req,id,success,fail
->>>>>>> mergemasta
-        
+
         });
 
         app.post('/createRubricItem', function (req, res){
-            rubrics = require('../models/rubrics.js');
-            console.log(req.body, "-----------------------");
+            item = require('../models/items.js');
+            //console.log(req.body.selectedRubric.rubricSections, "------------++-----------");
+            item.add(req.body, function(doc){
+                    res.send(doc);
+                }); 
         })
        
     // -------------------------------------------------------------
@@ -100,6 +87,12 @@
           app.post('/addRubric', function (req, res) {
                 rubrics = require('../models/rubrics.js');
                 //console.log(req.body);
+                var data = {};
+                    data.itemName = req.itemName;
+                    data.itemDes = req.itemDes;
+                    data.rubricID = req.selectedRubric._id;
+
+
                 rubrics.add(req.body, function(doc){
                     res.send(doc);
                 }); 
