@@ -34,6 +34,25 @@ var _model = mongoose.model('rubrics', rubricSchema);
     			
   			});
   		};
+
+// Update Courses ============
+
+	_update = function(success, fail){
+
+        var cleanData = data.sanitize(rubric);
+
+        if (cleanData){
+            _model.update({'_id':rubric._id}, {$set:cleanData}, function(err,doc){
+                if (err) {
+                    fail(err);
+                }else{
+                    success(doc);
+                }
+            });
+        }
+    };
+// Update Courses End ============
+
 //  Add Course End =================
 //  Find All Courses ===============
 	_findAll = function(success, fail){
@@ -69,6 +88,7 @@ var _model = mongoose.model('rubrics', rubricSchema);
 return {
 		schema  : rubricSchema,
 		add 	: _save,
+		update  : _update,
 	    findAll : _findAll,
 	    findOne : _findOne
 	   };
