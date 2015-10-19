@@ -86,13 +86,6 @@
        });
           app.post('/addRubric', function (req, res) {
                 rubrics = require('../models/rubrics.js');
-                //console.log(req.body);
-                var data = {};
-                    data.itemName = req.itemName;
-                    data.itemDes = req.itemDes;
-                    data.rubricID = req.selectedRubric._id;
-
-
                 rubrics.add(req.body, function(doc){
                     res.send(doc);
                 }); 

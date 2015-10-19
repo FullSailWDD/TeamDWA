@@ -21,7 +21,6 @@ var _model = mongoose.model('rubrics', rubricSchema);
 		for(i = 0; i < req.rubricSections.length;i++){
 			rubricSectionsArray.push({sectionName:req.rubricSections[i]})
 		}
-		console.log("--- DATA RUBRIC SECTION-----",rubricSectionsArray);
 	var newRubric = new _model({
 				courseID		: req.courseID,
 				rubricName 		: req.rubricName,
