@@ -248,10 +248,26 @@ var app = angular.module('app', ['ngRoute'])
 			},
 			template:
 			'<p class="edit-button" ng-click="callback({rubric: payload})">Edit Rubric</p>'+
-			'<p class="rubric-name">{[{payload.rubricName}]}</p>'+
+            '<div class="rubric-stuff">'+
             '<p class="rubric-degree">Degree Name</p>'+
             '<p class="rubric-course">Course Name</p>'+
-			'<div class="rubric-section" ng-repeat="section in payload.rubricSections">{[{section.sectionName}]}</div>'
+			'<p class="rubric-name">{[{payload.rubricName}]}</p>'+
+			'<div class="rubric-section" ng-repeat="section in payload.rubricSections">{[{section.sectionName}]}</div>'+
+                '<div class="rubric-item">'+
+                    '<div class="rubric-buttons">'+
+                        '<ul class="button-list">'+
+                        '<li class="button-actual"><button type="button" onclick="">100</button></li>'+
+                        '<li class="button-actual"><button type="button" onclick="">75</button></li>'+
+                        '<li class="button-actual"><button type="button" onclick="">50</button></li>'+
+                        '<li class="button-actual"><button type="button" onclick="">25</button></li>'+
+                        '<li class="button-actual"><button type="button" onclick="">0</button></li>'+
+                        '</ul>'+
+                    '</div>'+
+                    '<p class="rubric-item ri-name">({(rubricSections[i].items[i].itemName)})</p>'+
+                    '<p class="rubric-item ri-wiki">({(rubricSections[i].items[i].itemWiki)})</p>'+
+                    '<p class="rubric-item ri-desc">({(rubricSections[i].items[i].itemDesc)})</p>'+
+                    '<p class="rubric-item ri-comment">({(rubricSections[i].items[i].itemComment)})</p>'+
+            '</div>'
 		}
 	})
 
