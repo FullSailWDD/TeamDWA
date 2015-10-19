@@ -222,6 +222,15 @@ html {
   cursor: pointer;
   z-index: 2;
 }
+.dashboardbutton {
+  position: fixed;
+  top: 10px;
+  right: 101px;
+  font-family: arialround;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2;
+}
 .logoutbutton:link {
   color: #2c242f;
 }
