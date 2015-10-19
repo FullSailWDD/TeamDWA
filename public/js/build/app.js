@@ -152,7 +152,6 @@ var app = angular.module('app', ['ngRoute'])
 		}
 
 		$scope.addRubricItem = function(rubric, rubricSection){
-			$scope.inputClick++;
 			console.log(rubricSection);
 			console.log(rubric);
 		}
