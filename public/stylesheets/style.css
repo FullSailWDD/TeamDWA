@@ -557,6 +557,20 @@ html {
   top: 191px;
   right: 247px;
 }
+.use-button {
+  position: fixed;
+  top: 191px;
+  right: 247px;
+}
+.editanddone {
+  padding: 10px;
+}
+.whatsthis {
+  background-color: #008000;
+}
+.edit-input {
+  font-size: 24px;
+}
 .rubric-buttons {
   float: right;
 }
