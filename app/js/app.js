@@ -24,9 +24,9 @@ var app = angular.module('app', ['ngRoute'])
 	    }).when("/addRubric",{
 	        templateUrl: "templates/rubric.html",
 	        controller: "rubricCtrl"
-	    }).when("/studentAudit",{
-	        templateUrl: "templates/rubricAudit.html",
-	        controller: "rubricAudit"
+	    }).when("/useRubric",{
+	        templateUrl: "templates/useRubric.html",
+	        controller: "useRubricCtrl"
 	    }).when("/createRubric",{
 	        templateUrl: "templates/dashboard.html",
 	        controller: "rubricCreateCtrl"
@@ -69,9 +69,9 @@ var app = angular.module('app', ['ngRoute'])
 					console.log($scope.courses.courses);
 			});
 
-			$scope.select = function(rubric){
+			$scope.rubricSelect = function(rubric){
 				$rootScope.rubric = rubric;
-				$location.path('/studentAudit');
+				$location.path('/useRubric');
 				console.log($rootScope.rubric);
 			}
 
@@ -128,29 +128,30 @@ var app = angular.module('app', ['ngRoute'])
 			scope: {
 				rubrics: '=',
 				payload: '=',
-				rubricSelect: '&',
+				select: '&',
 				callback: '&'
 			}, 
 			template: 
-				'<div class="dashsearchcontainer">'+
-				'<input class="dashsearch" type="text" name="search" size="35" placeholder="Search for a Degree, Course or Rubric" ng-model="searchText">'+
-				'</div>'+	
-					'<div class="dashresults" >'+
-					  '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
-							'<li>DegreeID : <span id="degreeID">{[{course.degreeID}]}</span><br/>'+
-							'DegreeName : <span id="degreeID">{[{course.degreeName}]}</span><br/>'+
-							'DegreeAbbr : <span id="degreeID">{[{course.degreeAbbr}]}</span><br/>'+
-							'Course Abbreviation : <span id="courseAbbr">{[{course.courseAbbr}]}</span><br/>'+
-							' -- Course Name : <span id="courseName">{[{course.courseName}]}</span><br/>'+
-							' -- ID : <span>{[{course._id}]}</span><br/>'+
-							' -- Rubrics : <span ng-repeat="theRubrics in rubrics"><div ng-click="rubricSelect({theRubrics: theRubrics})" ng-if="course._id == theRubrics.courseID">{[{theRubrics}]}</div></span><br/>'+
-							'<button ng-click="callback({course:course})">Add Rubric</button></li>'+
-						'</li>'+
-					  '</ul>'+
-					'</div>'
+            '<div class="dashsearchcontainer">'+
+                '<input class="dashsearch" type="text" name="search" size="35" placeholder="Search for a Degree, Course or Rubric" ng-model="searchText">'+
+            '</div>'+
+            '<div class="dashresults">'+
+                '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
+                    '<li>'+
+                        '<p class="degreeAbbr">{[{course.degreeAbbr}]}<span class="degreeName">{[{course.degreeName}]}</span></p>'+
+                        '<p id="courseAbbr" class="courseAbbr">{[{course.courseAbbr}]}<span id="courseName" class="courseName">{[{course.courseName}]}</span></p>'+
+                        '<div class="rubricholder">'+
+                            '<p class="rubric" ng-repeat="theRubrics in rubrics" ng-repeat="theRubrics in rubrics" ng-if="course._id == theRubrics.courseID" ng-click="select({theRubrics:theRubrics})">{[{theRubrics.rubricName}]}</p>'+
+                        '</div>'+
+                        '<p class="hideme">{[{course._id}]}</p>'+
+                        '<p class="hideme">{[{course.degreeID}]}</p>'+
+                        '<button class="addrubric" ng-click="callback({course:course})">+</button>'+
+                        '<img class="dots" width="20" src="img/dots.png">'+
+                    '</li>'+
+                '</ul>'+
+            '</div>'                 
 		}
 	})
-
 
 	app.directive('degrees', function(){
 		return{

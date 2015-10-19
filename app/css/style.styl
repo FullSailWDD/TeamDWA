@@ -89,9 +89,9 @@ body
     color darkPurple
 
 .dashresults
-    col (2/3)
-    center 955px
-    
+    col(2/3)
+    center 450px
+
 .dashresults li
     background-image: url("../img/result-bg.png")
     height 129px
@@ -106,53 +106,41 @@ body
     text-align center
     padding-top 35px
     padding-bottom 35px
-
-//media queries
-//@media screen and (min-width: 500px) and (max-device-width: 1150px)
-//    .dashresults
-//        col(1/3)
-//        center 450px
+    
+.dots
+    background-color red
+    width 20px
 
 //mobile
-@media (min-width: 1px)
-    .dashresults
-        display none
+@media screen and (min-width: 1px), (max-width: 699px)
     .dashsearchcontainer
+        display none
+    .dashresults
         display none
         
 //before mobile
-@media (min-width: 790px)
-    .dashsearch
-        font-size 27px
-    .dashresults
-        col(2/3)
-        center 450px
-        display block
+@media screen and (min-width: 790px), (max-width: 1149px)
     .dashsearchcontainer
         display block
-        
-//shorten search
-@media (min-width: 850px)
+    .dashsearch
+        font-size 27px
     .dashresults
         col(2/3)
         center 450px
-    .dashsearch
-        font-size 27px
+        display block
         
-@media (min-width: 1150px)
+//large
+@media screen and (min-width: 1150px), (max-width: 1599px)
+    .dashsearch
+        font-size 32px
     .dashresults
         col(2/3)
         center 955px
+        
+//xlarge
+@media screen and (min-width: 1600px)
     .dashsearch
         font-size 32px
-        
-@media (min-width: 1600px)
     .dashresults
         col(7/8)
         center 1450px
-    .dashsearch
-        font-size 32px
-
-//@media (min-width: 100px), (min-height: 200px)
-//.foo
-//  color: #100

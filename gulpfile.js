@@ -46,7 +46,8 @@ var gulp 			= require('gulp'),
 	gulp.task('watch', function () {
     livereload.listen();
     gulp.watch([        
-        './app/**/*', 
+        './app/**/*',
+        './routes/**/*',
         './models/**/*'
     ],['all']);
 	});
