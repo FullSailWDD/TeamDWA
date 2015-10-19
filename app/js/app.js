@@ -140,6 +140,7 @@ var app = angular.module('app', ['ngRoute'])
                     '<li>'+
                         '<p class="degreeAbbr">{[{course.degreeAbbr}]}<span class="degreeName">{[{course.degreeName}]}</span></p>'+
                         '<p id="courseAbbr" class="courseAbbr">{[{course.courseAbbr}]}<span id="courseName" class="courseName">{[{course.courseName}]}</span></p>'+
+                        '<p class="rubricnumber">#</p>'+
                         '<div class="rubricholder">'+
                             '<p class="rubric" ng-repeat="theRubrics in rubrics" ng-repeat="theRubrics in rubrics" ng-if="course._id == theRubrics.courseID" ng-click="select({theRubrics:theRubrics})">{[{theRubrics.rubricName}]}</p>'+
                         '</div>'+

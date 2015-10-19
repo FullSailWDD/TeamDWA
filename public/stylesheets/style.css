@@ -202,7 +202,7 @@ html {
   .dashsearch {
     display: initial;
     width: 60%;
-    font-size: 16px;
+    font-size: 29px;
   }
 }
 @media screen and (min-width: 790px) and (max-width: 1149px) {
@@ -224,6 +224,25 @@ html {
 @media screen and (min-width: 1px) and (max-width: 789px) {
   .dashresults {
     display: initial;
+    *zoom: 1;
+    width: auto;
+    max-width: 450px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 80px;
+    max-width: 480px;
+  }
+  .dashresults:before,
+  .dashresults:after {
+    content: '';
+    display: table;
+  }
+  .dashresults:after {
+    clear: both;
   }
 }
 @media screen and (min-width: 790px) and (max-width: 1149px) {
@@ -301,12 +320,25 @@ html {
   padding-bottom: 26px;
   float: left;
 }
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .dashresults li {
+    background-image: url("../img/mobile-result-bg.png");
+    width: 146px;
+    padding-right: 12px;
+  }
+}
 .degreeAbbr {
   font-family: arialround;
   font-size: 31px;
   padding-top: 12px;
   padding-left: 22px;
   color: #2c242f;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .degreeAbbr {
+    padding-top: 14px;
+    padding-left: 41px;
+  }
 }
 .degreeName {
   color: #2c242f;
@@ -321,12 +353,25 @@ html {
   padding-left: 13px;
   *display: inline;
 }
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .degreeName {
+    display: none;
+  }
+}
 .courseAbbr {
   font-family: arialround;
   font-size: 31px;
   padding-top: 5px;
   padding-left: 22px;
   color: #2c242f;
+  padding-top: 5px;
+  padding-left: 23px;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .courseAbbr {
+    padding-top: 12px;
+    padding-left: 40px;
+  }
 }
 .courseName {
   color: #2c242f;
@@ -340,6 +385,27 @@ html {
   padding-top: 3px;
   padding-left: 17px;
   *display: inline;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .courseName {
+    display: none;
+  }
+}
+.rubricnumber {
+  font-family: arialround;
+  font-size: 31px;
+  padding-top: 5px;
+  padding-left: 22px;
+  color: #2c242f;
+  padding-top: 9px;
+  padding-left: 46px;
+  position: absolute;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .rubricnumber {
+    padding-top: 15px;
+    padding-left: 32px;
+  }
 }
 .rubric {
   color: #2c242f;
@@ -364,6 +430,11 @@ html {
   padding-left: 103px;
   margin-top: -3px;
 }
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .rubricholder {
+    display: none;
+  }
+}
 .addcontainer {
   width: 0px;
   padding-left: 106px;
@@ -381,6 +452,11 @@ html {
 }
 .addrubric padding 0px 5px {
   border: none;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .addrubric padding 0px 5px {
+    margin-top: 17px;
+  }
 }
 .dots {
   margin-right: 8px;
