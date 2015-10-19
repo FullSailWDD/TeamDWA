@@ -7,8 +7,8 @@ module.exports = function(){
 var rubricSchema = new mongoose.Schema({
 		courseID 		: { type: String, required: false },
     	rubricName 		: String,
-    	rubricSections  : { type: Array, required: false }
-})
+    	rubricSections  : {type: Array, required: false }
+    })
 
 // making our schema a model variable to create new courses using the schema
 var _model = mongoose.model('rubrics', rubricSchema);
@@ -16,12 +16,16 @@ var _model = mongoose.model('rubrics', rubricSchema);
 
 // Add Course ====================
 	_save = function (req, success, fail ){
+		rubricSectionsArray = [];
+		for(i = 0; i < req.rubricSections.length;i++){
+			rubricSectionsArray.push({sectionName:req.rubricSections[i]})
+		}
 	var newRubric = new _model({
 				courseID		: req.courseID,
-				rubricName 		: req.rubricName
+				rubricName 		: req.rubricName,
+				rubricSections  : rubricSectionsArray
 		});
-		
-		console.log(newRubric);
+			console.log(newRubric, '--------------------');
 			// Save to Database
 			newRubric.save( function(err){
 				if (err) {

@@ -42,14 +42,12 @@ var app = angular.module('app', ['ngRoute'])
 			$http.post('/getDegrees', $scope.allDegrees)
 				.then(function(res){
 					$rootScope.theSession = 0;
-					console.log($scope.theSession);
 					myService.addItem(res.data);
 					$location.path('/getRubrics');
 			});
 	}]);
 	app.controller('getRubricsCtrl', ['$scope', '$rootScope', '$http','$location', function($scope, $rootScope, $http, $location){
 			$rootScope.theSession ++;
-			console.log($scope.theSession);
 			$http.post('/getRubrics', $scope.allRubrics)
 				.then(function(res){
 					$rootScope.rootRubrics = res.data;
@@ -59,18 +57,10 @@ var app = angular.module('app', ['ngRoute'])
 		//Dashboard Controller============
 	app.controller('dashboardCtrl', ['$scope','$rootScope', '$http', '$routeParams','$location', 'courseTileGenerator', 'degreeGenerator', 'myService', function($scope, $rootScope, $http, $routeParams, $location, courseTileGenerator, degreeGenerator, myService){
 			$rootScope.theSession++;
-			console.log($scope.theSession);
-			console.log($rootScope.theSession);
 			if($rootScope.theSession != 2){
 				console.log('Refresh -- Solo If');
 					$location.path('/');
 			};
-			// $rootScope.$on("$routeChangeStart", function(event, next, curent){
-			// 	if($rootScope.theSession != 2){
-			// 		console.log('Refresh');
-			// 		$location.path('/');
-			// 	} 
-			// })
 			
 			$scope.courses = {};
 			$http.post('/getDashboard', $scope.allCourses)
@@ -122,8 +112,10 @@ var app = angular.module('app', ['ngRoute'])
 	app.controller('rubricCtrl', ['$scope', '$rootScope', '$http', '$routeParams','$location', function($scope, $rootScope, $http, $routeParams, $location){
 				$scope.newRubric = {};
 			$scope.createRubric = function(){
-				// console.log($scope.test);
 				$scope.newRubric.courseID = $scope.test._id;
+				var sections = $scope.newRubric.rubricSections.split(',');
+					// console.log(sections);
+					$scope.newRubric.rubricSections = sections;
 				console.log($scope.newRubric);
 				$http.post('/addRubric', $scope.newRubric);
 
@@ -134,11 +126,11 @@ var app = angular.module('app', ['ngRoute'])
 	}]);
 
 	app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $routeParams, $location){
-			console.log($scope.selectedRubric);
+			// console.log($scope.selectedRubric);
 			$http.get('/useRubric/'+$scope.selectedRubric._id)
 				.then(function(res){
 					$scope.usedRubric = res.data;
-					console.log($scope.usedRubric);
+					// console.log($scope.usedRubric);
 			});
 	}]);
 
@@ -217,8 +209,8 @@ var app = angular.module('app', ['ngRoute'])
             			'<input type="text" class="form-control" name="rubricName" ng-model="model.rubricName">'+
         			'</div>'+
         			'<div class="form-group">'+
-            			'<label>Rubric Section</label>'+
-           				'<input type="text" class="form-control" name="sectionName" ng-model="model.rubricSections">'+
+            			'<label>Rubric Sections</label>'+
+           				'<input type="text" class="form-control" name="sections" ng-model="model.rubricSections">'+
         			'</div>'+
 						'<button ng-click="callback()" class="btn btn-warning btn-lg">Create Rubric</button>'+
     			'</form>'
