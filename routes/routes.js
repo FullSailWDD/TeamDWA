@@ -19,7 +19,7 @@
 // Login
         app.post('/login', passport.authenticate('local-login', {
             successRedirect : '/dashboard', // redirect to the secure profile section
-            failureRedirect : '/login', // redirect back to the signup page if there is an error
+            failureRedirect : '/', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
 
         }));
@@ -47,11 +47,24 @@
        });
 
         app.post('/getRubrics', function (req, res) {
+            console.log('working here');
             rubrics = require('../models/rubrics.js');
             allrubrics = rubrics.findAll(function(result){
                 res.send(JSON.stringify({rubrics: result}, null, 3));
-            });    
-       });
+                console.log(result);
+            });  
+        });
+
+
+        app.get('/useRubric/:id', function (req, res){
+            var rubricID = req.param("id");
+            console.log(rubricID);
+            rubrics = require('../models/rubrics.js');
+            usedRubric = rubrics.findOne(rubricID, function(result){
+                res.send(JSON.stringify({usedRubric: result},null, 3));
+            });
+        }); 
+       
     // -------------------------------------------------------------
     // Add Course JSON Route - Receiving Data From Angular 
          app.post('/addCourseJSON', function (req, res) {
