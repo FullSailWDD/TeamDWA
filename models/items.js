@@ -51,11 +51,23 @@ var _model = mongoose.model('item', itemSchema);
   		};
 
 
+  			_findAllByRubricID = function(success, fail){
+		//console.log('firing here');
+		_model.find({}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				success(doc);
+			}
+		})
+	};
+
+
 return {
 		schema  : itemSchema,
 		add 	: _save,
 		update  : _update,
-	    findAll : _findAll,
+	    findByRubric : _findAllByRubricID,
 	    findOne : _findOne
 	   };
 }();
