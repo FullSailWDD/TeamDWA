@@ -67,17 +67,12 @@
        
         app.post('/editRubric', function (req, res){
             rubrics = require('../models/rubrics.js');
-<<<<<<< HEAD
             // console.log(req.body, '--------------------');
             // rubrics.edit();
-        
-=======
-            //console.log(req.body, '--------------------');
             rubrics.update(req.body, function(doc){
                     res.send(doc);
                 });
 //req,id,success,fail
->>>>>>> mergemasta
         
         });
 
