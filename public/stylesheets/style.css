@@ -30,6 +30,7 @@ html {
 }
 .bg {
   position: fixed;
+  z-index: 2;
 }
 .mobile-top {
   top: 0px;
@@ -164,6 +165,7 @@ html {
   font-family: arialround;
   font-size: 24px;
   cursor: pointer;
+  z-index: 2;
 }
 .logoutbutton:link {
   color: #2c242f;
@@ -528,13 +530,11 @@ html {
   min-height: 1000px;
 }
 .rubric-body {
-  background-color: #90ee90;
   margin-left: 191px;
 }
 .rubric-stuff {
   position: relative;
-  top: -17px;
-  left: 30px;
+  top: -42px;
 }
 .edit-button {
   position: fixed;
@@ -542,56 +542,69 @@ html {
   right: 247px;
 }
 .rubric-buttons {
-  background-color: #ffa500;
   float: right;
 }
 .rubric-name {
-  background-color: #f00;
-  margin-left: 10px;
   font-size: 42px;
+  margin-bottom: 11px;
 }
 .rubric-degree {
-  background-color: #008000;
-  margin-left: 10px;
-  margin-top: -62px;
   font-size: 16px;
+  display: none;
 }
 .rubric-course {
-  background-color: #00f;
-  margin-left: 238px;
-  margin-top: -16px;
   font-size: 16px;
+  margin-bottom: 9px;
 }
 .rubric-section {
-  background-color: #800080;
-  margin-left: 40px;
   font-size: 16px;
+  background-color: #fff;
+  border: 3px solid #000;
+  border-radius: 15px;
+  min-height: 170px;
+  width: 519px;
+  margin-bottom: 9px;
+}
+.rubric-section-title {
+  padding-top: 8px;
+  padding-left: 14px;
+  padding-bottom: 0px;
+  font-size: 25px;
+}
+.section-weight {
+  color: #f00;
+  float: right;
+  margin-top: -28px;
+  margin-right: 7px;
 }
 .rubric-item {
-  background-color: #ff0;
-  margin-left: 50px;
   font-size: 16px;
+  padding-top: 8px;
+  padding-left: 14px;
+  padding-bottom: 8px;
 }
 .ri-name {
-  margin-left: 10px;
+  margin-left: 0px;
 }
 .ri-wiki {
-  margin-left: 20px;
+  margin-left: 0px;
 }
 .ri-desc {
-  margin-left: 30px;
+  margin-left: 0px;
 }
 .ri-comment {
-  margin-left: 40px;
+  margin-left: 0px;
 }
 .rubric-buttons {
-  background-color: #f0f;
+  color: #00f;
 }
 .button-list {
-  background-color: #ffc0cb;
+  color: #00f;
 }
-.button-actual {
-  color: #008000;
+.button-actual button {
+  width: 41px;
+  height: 25px;
+  margin-right: 6px;
 }
 .hideme {
   display: none;
