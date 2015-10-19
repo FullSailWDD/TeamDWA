@@ -33,6 +33,9 @@ var app = angular.module('app', ['ngRoute'])
 	    }).when("/editRubric",{
 	        templateUrl: "templates/editRubric.html",
 	        controller: "rubricEditCtrl"
+	    }).when("/addItem",{
+	        templateUrl: "templates/addItem.html",
+	        controller: "rubricEditCtrl"
 	    }).otherwise({
 	        redirectTo: "/"
 	    })
@@ -69,7 +72,7 @@ var app = angular.module('app', ['ngRoute'])
 			$http.post('/getDashboard', $scope.allCourses)
 				.then(function(res){
 					$scope.courseRubrics = $scope.rootRubrics.rubrics;
-					console.log($scope.rootRubrics.rubrics);
+					//console.log($scope.rootRubrics.rubrics);
 					$scope.degrees = myService.getItem();
 					$scope.courses = res.data;
 					$scope.degreesData = new degreeGenerator($scope.degrees);
@@ -100,9 +103,9 @@ var app = angular.module('app', ['ngRoute'])
 		$scope.addCourse = function(){
 			$scope.newCourse.degreeID = $scope.test;
 			if(!$scope.newCourse.degreeID){
-				console.log('Error');
+				//console.log('Error');
 			}else{
-			console.log($scope.newCourse);
+			//console.log($scope.newCourse);
 			$http.post('/addCourseJSON', $scope.newCourse);
 			$location.path('/dashboard');
 			}
@@ -119,7 +122,7 @@ var app = angular.module('app', ['ngRoute'])
 				var sections = $scope.newRubric.rubricSections.split(',');
 					// console.log(sections);
 					$scope.newRubric.rubricSections = sections;
-				console.log($scope.newRubric);
+				//console.log($scope.newRubric);
 				$http.post('/addRubric', $scope.newRubric);
 
 				$location.path('/');
@@ -133,21 +136,34 @@ var app = angular.module('app', ['ngRoute'])
 		console.log($scope.usedRubric);
 
 		$scope.editRubric = function(rubric){
-			console.log(rubric);
+			//console.log(rubric);
 			$rootScope.editRubric = rubric;
-			console.log($rootScope.editRubric);
+			//console.log($rootScope.editRubric);
 			$location.path('/editRubric');
 		}
 	}]);
 
 	app.controller('rubricEditCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
-			console.log($scope.editRubric);
+			// console.log($scope.editRubric);
 
 		$scope.addRubricItem = function(rubric, rubricSection){
+			$location.path('/addItem');
 			console.log(rubricSection);
-			console.log('Hello World!');
 			console.log(rubric);
+
 		}
+
+		$scope.newItem ={};
+		$scope.addItem = function(){
+
+		var itemName = $scope.newItem.itemName;
+
+		console.log(itemName);
+
+
+		}
+
+
 
 		$scope.useFromEditRubric = function(rubric){
 			console.log(rubric);
@@ -213,6 +229,33 @@ var app = angular.module('app', ['ngRoute'])
 					'</li>'+
 				'</ul>'+
 				'</div>'
+		}
+	})
+
+
+	app.directive('addItem', function(){
+		return{
+			restrict: 'E',
+			scope: {
+				model: '=',
+				callback: '&'
+			},
+			template:
+			    '<form >'+
+        			'<div class="form-group">'+
+            			'<label>Rubric Name</label>'+
+            			'<input type="text" class="form-control" name="rubricName" ng-model="item.itemName">'+
+        			'</div>'+
+        			'<div class="form-group">'+
+            			'<label>Item Description</label>'+
+           				'<input type="text" class="form-control" name="sections" ng-model="item.itemDes">'+
+        			'</div>'+
+        			'<div class="form-group">'+
+            			'<label>Item Weight</label>'+
+           				'<input type="text" class="form-control" name="weight" ng-model="item.itemweight">'+
+        			'</div>'+
+						'<button ng-click="callback()" class="btn btn-warning btn-lg">Add Item</button>'+
+    			'</form>'
 		}
 	})
 
