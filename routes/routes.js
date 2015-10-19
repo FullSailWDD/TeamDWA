@@ -55,14 +55,22 @@
         });
 
 
-        app.get('/useRubric/:id', function (req, res){
-            var rubricID = req.param("id");
-            console.log(rubricID);
+        // app.get('/useRubric/:id', function (req, res){
+        //     var rubricID = req.param("id");
+        //     console.log(rubricID);
+        //     rubrics = require('../models/rubrics.js');
+        //     usedRubric = rubrics.findOne(rubricID, function(result){
+        //         res.send(JSON.stringify({usedRubric: result},null, 3));
+        //     });
+        // }); 
+
+       
+        app.post('/editRubric', function (req, res){
             rubrics = require('../models/rubrics.js');
-            usedRubric = rubrics.findOne(rubricID, function(result){
-                res.send(JSON.stringify({usedRubric: result},null, 3));
-            });
-        }); 
+            console.log(req.body, '--------------------');
+        
+        
+        });
        
     // -------------------------------------------------------------
     // Add Course JSON Route - Receiving Data From Angular 

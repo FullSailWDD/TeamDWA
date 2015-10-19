@@ -142,10 +142,18 @@ var app = angular.module('app', ['ngRoute'])
 
 	app.controller('rubricEditCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
 			console.log($scope.editRubric);
+			$scope.edit = true;
+
+		$scope.theEditRubric = function(rubric){
+			console.log(rubric);
+			$scope.edit =! $scope.edit;
+			console.log(rubric);
+			$http.post('/editRubric', rubric)
+		}
 
 		$scope.addRubricItem = function(rubric, rubricSection){
+			$scope.inputClick++;
 			console.log(rubricSection);
-			console.log('Hello World!');
 			console.log(rubric);
 		}
 
@@ -261,15 +269,31 @@ var app = angular.module('app', ['ngRoute'])
 			scope: {
 				payload: '=',
 				item: '&',
-				callback: '&'
+				callback: '&',
+				clicked : '=',
+				editrubric: '&'
 			},
 			template:
 			'<p ng-click="callback({rubric: payload})">Use Rubric</p>'+
 			'<div>'+
-			'<div>{[{payload.rubricName}]}</div>'+
+				'<div>'+
+					'<span ng-show="clicked">'+
+						'{[{payload.rubricName}]}</span>'+
+						'<p ng-click="editrubric({rubric: payload})"><span ng-if="clicked">Edit</span><span ng-if="!clicked">Done</span></p>'+
+					'<span ng-hide="clicked">'+
+						'<input type="text" ng-model="payload.rubricName" placeholder="{[{payload.rubricName}]}"/>'+
+					'</span>'+
+				'</div>'+
 			'<ul ng-repeat="section in payload.rubricSections">'+
-			'<li>{[{section.sectionName}]}</li>'+
-			'<li><p ng-click="item({rubric: payload, rubricSection: section})"> -- Add Item -- </p></li>'+
+				'<li>'+
+					'<span ng-show="clicked">'+
+						'{[{section.sectionName}]}</span>'+
+						'<p ng-click="editrubric({rubric: payload})"><span ng-if="clicked">Edit</span><span ng-if="!clicked">Done</span></p>'+
+					'<span ng-hide="clicked">'+
+						'<input type="text" ng-model="section.sectionName" placeholder="{[{section.sectionName}]}"/>'+
+					'</span>'+
+				'</li>'+
+				'<li><p ng-click="item({rubric: payload, rubricSection: section})"> -- Add Item -- </p></li>'+
 			'</ul>'+
 			'</div>'
 		}
