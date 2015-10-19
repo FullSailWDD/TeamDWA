@@ -1,4 +1,3 @@
-<p class=""></p>
 <h1>Use Rubric</h1>
 <div class="rubric-container-use">
     <div class="rubric-header">
@@ -7,6 +6,26 @@
         <p class="rubric-course">({(db.courses.courseName)})</p>
     </div>
     <div class="rubric-body">
+        <p class="rubric-section" ng-repeat section is sections>({(rubricSections[i].sectionName)})</p>
+        <div class="rubric-item" ng-repeat item in items>
+            <div class="rubric-buttons">
+                <ul class="button-list">
+                <li class="button-actual"><button type="button" onclick="myFunction()">100</button></li>
+                <li class="button-actual"><button type="button" onclick="myFunction()">75</button></li>
+                <li class="button-actual"><button type="button" onclick="myFunction()">50</button></li>
+                <li class="button-actual"><button type="button" onclick="myFunction()">25</button></li>
+                <li class="button-actual"><button type="button" onclick="myFunction()">0</button></li>
+                </ul>
+            </div>
+            <p class="rubric-item ri-name">({(rubricSections[i].items[i].itemName)})</p>
+            <p class="rubric-item ri-wiki">({(rubricSections[i].items[i].itemWiki)})</p>
+            <p class="rubric-item ri-desc">({(rubricSections[i].items[i].itemDesc)})</p>
+            <p class="rubric-item ri-comment">({(rubricSections[i].items[i].itemComment)})</p>
+        </div>
+    </div>
+</div>
+
+
 <!--
         ng-repeat thu sections in rubric
         ng-repeat thu items in section
@@ -32,44 +51,3 @@
         ({(rubricSections[i].items[i].itemDesc)})
         ({(rubricSections[i].items[i].itemComment)})
 -->
-        <p class="rubric-section">({(rubricSections[i].sectionName)})</p>
-            <p class="rubric-item ri-name">({(rubricSections[i].items[i].itemName)})</p>
-            <p class="rubric-item ri-wiki">({(rubricSections[i].items[i].itemWiki)})</p>
-            <p class="rubric-item ri-desc">({(rubricSections[i].items[i].itemDesc)})</p>
-            <p class="rubric-item ri-comment">({(rubricSections[i].items[i].itemComment)})</p>
-            <p class="rubric-item ri-name">({(rubricSections[i].items[i].itemName)})</p>
-            <p class="rubric-item ri-wiki">({(rubricSections[i].items[i].itemWiki)})</p>
-            <p class="rubric-item ri-desc">({(rubricSections[i].items[i].itemDesc)})</p>
-            <p class="rubric-item ri-comment">({(rubricSections[i].items[i].itemComment)})</p>
-            <p class="rubric-item ri-name">({(rubricSections[i].items[i].itemName)})</p>
-            <p class="rubric-item ri-wiki">({(rubricSections[i].items[i].itemWiki)})</p>
-            <p class="rubric-item ri-desc">({(rubricSections[i].items[i].itemDesc)})</p>
-            <p class="rubric-item ri-comment">({(rubricSections[i].items[i].itemComment)})</p>
-        <p class="rubric-section">({(rubricSections[i].sectionName)})</p>
-            <p class="rubric-item ri-name">({(rubricSections[i].items[i].itemName)})</p>
-            <p class="rubric-item ri-wiki">({(rubricSections[i].items[i].itemWiki)})</p>
-            <p class="rubric-item ri-desc">({(rubricSections[i].items[i].itemDesc)})</p>
-            <p class="rubric-item ri-comment">({(rubricSections[i].items[i].itemComment)})</p>
-            <p class="rubric-item ri-name">({(rubricSections[i].items[i].itemName)})</p>
-            <p class="rubric-item ri-wiki">({(rubricSections[i].items[i].itemWiki)})</p>
-            <p class="rubric-item ri-desc">({(rubricSections[i].items[i].itemDesc)})</p>
-            <p class="rubric-item ri-comment">({(rubricSections[i].items[i].itemComment)})</p>
-            <p class="rubric-item ri-name">({(rubricSections[i].items[i].itemName)})</p>
-            <p class="rubric-item ri-wiki">({(rubricSections[i].items[i].itemWiki)})</p>
-            <p class="rubric-item ri-desc">({(rubricSections[i].items[i].itemDesc)})</p>
-            <p class="rubric-item ri-comment">({(rubricSections[i].items[i].itemComment)})</p>
-        <p class="rubric-section">({(rubricSections[i].sectionName)})</p>
-            <p class="rubric-item ri-name">({(rubricSections[i].items[i].itemName)})</p>
-            <p class="rubric-item ri-wiki">({(rubricSections[i].items[i].itemWiki)})</p>
-            <p class="rubric-item ri-desc">({(rubricSections[i].items[i].itemDesc)})</p>
-            <p class="rubric-item ri-comment">({(rubricSections[i].items[i].itemComment)})</p>
-            <p class="rubric-item ri-name">({(rubricSections[i].items[i].itemName)})</p>
-            <p class="rubric-item ri-wiki">({(rubricSections[i].items[i].itemWiki)})</p>
-            <p class="rubric-item ri-desc">({(rubricSections[i].items[i].itemDesc)})</p>
-            <p class="rubric-item ri-comment">({(rubricSections[i].items[i].itemComment)})</p>
-            <p class="rubric-item ri-name">({(rubricSections[i].items[i].itemName)})</p>
-            <p class="rubric-item ri-wiki">({(rubricSections[i].items[i].itemWiki)})</p>
-            <p class="rubric-item ri-desc">({(rubricSections[i].items[i].itemDesc)})</p>
-            <p class="rubric-item ri-comment">({(rubricSections[i].items[i].itemComment)})</p>
-    </div>
-</div>

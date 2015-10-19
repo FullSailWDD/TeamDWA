@@ -517,6 +517,10 @@ html {
   background-color: #90ee90;
   margin-left: 30px;
 }
+.rubric-buttons {
+  background-color: #ffa500;
+  float: right;
+}
 .rubric-name {
   background-color: #f00;
   margin-left: 10px;
@@ -548,6 +552,15 @@ html {
 }
 .ri-comment {
   margin-left: 40px;
+}
+.rubric-buttons {
+  background-color: #f0f;
+}
+.button-list {
+  background-color: #ffc0cb;
+}
+.button-actual {
+  color: #008000;
 }
 .hideme {
   display: none;
