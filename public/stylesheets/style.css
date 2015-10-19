@@ -23,6 +23,61 @@ html {
   color: #2c242f;
   background-color: #808080;
 }
+#homepage h1 {
+  color: #2c242f;
+  font-size: 1.5em;
+  margin-bottom: 5%;
+  font-weight: bold;
+}
+#homepage input {
+  margin: 1%;
+  width: 80%;
+  padding: 10px;
+}
+#homepage label {
+  margin-right: 6%;
+}
+#rexLogo {
+  margin-left: 28%;
+  clear: both;
+}
+.homeDiv {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+  background-color: #fff;
+  float: left;
+  padding: 2%;
+  margin-top: 5%;
+  margin-left: 22%;
+  border: 2px solid;
+  border-color: #2c242f;
+  border-radius: 25px;
+  text-align: center;
+}
+.homeDiv:before,
+.homeDiv:after {
+  content: '';
+  display: table;
+}
+.homeDiv:after {
+  clear: both;
+}
+.homeDiv:last-child {
+  margin-right: 0%;
+}
+.homeForm {
+  width: 80%;
+  margin: 0 auto;
+}
+.homeBtn {
+  margin-right: 65%;
+  margin-top: 5%;
+}
 .dashboard {
   background-image: url("../img/ui-background.png");
   background-repeat: repeat;
