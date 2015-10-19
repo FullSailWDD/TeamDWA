@@ -38,14 +38,16 @@ var app = angular.module('app', ['ngRoute'])
 
 
 // Controllers ===========================
-	app.controller('getDegreesCtrl', ['$scope', '$http', '$routeParams','$location', 'myService', function($scope, $http, $routeParams, $location, myService){
+	app.controller('getDegreesCtrl', ['$scope', '$rootScope', '$http', '$routeParams','$location', 'myService', function($scope, $rootScope, $http, $routeParams, $location, myService){
 			$http.post('/getDegrees', $scope.allDegrees)
 				.then(function(res){
+					$rootScope.theSession = 0;
 					myService.addItem(res.data);
 					$location.path('/getRubrics');
 			});
 	}]);
 	app.controller('getRubricsCtrl', ['$scope', '$rootScope', '$http','$location', function($scope, $rootScope, $http, $location){
+			$rootScope.theSession ++;
 			$http.post('/getRubrics', $scope.allRubrics)
 				.then(function(res){
 					$rootScope.rootRubrics = res.data;
@@ -54,25 +56,35 @@ var app = angular.module('app', ['ngRoute'])
 	}]);
 		//Dashboard Controller============
 	app.controller('dashboardCtrl', ['$scope','$rootScope', '$http', '$routeParams','$location', 'courseTileGenerator', 'degreeGenerator', 'myService', function($scope, $rootScope, $http, $routeParams, $location, courseTileGenerator, degreeGenerator, myService){
+			$rootScope.theSession++;
+			console.log($scope.theSession);
+			console.log($rootScope.theSession);
+			$rootScope.$on("$routeChangeStart", function(event, next, curent){
+				if($rootScope.theSession != 2){
+					console.log('Refresh');
+					$location.path('/');
+				} 
+			})
+			
 			$scope.courses = {};
 			$http.post('/getDashboard', $scope.allCourses)
 				.then(function(res){
-					// console.log($scope.rootRubrics.rubrics);
 					$scope.courseRubrics = $scope.rootRubrics.rubrics;
+					console.log($scope.rootRubrics.rubrics);
 					$scope.degrees = myService.getItem();
-					// console.log($scope.courseRubrics);
 					$scope.courses = res.data;
 					$scope.degreesData = new degreeGenerator($scope.degrees);
-					// $scope.courses.courses.degreeData = $scope.degreesData.degree[0].degrees;
 					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
-					
-					console.log($scope.courses.courses);
 			});
 
+			$scope.refresh = function(){
+				$location.path('/');
+			}
+
 			$scope.rubricSelect = function(rubric){
-				$rootScope.rubric = rubric;
+				$rootScope.selectedRubric = rubric;
 				$location.path('/useRubric');
-				console.log($rootScope.rubric);
+				console.log($rootScope.selectedRubric);
 			}
 
 			$scope.addRubric = function(course){
@@ -82,6 +94,7 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.changeDegree = function(degree){
 				$rootScope.test = degree;
 			}
+			
 	}]);
 		// Dashboard Controller End ==========
 		// ===================================
@@ -117,6 +130,15 @@ var app = angular.module('app', ['ngRoute'])
 			
 	}]);
 
+	app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $routeParams, $location){
+			console.log($scope.selectedRubric);
+			$http.get('/useRubric/'+$scope.selectedRubric._id)
+				.then(function(res){
+					$scope.usedRubric = res.data;
+					console.log($scope.usedRubric);
+			});
+	}]);
+
 	// Controllers End ===================
 	// Directives ========================
 
@@ -141,7 +163,7 @@ var app = angular.module('app', ['ngRoute'])
                         '<p class="degreeAbbr">{[{course.degreeAbbr}]}<span class="degreeName">{[{course.degreeName}]}</span></p>'+
                         '<p id="courseAbbr" class="courseAbbr">{[{course.courseAbbr}]}<span id="courseName" class="courseName">{[{course.courseName}]}</span></p>'+
                         '<div class="rubricholder">'+
-                            '<p class="rubric" ng-repeat="theRubrics in rubrics" ng-repeat="theRubrics in rubrics" ng-if="course._id == theRubrics.courseID" ng-click="select({theRubrics:theRubrics})">{[{theRubrics.rubricName}]}</p>'+
+                            '<p class="rubric" ng-repeat="theRubrics in rubrics" ng-repeat="theRubrics in rubrics" ng-if="course._id == theRubrics.courseID" ng-click="select({rubric: theRubrics})">{[{theRubrics.rubricName}]}</p>'+
                         '</div>'+
                         '<p class="hideme">{[{course._id}]}</p>'+
                         '<p class="hideme">{[{course.degreeID}]}</p>'+

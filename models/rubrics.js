@@ -7,7 +7,7 @@ module.exports = function(){
 var rubricSchema = new mongoose.Schema({
 		courseID 		: { type: String, required: false },
     	rubricName 		: String,
-    	rubricSections  : String
+    	rubricSections  : { type: Array, required: false }
 })
 
 // making our schema a model variable to create new courses using the schema
@@ -15,13 +15,10 @@ var _model = mongoose.model('rubrics', rubricSchema);
 
 
 // Add Course ====================
-	_save = function ( req, success, fail ){
-		console.log(req, '-----------');
-		console.log(req.courseID, '----------');
+	_save = function (req, success, fail ){
 	var newRubric = new _model({
 				courseID		: req.courseID,
-				rubricName 		: req.rubricName,
-				rubricSections  : req.rubricSections
+				rubricName 		: req.rubricName
 		});
 		
 		console.log(newRubric);
@@ -36,10 +33,11 @@ var _model = mongoose.model('rubrics', rubricSchema);
 				};
     			
   			});
-  			};
+  		};
 //  Add Course End =================
 //  Find All Courses ===============
 	_findAll = function(success, fail){
+		console.log('firing here');
 		_model.find({}, function(err, doc){
 			if(err){
 				fail(err);
@@ -47,6 +45,22 @@ var _model = mongoose.model('rubrics', rubricSchema);
 				success(doc);
 			}
 		})
+	};
+
+	_findOne = function(id, success, fail){
+		// console.log(id, '-----------');
+		_model.find({_id: id}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				// console.log(doc);
+				success(doc);
+			};
+		});
+	};
+
+	_modifyRubric = function(id, success, fail){
+
 	}
 	
 // Find All Courses End ============
@@ -55,6 +69,7 @@ var _model = mongoose.model('rubrics', rubricSchema);
 return {
 		schema  : rubricSchema,
 		add 	: _save,
-	    findAll : _findAll
+	    findAll : _findAll,
+	    findOne : _findOne
 	   };
 }();
