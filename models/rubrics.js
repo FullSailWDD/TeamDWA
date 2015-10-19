@@ -83,7 +83,6 @@ var _model = mongoose.model('rubrics', rubricSchema);
 	};
 
 	_modifyRubric = function(id, success, fail){
-
 	}
 	
 // Find All Courses End ============

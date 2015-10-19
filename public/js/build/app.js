@@ -30,6 +30,9 @@ var app = angular.module('app', ['ngRoute'])
 	    }).when("/createRubric",{
 	        templateUrl: "templates/dashboard.html",
 	        controller: "rubricCreateCtrl"
+	    }).when("/editRubric",{
+	        templateUrl: "templates/editRubric.html",
+	        controller: "rubricEditCtrl"
 	    }).otherwise({
 	        redirectTo: "/"
 	    })
@@ -130,7 +133,7 @@ var app = angular.module('app', ['ngRoute'])
 			$http.get('/useRubric/'+$scope.selectedRubric._id)
 				.then(function(res){
 					$scope.usedRubric = res.data;
-					// console.log($scope.usedRubric);
+					console.log($scope.usedRubric);
 			});
 	}]);
 
@@ -217,6 +220,14 @@ var app = angular.module('app', ['ngRoute'])
 		}
 	})
 
+	app.directive('useRubric', function(){
+		return{
+			restrict: 'E',
+			template:
+			'<div>{[{usedRubric}]}</div>'
+		}
+	})
+
 	// Directives End =====================
 	// Services ===========================
 	app.service('myService', function(){
@@ -249,6 +260,13 @@ var app = angular.module('app', ['ngRoute'])
 	// 	}
 	// 	return rubricCourse
 	// })
+
+	app.service('rubricGenerator', function(){
+		var rubricGen = function(args){
+			this.rubric = args || [];
+		}
+		return rubricGen;
+	})
 
 	app.service('degreeGenerator', function(){
 		var degreeGen = function(args){
