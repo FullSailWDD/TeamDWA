@@ -184,7 +184,7 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.newItem.selectedRubric = $scope.selectedRubric; 
 			$scope.newItem.selectedSection = $rootScope.selectedSection
 			console.log('bloop');
-			console.log($scope.newItem);
+			console.log($scope.selectedRubric);
 			$location.path('/editRubric');
 			$http.post('/createRubricItem', $scope.newItem);
 			
