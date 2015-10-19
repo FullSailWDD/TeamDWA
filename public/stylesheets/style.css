@@ -562,13 +562,27 @@ html {
   top: 191px;
   right: 247px;
 }
+.rubric-name {
+  font-size: 42px;
+  margin-bottom: 11px;
+}
 .rubric-name-edit {
   float: right;
 }
-.edit-input-container {
+.rubric-name-edit-edit {
+  color: #008000;
+  margin-right: 59px;
+  margin-top: -37px;
+}
+.rubric-name-edit-done {
+  color: #f00;
+  margin-top: 16px;
+  margin-right: 50px;
+}
+.rubric-name-edit-input {
   margin-top: -4px;
 }
-.edit-input {
+.rubric-name-edit-input-input {
   color: #2c242f;
   font-size: 42px;
   padding: 0px 0px;
@@ -578,22 +592,8 @@ html {
   border: none;
   margin-bottom: 7px;
 }
-.ead-edit {
-  color: #008000;
-  margin-right: 59px;
-  margin-top: -37px;
-}
-.ead-done {
-  color: #f00;
-  margin-top: 16px;
-  margin-right: 50px;
-}
 .rubric-buttons {
   float: right;
-}
-.rubric-name {
-  font-size: 42px;
-  margin-bottom: 11px;
 }
 .rubric-degree {
   font-size: 16px;
@@ -618,10 +618,56 @@ html {
   padding-bottom: 0px;
   font-size: 25px;
 }
+.rubric-section-edit {
+  font-size: 16px;
+  float: right;
+}
+.rubric-section-edit-edit {
+  color: #008000;
+  margin-right: 148px;
+  margin-top: -28px;
+}
+.rubric-section-edit-done {
+  color: #f00;
+  margin-top: 2px;
+  margin-right: 76px;
+}
+.rubric-section-edit-input {
+  margin-top: -4px;
+}
+.rubric-section-edit-input-input {
+  color: #2c242f;
+  font-family: arialround;
+  outline: none;
+  background-color: rgba(255,255,255,0);
+  border: none;
+  margin-bottom: 7px;
+  padding-top: 11px;
+  padding-left: 14px;
+  padding-bottom: 0px;
+  font-size: 25px;
+  width: 100%;
+}
+.add-item {
+  font-size: 16px;
+  padding-top: 16px;
+  padding-left: 29px;
+  padding-bottom: 8px;
+}
 .section-weight {
   float: right;
   margin-top: -21px;
   margin-right: 7px;
+}
+.rubric-section-edit-edit {
+  color: #008000;
+  margin-right: 59px;
+  margin-top: -37px;
+}
+.rubric-section-edit-done {
+  color: #f00;
+  margin-top: 16px;
+  margin-right: 50px;
 }
 .rubric-item {
   font-size: 16px;
