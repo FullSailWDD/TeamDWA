@@ -505,6 +505,50 @@ html {
   top: 0;
   right: 0;
 }
+.rubric-container-use {
+  background-color: #add8e6;
+  margin-left: 10px;
+}
+.rubric-header {
+  background-color: #ffffe0;
+  margin-left: 20px;
+}
+.rubric-body {
+  background-color: #90ee90;
+  margin-left: 30px;
+}
+.rubric-name {
+  background-color: #f00;
+  margin-left: 10px;
+}
+.rubric-degree {
+  background-color: #008000;
+  margin-left: 20px;
+}
+.rubric-course {
+  background-color: #00f;
+  margin-left: 30px;
+}
+.rubric-section {
+  background-color: #800080;
+  margin-left: 40px;
+}
+.rubric-item {
+  background-color: #ff0;
+  margin-left: 50px;
+}
+.ri-name {
+  margin-left: 10px;
+}
+.ri-wiki {
+  margin-left: 20px;
+}
+.ri-desc {
+  margin-left: 30px;
+}
+.ri-comment {
+  margin-left: 40px;
+}
 .hideme {
   display: none;
 }
