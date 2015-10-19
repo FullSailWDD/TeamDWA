@@ -25,7 +25,7 @@ var _model = mongoose.model('rubrics', rubricSchema);
 				rubricName 		: req.rubricName,
 				rubricSections  : rubricSectionsArray
 		});
-			console.log(newRubric, '--------------------');
+			//console.log(newRubric, '--------------------');
 			// Save to Database
 			newRubric.save( function(err){
 				if (err) {
@@ -43,7 +43,7 @@ var _model = mongoose.model('rubrics', rubricSchema);
 //  Add Course End =================
 //  Find All Courses ===============
 	_findAll = function(success, fail){
-		console.log('firing here');
+		//console.log('firing here');
 		_model.find({}, function(err, doc){
 			if(err){
 				fail(err);
@@ -65,14 +65,20 @@ var _model = mongoose.model('rubrics', rubricSchema);
 		});
 	};
 
-	_update = function(req, id, success, fail){
-			var updateInfo = '';
+	_update = function(req, success, fail){
+			// var updateInfo = '';
+			console.log('REQ', req);
+			var id = req._id;
+			var rubricName = req.rubricName;
+			var rubricSections = req.rubricSections;
 
-            _model.update({_id: id}, {$set:updateInfo}, function(err,doc){
+            _model.update({_id: id}, {$set:{rubricName:rubricName,rubricSections:rubricSections}}, function(err,doc){
                 if (err) {
                     fail(err);
+                    console.log('DID NOT SAVE');
                 }else{
                     success(doc);
+                    console.log('SAVED TO DB');
                 }
             });
         
