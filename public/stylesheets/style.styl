@@ -98,6 +98,8 @@ body, html
 .dashbody
     padding-top 179px
     padding-right 160px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        padding-right 0px
     
 .header
     position fixed
@@ -136,6 +138,16 @@ body, html
     color darkPurple
     
 //search area
+.dashsearchcontainer
+    text-align center
+    padding-top 35px
+    padding-bottom 35px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        padding-top 0px
+        width 70%
+        margin -60px auto
+        z-index 2
+        
 .dashsearch
     font-size 32px
     outline none
@@ -144,7 +156,9 @@ body, html
     padding 5px 20px
     color darkPurple
     @media screen and (min-width: 1px) and (max-width: 789px)
-        display none
+        display initial
+        width 60%
+        font-size 16px
     @media screen and (min-width: 790px) and (max-width: 1149px)
         display initial
         font-size 24px
@@ -156,7 +170,7 @@ body, html
 //results div
 .dashresults
     @media screen and (min-width: 1px) and (max-width: 789px)
-        display none
+        display initial
     @media screen and (min-width: 790px) and (max-width: 1149px)
         display initial
         center(450px)
@@ -175,11 +189,6 @@ body, html
     background-repeat no-repeat
     padding-bottom 26px
     float left
-    
-.dashsearchcontainer
-    text-align center
-    padding-top 35px
-    padding-bottom 35px
     
 //##############
 //RESULT STYLING
