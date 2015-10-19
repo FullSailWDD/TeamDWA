@@ -17,17 +17,16 @@ var _model = mongoose.model('rubrics', rubricSchema);
 // Add Course ====================
 	_save = function (req, success, fail ){
 		rubricSectionsArray = [];
-		console.log('REQQQQQQQQ',req);
+		
 		for(i = 0; i < req.rubricSections.length;i++){
 			rubricSectionsArray.push({sectionName:req.rubricSections[i]})
 		}
+
 	var newRubric = new _model({
 				courseID		: req.courseID,
 				rubricName 		: req.rubricName,
 				rubricSections  : rubricSectionsArray
 		});
-			//console.log(newRubric, '--------------------');
-			// Save to Database
 			newRubric.save( function(err){
 				if (err) {
 					console.log('You Suck -- Rubrics');

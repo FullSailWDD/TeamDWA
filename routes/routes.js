@@ -57,12 +57,13 @@
        
         app.post('/editRubric', function (req, res){
             rubrics = require('../models/rubrics.js');
-
-            //console.log(req.body, '--------------------');
+            // console.log(req.body, '--------------------');
+            // rubrics.edit();
             rubrics.update(req.body, function(doc){
                     res.send(doc);
                 });
-
+            //req,id,success,fail
+        
         });
 
         app.post('/createRubricItem', function (req, res){
@@ -86,6 +87,7 @@
        });
           app.post('/addRubric', function (req, res) {
                 rubrics = require('../models/rubrics.js');
+
                 rubrics.add(req.body, function(doc){
                     res.send(doc);
                 }); 

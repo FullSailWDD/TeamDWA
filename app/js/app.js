@@ -268,6 +268,18 @@ var app = angular.module('app', ['ngRoute'])
             					'<label>Item Description</label>'+
            						'<input type="text" class="form-control" name="sections" ng-model="model.itemDes">'+
         					'</div>'+
+        					'<div class="form-group">'+
+            					'<label>Item Weight</label>'+
+           						'<input type="text" class="form-control" name="sections" ng-model="model.itemWeight">'+
+        					'</div>'+
+        					'<div class="form-group">'+
+            					'<label>Wiki Link</label>'+
+           						'<input type="text" class="form-control" name="sections" ng-model="model.itemWiki">'+
+        					'</div>'+
+        					'<div class="form-group">'+
+            					'<label>Item Weight</label>'+
+           						'<input type="text" class="form-control" name="sections" ng-model="model.itemComment">'+
+        					'</div>'+
 							'<button ng-click="callback()" class="btn btn-warning btn-lg">Add Item</button>'+
     					'</form>'
 		}

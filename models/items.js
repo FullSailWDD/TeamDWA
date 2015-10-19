@@ -9,6 +9,7 @@ var itemSchema = new mongoose.Schema({
 		sectionID 		: { type: String, required: false },
     	itemName 		: String,
     	itemDes  		: String,
+    	itemWeight		: Number,
     	itemWiki  		: String,
     	itemComment  	: String
     })
@@ -33,8 +34,9 @@ var _model = mongoose.model('item', itemSchema);
 				sectionID		:req.selectedRubric._id,
 				itemName		:req.itemName,
 				itemDes			:req.itemDes,
-				itemWiki		:1,
-				itemComment		:1
+				itemWeight		:req.itemWeight,
+				itemWiki		:req.itemWiki,
+				itemComment		:req.itemComment
 		});
 			//console.log('----------NEW ITEM----------',newitem, '----------NEW ITEM----------');
 	// 		// Save to Database
@@ -49,6 +51,51 @@ var _model = mongoose.model('item', itemSchema);
     			
   			});
   		};
+
+
+  		//  Find All Courses ===============
+	_findAll = function(success, fail){
+		//console.log('firing here');
+		_model.find({}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				success(doc);
+			}
+		})
+	};
+
+	_findOne = function(id, success, fail){
+		// console.log(id, '-----------');
+		_model.find({_id: id}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				// console.log(doc);
+				success(doc);
+			};
+		});
+	};
+
+	_update = function(req, success, fail){
+		// var updateInfo = '';
+		console.log('REQ', req);
+		var id = req._id;
+		var itemName = req.itemName;
+		var itemDes = req.itemDes;
+
+
+        _model.update({_id: id}, {$set:{itemName:itemName,itemDes:itemDes}}, function(err,doc){
+            if (err) {
+                fail(err);
+                console.log('DID NOT SAVE');
+            }else{
+                success(doc);
+                console.log('SAVED TO DB');
+            }
+        });
+        
+	}
 
 
 return {
