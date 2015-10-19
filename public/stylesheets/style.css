@@ -1,28 +1,3 @@
-::-webkit-scrollbar {
-  display: none;
-}
-::-webkit-input-placeholder {
-  color: #2c242f;
-}
-:-moz-placeholder {
-  color: #2c242f;
-}
-::-moz-placeholder {
-  color: #2c242f;
-}
-:-ms-input-placeholder {
-  color: #2c242f;
-}
-@font-face {
-  font-family: arialround;
-  src: url("../fonts/arialround.ttf");
-}
-body,
-html {
-  height: 100%;
-  color: #2c242f;
-  background-color: #808080;
-}
 #homepage h1 {
   color: #2c242f;
   font-size: 1.5em;
@@ -77,6 +52,31 @@ html {
 .homeBtn {
   margin-right: 65%;
   margin-top: 5%;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+::-webkit-input-placeholder {
+  color: #2c242f;
+}
+:-moz-placeholder {
+  color: #2c242f;
+}
+::-moz-placeholder {
+  color: #2c242f;
+}
+:-ms-input-placeholder {
+  color: #2c242f;
+}
+@font-face {
+  font-family: arialround;
+  src: url("../fonts/arialround.ttf");
+}
+body,
+html {
+  height: 100%;
+  color: #2c242f;
+  background-color: #808080;
 }
 .dashboard {
   background-image: url("../img/ui-background.png");
