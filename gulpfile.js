@@ -46,12 +46,12 @@ var gulp 			= require('gulp'),
         //.on('error', gutil.log);
 	});
 
-    //NEED TO COMPRESS CSS
-    gulp.task('cssCompress', function () {
-      gulp.src('./app/css/style.css')
-        .pipe(stylus())
-        .pipe(gulp.dest('./public/stylesheets'));
-    });
+//    //NEED TO COMPRESS CSS
+//    gulp.task('cssCompress', function () {
+//      gulp.src('./app/css/style.css')
+//        .pipe(stylus())
+//        .pipe(gulp.dest('./public/stylesheets'));
+//    });
 
     //watch for changes
 	gulp.task('watch', function () {
@@ -64,4 +64,4 @@ var gulp 			= require('gulp'),
 	});
 
     //NEED TO ADD COMPRESS CSS TASK
-	gulp.task('all', ['mongod', 'dev', 'htmlCompress', 'jsCompress', 'cssCompress', 'watch']);
+	gulp.task('all', ['mongod', 'dev', 'htmlCompress', 'jsCompress', 'watch']);
