@@ -38,6 +38,8 @@
             });
         });
 
+
+
         app.post('/getDegrees',  function (req, res) {
             degrees = require('../models/degrees.js');
             allDegrees = degrees.findAll(function(result){
@@ -93,6 +95,27 @@
 
             
        });
+         app.post('/addDegreeJSON', function (req, res) {
+                degree = require('../models/degrees.js');
+                console.log(req.body);
+                degree.add(req.body, function(doc){
+                    res.send(doc);
+                });
+
+            
+       }); 
+        app.get('/removeDegree/:id', function (req, res) {
+                var id = req.params.id;
+                degree = require('../models/degrees.js');
+                console.log(id,'-----------------------------');
+                degree.delete(id, function(doc){
+                    res.send(doc);
+                });
+
+            
+       });
+
+
           app.post('/addRubric', function (req, res) {
                 rubrics = require('../models/rubrics.js');
                 console.log(req);
