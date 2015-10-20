@@ -122,7 +122,7 @@ var app = angular.module('app', ['ngRoute'])
 				var sections = $scope.newRubric.rubricSections.split(',');
 					console.log(sections);
 					for(i=1; i<=sections.length; i++){
-						sectionsWeight = 100/i;
+						sectionsWeight = Math.round(100/i, 0);
 					}
 					console.log(sectionsWeight);
 					$scope.newRubric.sectionWeight = sectionsWeight;
