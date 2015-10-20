@@ -7,7 +7,7 @@ module.exports = function(){
 var itemSchema = new mongoose.Schema({
 		courseID 		: { type: String, required: false },
 		rubricID 		: { type: String, required: false },
-		sectionName     : String,
+		sectionID     : String,
     	itemName 		: String,
     	itemDes  		: String,
     	itemWeight		: Number,
@@ -30,18 +30,18 @@ var _model = mongoose.model('item', itemSchema);
 		// 	itemSectionsArray.push({sectionName:req.itemSections[i]})
 		// }
 		// console.log("--- DATA item SECTION-----",itemSectionsArray);
-		console.log(req);
+		console.log('----------REQ----------', req.selectedSectionID);
 	var newitem = new _model({
 				courseID     	:req.selectedRubric.courseID,
 				rubricID		:req.selectedRubric._id,
-				sectionID     :req.selectedSection.sectionName,
+				sectionID     	:req.selectedSectionID,
 				itemName		:req.itemName,
 				itemDes			:req.itemDes,
 				itemWeight		:req.itemWeight,
 				itemWiki		:req.itemWiki,
 				itemComment		:req.itemComment
 		});
-			//console.log('----------NEW ITEM----------',newitem, '----------NEW ITEM----------');
+			console.log('----------NEW ITEM----------',newitem, '----------NEW ITEM----------');
 	// 		// Save to Database
 			newitem.save( function(err, doc){
 				if (err) {
