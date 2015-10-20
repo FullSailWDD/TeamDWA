@@ -12,6 +12,7 @@ var gulp 			= require('gulp'),
     htmlmin         = require('gulp-html-minifier'),
     livereload      = require('gulp-livereload');
 
+    //nodemon app.js
 	gulp.task('dev', function(){
 		nodemon({
 			script: 'app.js',
@@ -19,12 +20,14 @@ var gulp 			= require('gulp'),
 		})
 	})	
 
+    //start up mongod
 	gulp.task('mongod', function(){
-		child_process.exec('mongo', function(err, stdout, stderr){
+		child_process.exec('mongod', function(err, stdout, stderr){
 			console.log(stdout);		
 		})
-	})
+	});
 
+    //compress views
 	gulp.task('htmlCompress', function () {
     gulp.src('./app/views/*.html')
         .pipe(htmlmin({
@@ -33,7 +36,7 @@ var gulp 			= require('gulp'),
         .pipe(gulp.dest('./public/views'));
 	});
 
-
+    //compress js
 	gulp.task('jsCompress', function () {
     gulp.src('./app/js/**/*.js')
         //.pipe(ngAnnotate())
@@ -43,6 +46,14 @@ var gulp 			= require('gulp'),
         //.on('error', gutil.log);
 	});
 
+    //NEED TO COMPRESS CSS
+    gulp.task('cssCompress', function () {
+      gulp.src('./app/css/style.css')
+        .pipe(stylus())
+        .pipe(gulp.dest('./public/stylesheets'));
+    });
+
+    //watch for changes
 	gulp.task('watch', function () {
     livereload.listen();
     gulp.watch([        
@@ -52,4 +63,5 @@ var gulp 			= require('gulp'),
     ],['all']);
 	});
 
-	gulp.task('all', ['mongod', 'dev', 'htmlCompress', 'jsCompress', 'watch']);
+    //NEED TO ADD COMPRESS CSS TASK
+	gulp.task('all', ['mongod', 'dev', 'htmlCompress', 'jsCompress', 'cssCompress', 'watch']);
