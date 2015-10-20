@@ -68,7 +68,7 @@
 
         app.post('/createRubricItem', function (req, res){
             item = require('../models/items.js');
-            //console.log(req.body.selectedRubric.rubricSections, "------------++-----------");
+            console.log(req.body, "------------++-----------");
             item.add(req.body, function(doc){
                     res.send(doc);
                 }); 
