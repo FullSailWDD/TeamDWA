@@ -199,7 +199,7 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.newItem.selectedSectionID = $rootScope.selectedSection.$$hashKey
 			console.log('bloop');
 			console.log($scope.newItem.selectedSectionID);
-			$location.path('/editRubric');
+			$location.path('/useRubric');
 			$http.post('/createRubricItem', $scope.newItem);
 			
 		}
