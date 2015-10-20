@@ -189,9 +189,9 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.newItem = {};
 			$scope.createItem = function(){
 			$scope.newItem.selectedRubric = $scope.selectedRubric; 
-			$scope.newItem.selectedSection = $rootScope.selectedSection
+			$scope.newItem.selectedSectionID = $rootScope.selectedSection.$$hashKey
 			console.log('bloop');
-			console.log($scope.selectedRubric);
+			console.log($scope.newItem.selectedSectionID);
 			$location.path('/editRubric');
 			$http.post('/createRubricItem', $scope.newItem);
 			
@@ -332,7 +332,7 @@ var app = angular.module('app', ['ngRoute'])
                 '<div class="rubric-section" ng-repeat="section in payload.rubricSections">'+
                     '<p class="rubric-section-title">{[{section.sectionName}]}<p>'+
                     '<p class="section-weight">80%</p>'+
-                    	'<div ng-repeat="item in items.items track by $index" ng-if="item.sectionName == section.sectionName" class="rubric-item">'+
+                    	'<div ng-repeat="item in items.items track by $index" ng-if="item.sectionID == section.$$hashKey" class="rubric-item">'+
                         '<div class="rubric-buttons">'+
                             '<ul class="button-list">'+
                                 '<li class="button-actual"><button type="button" onclick="">100</button></li>'+
