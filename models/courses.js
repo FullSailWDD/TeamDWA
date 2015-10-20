@@ -53,10 +53,30 @@ var _model = mongoose.model('courses', courseSchema);
 	}
 // Find All Courses End ============
 
+	_update = function(req, success, fail){
+			// var updateInfo = '';
+			console.log('REQ', req);
+			var id = req._id;
+			var courseName = req.courseName;
+			var courseAbbr = req.courseAbbr;
+
+            _model.update({_id: id}, {$set:{courseName:courseName,courseAbbr:courseAbbr}}, function(err,doc){
+                if (err) {
+                    fail(err);
+                    console.log('DID NOT SAVE');
+                }else{
+                    success(doc);
+                    console.log('SAVED TO DB');
+                }
+            });
+        
+	}
+
 
 return {
 		schema  : courseSchema,
 		add 	: _save,
-	    findAll : _findAll
+	    findAll : _findAll,
+	    update  : _update
 	   };
 }();

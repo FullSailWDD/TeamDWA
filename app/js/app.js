@@ -125,9 +125,9 @@ var app = angular.module('app', ['ngRoute'])
 						sectionsWeight = Math.round(100/i);
 
 					}
-					console.log(sectionsWeight);
+					//console.log(sectionsWeight);
 					$scope.newRubric.sectionWeight = sectionsWeight;
-					console.log($scope.newRubric.sectionWeight);
+					//console.log($scope.newRubric.sectionWeight);
 					$scope.newRubric.rubricSections = sections;
 
 				//console.log($scope.newRubric);
@@ -158,6 +158,12 @@ var app = angular.module('app', ['ngRoute'])
 			//console.log($rootScope.editRubric);
 			$location.path('/editRubric');
 		}
+
+		$scope.gradeSelect = function(value){
+
+			$rootScope.grade = value;
+		}
+
 	}]);
 
 	app.controller('rubricEditCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
@@ -188,8 +194,6 @@ var app = angular.module('app', ['ngRoute'])
 			$location.path('/addItem');
 
 		}
-
-
 
 		$scope.useFromEditRubric = function(rubric){
 			console.log(rubric);
@@ -337,7 +341,8 @@ var app = angular.module('app', ['ngRoute'])
 			scope: {
 				payload: '=',
 				items: "=",
-				callback: '&'
+				callback: '&',
+				grade: '&'
 			},
 			template:
 			'<p class="edit-button" ng-click="callback({rubric: payload})">Edit Rubric</p>'+
@@ -351,11 +356,11 @@ var app = angular.module('app', ['ngRoute'])
                     	'<div ng-repeat="item in items.items track by $index" ng-if="item.sectionID == section.$$hashKey" class="rubric-item">'+
                         '<div class="rubric-buttons">'+
                             '<ul class="button-list">'+
-                                '<li class="button-actual"><button type="button" onclick="gradeMe(this.id);" id="100">100</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="gradeMe(this.id);" id="75">75</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="gradeMe(this.id);" id="50">50</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="gradeMe(this.id);" id="25">25</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="gradeMe(this.id);" id="0">0</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:100})" ng-model="gradeOption.one">100</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:75})" ng-model="gradeOption.two">75</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:50})" ng-model="gradeOption.three">50</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:25})" ng-model="gradeOption.four">25</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:0})" ng-model="gradeOption.one">0</button></li>'+
                             '</ul>'+
                         '</div>'+
                         '<p class="rubric-item ri-name">{[{item.itemName}]}</p>'+
@@ -458,12 +463,6 @@ var app = angular.module('app', ['ngRoute'])
 		return newData;
 	})
 
-	// app.service('rubricCourseMerger', function(){
-	// 	var rubricCourse = function(args){
-	// 		this.course = args || {};
-	// 	}
-	// 	return rubricCourse
-	// })
 
 	app.service('rubricGenerator', function(){
 		var rubricGen = function(args){
@@ -486,14 +485,3 @@ var app = angular.module('app', ['ngRoute'])
 		return courseTileGen;
 	})
 	// Services End =====================
-
-
-
-
-
-
-	function gradeMe(id){
-		//console.log('I was clicked');
-		var grade = id;
-		console.log(grade);
-	}
