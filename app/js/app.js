@@ -140,6 +140,10 @@ var app = angular.module('app', ['ngRoute'])
 	}]);
 
 	app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
+			if($rootScope.theSession != 2){
+				console.log('Refresh -- Solo If');
+					$location.path('/');
+			};
 		$scope.usedRubric = $rootScope.selectedRubric;
 		console.log($scope.usedRubric);
 		$http.get('/rubricItems/'+$scope.usedRubric._id)
@@ -157,6 +161,10 @@ var app = angular.module('app', ['ngRoute'])
 	}]);
 
 	app.controller('rubricEditCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
+			if($rootScope.theSession != 2){
+				console.log('Refresh -- Solo If');
+					$location.path('/');
+			};
 			console.log($scope.editRubric);
 	
 			$scope.edit = true;
@@ -197,7 +205,7 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.newItem = {};
 			$scope.createItem = function(){
 			$scope.newItem.selectedRubric = $scope.selectedRubric; 
-			$scope.newItem.selectedSectionID = $rootScope.selectedSection.$$hashKey
+			$scope.newItem.selectedSectionID = $rootScope.selectedSection.sectionID
 			console.log('bloop');
 			console.log($scope.newItem.selectedSectionID);
 			$location.path('/useRubric');

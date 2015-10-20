@@ -20,7 +20,8 @@
     "jeet": "^6.1.2",
     "mongoose": "^4.1.11",
     "passport": "^0.3.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "sha1": "^1.1.1"
   },
   "devDependencies": {
     "browser-sync": "^2.9.11",
