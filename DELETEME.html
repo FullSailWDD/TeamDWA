@@ -1,0 +1,21 @@
+<p class="use-button" ng-click="callback({rubric: payload})">Use Rubric</p>
+<div class="rubric-stuff">
+    <p class="rubric-degree">Degree Name</p>
+    <p class="rubric-course">Course Name</p>
+    <p class="rubric-name" ng-show="clicked">{[{payload.rubricName}]}</p>
+    <div class="rubric-name-edit" ng-click="editrubric({rubric: payload})">
+        <p class="rubric-name-edit-edit" ng-if="clicked">Edit</p>
+        <p class="rubric-name-edit-done" ng-if="!clicked">Done</p>
+    </div>
+    <div class="edit-input-container" ng-hide="clicked">
+        <input class="edit-input" type="text" ng-model="payload.rubricName" placeholder="{[{payload.rubricName}]}"/>
+    </div>
+    <div class="rubric-section" ng-repeat="section in payload.rubricSections">
+        <p class="rubric-section-title" ng-show="clicked">{[{section.sectionName}]}</p>
+        <p ng-click="editrubric({rubric: payload})"><span ng-if="clicked">Edit</span><span ng-if="!clicked">Done</span></p>
+        <span ng-hide="clicked">
+            <input type="text" ng-model="section.sectionName" placeholder="{[{section.sectionName}]}"/>
+        </span>
+        <p class="add-item" ng-click="item({rubric: payload, rubricSection: section})">Add Item</p>
+    </div>
+</div>

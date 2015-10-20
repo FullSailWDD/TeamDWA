@@ -18,15 +18,20 @@ rubricRounding = 5px
         margin-bottom: 5%
         font-weight: bold
     input
-        margin: 1% 
-        width: 80%
+        width: 85%
+        margin 3%
         padding 10px
     label
         margin-right: 6%
+    button
+        background-color lightGrey
+        border-radius 5px
+        padding 1%
 
 
 #rexLogo
-    margin-left 28%
+    width 40%
+    margin-left 27%
     clear both
 
 .homeDiv
@@ -46,8 +51,8 @@ rubricRounding = 5px
     margin 0 auto
 
 .homeBtn
-    margin-right: 65%
     margin-top 5%
+    margin-right 450px
 
 //custom stuff
 ::-webkit-scrollbar
@@ -74,7 +79,11 @@ rubricRounding = 5px
 body, html
     height 100%
     color darkPurple
-    background-color grey
+    background-color lightGreen
+    font-family: 'Roboto Slab', serif;
+
+h1
+    font-family "Arial Rounded MT", Arial, Helvetica, sans-serif;
     
 .dashboard
     background-image url("../img/ui-background.png")
@@ -164,6 +173,15 @@ body, html
     position fixed
     top 10px
     right 15px
+    font-family arialround
+    font-size 24px
+    cursor pointer
+    z-index 2
+    
+.dashboardbutton
+    position fixed
+    top 10px
+    right 101px
     font-family arialround
     font-size 24px
     cursor pointer
@@ -450,13 +468,44 @@ body, html
     position fixed
     top 191px
     right 247px
-
-.rubric-buttons
-    float right
-
+    
+.use-button
+    position fixed
+    top 191px
+    right 247px
+    
 .rubric-name
     font-size 42px
     margin-bottom 11px
+
+.rubric-name-edit
+    float right
+    
+.rubric-name-edit-edit
+    color green
+    margin-right 59px
+    margin-top -37px
+    
+.rubric-name-edit-done
+    color red
+    margin-top 16px
+    margin-right 50px
+    
+.rubric-name-edit-input
+    margin-top -4px
+    
+.rubric-name-edit-input-input
+    color darkPurple
+    font-size 42px
+    padding 0px 0px
+    font-family arialround
+    outline none
+    background-color rgba(255,255,255,0)
+    border none
+    margin-bottom 7px
+    
+.rubric-buttons
+    float right
     
 .rubric-degree
     font-size 16px
@@ -481,10 +530,59 @@ body, html
     padding-bottom 0px
     font-size 25px
     
+.rubric-section-edit
+    font-size 16px
+    float right
+    
+.rubric-section-edit-edit
+    color green
+    margin-right 148px
+    margin-top -28px
+    
+.rubric-section-edit-done
+    color red
+    margin-top 2px
+    margin-right 76px
+    
+.rubric-section-edit-input
+    margin-top -4px
+    
+.rubric-section-edit-input-input
+    color darkPurple
+    font-family arialround
+    outline none
+    background-color rgba(255,255,255,0)
+    border none
+    margin-bottom 7px
+    padding-top 11px
+    padding-left 14px
+    padding-bottom 0px
+    font-size 25px
+    width 100%
+    
+.add-item
+    font-size: 16px;
+    padding-top: 16px;
+    padding-left: 29px;
+    padding-bottom: 8px;
+    
 .section-weight
     float right
     margin-top -21px
     margin-right 7px
+    
+//.rubric-section-edit
+//    background-color blue
+    
+.rubric-section-edit-edit
+    color green
+    margin-right 59px
+    margin-top -37px
+    
+.rubric-section-edit-done
+    color red
+    margin-top 16px
+    margin-right 50px
     
 //items
 
@@ -518,6 +616,14 @@ body, html
     width 41px
     height 25px
     margin-right 6px
+    
+.score-button
+    text-align center
+    
+.score-button-actual
+    width 300px
+    height 90px
+    margin-left 134px
     
 //############
 //util classes

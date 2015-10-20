@@ -73,6 +73,14 @@
                     res.send(doc);
                 }); 
         })
+
+        app.get('/rubricItems/:id', function (req, res){
+            item = require('../models/items.js');
+            rubricID = req.params.id;
+            item.findByRubric(rubricID, function(doc){
+                res.send(JSON.stringify({items: doc}, null, 3));
+            })
+        })
        
     // -------------------------------------------------------------
     // Add Course JSON Route - Receiving Data From Angular 

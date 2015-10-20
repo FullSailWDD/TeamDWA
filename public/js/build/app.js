@@ -134,6 +134,11 @@ var app = angular.module('app', ['ngRoute'])
 	app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
 		$scope.usedRubric = $rootScope.selectedRubric;
 		console.log($scope.usedRubric);
+		$http.get('/rubricItems/'+$scope.usedRubric._id)
+				.then(function(res){
+					console.log(res.data);
+					$scope.rubricItems = res.data;
+				})
 
 		$scope.editRubric = function(rubric){
 			//console.log(rubric);
@@ -153,7 +158,7 @@ var app = angular.module('app', ['ngRoute'])
 		$scope.theEditRubric = function(rubric){
 			console.log(rubric);
 			$scope.edit =! $scope.edit;
-			console.log(rubric);
+			$scope.sectionID = rubric.rubricSections[0].$$hashKey;
 			$http.post('/editRubric', rubric);
 		}
 
@@ -161,6 +166,8 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.itemAdd =! $scope.itemAdd;
 			$rootScope.selectedRubric = rubric;
 			$rootScope.selectedSection = rubricSection;
+			console.log($rootScope.selectedRubric);
+			console.log($rootScope.selectedSection);
 			$scope.newItem ={};
 			$location.path('/addItem');
 
@@ -313,6 +320,7 @@ var app = angular.module('app', ['ngRoute'])
 			restrict: 'E',
 			scope: {
 				payload: '=',
+				items: "=",
 				callback: '&'
 			},
 			template:
@@ -324,7 +332,7 @@ var app = angular.module('app', ['ngRoute'])
                 '<div class="rubric-section" ng-repeat="section in payload.rubricSections">'+
                     '<p class="rubric-section-title">{[{section.sectionName}]}<p>'+
                     '<p class="section-weight">80%</p>'+
-                    '<div class="rubric-item">'+
+                    	'<div ng-repeat="item in items.items track by $index" ng-if="item.sectionName == section.sectionName" class="rubric-item">'+
                         '<div class="rubric-buttons">'+
                             '<ul class="button-list">'+
                                 '<li class="button-actual"><button type="button" onclick="">100</button></li>'+
@@ -334,11 +342,11 @@ var app = angular.module('app', ['ngRoute'])
                                 '<li class="button-actual"><button type="button" onclick="">0</button></li>'+
                             '</ul>'+
                         '</div>'+
-                        '<p class="rubric-item ri-name">Item Name</p>'+
-                        '<p class="rubric-item ri-wiki">Item Wiki</p>'+
-                        '<p class="rubric-item ri-desc">Item Description</p>'+
-                        '<p class="rubric-item ri-comment">Item Comment</p>'+
-                    '</div>'+
+                        '<p class="rubric-item ri-name">{[{item.itemName}]}</p>'+
+                        '<p class="rubric-item ri-wiki">{[{item.itemWiki}]}</p>'+
+                        '<p class="rubric-item ri-desc">{[{item.itemDes}]}</p>'+
+                        '<p class="rubric-item ri-comment">{[{item.itemComment}]}</p>'+
+                    	'</div>'+
                 '</div>'+
             '</div>'
 		}
@@ -358,31 +366,78 @@ var app = angular.module('app', ['ngRoute'])
 				itemadd: '=' 
 			},
 			template:
-			'<p ng-click="callback({rubric: payload})">Use Rubric</p>'+
-			'<div>'+
-				'<div>'+
-					'<span ng-show="clicked">'+
-						'{[{payload.rubricName}]}</span>'+
-						'<p ng-click="editrubric({rubric: payload})"><span ng-if="clicked">Edit</span><span ng-if="!clicked">Done</span></p>'+
-					'<span ng-hide="clicked">'+
-						'<input type="text" ng-model="payload.rubricName" placeholder="{[{payload.rubricName}]}"/>'+
-					'</span>'+
-				'</div>'+
-			'<ul ng-repeat="section in payload.rubricSections track by $index">'+
-				'<li>'+
-					'<span ng-show="clicked">'+
-						'{[{section.sectionName}]}</span>'+
-						'<p ng-click="editrubric({rubric: payload})"><span ng-if="clicked">Edit</span><span ng-if="!clicked">Done</span></p>'+
-					'<span ng-hide="clicked">'+
-						'<input type="text" ng-model="section.sectionName" placeholder="{[{section.sectionName}]}"/>'+
-					'</span>'+
-				'</li>'+
-				'<li>'+
-					'<span ng-show="itemadd">'+
-						'<p ng-click="item({rubric: payload, rubricSection: section})"><span> -- Add Item --</span></p>'+
-					'</span>'+
-				'</li>'+
-			'</ul>'+
+
+            //use rubric button - turn off edit mode
+			'<p class="use-button" ng-click="callback({rubric: payload})">Use Rubric</p>'+
+            //rubric stuff
+			'<div class="rubric-stuff">'+
+                //degree name (hidden for now)
+                '<p class="rubric-degree">Degree Name</p>'+
+                //course name (hardcoded for now)
+                '<p class="rubric-course">Course Name</p>'+
+                //rubric name
+                '<p class="rubric-name" ng-show="clicked">{[{payload.rubricName}]}</p>'+
+                //rubric name editing div
+                '<div class="rubric-name-edit" ng-click="editrubric({rubric: payload})">'+
+                    //edit button
+                    '<p class="rubric-name-edit-edit" ng-if="clicked">Edit</p>'+
+                    //done button
+                    '<p class="rubric-name-edit-done" ng-if="!clicked">Done</p>'+
+                '</div>'+
+                //rubric name editing input
+                '<div class="rubric-name-edit-input" ng-hide="clicked">'+
+                    //actual input
+                    '<input class="rubric-name-edit-input-input" type="text" ng-model="payload.rubricName" placeholder="{[{payload.rubricName}]}"/>'+
+                '</div>'+
+                //rubric section
+                '<div class="rubric-section" ng-repeat="section in payload.rubricSections track by $index">'+
+                    //rubric section title
+                    '<p class="rubric-section-title" ng-show="clicked">{[{section.sectionName}]}</p>'+
+                    //section name editing div
+                    '<div class="rubric-section-edit" ng-click="editrubric({rubric: payload})">'+
+                        //edit button
+                        '<p class="rubric-section-edit-edit" ng-if="clicked">Edit</p>'+
+                        //done button
+                        '<p class="rubric-section-edit-done" ng-if="clicked">Done</p>'+
+                    '</div>'+
+                    //section name editing input
+                    '<div class="rubric-section-edit-input" ng-hide="clicked">'+
+                        //actual input
+                        '<input class="rubric-section-edit-input-input" type="text" ng-model="section.sectionName" placeholder="{[{section.sectionName}]}"/>'+
+                    '</div>'+
+                    //item container
+                    '<div class="add-item-container" ng-show="itemadd">'+
+                        //add item thing
+                        '<p class="add-item" ng-click="item({rubric: payload, rubricSection: section})">Add Item</p>'+
+                    '</div>'+
+                '</div>'+
+            
+//			'<p ng-click="callback({rubric: payload})">Use Rubric</p>'+
+//			'<div>'+
+//				'<div>'+
+//					'<span ng-show="clicked">'+
+//						'{[{payload.rubricName}]}</span>'+
+//						'<p ng-click="editrubric({rubric: payload})"><span ng-if="clicked">Edit</span><span ng-if="!clicked">Done</span></p>'+
+//					'<span ng-hide="clicked">'+
+//						'<input type="text" ng-model="payload.rubricName" placeholder="{[{payload.rubricName}]}"/>'+
+//					'</span>'+
+//				'</div>'+
+//			'<ul ng-repeat="section in payload.rubricSections track by $index">'+
+//				'<li>'+
+//					'<span ng-show="clicked">'+
+//						'{[{section.sectionName}]}</span>'+
+//						'<p ng-click="editrubric({rubric: payload})"><span ng-if="clicked">Edit</span><span ng-if="!clicked">Done</span></p>'+
+//					'<span ng-hide="clicked">'+
+//						'<input type="text" ng-model="section.sectionName" placeholder="{[{section.sectionName}]}"/>'+
+//					'</span>'+
+//				'</li>'+
+//				'<li>'+
+//					'<span ng-show="itemadd">'+
+//						'<p ng-click="item({rubric: payload, rubricSection: section})"><span> -- Add Item --</span></p>'+
+//					'</span>'+
+//				'</li>'+
+//			'</ul>'+
+
 			'</div>'
 		}
 	})
