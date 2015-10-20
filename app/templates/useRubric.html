@@ -9,7 +9,7 @@
     <!--header-->
     <img class="header headerlogo" src="img/header-logo.png">
     <a class="logoutbutton" href="/logout">logout</a>
-    <a class="logoutbutton"href="#/dashboard">Dashboard</a>
+    <a class="dashboardbutton" href="#/dashboard">dashboard</a>
     <!--body-->
     <div class="usebody">
         <div class="sheet-top">
@@ -18,6 +18,9 @@
             <div class="rubric-body">
                 <!--ng-repeat section is sections-->
                 <use-rubric data-payload="usedRubric" data-items="rubricItems" data-callback="editRubric(rubric)"></use-rubric>
+            </div>
+            <div class="score-button">
+                <button class="score-button-actual">Score Rubric</button>
             </div>
         </div>
         <div class="sheet-bottom">
