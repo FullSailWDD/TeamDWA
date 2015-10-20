@@ -95,7 +95,7 @@
        });
           app.post('/addRubric', function (req, res) {
                 rubrics = require('../models/rubrics.js');
-
+                console.log(req);
                 rubrics.add(req.body, function(doc){
                     res.send(doc);
                 }); 
