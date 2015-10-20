@@ -20,7 +20,7 @@ var gulp 			= require('gulp'),
 	})	
 
 	gulp.task('mongod', function(){
-		child_process.exec('mongo', function(err, stdout, stderr){
+		child_process.exec('mongod', function(err, stdout, stderr){
 			console.log(stdout);		
 		})
 	})
