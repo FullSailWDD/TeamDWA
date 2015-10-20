@@ -590,6 +590,11 @@ h1 {
   margin-left: 155px;
   padding-top: 210px;
 }
+@media screen and (min-width: 1px) and (max-width: 1070px) {
+  .usebody {
+    margin-left: 5px;
+  }
+}
 .editrubric {
   background-image: url("../img/ui-background.png");
   background-repeat: repeat;
@@ -598,6 +603,11 @@ h1 {
 .editbody {
   margin-left: 155px;
   padding-top: 210px;
+}
+@media screen and (min-width: 1px) and (max-width: 1070px) {
+  .editbody {
+    margin-left: 5px;
+  }
 }
 .sheet-top {
   background-image: url("../img/sheet-top.png");
