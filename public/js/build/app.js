@@ -123,7 +123,7 @@ var app = angular.module('app', ['ngRoute'])
 					console.log(sections);
 					for(i=1; i<=sections.length; i++){
 						sectionsWeight = Math.round(100/i);
-						
+
 					}
 					console.log(sectionsWeight);
 					$scope.newRubric.sectionWeight = sectionsWeight;
@@ -339,15 +339,15 @@ var app = angular.module('app', ['ngRoute'])
                 '<p class="rubric-name">{[{payload.rubricName}]}</p>'+
                 '<div class="rubric-section" ng-repeat="section in payload.rubricSections">'+
                     '<p class="rubric-section-title">{[{section.sectionName}]}<p>'+
-                    '<p class="section-weight">{[{section.sectionWeight}]}</p>'+
+                    '<p class="section-weight">{[{section.sectionWeight}]}%</p>'+
                     	'<div ng-repeat="item in items.items track by $index" ng-if="item.sectionID == section.$$hashKey" class="rubric-item">'+
                         '<div class="rubric-buttons">'+
                             '<ul class="button-list">'+
-                                '<li class="button-actual"><button type="button" onclick="">100</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="">75</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="">50</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="">25</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="">0</button></li>'+
+                                '<li class="button-actual"><button type="button" onclick="gradeMe(this.id);" id="100">100</button></li>'+
+                                '<li class="button-actual"><button type="button" onclick="gradeMe(this.id);" id="75">75</button></li>'+
+                                '<li class="button-actual"><button type="button" onclick="gradeMe(this.id);" id="50">50</button></li>'+
+                                '<li class="button-actual"><button type="button" onclick="gradeMe(this.id);" id="25">25</button></li>'+
+                                '<li class="button-actual"><button type="button" onclick="gradeMe(this.id);" id="0">0</button></li>'+
                             '</ul>'+
                         '</div>'+
                         '<p class="rubric-item ri-name">{[{item.itemName}]}</p>'+
@@ -478,3 +478,14 @@ var app = angular.module('app', ['ngRoute'])
 		return courseTileGen;
 	})
 	// Services End =====================
+
+
+
+
+
+
+	function gradeMe(id){
+		//console.log('I was clicked');
+		var grade = id;
+		console.log(grade);
+	}
