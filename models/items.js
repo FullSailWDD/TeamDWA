@@ -30,7 +30,7 @@ var _model = mongoose.model('item', itemSchema);
 		// 	itemSectionsArray.push({sectionName:req.itemSections[i]})
 		// }
 		// console.log("--- DATA item SECTION-----",itemSectionsArray);
-		console.log('----------REQ----------', req.selectedSectionID);
+		console.log('----------REQ----------', req);
 	var newitem = new _model({
 				courseID     	:req.selectedRubric.courseID,
 				rubricID		:req.selectedRubric._id,
