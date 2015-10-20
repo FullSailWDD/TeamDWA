@@ -6,7 +6,7 @@ module.exports = function(){
 // Creating the Degrees schema for the DB
 var degreeSchema = new mongoose.Schema({
     	degreeName : String,
-    	degreeAbbr : String,
+    	// degreeAbbr : String,
     	courseIDs : { type: Array, required: false }
 })
 
@@ -19,8 +19,10 @@ var _model = mongoose.model('degree', degreeSchema);
 		console.log(req.degreeName);
 	var degree = new _model({
 				degreeName 		: req.degreeName
+				// degreeAbbr		: req.degreeAbbr
 		});
 			// Save to Database
+			console.log(newDegree);
 			degree.save( function (err, doc){
 				if (err) {
 					console.log('You Suck');
@@ -54,6 +56,16 @@ var _model = mongoose.model('degree', degreeSchema);
 			}
 		})
 	}
+	_remove = function(id, success, fail){
+		console.log(id);
+		_model.remove({_id: id}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				success(doc);
+			}
+		})
+	}
 // Find All Degrees End ============
 // Modify To Add Course ID =========
 	// _courseID = function(){
@@ -68,6 +80,7 @@ return {
 		schema  : degreeSchema,
 		add 	: _save,
 	    findAll : _findAll,
-	    findOne : _findOne
+	    findOne : _findOne,
+	    delete  : _remove
 	   };
 }();

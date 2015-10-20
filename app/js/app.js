@@ -12,6 +12,9 @@ var app = angular.module('app', ['ngRoute'])
 	    }).when("/dashboard",{
 	        templateUrl: "templates/dashboard.html",
 	        controller: "dashboardCtrl"
+	    }).when("/addDegree",{
+	        templateUrl: "templates/addDegree.html",
+	        controller: "addDegreeCtrl"
 	    }).when("/addCourse",{
 	        templateUrl: "templates/addCourse.html",
 	        controller: "addCourseCtrl"
@@ -79,6 +82,14 @@ var app = angular.module('app', ['ngRoute'])
 					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
 			});
 
+			$scope.removeDegree = function(degreeID){
+				console.log(degreeID);
+				$scope.degree = degreeID;
+				$http.get('/removeDegree/'+$scope.degree)
+					.then(function(res){
+				$location.path('/');
+			});
+			}
 
 			$scope.rubricSelect = function(rubric){
 				$rootScope.selectedRubric = rubric;
@@ -110,6 +121,14 @@ var app = angular.module('app', ['ngRoute'])
 			$location.path('/dashboard');
 			}
 		}
+	}]);
+
+	app.controller('addDegreeCtrl', ['$scope', '$rootScope', '$http', '$routeParams','$location', 'myService', function($scope, $rootScope, $http, $routeParams, $location, myService){
+			$scope.newDegree = {};
+		$scope.addDegree = function(){
+			$http.post('/addDegreeJSON', $scope.newDegree);
+			$location.path('/');
+			}
 	}]);
 		// Add Course Controller End =========
 		// ===================================
@@ -262,7 +281,8 @@ var app = angular.module('app', ['ngRoute'])
 			restrict: 'E',
 			scope: {
 				payload: '=',
-				callback: '&'
+				callback: '&',
+				delete: '&'
 			},
 			template: 
 				'<div>'+
@@ -271,7 +291,8 @@ var app = angular.module('app', ['ngRoute'])
 					'<p ng-click="callback({degree: degree})">{[{degree._id}]}</p>'+
 					'<input ng-hide="true" type="text" ng-model="degreeModel.ID" value="{[{degree._id}]}"/>'+
 					'<p ng-click="callback({degree: degree})">{[{degree.degreeAbbr}]}</p>'+
-					'<p ng-click="callback({degree: degree})">{[{degree.degreeName}]}</p><br/>'+
+					'<p ng-click="callback({degree: degree})">{[{degree.degreeName}]}</p>'+
+					'<p ng-click="delete({degreeID: degree._id})">- Delete -</p><br/>'+
 					'</li>'+
 				'</ul>'+
 				'</div>'
@@ -297,15 +318,11 @@ var app = angular.module('app', ['ngRoute'])
         					'</div>'+
         					'<div class="form-group">'+
             					'<label>Item Weight</label>'+
-           						'<input type="text" class="form-control" name="sections" ng-model="model.itemWeight">'+
+           						'<input type="number" class="form-control" name="sections" ng-model="model.itemWeight">'+
         					'</div>'+
         					'<div class="form-group">'+
             					'<label>Wiki Link</label>'+
            						'<input type="text" class="form-control" name="sections" ng-model="model.itemWiki">'+
-        					'</div>'+
-        					'<div class="form-group">'+
-            					'<label>Comment</label>'+
-           						'<input type="text" class="form-control" name="sections" ng-model="model.itemComment">'+
         					'</div>'+
 							'<button ng-click="callback()" class="btn btn-warning btn-lg">Add Item</button>'+
     					'</form>'
@@ -366,7 +383,12 @@ var app = angular.module('app', ['ngRoute'])
                         '<p class="rubric-item ri-name">{[{item.itemName}]}</p>'+
                         '<p class="rubric-item ri-wiki">{[{item.itemWiki}]}</p>'+
                         '<p class="rubric-item ri-desc">{[{item.itemDes}]}</p>'+
-                        '<p class="rubric-item ri-comment">{[{item.itemComment}]}</p>'+
+                        '<p class="rubric-item ri-comment">'+
+                        	'<div ng-show=""></div>'+
+            				'<label>Comment</label><br/>'+
+           					'<input type="text" ng-model="item[]."class="form-control" name="sections" ng-model="model.itemComment">'+
+           					'<span> Done</span>'+
+        				'</p>'+
                     	'</div>'+
                 '</div>'+
             '</div>'

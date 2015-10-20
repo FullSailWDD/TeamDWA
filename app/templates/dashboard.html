@@ -17,12 +17,13 @@
             </ul>
         </div>
         <!--header-->
-        <img class="header headerlogo" src="img/header-logo.png">
+        <a href="#/dashboard"><img class="header headerlogo" src="img/header-logo.png"></a>
         <a class="logoutbutton" href="/logout">logout</a>
         <br><br>
         <a class="dashboardbutton" href="#/dashboard">dashboard</a>
 
         <div class="dashbody">
         <course-element data-payload='courseTile' data-rubrics="courseRubrics" data-select="rubricSelect(rubric)" data-callback='addRubric(course)'></course-element>
-        <degrees data-payload="degreesData"  data-callback="changeDegree(degree)"></degrees>
+        <degrees data-payload="degreesData" data-delete="removeDegree(degreeID)"  data-callback="changeDegree(degree)"></degrees>
+        <a class="addDegreeButton" href='#/addDegree'>Add Degree</a>
         <a class="addCourseButton" href='#/addCourse'>Add Course</a>
