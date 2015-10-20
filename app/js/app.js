@@ -72,7 +72,6 @@ var app = angular.module('app', ['ngRoute'])
 			$http.post('/getDashboard', $scope.allCourses)
 				.then(function(res){
 					$scope.courseRubrics = $scope.rootRubrics.rubrics;
-					//console.log($scope.rootRubrics.rubrics);
 					$scope.degrees = myService.getItem();
 					$scope.courses = res.data;
 					$scope.degreesData = new degreeGenerator($scope.degrees);
@@ -103,9 +102,7 @@ var app = angular.module('app', ['ngRoute'])
 		$scope.addCourse = function(){
 			$scope.newCourse.degreeID = $scope.test;
 			if(!$scope.newCourse.degreeID){
-				//console.log('Error');
 			}else{
-			//console.log($scope.newCourse);
 			$http.post('/addCourseJSON', $scope.newCourse);
 			$location.path('/dashboard');
 			}
@@ -129,12 +126,10 @@ var app = angular.module('app', ['ngRoute'])
 					console.log($scope.newRubric.sectionWeight);
 					$scope.newRubric.rubricSections = sections;
 
-				//console.log($scope.newRubric);
 				$http.post('/addRubric', $scope.newRubric);
 
 				$location.path('/');
 			}
-			// console.log($scope.newRubric);
 			
 	}]);
 
@@ -148,9 +143,7 @@ var app = angular.module('app', ['ngRoute'])
 				})
 
 		$scope.editRubric = function(rubric){
-			//console.log(rubric);
 			$rootScope.editRubric = rubric;
-			//console.log($rootScope.editRubric);
 			$location.path('/editRubric');
 		}
 	}]);
@@ -197,7 +190,6 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.createItem = function(){
 			$scope.newItem.selectedRubric = $scope.selectedRubric; 
 			$scope.newItem.selectedSectionID = $rootScope.selectedSection.$$hashKey
-			console.log('bloop');
 			console.log($scope.newItem.selectedSectionID);
 			$location.path('/useRubric');
 			$http.post('/createRubricItem', $scope.newItem);
@@ -448,13 +440,6 @@ var app = angular.module('app', ['ngRoute'])
 		}
 		return newData;
 	})
-
-	// app.service('rubricCourseMerger', function(){
-	// 	var rubricCourse = function(args){
-	// 		this.course = args || {};
-	// 	}
-	// 	return rubricCourse
-	// })
 
 	app.service('rubricGenerator', function(){
 		var rubricGen = function(args){

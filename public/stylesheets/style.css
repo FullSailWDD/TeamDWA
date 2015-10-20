@@ -1,5 +1,5 @@
 #homepage h1 {
-  color: #2c242f;
+  color: #5b83c2;
   font-size: 1.5em;
   margin-bottom: 5%;
   font-weight: bold;
@@ -13,7 +13,7 @@
   margin-right: 6%;
 }
 #homepage button {
-  background-color: #aba7a7;
+  background-color: #5b83c2;
   border-radius: 5px;
   padding: 1%;
 }
@@ -30,7 +30,7 @@
   width: 48.5%;
   margin-left: 0%;
   margin-right: 3%;
-  background-color: #fff;
+  background-color: #f8f8f8;
   float: left;
   padding: 2%;
   margin-top: 5%;
@@ -57,7 +57,8 @@
 }
 .homeBtn {
   margin-top: 5%;
-  margin-right: 450px;
+  margin-right: 80%;
+  color: #f8f8f8;
 }
 ::-webkit-scrollbar {
   display: none;

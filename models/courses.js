@@ -31,10 +31,10 @@ var _model = mongoose.model('courses', courseSchema);
 			// Save to Database
 			newCourse.save( function( err){
 				if (err) {
-					console.log('You Suck -- Courses');
+					
 					fail(err)
 				}else{
-					console.log('You are Awesome -- Courses');
+					
 					success(newCourse);
 				};
     			
