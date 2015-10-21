@@ -86,6 +86,17 @@ var _model = mongoose.model('rubrics', rubricSchema);
             });
         
 	}
+
+	_remove = function(id, success, fail){
+		console.log(id);
+		_model.remove({_id: id}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				success(doc);
+			}
+		})
+	}
 	
 // Find All Courses End ============
 
@@ -95,6 +106,7 @@ return {
 		add 	: _save,
 		update  : _update,
 	    findAll : _findAll,
-	    findOne : _findOne
+	    findOne : _findOne,
+	    delete  : _remove
 	   };
 }();
