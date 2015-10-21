@@ -185,7 +185,7 @@ var app = angular.module('app', ['ngRoute'])
 					$location.path('/');
 			};
 		$scope.usedRubric = $scope.selectedRubric;
-		console.log($scope.usedRubric);
+		// console.log($scope.usedRubric);
 		$http.get('/rubricItems/'+$scope.usedRubric._id)
 				.then(function(res){
 					console.log(res.data);
@@ -196,6 +196,31 @@ var app = angular.module('app', ['ngRoute'])
 			$rootScope.editRubric = rubric;
 			$location.path('/editRubric');
 		}
+
+
+		$scope.gradeSelect = function(value){
+
+			var totalWeight = 0;
+			var sectionWeights = [];
+			var itemWeights = [];
+			for(var i = 0; i < $scope.usedRubric.rubricSections.length; i++){
+				var eachWeight = $scope.usedRubric.rubricSections[i].sectionWeight;
+				sectionWeights.push(eachWeight);
+				totalWeight += eachWeight;
+			}
+
+			for(var i = 0; i < $scope.rubricItems.items; i++){
+				var eachItem = $scope.rubricItems.items[i];
+				itemWeights.push(eachItem);
+			}
+
+			console.log($scope.rubricItems.items);
+			console.log('Grade Clicked: ', value);
+			console.log('Section Weight: ', sectionWeights);
+			console.log('Total Weight: ', totalWeight);
+			console.log('Item Weights: ', itemWeights);
+		}
+
 	}]);
 
 
@@ -391,7 +416,8 @@ var app = angular.module('app', ['ngRoute'])
 			scope: {
 				payload: '=',
 				items: "=",
-				callback: '&'
+				callback: '&',
+				grade: '&'
 			},
 			template:
 			'<p class="edit-button" ng-click="callback({rubric: payload})"><img src="./img/edit-button.png" class="absolute"/></p>'+
@@ -405,11 +431,11 @@ var app = angular.module('app', ['ngRoute'])
                     	'<div ng-repeat="item in items.items track by $index" ng-if="item.sectionID == section.sectionID" class="rubric-item">'+
                         '<div class="rubric-buttons">'+
                             '<ul class="button-list">'+
-                                '<li class="button-actual"><button type="button" onclick="">100</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="">75</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="">50</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="">25</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="">0</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:100})">100</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:75})">75</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:50})">50</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:25})">25</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:0})">0</button></li>'+
                             '</ul>'+
                         '</div>'+
                         '<p class="rubric-item ri-name">{[{item.itemName}]}</p>'+
