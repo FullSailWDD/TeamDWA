@@ -24,6 +24,9 @@ var app = angular.module('app', ['ngRoute'])
 	    }).when("/changeDegree",{
 	        templateUrl: "templates/dashboard.html",
 	        controller: "changeDegreeCtrl"
+	    }).when("/allRubrics",{
+	        templateUrl: "templates/viewRubrics.html",
+	        controller: "allRubrics"
 	    }).when("/addRubric",{
 	        templateUrl: "templates/rubric.html",
 	        controller: "rubricCtrl"
@@ -90,6 +93,12 @@ var app = angular.module('app', ['ngRoute'])
 				$location.path('/');
 			});
 			}
+			$scope.allRubrics = function(courseID){
+				$rootScope.courseID = courseID;
+				$location.path('/allRubrics');
+
+			}
+			
 
 			$scope.rubricSelect = function(rubric){
 				$rootScope.selectedRubric = rubric;
@@ -157,12 +166,27 @@ var app = angular.module('app', ['ngRoute'])
 			
 	}]);
 
+	app.controller('allRubrics', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
+		console.log($scope.courseID);
+		console.log($scope.rootRubrics);
+		$scope.rootRubrics;
+		$scope.courseID;
+
+		$scope.rubricSelect = function(rubric){
+				$rootScope.selectedRubric = rubric;
+				$location.path('/useRubric');
+				console.log($rootScope.selectedRubric);
+			}
+
+
+	}]);
+
 	app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
 			if($rootScope.theSession != 2){
 				console.log('Refresh -- Solo If');
 					$location.path('/');
 			};
-		$scope.usedRubric = $rootScope.selectedRubric;
+		$scope.usedRubric = $scope.selectedRubric;
 		console.log($scope.usedRubric);
 		$http.get('/rubricItems/'+$scope.usedRubric._id)
 				.then(function(res){
@@ -177,6 +201,8 @@ var app = angular.module('app', ['ngRoute'])
 			$location.path('/editRubric');
 		}
 	}]);
+
+
 
 	app.controller('rubricEditCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
 			if($rootScope.theSession != 2){
@@ -244,7 +270,8 @@ var app = angular.module('app', ['ngRoute'])
 				rubrics: '=',
 				payload: '=',
 				select: '&',
-				callback: '&'
+				callback: '&',
+				allrubrics: '&'
 			}, 
 			template: 
             '<div class="dashsearchcontainer">'+
@@ -257,13 +284,13 @@ var app = angular.module('app', ['ngRoute'])
                         '<p id="courseAbbr" class="courseAbbr">{[{course.courseAbbr}]}<span id="courseName" class="courseName">{[{course.courseName}]}</span></p>'+
                         '<p class="rubricnumber">#</p>'+
                         '<div class="rubricholder">'+
-                            '<p class="rubric" ng-repeat="theRubrics in rubrics" ng-repeat="theRubrics in rubrics" ng-if="course._id == theRubrics.courseID" ng-click="select({rubric: theRubrics})">{[{theRubrics.rubricName}]}</p>'+
+                            '<p class="rubric" ng-repeat="theRubrics in rubrics | limitTo: 5" ng-repeat="theRubrics in rubrics" ng-if="course._id == theRubrics.courseID" ng-click="select({rubric: theRubrics})">{[{theRubrics.rubricName}]}</p>'+
                         '</div>'+
                         '<p class="hideme">{[{course._id}]}</p>'+
                         '<p class="hideme">{[{course.degreeID}]}</p>'+
                         '<div class="addcontainer">'+
                         '<button class="addrubric" ng-click="callback({course:course})">+</button>'+
-                        '<img class="dots" width="20" src="img/dots.png">'+
+                        '<img ng-click="allrubrics({courseID: course._id})" class="dots" width="20" src="img/dots.png">'+
                         '</div>'+
                     '</li>'+
                 '</ul>'+
@@ -291,6 +318,21 @@ var app = angular.module('app', ['ngRoute'])
 					'</li>'+
 				'</ul>'+
 				'</div>'
+		}
+	})
+
+	app.directive('allRubrics', function(){
+		return{
+			restrict: 'E',
+			scope: {
+				rubrics: '=',
+				courseid: '=',
+				select: '&'
+			},
+			template:
+			'<div ng-repeat="rubric in rubrics.rubrics">'+
+			'<p ng-click="select({rubric: rubric})"" ng-if="rubric.courseID == courseid">{[{rubric.rubricName}]}</p><br/>'+
+			'</div>'
 		}
 	})
 
