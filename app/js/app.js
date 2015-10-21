@@ -381,6 +381,7 @@ var app = angular.module('app', ['ngRoute'])
             			'<input type="text" class="form-control" name="rubricName" ng-model="model.rubricName">'+
         			'</div>'+
         			'<div class="form-group">'+
+                        '<p class="warning">Note: Seperate sections with commas</p>'+
             			'<label>Rubric Sections</label>'+
            				'<input type="text" class="form-control" name="sections" ng-model="model.rubricSections">'+
         			'</div>'+
