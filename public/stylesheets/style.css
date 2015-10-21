@@ -1084,6 +1084,11 @@ button {
 .rubric-buttons {
   color: #00f;
 }
+.rubric-delete {
+  position: absolute;
+  top: 0px;
+  right: 394px;
+}
 .button-list {
   color: #00f;
 }

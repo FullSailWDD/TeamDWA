@@ -604,7 +604,7 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
                 '<p class="rubric-degree">Degree Name</p>'+
                 //course name (hardcoded for now)
                 '<p class="rubric-course">Course Name</p>'+
-                '<p ng-click="delete({id: payload._id})">Delete</p>'+
+                '<p class="rubric-delete" ng-click="delete({id: payload._id})">Delete</p>'+
                 //rubric name
                 '<p class="rubric-name" ng-show="clicked">{[{payload.rubricName}]}</p>'+
                 //rubric name editing div
