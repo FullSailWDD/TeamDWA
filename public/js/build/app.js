@@ -95,6 +95,14 @@ var app = angular.module('app', ['ngRoute'])
             $scope.degreesData = new degreeGenerator($scope.degrees);
             $scope.courseTile = new courseTileGenerator($scope.courses.courses);
         });
+
+        $scope.removeCourse = function(courseID){
+        	$scope.courseID = courseID;
+        	$http.get('/removeCourse/'+$scope.courseID)
+        		.then(function(res){
+        			$location.path('/');
+        		})
+        }
         $scope.removeDegree = function(degreeID){
             console.log(degreeID);
             $scope.degree = degreeID;
@@ -408,7 +416,8 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
 				payload: '=',
 				select: '&',
 				callback: '&',
-				allrubrics: '&'
+				allrubrics: '&',
+				remove: '&'
 			}, 
 			template: 
             '<div class="dashsearchcontainer">'+
@@ -418,7 +427,7 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
                 '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
                     '<li>'+
                         //delete button, needs ng-click to delete
-                        '<img class="delete-course-button" src="./img/x-button.png" />'+
+                        '<img class="delete-course-button" ng-click="remove({id:course._id})" src="./img/x-button.png" />'+
                         '<p class="degreeAbbr">{[{course.degreeAbbr}]}<span class="degreeName">{[{course.degreeName}]}</span></p>'+
                         '<p id="courseAbbr" class="courseAbbr">{[{course.courseAbbr}]}<span id="courseName" class="courseName">{[{course.courseName}]}</span></p>'+
                         '<p class="rubricnumber">#</p>'+
