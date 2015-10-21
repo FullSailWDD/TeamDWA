@@ -12,6 +12,9 @@ var app = angular.module('app', ['ngRoute'])
 	    }).when("/dashboard",{
 	        templateUrl: "templates/dashboard.html",
 	        controller: "dashboardCtrl"
+	    }).when("/addDegree",{
+	        templateUrl: "templates/addDegree.html",
+	        controller: "addDegreeCtrl"
 	    }).when("/addCourse",{
 	        templateUrl: "templates/addCourse.html",
 	        controller: "addCourseCtrl"
@@ -21,6 +24,9 @@ var app = angular.module('app', ['ngRoute'])
 	    }).when("/changeDegree",{
 	        templateUrl: "templates/dashboard.html",
 	        controller: "changeDegreeCtrl"
+	    }).when("/allRubrics",{
+	        templateUrl: "templates/viewRubrics.html",
+	        controller: "allRubrics"
 	    }).when("/addRubric",{
 	        templateUrl: "templates/rubric.html",
 	        controller: "rubricCtrl"
@@ -72,13 +78,26 @@ var app = angular.module('app', ['ngRoute'])
 			$http.post('/getDashboard', $scope.allCourses)
 				.then(function(res){
 					$scope.courseRubrics = $scope.rootRubrics.rubrics;
-					//console.log($scope.rootRubrics.rubrics);
 					$scope.degrees = myService.getItem();
 					$scope.courses = res.data;
 					$scope.degreesData = new degreeGenerator($scope.degrees);
 					$scope.courseTile = new courseTileGenerator($scope.courses.courses);
 			});
 
+			$scope.removeDegree = function(degreeID){
+				console.log(degreeID);
+				$scope.degree = degreeID;
+				$http.get('/removeDegree/'+$scope.degree)
+					.then(function(res){
+				$location.path('/');
+			});
+			}
+			$scope.allRubrics = function(courseID){
+				$rootScope.courseID = courseID;
+				$location.path('/allRubrics');
+
+			}
+			
 
 			$scope.rubricSelect = function(rubric){
 				$rootScope.selectedRubric = rubric;
@@ -103,13 +122,19 @@ var app = angular.module('app', ['ngRoute'])
 		$scope.addCourse = function(){
 			$scope.newCourse.degreeID = $scope.test;
 			if(!$scope.newCourse.degreeID){
-				//console.log('Error');
 			}else{
-			//console.log($scope.newCourse);
 			$http.post('/addCourseJSON', $scope.newCourse);
 			$location.path('/dashboard');
 			}
 		}
+	}]);
+
+	app.controller('addDegreeCtrl', ['$scope', '$rootScope', '$http', '$routeParams','$location', 'myService', function($scope, $rootScope, $http, $routeParams, $location, myService){
+			$scope.newDegree = {};
+		$scope.addDegree = function(){
+			$http.post('/addDegreeJSON', $scope.newDegree);
+			$location.path('/');
+			}
 	}]);
 		// Add Course Controller End =========
 		// ===================================
@@ -129,13 +154,26 @@ var app = angular.module('app', ['ngRoute'])
 					console.log($scope.newRubric.sectionWeight);
 					$scope.newRubric.rubricSections = sections;
 
-				//console.log($scope.newRubric);
 				$http.post('/addRubric', $scope.newRubric);
 
 				$location.path('/');
 			}
-			// console.log($scope.newRubric);
 			
+	}]);
+
+	app.controller('allRubrics', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
+		console.log($scope.courseID);
+		console.log($scope.rootRubrics);
+		$scope.rootRubrics;
+		$scope.courseID;
+
+		$scope.rubricSelect = function(rubric){
+				$rootScope.selectedRubric = rubric;
+				$location.path('/useRubric');
+				console.log($rootScope.selectedRubric);
+			}
+
+
 	}]);
 
 	app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
@@ -143,7 +181,7 @@ var app = angular.module('app', ['ngRoute'])
 				console.log('Refresh -- Solo If');
 					$location.path('/');
 			};
-		$scope.usedRubric = $rootScope.selectedRubric;
+		$scope.usedRubric = $scope.selectedRubric;
 		console.log($scope.usedRubric);
 		$http.get('/rubricItems/'+$scope.usedRubric._id)
 				.then(function(res){
@@ -152,12 +190,12 @@ var app = angular.module('app', ['ngRoute'])
 				})
 
 		$scope.editRubric = function(rubric){
-			//console.log(rubric);
 			$rootScope.editRubric = rubric;
-			//console.log($rootScope.editRubric);
 			$location.path('/editRubric');
 		}
 	}]);
+
+
 
 	app.controller('rubricEditCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
 			if($rootScope.theSession != 2){
@@ -225,7 +263,8 @@ var app = angular.module('app', ['ngRoute'])
 				rubrics: '=',
 				payload: '=',
 				select: '&',
-				callback: '&'
+				callback: '&',
+				allrubrics: '&'
 			}, 
 			template: 
             '<div class="dashsearchcontainer">'+
@@ -238,13 +277,13 @@ var app = angular.module('app', ['ngRoute'])
                         '<p id="courseAbbr" class="courseAbbr">{[{course.courseAbbr}]}<span id="courseName" class="courseName">{[{course.courseName}]}</span></p>'+
                         '<p class="rubricnumber">#</p>'+
                         '<div class="rubricholder">'+
-                            '<p class="rubric" ng-repeat="theRubrics in rubrics" ng-repeat="theRubrics in rubrics" ng-if="course._id == theRubrics.courseID" ng-click="select({rubric: theRubrics})">{[{theRubrics.rubricName}]}</p>'+
+                            '<p class="rubric" ng-repeat="theRubrics in rubrics | limitTo: 5" ng-repeat="theRubrics in rubrics" ng-if="course._id == theRubrics.courseID" ng-click="select({rubric: theRubrics})">{[{theRubrics.rubricName}]}</p>'+
                         '</div>'+
                         '<p class="hideme">{[{course._id}]}</p>'+
                         '<p class="hideme">{[{course.degreeID}]}</p>'+
                         '<div class="addcontainer">'+
                         '<button class="addrubric" ng-click="callback({course:course})">+</button>'+
-                        '<img class="dots" width="20" src="img/dots.png">'+
+                        '<img ng-click="allrubrics({courseID: course._id})" class="dots" width="20" src="img/dots.png">'+
                         '</div>'+
                     '</li>'+
                 '</ul>'+
@@ -257,7 +296,8 @@ var app = angular.module('app', ['ngRoute'])
 			restrict: 'E',
 			scope: {
 				payload: '=',
-				callback: '&'
+				callback: '&',
+				delete: '&'
 			},
 			template: 
 				'<div class="rightme">'+
@@ -266,10 +306,26 @@ var app = angular.module('app', ['ngRoute'])
 					'<p ng-click="callback({degree: degree})">{[{degree._id}]}</p>'+
 					'<input ng-hide="true" type="text" ng-model="degreeModel.ID" value="{[{degree._id}]}"/>'+
 					'<p ng-click="callback({degree: degree})">{[{degree.degreeAbbr}]}</p>'+
-					'<p ng-click="callback({degree: degree})">{[{degree.degreeName}]}</p><br/>'+
+					'<p ng-click="callback({degree: degree})">{[{degree.degreeName}]}</p>'+
+					'<p ng-click="delete({degreeID: degree._id})">- Delete -</p><br/>'+
 					'</li>'+
 				'</ul>'+
 				'</div>'
+		}
+	})
+
+	app.directive('allRubrics', function(){
+		return{
+			restrict: 'E',
+			scope: {
+				rubrics: '=',
+				courseid: '=',
+				select: '&'
+			},
+			template:
+			'<div ng-repeat="rubric in rubrics.rubrics">'+
+			'<p ng-click="select({rubric: rubric})"" ng-if="rubric.courseID == courseid">{[{rubric.rubricName}]}</p><br/>'+
+			'</div>'
 		}
 	})
 
@@ -292,15 +348,11 @@ var app = angular.module('app', ['ngRoute'])
         					'</div>'+
         					'<div class="form-group">'+
             					'<label>Item Weight</label>'+
-           						'<input type="text" class="form-control" name="sections" ng-model="model.itemWeight">'+
+           						'<input type="number" class="form-control" name="sections" ng-model="model.itemWeight">'+
         					'</div>'+
         					'<div class="form-group">'+
             					'<label>Wiki Link</label>'+
            						'<input type="text" class="form-control" name="sections" ng-model="model.itemWiki">'+
-        					'</div>'+
-        					'<div class="form-group">'+
-            					'<label>Comment</label>'+
-           						'<input type="text" class="form-control" name="sections" ng-model="model.itemComment">'+
         					'</div>'+
 							'<button ng-click="callback()" class="btn btn-warning btn-lg">Add Item</button>'+
     					'</form>'
@@ -360,7 +412,12 @@ var app = angular.module('app', ['ngRoute'])
                         '<p class="rubric-item ri-name">{[{item.itemName}]}</p>'+
                         '<p class="rubric-item ri-wiki">{[{item.itemWiki}]}</p>'+
                         '<p class="rubric-item ri-desc">{[{item.itemDes}]}</p>'+
-                        '<p class="rubric-item ri-comment">{[{item.itemComment}]}</p>'+
+                        '<p class="rubric-item ri-comment">'+
+                        	'<div ng-show=""></div>'+
+            				'<label>Comment</label><br/>'+
+           					'<input type="text" ng-model="item[]."class="form-control" name="sections" ng-model="model.itemComment">'+
+           					'<span> Done</span>'+
+        				'</p>'+
                     	'</div>'+
                 '</div>'+
             '</div>'
@@ -461,13 +518,6 @@ var app = angular.module('app', ['ngRoute'])
 		}
 		return newData;
 	})
-
-	// app.service('rubricCourseMerger', function(){
-	// 	var rubricCourse = function(args){
-	// 		this.course = args || {};
-	// 	}
-	// 	return rubricCourse
-	// })
 
 	app.service('rubricGenerator', function(){
 		var rubricGen = function(args){

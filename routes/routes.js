@@ -38,6 +38,8 @@
             });
         });
 
+
+
         app.post('/getDegrees',  function (req, res) {
             degrees = require('../models/degrees.js');
             allDegrees = degrees.findAll(function(result){
@@ -46,23 +48,23 @@
        });
 
         app.post('/getRubrics', function (req, res) {
-            //console.log('working here');
+            
             rubrics = require('../models/rubrics.js');
             allrubrics = rubrics.findAll(function(result){
                 res.send(JSON.stringify({rubrics: result}, null, 3));
-                //console.log(result);
+                
             });  
         });
 
        
         app.post('/editRubric', function (req, res){
             rubrics = require('../models/rubrics.js');
-            // console.log(req.body, '--------------------');
-            // rubrics.edit();
+            
+            
             rubrics.update(req.body, function(doc){
                     res.send(doc);
                 });
-            //req,id,success,fail
+            
         
         });
 
@@ -86,13 +88,34 @@
     // Add Course JSON Route - Receiving Data From Angular 
          app.post('/addCourseJSON', function (req, res) {
                 courses = require('../models/courses.js');
-                //console.log(req.body);
+                
                 courses.add(req.body, function(doc){
                     res.send(doc);
                 });
 
             
        });
+         app.post('/addDegreeJSON', function (req, res) {
+                degree = require('../models/degrees.js');
+                console.log(req.body);
+                degree.add(req.body, function(doc){
+                    res.send(doc);
+                });
+
+            
+       }); 
+        app.get('/removeDegree/:id', function (req, res) {
+                var id = req.params.id;
+                degree = require('../models/degrees.js');
+                console.log(id,'-----------------------------');
+                degree.delete(id, function(doc){
+                    res.send(doc);
+                });
+
+            
+       });
+
+
           app.post('/addRubric', function (req, res) {
                 rubrics = require('../models/rubrics.js');
                 console.log(req);
