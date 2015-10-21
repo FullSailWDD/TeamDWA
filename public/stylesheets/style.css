@@ -514,7 +514,7 @@ h1 {
   white-space: nowrap;
   overflow: hidden;
 }
-.rubric:nth-child(5) {
+.rubric:nth-child(n+4) {
   display: none;
 }
 .rubricholder {
