@@ -545,8 +545,8 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
                                 '<li class="button-actual"><button type="button" ng-click="grade({value:0, weight: item.itemWeight, item: item, section: sction})">0</button></li>'+
                             '</ul>'+
                         '</div>'+
-                        '<p ng-click="delete({id:item._id})">-- Delete Item -- </p>'+
                         '<p class="rubric-item ri-name">{[{item.itemName}]}</p>'+
+                        '<p ng-click="delete({id:item._id})">-- Delete Item -- </p>'+
                         '<p class="rubric-item ri-wiki">{[{item.itemWiki}]}</p>'+
                         '<p class="rubric-item ri-desc">{[{item.itemDes}]}</p>'+
                         '<p class="rubric-item ri-comment">'+
