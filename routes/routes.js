@@ -115,6 +115,27 @@
             
        });
 
+        app.get('/removeRubric/:id', function (req, res) {
+                var id = req.params.id;
+                rubric = require('../models/rubrics.js');
+                console.log(id,'-----------------------------');
+                rubric.delete(id, function(doc){
+                    res.send(doc);
+                });
+
+            
+       });
+
+         app.get('/removeItem/:id', function (req, res) {
+                var id = req.params.id;
+                item = require('../models/items.js');
+                console.log(id,'-----------------------------');
+                item.delete(id, function(doc){
+                    res.send(doc);
+                });
+
+            
+       });
 
           app.post('/addRubric', function (req, res) {
                 rubrics = require('../models/rubrics.js');

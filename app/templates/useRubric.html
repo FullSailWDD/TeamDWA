@@ -17,7 +17,7 @@
         <div class="rubric-container-use">
             <div class="rubric-body">
                 <!--ng-repeat section is sections-->
-                <use-rubric data-payload="usedRubric" data-items="rubricItems" data-callback="editRubric(rubric)"></use-rubric>
+                <use-rubric data-payload="usedRubric" data-delete="removeItem(id)" data-items="rubricItems" data-callback="editRubric(rubric)"></use-rubric>
             </div>
             <div class="score-button">
                 <button class="score-button-actual">Score Rubric</button>

@@ -7,7 +7,7 @@ module.exports = function(){
 var itemSchema = new mongoose.Schema({
 		courseID 		: { type: String, required: false },
 		rubricID 		: { type: String, required: false },
-		sectionID     : String,
+		sectionID       : String,
     	itemName 		: String,
     	itemDes  		: String,
     	itemWeight		: Number,
@@ -88,13 +88,25 @@ var _model = mongoose.model('item', itemSchema);
                 
             }
         });
-        
+    }
+
+    _remove = function(id, success, fail){
+		console.log(id);
+		_model.remove({_id: id}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				success(doc);
+			}
+		})
 	}
+        
 return {
 		schema  	 : itemSchema,
 		add 		 : _save,
 		update  	 : _update,
 	    findByRubric : _findAllByRubricID,
-	    findOne 	 : _findOne
+	    findOne 	 : _findOne,
+	    delete       : _remove
 	   };
 }();

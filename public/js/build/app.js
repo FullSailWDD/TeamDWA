@@ -69,9 +69,11 @@ var app = angular.module('app', ['ngRoute'])
 		//Dashboard Controller============
 	app.controller('dashboardCtrl', ['$scope','$rootScope', '$http', '$routeParams','$location', 'courseTileGenerator', 'degreeGenerator', 'myService', function($scope, $rootScope, $http, $routeParams, $location, courseTileGenerator, degreeGenerator, myService){
 			$rootScope.theSession++;
+			if($rootScope.reRouteItems == 1){
+				$location.path('/useRubric')
+			}
 			if($rootScope.theSession != 2){
 				console.log('Refresh -- Solo If');
-					$rootScope.theSession = 0;
 					$location.path('/');
 			};
 			
@@ -129,7 +131,8 @@ var app = angular.module('app', ['ngRoute'])
 			$http.post('/addCourseJSON', $scope.newCourse);
 			$location.path('/dashboard');
 			}
-		}
+		
+	}
 	}]);
 
 	app.controller('addDegreeCtrl', ['$scope', '$rootScope', '$http', '$routeParams','$location', 'myService', function($scope, $rootScope, $http, $routeParams, $location, myService){
@@ -160,11 +163,14 @@ var app = angular.module('app', ['ngRoute'])
 				$http.post('/addRubric', $scope.newRubric);
 
 				$location.path('/');
-			}
-			
+			}	
 	}]);
 
 	app.controller('allRubrics', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
+			if($rootScope.theSession != 2){
+				console.log('Refresh -- Solo If');
+					$location.path('/');
+			};
 		console.log($scope.courseID);
 		console.log($scope.rootRubrics);
 		$scope.rootRubrics;
@@ -192,6 +198,15 @@ var app = angular.module('app', ['ngRoute'])
 					$scope.rubricItems = res.data;
 				})
 
+		$scope.removeItem = function(id){
+				$rootScope.reRouteItems = 1;
+				$scope.itemID = id;
+				$http.get('/removeItem/'+$scope.itemID)
+					.then(function(res){
+				$location.path('/');
+			});
+		}
+
 		$scope.editRubric = function(rubric){
 			$rootScope.editRubric = rubric;
 			$location.path('/editRubric');
@@ -211,6 +226,16 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.itemAdd = true;
 			console.log($scope.itemAdd, 'before Anything');
 
+		$scope.deleteRubric = function(id){
+			$scope.rubricID = id;
+			console.log($scope.rubricID);
+				$http.get('/removeRubric/'+$scope.rubricID)
+					.then(function(res){
+				$location.path('/');
+			});
+		}
+
+
 		$scope.theEditRubric = function(rubric){
 			console.log(rubric);
 			$scope.edit =! $scope.edit;
@@ -228,8 +253,6 @@ var app = angular.module('app', ['ngRoute'])
 			$location.path('/addItem');
 
 		}
-
-
 
 		$scope.useFromEditRubric = function(rubric){
 			console.log(rubric);
@@ -343,15 +366,15 @@ var app = angular.module('app', ['ngRoute'])
 					'<form>'+
         					'<div class="form-group">'+
             					'<label>Item Name</label>'+
-            					'<input type="text" class="form-control" name="itemName" ng-model="model.itemName">'+
+            					'<input type="text" required="require" class="form-control" name="itemName" ng-model="model.itemName">'+
         					'</div>'+
         					'<div class="form-group">'+
             					'<label>Item Description</label>'+
-           						'<input type="text" class="form-control" name="sections" ng-model="model.itemDes">'+
+           						'<input type="text" required="require" class="form-control" name="sections" ng-model="model.itemDes">'+
         					'</div>'+
         					'<div class="form-group">'+
             					'<label>Item Weight</label>'+
-           						'<input type="number" class="form-control" name="sections" ng-model="model.itemWeight">'+
+           						'<input type="number" required="require" class="form-control" name="sections" ng-model="model.itemWeight">'+
         					'</div>'+
         					'<div class="form-group">'+
             					'<label>Wiki Link</label>'+
@@ -374,11 +397,11 @@ var app = angular.module('app', ['ngRoute'])
 			    '<form >'+
         			'<div class="form-group">'+
             			'<label>Rubric Name</label>'+
-            			'<input type="text" class="form-control" name="rubricName" ng-model="model.rubricName">'+
+            			'<input type="text" required="require" class="form-control" name="rubricName" ng-model="model.rubricName">'+
         			'</div>'+
         			'<div class="form-group">'+
             			'<label>Rubric Sections</label>'+
-           				'<input type="text" class="form-control" name="sections" ng-model="model.rubricSections">'+
+           				'<input type="text" required="require" class="form-control" name="sections" ng-model="model.rubricSections">'+
         			'</div>'+
 						'<button ng-click="callback()" class="btn btn-warning btn-lg">Create Rubric</button>'+
     			'</form>'
@@ -391,7 +414,8 @@ var app = angular.module('app', ['ngRoute'])
 			scope: {
 				payload: '=',
 				items: "=",
-				callback: '&'
+				callback: '&',
+				delete: '&'
 			},
 			template:
 			'<p class="edit-button" ng-click="callback({rubric: payload})"><img src="./img/edit-button.png" class="absolute"/></p>'+
@@ -412,6 +436,7 @@ var app = angular.module('app', ['ngRoute'])
                                 '<li class="button-actual"><button type="button" onclick="">0</button></li>'+
                             '</ul>'+
                         '</div>'+
+                        '<p ng-click="delete({id:item._id})">-- Delete Item -- </p>'+
                         '<p class="rubric-item ri-name">{[{item.itemName}]}</p>'+
                         '<p class="rubric-item ri-wiki">{[{item.itemWiki}]}</p>'+
                         '<p class="rubric-item ri-desc">{[{item.itemDes}]}</p>'+
@@ -438,7 +463,8 @@ var app = angular.module('app', ['ngRoute'])
 				editrubric: '&',
 				itemcreate: '&',
 				model: '=',
-				itemadd: '=' 
+				itemadd: '=',
+				delete: '&' 
 			},
 			template:
 
@@ -455,6 +481,7 @@ var app = angular.module('app', ['ngRoute'])
                 '<p class="rubric-degree">Degree Name</p>'+
                 //course name (hardcoded for now)
                 '<p class="rubric-course">Course Name</p>'+
+                '<p ng-click="delete({id: payload._id})">Delete</p>'+
                 //rubric name
                 '<p class="rubric-name" ng-show="clicked">{[{payload.rubricName}]}</p>'+
                 //rubric name editing div
