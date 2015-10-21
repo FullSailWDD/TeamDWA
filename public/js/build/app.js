@@ -323,7 +323,7 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
             //     };
             // };
 //            secValue.push(secValue);
-        
+        // 
 //        rubricScore = sectionValues.reduce(function(total,num){return total+num},0);
 //        sectionValue = sectionScore * sectionWeight;
 //        sectionScore = itemValues.reduce(function(total,num){return total+num},0);
@@ -518,7 +518,9 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
         					'<div class="form-group">'+
             					'<label>Item Weight</label>'+
            						'<input type="number" required="require" class="form-control" name="sections" ng-model="model.itemWeight">'+
+        						'<p>combined item weights must equal 100%!</p>'+
         					'</div>'+
+
         					'<div class="form-group">'+
             					'<label>Wiki Link</label>'+
            						'<input type="text" class="form-control" name="sections" ng-model="model.itemWiki">'+
