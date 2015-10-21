@@ -150,7 +150,7 @@ var app = angular.module('app', ['ngRoute'])
 				var sections = $scope.newRubric.rubricSections.split(',');
 					console.log(sections);
 					for(i=1; i<=sections.length; i++){
-						sectionsWeight = Math.round(100/i);
+						sectionsWeight = Math.round((100/i),2);
 					}
 					console.log(sectionsWeight);
 					$scope.newRubric.sectionWeight = sectionsWeight;
@@ -185,7 +185,7 @@ var app = angular.module('app', ['ngRoute'])
 					$location.path('/');
 			};
 		$scope.usedRubric = $scope.selectedRubric;
-		// console.log($scope.usedRubric);
+		// console.log($scope.usedRubric._id);
 		$http.get('/rubricItems/'+$scope.usedRubric._id)
 				.then(function(res){
 					console.log(res.data);
@@ -197,10 +197,11 @@ var app = angular.module('app', ['ngRoute'])
 			$location.path('/editRubric');
 		}
 
-
+		var grade = [];
+		
 		$scope.gradeSelect = function(value){
-
 			var totalWeight = 0;
+			var totalItemwight = 0;
 			var sectionWeights = [];
 			var itemWeights = [];
 			for(var i = 0; i < $scope.usedRubric.rubricSections.length; i++){
@@ -209,16 +210,19 @@ var app = angular.module('app', ['ngRoute'])
 				totalWeight += eachWeight;
 			}
 
-			for(var i = 0; i < $scope.rubricItems.items; i++){
-				var eachItem = $scope.rubricItems.items[i];
+			for(var i = 0; i < $scope.rubricItems.items.length; i++){
+				var eachItem = $scope.rubricItems.items[i].itemWeight;
 				itemWeights.push(eachItem);
-			}
-
-			console.log($scope.rubricItems.items);
-			console.log('Grade Clicked: ', value);
+				totalItemwight += eachItem;
+			}	
+			
+			grade.push(value);
+			console.log('Grade Clicked: ', grade);
 			console.log('Section Weight: ', sectionWeights);
 			console.log('Total Weight: ', totalWeight);
 			console.log('Item Weights: ', itemWeights);
+			console.log('Total Item Weights', totalItemwight);
+
 		}
 
 	}]);
@@ -272,7 +276,10 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.newItem.selectedRubric = $scope.selectedRubric; 
 			$scope.newItem.selectedSectionID = $rootScope.selectedSection.sectionID
 			console.log('bloop');
-			console.log($scope.newItem.selectedSectionID);
+			console.log('2eac jwd cmz', $scope.newItem);
+
+
+
 			$location.path('/useRubric');
 			$http.post('/createRubricItem', $scope.newItem);
 			
@@ -427,7 +434,7 @@ var app = angular.module('app', ['ngRoute'])
                 '<p class="rubric-name">{[{payload.rubricName}]}</p>'+
                 '<div class="rubric-section" ng-repeat="section in payload.rubricSections">'+
                     '<p class="rubric-section-title">{[{section.sectionName}]}<p>'+
-                    '<p class="section-weight">{[{section.sectionWeight}]}</p>'+
+                    '<p class="section-weight">{[{section.sectionWeight}]}%</p>'+
                     	'<div ng-repeat="item in items.items track by $index" ng-if="item.sectionID == section.sectionID" class="rubric-item">'+
                         '<div class="rubric-buttons">'+
                             '<ul class="button-list">'+
