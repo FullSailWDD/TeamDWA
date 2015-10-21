@@ -71,12 +71,15 @@ var app = angular.module('app', ['ngRoute'])
 			$rootScope.theSession++;
 			if($rootScope.theSession != 2){
 				console.log('Refresh -- Solo If');
+					$rootScope.theSession = 0;
 					$location.path('/');
 			};
 			
 			$scope.courses = {};
 			$http.post('/getDashboard', $scope.allCourses)
 				.then(function(res){
+					console.log($scope.rootRubrics);
+					console.log($scope.rootRubrics.rubrics);
 					$scope.courseRubrics = $scope.rootRubrics.rubrics;
 					$scope.degrees = myService.getItem();
 					$scope.courses = res.data;
@@ -277,7 +280,7 @@ var app = angular.module('app', ['ngRoute'])
                         '<p id="courseAbbr" class="courseAbbr">{[{course.courseAbbr}]}<span id="courseName" class="courseName">{[{course.courseName}]}</span></p>'+
                         '<p class="rubricnumber">#</p>'+
                         '<div class="rubricholder">'+
-                            '<p class="rubric" ng-repeat="theRubrics in rubrics | limitTo: 5" ng-repeat="theRubrics in rubrics" ng-if="course._id == theRubrics.courseID" ng-click="select({rubric: theRubrics})">{[{theRubrics.rubricName}]}</p>'+
+                            '<p class="rubric" ng-repeat="theRubrics in rubrics" ng-repeat="theRubrics in rubrics" ng-if="course._id == theRubrics.courseID" ng-click="select({rubric: theRubrics})">{[{theRubrics.rubricName}]}</p>'+
                         '</div>'+
                         '<p class="hideme">{[{course._id}]}</p>'+
                         '<p class="hideme">{[{course.degreeID}]}</p>'+
