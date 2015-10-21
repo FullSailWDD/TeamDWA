@@ -71,7 +71,6 @@ var app = angular.module('app', ['ngRoute'])
 			$rootScope.theSession++;
 			if($rootScope.theSession != 2){
 				console.log('Refresh -- Solo If');
-					$rootScope.theSession = 0;
 					$location.path('/');
 			};
 			
@@ -165,7 +164,12 @@ var app = angular.module('app', ['ngRoute'])
 	}]);
 
 	app.controller('allRubrics', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
-		console.log($scope.courseID);
+        if($rootScope.theSession != 2){
+				console.log('Refresh -- Solo If');
+					$rootScope.theSession = 0;
+					$location.path('/');
+			};
+        console.log($scope.courseID);
 		console.log($scope.rootRubrics);
 		$scope.rootRubrics;
 		$scope.courseID;
