@@ -18,8 +18,9 @@ var _model = mongoose.model('rubrics', rubricSchema);
 	_save = function (req, success, fail ){
 		console.log(req.sectionWeight);
 		rubricSectionsArray = [];
+
 		for(i = 0; i < req.rubricSections.length;i++){
-			rubricSectionsArray.push({sectionName:req.rubricSections[i], sectionWeight: req.sectionWeight})
+			rubricSectionsArray.push({sectionName:req.rubricSections[i], sectionID:sha1(req.rubricSections[i]), sectionWeight: req.sectionWeight})
 		}
 		console.log("--- DATA RUBRIC SECTION-----",rubricSectionsArray);
 	var newRubric = new _model({

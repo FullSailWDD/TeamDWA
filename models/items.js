@@ -24,7 +24,6 @@ var _model = mongoose.model('item', itemSchema);
 // Add Item ====================
 	_save = function (req, success, fail ){
 
-		console.log('----------REQ----------', req.selectedSectionID);
 	var newitem = new _model({
 				courseID     	:req.selectedRubric.courseID,
 				rubricID		:req.selectedRubric._id,
@@ -36,7 +35,7 @@ var _model = mongoose.model('item', itemSchema);
 				itemComment		:req.itemComment
 		});
 			console.log('----------NEW ITEM----------',newitem, '----------NEW ITEM----------');
-	// 		// Save to Database
+	 	// Save to Database
 			newitem.save( function(err, doc){
 				if (err) {
 					

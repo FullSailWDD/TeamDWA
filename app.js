@@ -7,6 +7,7 @@ var 	express 	    = require('express'),
     	flash     		= require('connect-flash'),
     	mongoose	    = require('mongoose'),
  	  	exphbs 		    = require('express-handlebars'),
+ 	  	sha1			= require('sha1'),
 	  	path 		    = require('path');
 	  	// master			= require('./models/masterModel.js');
 
