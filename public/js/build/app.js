@@ -281,12 +281,33 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
 
 
     $scope.gradeRubric = function(){
-        $scope.gradeObj = $scope.gradeThis;
-        rubricScore = sectionValues.reduce(function(total,num){return total+num},0);
-        sectionValue = sectionScore * sectionWeight;
-        sectionScore = itemValues.reduce(function(total,num){return total+num},0);
-        itemValue = itemScore * itemWeight;
-        //return final rubric score
+        var gradeThis =  $scope.gradeThis,
+            secValues = [],
+            itemValues = [],
+            sectionScore = [],
+            sectionValue = [];
+            
+        
+        for(i=0;i<gradeThis.length;i++){
+            itemValues[i] = gradeThis[i].scores.weight / gradeThis[i].score;
+            sectionScore[i] = itemValues.reduce(function(total,num){return total+num},0);
+            sectionValue[i] = gradeThis[i].sectionWeights / sectionScore[i];
+            console.log(sectionValue);
+            var secValue = gradeThis[i].sectionScore * gradeThis[i].secWeight;
+            for(j=0;j<gradeThis[i].scores.length;j++){
+                var itemValues = [];
+                for(k=0;k<gradeThis[i].scores[j].score[k];k++){
+                    itemValues.push(gradeThis[i].scores[j].score[k] * gradeThis[i].scores[j].weight[k]);
+                };
+            };
+//            secValue.push(secValue);
+        };
+//        rubricScore = sectionValues.reduce(function(total,num){return total+num},0);
+//        sectionValue = sectionScore * sectionWeight;
+//        sectionScore = itemValues.reduce(function(total,num){return total+num},0);
+//        itemValue = itemScore * itemWeight;
+//        //return final rubric score
+        var rubricScore = secValues.reduce(function(total,num){return total+num},0);
         return rubricScore;
     };
 
