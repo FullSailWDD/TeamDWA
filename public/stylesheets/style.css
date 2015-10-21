@@ -1028,6 +1028,45 @@ h1 {
   font-size: 24px;
   color: #2c242f;
 }
+.allrubrics {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 31.33333333333333%;
+  margin-left: 0%;
+  margin-right: 3%;
+  border: 2px solid #2c242f;
+  background-color: #f8f8f8;
+  border-radius: 15px;
+  margin: 15%;
+  margin-left: 25%;
+  padding: 3%;
+}
+.allrubrics:before,
+.allrubrics:after {
+  content: '';
+  display: table;
+}
+.allrubrics:after {
+  clear: both;
+}
+.allrubrics:last-child {
+  margin-right: 0%;
+}
+.allrubrics p {
+  background-color: #5b83c2;
+  color: #f8f8f8;
+  padding: 5%;
+  margin: 2%;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 5px 5px 5px #2c242f;
+}
+.allrubrics h1 {
+  margin-left: 25%;
+  width: 80%;
+}
 .addDegreeButton {
   position: fixed;
   top: 222px;
