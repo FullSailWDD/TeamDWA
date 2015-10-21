@@ -20,8 +20,9 @@
                 <use-rubric data-payload="usedRubric" data-grade="gradeSelect(value, weight, item, section)" data-delete="removeItem(id)" data-items="rubricItems" data-callback="editRubric(rubric)"></use-rubric>
             </div>
             <div class="score-button">
-                <butto ng-click="gradeRubric()" class="score-button-actual">Score Rubric</button>
+                <button ng-click="gradeRubric()" class="score-button-actual">Score Rubric</button>
             </div>
+            <div><p>{[{total}]}</p></div>
         </div>
         <div class="sheet-bottom">
         </div>

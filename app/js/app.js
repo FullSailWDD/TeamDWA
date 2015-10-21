@@ -291,25 +291,39 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
     $scope.gradeRubric = function(){
         var gradeThis =  $scope.gradeThis,
             secValues = [],
-            itemValues = [],
             sectionScore = [],
             sectionValue = [];
-            
+            console.log(gradeThis);
         
         for(i=0;i<gradeThis.length;i++){
-            itemValues[i] = gradeThis[i].scores.weight / gradeThis[i].score;
-            sectionScore[i] = itemValues.reduce(function(total,num){return total+num},0);
-            sectionValue[i] = gradeThis[i].sectionWeights / sectionScore[i];
+        	itemValues = [];
+        		for(x=0; x<gradeThis[i].scores.length;x++){
+            		itemValues.push(  gradeThis[i].scores[x].weight/gradeThis[i].scores[x].score  );
+            		console.log(itemValues);
+        		}
+            sectionScore.push(itemValues.reduce(function(total,num){return total+num},0));
+            console.log(sectionScore);
+            sectionValue.push((gradeThis[i].secWeight/(sectionScore[i]*100))*100  );
             console.log(sectionValue);
-            var secValue = gradeThis[i].sectionScore * gradeThis[i].secWeight;
-            for(j=0;j<gradeThis[i].scores.length;j++){
-                var itemValues = [];
-                for(k=0;k<gradeThis[i].scores[j].score[k];k++){
-                    itemValues.push(gradeThis[i].scores[j].score[k] * gradeThis[i].scores[j].weight[k]);
-                };
+            
+
             };
+            var total = 0;
+            for(i=0;i<sectionValue.length;i++){
+      		total += sectionValue[i];
+
+            }
+            $scope.total = Math.round(total,2);
+            console.log($scope.total);
+            // var secValue = gradeThis[i].sectionScore * gradeThis[i].secWeight;
+            // for(j=0;j<gradeThis[i].scores.length;j++){
+            //     var itemValues = [];
+            //     for(k=0;k<gradeThis[i].scores[j].score[k];k++){
+            //         itemValues.push(gradeThis[i].scores[j].score[k] * gradeThis[i].scores[j].weight[k]);
+            //     };
+            // };
 //            secValue.push(secValue);
-        };
+        
 //        rubricScore = sectionValues.reduce(function(total,num){return total+num},0);
 //        sectionValue = sectionScore * sectionWeight;
 //        sectionScore = itemValues.reduce(function(total,num){return total+num},0);
