@@ -160,7 +160,21 @@ var app = angular.module('app', ['ngRoute'])
 		}
 
 		$scope.gradeSelect = function(value){
-			console.log(value);
+
+			var totalWeight = 0;
+			var sectionWeights = [];
+			for(var i = 0; i < $scope.usedRubric.rubricSections.length; i++){
+				var eachWeight = $scope.usedRubric.rubricSections[i].sectionWeight;
+				sectionWeights.push(eachWeight);
+				totalWeight += eachWeight;
+			}
+			console.log('Grade Clicked: ', value);
+			console.log('Section Weight: ', sectionWeights);
+			console.log('Total Weight: ', totalWeight);
+
+
+			//Calculate grade
+
 		}
 
 
@@ -199,7 +213,7 @@ var app = angular.module('app', ['ngRoute'])
 		$scope.useFromEditRubric = function(rubric){
 			console.log(rubric);
 			$rootScope.selectedRubric = rubric;
-			$location.path('/useRubric');
+			//$location.path('/useRubric');
 		}
 
 
