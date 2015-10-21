@@ -48,7 +48,6 @@
        });
 
         app.post('/getRubrics', function (req, res) {
-            
             rubrics = require('../models/rubrics.js');
             allrubrics = rubrics.findAll(function(result){
                 res.send(JSON.stringify({rubrics: result}, null, 3));
@@ -68,6 +67,17 @@
         
         });
 
+        app.get('/addSection/:id', function (req, res){
+            var rubricID = req.params.id;
+            console.log(rubricID,'-----------====++---------------');
+            rubrics = require('../models/rubrics.js');
+            rubrics.addSection(rubricID, function(doc){
+                    res.send(JSON.stringify({section: doc}, null, 3));
+                });
+            
+        
+        });
+
         app.post('/createRubricItem', function (req, res){
             item = require('../models/items.js');
             console.log(req.body, "------------++-----------");
@@ -78,7 +88,7 @@
 
         app.get('/rubricItems/:id', function (req, res){
             item = require('../models/items.js');
-            rubricID = req.params.id;
+            var rubricID = req.params.id;
             item.findByRubric(rubricID, function(doc){
                 res.send(JSON.stringify({items: doc}, null, 3));
             })
@@ -114,6 +124,51 @@
 
             
        });
+
+        app.get('/removeRubric/:id', function (req, res) {
+                var id = req.params.id;
+                rubric = require('../models/rubrics.js');
+                console.log(id,'-----------------------------');
+                rubric.delete(id, function(doc){
+                    res.send(doc);
+                });
+
+            
+       });
+
+        app.get('/removeSection/:id/:sectionID', function (req, res) {
+                var rubricID = req.params.id;
+                var sectionID = req.params.sectionID;
+                rubric = require('../models/rubrics.js');
+                // console.log(id,'-----------------------------');
+                rubric.removeSection(rubricID, sectionID, function(doc){
+                    res.send(doc);
+                });
+
+            
+       });
+
+         app.get('/removeItem/:id', function (req, res) {
+                var ic = req.params.id;
+
+                item = require('../models/items.js');
+                console.log(id,'-----------------------------');
+                item.delete(id, function(doc){
+                    res.send(doc);
+                });
+
+            
+        });
+         app.get('/removeCourse/:id', function (req, res) {
+                var id = req.params.id;
+                course = require('../models/courses.js');
+                console.log(id,'-----------------------------');
+                course.delete(id, function(doc){
+                    res.send(doc);
+                });
+
+            
+        });
 
 
           app.post('/addRubric', function (req, res) {

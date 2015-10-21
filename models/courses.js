@@ -51,12 +51,23 @@ var _model = mongoose.model('courses', courseSchema);
 			}
 		})
 	}
+	_remove = function(id, success, fail){
+		console.log(id);
+		_model.remove({_id: id}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				success(doc);
+			}
+		})
+	}
 // Find All Courses End ============
 
 
 return {
 		schema  : courseSchema,
 		add 	: _save,
-	    findAll : _findAll
+	    findAll : _findAll,
+	    delete  : _remove
 	   };
 }();

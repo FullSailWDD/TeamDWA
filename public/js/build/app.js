@@ -69,6 +69,10 @@ var app = angular.module('app', ['ngRoute'])
 		//Dashboard Controller============
 	app.controller('dashboardCtrl', ['$scope','$rootScope', '$http', '$routeParams','$location', 'courseTileGenerator', 'degreeGenerator', 'myService', function($scope, $rootScope, $http, $routeParams, $location, courseTileGenerator, degreeGenerator, myService){
 			$rootScope.theSession++;
+			if($rootScope.reRouteItems == 0){
+				$rootScope.reRouteItems = 1;
+				$location.path('/useRubric')
+			}
 			if($rootScope.theSession != 2){
 				console.log('Refresh -- Solo If');
 					$location.path('/');
@@ -128,7 +132,8 @@ var app = angular.module('app', ['ngRoute'])
 			$http.post('/addCourseJSON', $scope.newCourse);
 			$location.path('/dashboard');
 			}
-		}
+		
+	}
 	}]);
 
 	app.controller('addDegreeCtrl', ['$scope', '$rootScope', '$http', '$routeParams','$location', 'myService', function($scope, $rootScope, $http, $routeParams, $location, myService){
@@ -159,8 +164,7 @@ var app = angular.module('app', ['ngRoute'])
 				$http.post('/addRubric', $scope.newRubric);
 
 				$location.path('/');
-			}
-			
+			}	
 	}]);
 
 	app.controller('allRubrics', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
@@ -184,6 +188,22 @@ var app = angular.module('app', ['ngRoute'])
 	}]);
 
 
+<<<<<<< HEAD
+=======
+		$scope.removeItem = function(id){
+				$rootScope.reRouteItems = 0;
+				$scope.itemID = id;
+				$http.get('/removeItem/'+$scope.itemID)
+					.then(function(res){
+				$location.path('/');
+			});
+		}
+
+		$scope.editRubric = function(rubric){
+			$rootScope.editRubric = rubric;
+			$location.path('/editRubric');
+		}
+>>>>>>> master
 
 
 
@@ -376,6 +396,34 @@ $scope.gradeSelect = function(value, myWeight, item, section){
 			$scope.itemAdd = true;
 			console.log($scope.itemAdd, 'before Anything');
 
+		$scope.removeSection = function(rubricID, sectionID){
+			$rootScope.reRouteItems = 0;
+			console.log(sectionID);
+			$scope.rubricID = rubricID;
+			console.log($scope.rubricID);
+				$http.get('/removeSection/'+$scope.rubricID+'/'+sectionID)
+					.then(function(res){
+				$location.path('/');
+			});
+		}
+
+		$scope.addSection = function(id){
+			$rootScope.reRouteItems = 0;
+			$scope.rubricID = id;
+			console.log($scope.rubricID)
+				$http.get('/addSection/'+$scope.rubricID)
+					.then(function(res){
+					$location.path('/');
+				});
+		}
+		$scope.deleteRubric = function(id){
+			$scope.rubricID = id;
+			console.log($scope.rubricID);
+				$http.get('/removeRubric/'+$scope.rubricID)
+					.then(function(res){
+				$location.path('/');
+			});
+		}
 
 
 		$scope.theEditRubric = function(rubric){
@@ -513,15 +561,15 @@ $scope.gradeSelect = function(value, myWeight, item, section){
 					'<form>'+
         					'<div class="form-group">'+
             					'<label>Item Name</label>'+
-            					'<input type="text" class="form-control" name="itemName" ng-model="model.itemName">'+
+            					'<input type="text" required="require" class="form-control" name="itemName" ng-model="model.itemName">'+
         					'</div>'+
         					'<div class="form-group">'+
             					'<label>Item Description</label>'+
-           						'<input type="text" class="form-control" name="sections" ng-model="model.itemDes">'+
+           						'<input type="text" required="require" class="form-control" name="sections" ng-model="model.itemDes">'+
         					'</div>'+
         					'<div class="form-group">'+
             					'<label>Item Weight</label>'+
-           						'<input type="number" class="form-control" name="sections" ng-model="model.itemWeight">'+
+           						'<input type="number" required="require" class="form-control" name="sections" ng-model="model.itemWeight">'+
         					'</div>'+
         					'<div class="form-group">'+
             					'<label>Wiki Link</label>'+
@@ -544,12 +592,12 @@ $scope.gradeSelect = function(value, myWeight, item, section){
 			    '<form >'+
         			'<div class="form-group">'+
             			'<label>Rubric Name</label>'+
-            			'<input type="text" class="form-control" name="rubricName" ng-model="model.rubricName">'+
+            			'<input type="text" required="require" class="form-control" name="rubricName" ng-model="model.rubricName">'+
         			'</div>'+
         			'<div class="form-group">'+
                         '<p class="warning">Note: Seperate sections with commas</p>'+
             			'<label>Rubric Sections</label>'+
-           				'<input type="text" class="form-control" name="sections" ng-model="model.rubricSections">'+
+           				'<input type="text" required="require" class="form-control" name="sections" ng-model="model.rubricSections">'+
         			'</div>'+
 						'<button ng-click="callback()" class="btn btn-warning btn-lg">Create Rubric</button>'+
     			'</form>'
@@ -563,6 +611,7 @@ $scope.gradeSelect = function(value, myWeight, item, section){
 				payload: '=',
 				items: "=",
 				callback: '&',
+				delete: '&',
 				grade: '&'
 			},
 			template:
@@ -584,13 +633,14 @@ $scope.gradeSelect = function(value, myWeight, item, section){
                                 '<li class="button-actual"><button type="button" ng-click="grade({value:0, weight: item.itemWeight, item: item, section: sction})">0</button></li>'+
                             '</ul>'+
                         '</div>'+
+                        '<p ng-click="delete({id:item._id})">-- Delete Item -- </p>'+
                         '<p class="rubric-item ri-name">{[{item.itemName}]}</p>'+
                         '<p class="rubric-item ri-wiki">{[{item.itemWiki}]}</p>'+
                         '<p class="rubric-item ri-desc">{[{item.itemDes}]}</p>'+
                         '<p class="rubric-item ri-comment">'+
                         	'<div></div>'+
             				'<label>Comment</label><br/>'+
-           					'<input type="text" ng-model="item[]."class="form-control" name="sections" ng-model="model.itemComment">'+
+           					'<input type="text" "class="form-control" name="sections" ng-model="model.itemComment">'+
            					'<span> Done</span>'+
         				'</p>'+
                     	'</div>'+
@@ -611,7 +661,9 @@ $scope.gradeSelect = function(value, myWeight, item, section){
 				itemcreate: '&',
 				model: '=',
 				itemadd: '=',
-				delete: '&' 
+				delete: '&',
+				section: '&',
+				removesection: '&' 
 			},
 			template:
 
@@ -628,8 +680,9 @@ $scope.gradeSelect = function(value, myWeight, item, section){
                 '<p class="rubric-degree">Degree Name</p>'+
                 //course name (hardcoded for now)
                 '<p class="rubric-course">Course Name</p>'+
+                '<p ng-click="delete({id: payload._id})">Delete</p>'+
                 //rubric name
-                '<p class="rubric-name" ng-show="clicked">{[{payload.rubricName}]}</p><p ng-click="delete({rubric: payload})">Delete</p>'+
+                '<p class="rubric-name" ng-show="clicked">{[{payload.rubricName}]}</p>'+
                 //rubric name editing div
                 '<div class="rubric-name-edit" ng-click="editrubric({rubric: payload})">'+
                     //edit button
@@ -662,9 +715,11 @@ $scope.gradeSelect = function(value, myWeight, item, section){
                     '<div class="add-item-container" ng-show="itemadd">'+
                         //add item thing
                         '<p class="add-item" ng-click="item({rubric: payload, rubricSection: section})">Add Item</p>'+
+                    	'<div ng-click="removesection({rubricID: payload._id, sectionID: section.sectionID})"><p>-- Remove Section -- </p></div>'+
                     '</div>'+
+                    
                 '</div>'+
-
+                	'<div ng-click="section({rubricID: payload._id})"><p>-- Add Section -- </p></div>'+
 			'</div>'
 		}
 	})
