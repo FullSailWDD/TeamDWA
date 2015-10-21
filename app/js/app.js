@@ -183,53 +183,185 @@ var app = angular.module('app', ['ngRoute'])
 
 	}]);
 
-	app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
-			if($rootScope.theSession != 2){
-				console.log('Refresh -- Solo If');
-					$location.path('/');
-			};
-		$scope.usedRubric = $scope.selectedRubric;
-		// console.log($scope.usedRubric._id);
-		$http.get('/rubricItems/'+$scope.usedRubric._id)
-				.then(function(res){
-					console.log(res.data);
-					$scope.rubricItems = res.data;
-				})
 
-		$scope.editRubric = function(rubric){
-			$rootScope.editRubric = rubric;
-			$location.path('/editRubric');
-		}
 
-		var grade = [];
-		
-		$scope.gradeSelect = function(value){
-			var totalWeight = 0;
-			var totalItemwight = 0;
-			var sectionWeights = [];
-			var itemWeights = [];
-			for(var i = 0; i < $scope.usedRubric.rubricSections.length; i++){
-				var eachWeight = $scope.usedRubric.rubricSections[i].sectionWeight;
-				sectionWeights.push(eachWeight);
-				totalWeight += eachWeight;
-			}
 
-			for(var i = 0; i < $scope.rubricItems.items.length; i++){
-				var eachItem = $scope.rubricItems.items[i].itemWeight;
-				itemWeights.push(eachItem);
-				totalItemwight += eachItem;
-			}	
-			
-			grade.push(value);
-			console.log('Grade Clicked: ', grade);
-			console.log('Section Weight: ', sectionWeights);
-			console.log('Total Weight: ', totalWeight);
-			console.log('Item Weights: ', itemWeights);
-			console.log('Total Item Weights', totalItemwight);
 
-		}
 
-	}]);
+
+
+
+
+
+
+app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
+//refresh goes back to path
+if($rootScope.theSession != 2){
+    console.log('Refresh -- Solo If');
+    $location.path('/');
+}; 
+$scope.usedRubric = $scope.selectedRubric;
+// console.log($scope.usedRubric._id); 
+$http.get('/rubricItems/'+$scope.usedRubric._id)
+    .then(function(res){
+    console.log(res.data);
+    $scope.rubricItems = res.data;
+    })
+$scope.editRubric = function(rubric){
+    $rootScope.editRubric = rubric;
+    $location.path('/editRubric');
+}
+
+
+
+//
+//var itemScore = 0,
+//    itemWeight = 0,
+//    itemValue = 0,
+//    itemValues = [],
+//    sectionScore = 0,
+//    sectionWeight = 0,
+//    sectionValue = 0,
+//    sectionValues = [],
+//    rubricScore = 0;    
+//
+//var grade = [];
+
+//var itemScore = 0,
+//    itemWeight = 0,
+//    itemId = 0,
+//    sectionId = 0,
+//    sectionWeight = 0;
+
+//gradeObj[0] = {sectionID: 123123124434134, sectionWeight: 50%};
+//gradeObj[1] = {sectionID: 123123124434134, sectionWeight: 20%};
+//
+//gradeObj[0] = {sectionWeight: 50%};
+//gradeObj[1] = {sectionWeight: 20%}; 
+
+
+
+
+
+
+//define 
+var gradeThis = [];
+var counterVar = 0;
+    
+//for each section in the rubric, create a section object, fill it with info, and push it to gradeThis
+for(i=0;i<$scope.usedRubric.rubricSections.length;i++){
+    var section = {};
+    section.secID = $scope.usedRubric.rubricSections[i].sectionID;
+    section.secWeight = $scope.usedRubric.rubricSections[i].sectionWeight;
+    section.scores = []
+    gradeThis.push(section);
+};
+    
+//click fucntion
+$scope.gradeSelect = function(value, myWeight, item, section){
+    //more friendly variable names
+    var itemScore = value,
+        itemWeight = myWeight,
+        itemId = item._id,
+        secId = section.sectionID,
+        secWeight = section.sectionWeight;
+    console.log(itemScore,itemWeight,itemId,secId,secWeight);
+    
+    
+    
+    
+    
+//breaking
+    
+    //for all sections
+    for(i=0;i<gradeThis.length;i++){
+        //if section clicked matches section in gradeThis (it always should)
+        if(gradeThis[i].secID === secId){
+            console.log('right section');
+            //if no scores exist, push this one
+            if(gradeThis[i].scores.length === 0){
+                console.log('no scores, adding this one');
+                //make a new score object to push
+                var pushMe = {};
+                //add all click data to it
+                pushMe.id = itemId;
+                pushMe.weight = itemWeight;
+                pushMe.score = itemScore;
+                //push it
+                gradeThis[i].scores.push(pushMe);
+            }else{
+                console.log('found scores, looking for yours');
+                for(j=0;j<gradeThis[i].scores.length;j++){
+                    //if score clicked matches
+                    if(gradeThis[i].scores[j].id === itemId){
+                        console.log('found your item, updating score');
+                        //update score
+                        gradeThis[i].scores[j].score = itemScore;
+                        console.log(gradeThis);
+                    };
+                };
+                for(j=0;j<gradeThis[i].scores.length;j++){
+                    console.log('should go 5 times');
+                    if(gradeThis[i].scores[j].id !== itemId){
+                        console.log('item not found, incrementing counter', counterVar);
+                        counterVar++;
+                        //update score
+                        gradeThis[i].scores[j].score = itemScore;
+                        console.log(gradeThis);
+                    };
+                    if(gradeThis[i].scores[j].id !== itemId && gradeThis[i].scores.length<counterVar){
+                        console.log('didnt find your score, adding it');
+                        //make a new score object to push
+                        var pushMe = {};
+                        //add all click data to it
+                        pushMe.id = itemId;
+                        pushMe.weight = itemWeight;
+                        pushMe.score = itemScore;
+                        //push it
+                        gradeThis[i].scores.push(pushMe);
+                        console.log(gradeThis);
+                        counterVar = 0;
+                    };
+                };
+            };
+                
+        };
+    };
+};
+
+    
+    
+    
+    
+    
+
+
+//function gradeRubric(gradeObj){
+//    rubricScore = sectionValues.reduce(function(total,num){return total+num},0);
+//    sectionValue = sectionScore * sectionWeight;
+//    sectionScore = itemValues.reduce(function(total,num){return total+num},0);
+//    itemValue = itemScore * itemWeight;
+//    //return final rubric score
+//    return rubricScore;
+//};
+    
+//FUNCTION
+//takes just section values
+//$scope.gradeSelect(myRubric);
+
+}]);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -445,11 +577,11 @@ var app = angular.module('app', ['ngRoute'])
                     	'<div ng-repeat="item in items.items track by $index" ng-if="item.sectionID == section.sectionID" class="rubric-item">'+
                         '<div class="rubric-buttons">'+
                             '<ul class="button-list">'+
-                                '<li class="button-actual"><button type="button" ng-click="grade({value:100})">100</button></li>'+
-                                '<li class="button-actual"><button type="button" ng-click="grade({value:75})">75</button></li>'+
-                                '<li class="button-actual"><button type="button" ng-click="grade({value:50})">50</button></li>'+
-                                '<li class="button-actual"><button type="button" ng-click="grade({value:25})">25</button></li>'+
-                                '<li class="button-actual"><button type="button" ng-click="grade({value:0})">0</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:100, weight: item.itemWeight, item: item, section: section})">100</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:75, weight: item.itemWeight, item: item, section: section})">75</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:50, weight: item.itemWeight, item: item, section: section})">50</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:25, weight: item.itemWeight, item: item, section: section})">25</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:0, weight: item.itemWeight, item: item, section: sction})">0</button></li>'+
                             '</ul>'+
                         '</div>'+
                         '<p class="rubric-item ri-name">{[{item.itemName}]}</p>'+
