@@ -303,7 +303,7 @@ var app = angular.module('app', ['ngRoute'])
 				delete: '&'
 			},
 			template: 
-				'<div>'+
+				'<div class="rightme">'+
 				'<ul ng-repeat="degree in payload.degree[0].degrees track by $index">'+
 					'<li>'+
 					'<p ng-click="callback({degree: degree})">{[{degree._id}]}</p>'+
@@ -394,7 +394,7 @@ var app = angular.module('app', ['ngRoute'])
 				callback: '&'
 			},
 			template:
-			'<p class="edit-button" ng-click="callback({rubric: payload})">Edit Rubric</p>'+
+			'<p class="edit-button" ng-click="callback({rubric: payload})"><img src="./img/edit-button.png" class="absolute"/></p>'+
             '<div class="rubric-stuff">'+
                 '<p class="rubric-degree">Degree Name</p>'+
                 '<p class="rubric-course">Course Name</p>'+
@@ -442,8 +442,13 @@ var app = angular.module('app', ['ngRoute'])
 			},
 			template:
 
-            //use rubric button - turn off edit mode
-			'<p class="use-button" ng-click="callback({rubric: payload})">Use Rubric</p>'+
+            //edit button
+			'<p class="edit-button" ng-click="callback({rubric: payload})"><img src="./img/done-editing-button.png" class="absolute"/></p>'+
+//            //other edit buttons images
+//            '<div class="edit-button-images-container">'+
+//                '<img src="./img/view-button.png" />'+
+//                '<img src="./img/edit-edit-button.png" />'+
+//            '</div>'+
             //rubric stuff
 			'<div class="rubric-stuff">'+
                 //degree name (hidden for now)
@@ -455,9 +460,9 @@ var app = angular.module('app', ['ngRoute'])
                 //rubric name editing div
                 '<div class="rubric-name-edit" ng-click="editrubric({rubric: payload})">'+
                     //edit button
-                    '<p class="rubric-name-edit-edit" ng-if="clicked">Edit</p>'+
+                    '<img class="rubric-name-edit-edit absolute" src="./img/view-button.png" ng-if="clicked"/>'+
                     //done button
-                    '<p class="rubric-name-edit-done" ng-if="!clicked">Done</p>'+
+                    '<img class="rubric-name-edit-done absolute" src="./img/edit-edit-button.png" ng-if="!clicked"/>'+
                 '</div>'+
                 //rubric name editing input
                 '<div class="rubric-name-edit-input" ng-hide="clicked">'+
