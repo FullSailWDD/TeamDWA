@@ -274,13 +274,10 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
                             return gradeThis;
                         };
                     };
-          
                 };
             };
-
-        };
+    	};
     };
-
 
 
 
