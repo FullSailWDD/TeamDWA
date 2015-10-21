@@ -416,7 +416,7 @@ var app = angular.module('app', ['ngRoute'])
                         '<p class="rubric-item ri-wiki">{[{item.itemWiki}]}</p>'+
                         '<p class="rubric-item ri-desc">{[{item.itemDes}]}</p>'+
                         '<p class="rubric-item ri-comment">'+
-                        	'<div ng-show=""></div>'+
+                        	'<div></div>'+
             				'<label>Comment</label><br/>'+
            					'<input type="text" ng-model="item[]."class="form-control" name="sections" ng-model="model.itemComment">'+
            					'<span> Done</span>'+
