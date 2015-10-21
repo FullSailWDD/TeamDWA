@@ -28,7 +28,7 @@ var app = angular.module('app', ['ngRoute'])
 	        templateUrl: "templates/viewRubrics.html",
 	        controller: "allRubrics"
 	    }).when("/addRubric",{
-	        templateUrl: "templates/rubric.html",
+	        templateUrl: "templates/addRubric.html",
 	        controller: "rubricCtrl"
 	    }).when("/useRubric",{
 	        templateUrl: "templates/useRubric.html",
