@@ -69,7 +69,8 @@ var app = angular.module('app', ['ngRoute'])
 		//Dashboard Controller============
 	app.controller('dashboardCtrl', ['$scope','$rootScope', '$http', '$routeParams','$location', 'courseTileGenerator', 'degreeGenerator', 'myService', function($scope, $rootScope, $http, $routeParams, $location, courseTileGenerator, degreeGenerator, myService){
 			$rootScope.theSession++;
-			if($rootScope.reRouteItems == 1){
+			if($rootScope.reRouteItems == 0){
+				$rootScope.reRouteItems = 1;
 				$location.path('/useRubric')
 			}
 			if($rootScope.theSession != 2){
@@ -199,7 +200,7 @@ var app = angular.module('app', ['ngRoute'])
 				})
 
 		$scope.removeItem = function(id){
-				$rootScope.reRouteItems = 1;
+				$rootScope.reRouteItems = 0;
 				$scope.itemID = id;
 				$http.get('/removeItem/'+$scope.itemID)
 					.then(function(res){
@@ -255,7 +256,26 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.itemAdd = true;
 			console.log($scope.itemAdd, 'before Anything');
 
-<<<<<<< HEAD
+		$scope.removeSection = function(rubricID, sectionID){
+			$rootScope.reRouteItems = 0;
+			console.log(sectionID);
+			$scope.rubricID = rubricID;
+			console.log($scope.rubricID);
+				$http.get('/removeSection/'+$scope.rubricID+'/'+sectionID)
+					.then(function(res){
+				$location.path('/');
+			});
+		}
+
+		$scope.addSection = function(id){
+			$rootScope.reRouteItems = 0;
+			$scope.rubricID = id;
+			console.log($scope.rubricID)
+				$http.get('/addSection/'+$scope.rubricID)
+					.then(function(res){
+					$location.path('/');
+				});
+		}
 		$scope.deleteRubric = function(id){
 			$scope.rubricID = id;
 			console.log($scope.rubricID);
@@ -264,8 +284,6 @@ var app = angular.module('app', ['ngRoute'])
 				$location.path('/');
 			});
 		}
-=======
->>>>>>> 212ea911748c74af5a51e936a7e684a05db4fc3f
 
 
 		$scope.theEditRubric = function(rubric){
@@ -450,11 +468,8 @@ var app = angular.module('app', ['ngRoute'])
 				payload: '=',
 				items: "=",
 				callback: '&',
-<<<<<<< HEAD
-				delete: '&'
-=======
+				delete: '&',
 				grade: '&'
->>>>>>> 212ea911748c74af5a51e936a7e684a05db4fc3f
 			},
 			template:
 			'<p class="edit-button" ng-click="callback({rubric: payload})"><img src="./img/edit-button.png" class="absolute"/></p>'+
@@ -482,7 +497,7 @@ var app = angular.module('app', ['ngRoute'])
                         '<p class="rubric-item ri-comment">'+
                         	'<div></div>'+
             				'<label>Comment</label><br/>'+
-           					'<input type="text" ng-model="item[]."class="form-control" name="sections" ng-model="model.itemComment">'+
+           					'<input type="text" "class="form-control" name="sections" ng-model="model.itemComment">'+
            					'<span> Done</span>'+
         				'</p>'+
                     	'</div>'+
@@ -503,7 +518,9 @@ var app = angular.module('app', ['ngRoute'])
 				itemcreate: '&',
 				model: '=',
 				itemadd: '=',
-				delete: '&' 
+				delete: '&',
+				section: '&',
+				removesection: '&' 
 			},
 			template:
 
@@ -522,7 +539,7 @@ var app = angular.module('app', ['ngRoute'])
                 '<p class="rubric-course">Course Name</p>'+
                 '<p ng-click="delete({id: payload._id})">Delete</p>'+
                 //rubric name
-                '<p class="rubric-name" ng-show="clicked">{[{payload.rubricName}]}</p><p ng-click="delete({rubric: payload})">Delete</p>'+
+                '<p class="rubric-name" ng-show="clicked">{[{payload.rubricName}]}</p>'+
                 //rubric name editing div
                 '<div class="rubric-name-edit" ng-click="editrubric({rubric: payload})">'+
                     //edit button
@@ -555,9 +572,11 @@ var app = angular.module('app', ['ngRoute'])
                     '<div class="add-item-container" ng-show="itemadd">'+
                         //add item thing
                         '<p class="add-item" ng-click="item({rubric: payload, rubricSection: section})">Add Item</p>'+
+                    	'<div ng-click="removesection({rubricID: payload._id, sectionID: section.sectionID})"><p>-- Remove Section -- </p></div>'+
                     '</div>'+
+                    
                 '</div>'+
-
+                	'<div ng-click="section({rubricID: payload._id})"><p>-- Add Section -- </p></div>'+
 			'</div>'
 		}
 	})
