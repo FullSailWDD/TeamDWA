@@ -1,4 +1,3 @@
-
 var app = angular.module('app', ['ngRoute'])
 		app.config(['$interpolateProvider','$routeProvider', function ($interpolateProvider, $routeProvider){
             $interpolateProvider.startSymbol('{[{');
