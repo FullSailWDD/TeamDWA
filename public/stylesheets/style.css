@@ -648,11 +648,24 @@ h1 {
 .usebody {
   margin-left: 155px;
   padding-top: 210px;
+  *zoom: 1;
+  width: auto;
+  max-width: 756px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-right: 160px;
 }
-@media screen and (min-width: 1px) and (max-width: 1070px) {
-  .usebody {
-    margin-left: 5px;
-  }
+.usebody:before,
+.usebody:after {
+  content: '';
+  display: table;
+}
+.usebody:after {
+  clear: both;
 }
 .editrubric {
   background-image: url("../img/ui-background.png");
@@ -662,10 +675,150 @@ h1 {
 .editbody {
   margin-left: 155px;
   padding-top: 210px;
+  *zoom: 1;
+  width: auto;
+  max-width: 756px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-right: 160px;
 }
-@media screen and (min-width: 1px) and (max-width: 1070px) {
-  .editbody {
-    margin-left: 5px;
+.editbody:before,
+.editbody:after {
+  content: '';
+  display: table;
+}
+.editbody:after {
+  clear: both;
+}
+.adddegree {
+  background-image: url("../img/ui-background.png");
+  background-repeat: repeat;
+  font-family: arialround;
+}
+.degreebody {
+  margin-left: 155px;
+  padding-top: 210px;
+  *zoom: 1;
+  width: auto;
+  max-width: 300px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-right: 174px;
+  min-height: 800px;
+}
+.degreebody:before,
+.degreebody:after {
+  content: '';
+  display: table;
+}
+.degreebody:after {
+  clear: both;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .degreebody {
+    padding-right: 0px;
+  }
+}
+.coursebody {
+  margin-left: 155px;
+  padding-top: 210px;
+  *zoom: 1;
+  width: auto;
+  max-width: 300px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-right: 174px;
+  min-height: 800px;
+}
+.coursebody:before,
+.coursebody:after {
+  content: '';
+  display: table;
+}
+.coursebody:after {
+  clear: both;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .coursebody {
+    padding-right: 0px;
+  }
+}
+.addrubricpage {
+  background-image: url("../img/ui-background.png");
+  background-repeat: repeat;
+  font-family: arialround;
+}
+.rubricbody {
+  margin-left: 155px;
+  padding-top: 210px;
+  *zoom: 1;
+  width: auto;
+  max-width: 300px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-right: 174px;
+  min-height: 800px;
+}
+.rubricbody:before,
+.rubricbody:after {
+  content: '';
+  display: table;
+}
+.rubricbody:after {
+  clear: both;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .rubricbody {
+    padding-right: 0px;
+  }
+}
+.additempage {
+  background-image: url("../img/ui-background.png");
+  background-repeat: repeat;
+  font-family: arialround;
+}
+.additembody {
+  margin-left: 155px;
+  padding-top: 210px;
+  *zoom: 1;
+  width: auto;
+  max-width: 300px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-right: 174px;
+  min-height: 800px;
+}
+.additembody:before,
+.additembody:after {
+  content: '';
+  display: table;
+}
+.additembody:after {
+  clear: both;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .additembody {
+    padding-right: 0px;
   }
 }
 .sheet-top {
