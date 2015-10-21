@@ -11,16 +11,12 @@ var 	express 	    = require('express'),
 	  	path 		    = require('path');
 	  	// master			= require('./models/masterModel.js');
 
-var app            		= express();
-
-
+var app = express();
 
 app.set('port', process.env.PORT || 3000); // Setting the Port
 require('./config/passport')(passport); // Passport Config File
-
 app.engine('handlebars', exphbs({defaultLayout: 'main'})); // view Engine
 app.set('view engine', 'handlebars'); //view Engine
-
 app.use(express.static(path.join(__dirname, 'public'))); // Static Public directory For The Server
 app.use(express.static(path.join(__dirname, 'bower_components')));  // Static bower_components directory for the server
 app.use(express.static(path.join(__dirname, 'app'))); // Static app directory
@@ -39,12 +35,7 @@ app.use(passport.session()); // login sessions
 if ('development' == app.get('env')) { 
   app.use(express.errorHandler());
 }
-
-
-
 require('./routes/routes')(app, passport);
-
-
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
