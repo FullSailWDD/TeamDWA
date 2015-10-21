@@ -113,7 +113,7 @@
         });
     });
     app.get('/removeItem/:id', function (req, res) {
-        var ic = req.params.id;
+        var id = req.params.id;
         item = require('../models/items.js');
         console.log(id,'-----------------------------');
         item.delete(id, function(doc){
