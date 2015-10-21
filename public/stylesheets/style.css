@@ -788,6 +788,39 @@ h1 {
     padding-right: 0px;
   }
 }
+.additempage {
+  background-image: url("../img/ui-background.png");
+  background-repeat: repeat;
+  font-family: arialround;
+}
+.additembody {
+  margin-left: 155px;
+  padding-top: 210px;
+  *zoom: 1;
+  width: auto;
+  max-width: 300px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-right: 174px;
+  min-height: 800px;
+}
+.additembody:before,
+.additembody:after {
+  content: '';
+  display: table;
+}
+.additembody:after {
+  clear: both;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .additembody {
+    padding-right: 0px;
+  }
+}
 .sheet-top {
   background-image: url("../img/sheet-top.png");
   background-repeat: none;
