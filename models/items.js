@@ -6,9 +6,11 @@ module.exports = function(){
 // Creating the course schema for the DB
 var itemSchema = new mongoose.Schema({
 		courseID 		: { type: String, required: false },
-		sectionID 		: { type: String, required: false },
+		rubricID 		: { type: String, required: false },
+		sectionID       : String,
     	itemName 		: String,
     	itemDes  		: String,
+    	itemWeight		: Number,
     	itemWiki  		: String,
     	itemComment  	: String
     })
@@ -19,43 +21,92 @@ var itemSchema = new mongoose.Schema({
 var _model = mongoose.model('item', itemSchema);
 
 
-// Add Course ====================
+// Add Item ====================
 	_save = function (req, success, fail ){
-		//console.log('----THE FUCKING REQ',req, '----THE FUCKING REQ');
-		// itemSectionsArray = [];
-		// console.log('REQQQQQQQQ',req);
-		// for(i = 0; i < req.itemSections.length;i++){
-		// 	itemSectionsArray.push({sectionName:req.itemSections[i]})
-		// }
-		// console.log("--- DATA item SECTION-----",itemSectionsArray);
+
 	var newitem = new _model({
-				courseID     	: req.selectedRubric.courseID,
-				sectionID		:req.selectedRubric._id,
+				courseID     	:req.selectedRubric.courseID,
+				rubricID		:req.selectedRubric._id,
+				sectionID     	:req.selectedSectionID,
 				itemName		:req.itemName,
 				itemDes			:req.itemDes,
-				itemWiki		:1,
-				itemComment		:1
+				itemWeight		:req.itemWeight,
+				itemWiki		:req.itemWiki,
+				itemComment		:req.itemComment
 		});
-			//console.log('----------NEW ITEM----------',newitem, '----------NEW ITEM----------');
-	// 		// Save to Database
-			newitem.save( function(err){
+			console.log('----------NEW ITEM----------',newitem, '----------NEW ITEM----------');
+	 	// Save to Database
+			newitem.save( function(err, doc){
 				if (err) {
-					console.log('You Suck -- items');
+					
 					fail(err);
 				}else{
-					console.log('You are Awesome -- items');
-					success(newitem);
+					
+					success(doc);
 				};
     			
   			});
   		};
 
 
+  	_findAllByRubricID = function(id, success, fail){
+		_model.find({rubricID: id}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				success(doc);
+			}
+		})
+	};
+
+	_findOne = function(id, success, fail){
+		
+		_model.find({_id: id}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				
+				success(doc);
+			};
+		});
+	};
+
+	_update = function(req, success, fail){
+		
+		console.log('REQ', req);
+		var id = req._id;
+		var itemName = req.itemName;
+		var itemDes = req.itemDes;
+
+
+        _model.update({_id: id}, {$set:{itemName:itemName,itemDes:itemDes}}, function(err,doc){
+            if (err) {
+                fail(err);
+                
+            }else{
+                success(doc);
+                
+            }
+        });
+    }
+
+    _remove = function(id, success, fail){
+		console.log(id);
+		_model.remove({_id: id}, function(err, doc){
+			if(err){
+				fail(err);
+			}else{
+				success(doc);
+			}
+		})
+	}
+        
 return {
-		schema  : itemSchema,
-		add 	: _save,
-		update  : _update,
-	    findAll : _findAll,
-	    findOne : _findOne
+		schema  	 : itemSchema,
+		add 		 : _save,
+		update  	 : _update,
+	    findByRubric : _findAllByRubricID,
+	    findOne 	 : _findOne,
+	    delete       : _remove
 	   };
 }();

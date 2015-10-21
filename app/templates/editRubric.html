@@ -1,4 +1,3 @@
-
 <div class="editrubric">
     <!--fixed interface-->
     <img class="bg mobile-top" src="img/mobile-top.png">
@@ -8,10 +7,9 @@
     <img class="bg bgcorner" src="img/bg-corner.png">
     <img class="bg bgright" src="img/bg-right.png">
     <!--header-->
-    <img class="header headerlogo" src="img/header-logo.png">
+    <a href="#/dashboard"><img class="header headerlogo" src="img/header-logo.png"></a>
     <a class="logoutbutton" href="/logout">logout</a>
-    <a class="logoutbutton"href="#/dashboard">Dashboard</a>
-
+    <a class="dashboardbutton" href="#/dashboard">dashboard</a>
     <!--body-->
     <div class="editbody">
         <div class="sheet-top">
@@ -19,7 +17,7 @@
         <div class="rubric-container-use">
             <div class="rubric-body">
                 <!--ng-repeat section is sections-->
-                <edit-rubric data-payload="editRubric" data-itemcreate="createItem()" data-itemadd="itemAdd" data-model="itemModel" data-editrubric="theEditRubric(rubric)" data-clicked="edit" data-callback="useFromEditRubric(rubric)" data-item="addRubricItem(rubric, rubricSection)"></edit-rubric>
+                <edit-rubric data-payload="editRubric" data-removesection="removeSection(rubricID, sectionID)" data-section="addSection(rubricID)" data-delete="deleteRubric(id)" data-itemcreate="createItem()" data-itemadd="itemAdd" data-model="itemModel" data-editrubric="theEditRubric(rubric)" data-clicked="edit" data-callback="useFromEditRubric(rubric)" data-item="addRubricItem(rubric, rubricSection)"></edit-rubric>
             </div>
         </div>
         <div class="sheet-bottom">

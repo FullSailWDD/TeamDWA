@@ -11,19 +11,19 @@
     <a class="logoutbutton" href="/logout">logout</a>
     <a class="dashboardbutton" href="#/dashboard">dashboard</a>
     <!--body-->
-    <div class="coursebody">
-        <div class="coursediv">
-        <h1>Add Course</h1>
-        <form ng-submit='addCourse()'>
+    <div class="degreebody">
+    <div class="degreediv">
+        <h1>Add Degree</h1>
+        <form ng-submit='addDegree()'>
             <div class="form-group">
-                <label>Course Title</label>
-                <input type="text" required="require" class="form-control" name="courseTitle" ng-model="newCourse.courseName">
+                <label>Degree Name</label>
+                <input type="text" required="require" class="form-control" name="courseTitle" ng-model="newDegree.degreeName">
             </div>
             <div class="form-group">
-                <label>Course Abbr</label>
-                <input type="text" required="require" class="form-control" name="courseAbbr" ng-model="newCourse.courseAbbr">
+                <label>Degree Abbreviation</label>
+                <input type="text" required="require" class="form-control" name="courseAbbr" ng-model="newDegree.degreeAbbr">
             </div>
-            <button type="submit" class="btn btn-warning btn-lg">Add Course</button>
+            <button type="submit" class="btn btn-warning btn-lg">Add Degree</button>
         </form>
     </div>
     </div>

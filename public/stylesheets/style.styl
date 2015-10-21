@@ -8,30 +8,58 @@ darkPurple = #2C242F
 darkGrey = #A5A1A1
 lightGrey = #ABA7A7
 rubricRounding = 5px
+offWhite = #f8f8f8
+
+//main style
+body, html
+    height 100%
+    color darkPurple
+    background-color #838383
+    font-family: 'Roboto Slab', serif
+
+h1
+    font-family "Arial Rounded MT", Arial, Helvetica, sans-serif;
+    font-size 1.5em
+    font-weight bold
+    color dinoblue
+
+label
+    font-family: 'Roboto Slab', serif
+
+button
+    font-family: 'Roboto Slab', serif
+    background-color dinoblue
+    color offWhite
+    border-radius 5px
 
 // HOMEPAGE STYLINGS 
 
 #homepage
     h1
-        color darkPurple
+        color dinoblue
         font-size: 1.5em
         margin-bottom: 5%
         font-weight: bold
     input
-        margin: 1% 
-        width: 80%
+        width: 85%
+        margin 3%
         padding 10px
     label
         margin-right: 6%
+    button
+        background-color dinoblue
+        border-radius 5px
+        padding 1%
 
 
 #rexLogo
-    margin-left 28%
-    clear both
+    width 40%
+    margin-left 27%
+
 
 .homeDiv
     col(1/2)
-    background-color #fff
+    background-color offWhite
     float left
     padding 2%
     margin-top: 5%
@@ -46,8 +74,10 @@ rubricRounding = 5px
     margin 0 auto
 
 .homeBtn
-    margin-right: 65%
     margin-top 5%
+    margin-right 80%
+    color offWhite
+
 
 //custom stuff
 ::-webkit-scrollbar
@@ -69,12 +99,6 @@ rubricRounding = 5px
 @font-face
     font-family arialround
     src url("../fonts/arialround.ttf")
-    
-//main style
-body, html
-    height 100%
-    color darkPurple
-    background-color grey
     
 .dashboard
     background-image url("../img/ui-background.png")
@@ -169,6 +193,15 @@ body, html
     cursor pointer
     z-index 2
     
+.dashboardbutton
+    position fixed
+    top 10px
+    right 101px
+    font-family arialround
+    font-size 24px
+    cursor pointer
+    z-index 2
+    
 //logout button style
 .logoutbutton:link
     color darkPurple
@@ -177,6 +210,16 @@ body, html
 .logoutbutton:hover
     color darkPurple
 .logoutbutton:active
+    color darkPurple
+    
+//dashboard button style
+.dashboardbutton:link
+    color darkPurple
+.dashboardbutton:visited
+    color darkPurple
+.dashboardbutton:hover
+    color darkPurple
+.dashboardbutton:active
     color darkPurple
     
 //search area
@@ -242,6 +285,13 @@ body, html
 //##############
 //RESULT STYLING
 //##############
+
+.delete-course-button
+    position relative
+    float right
+    top 11px
+    margin-right 16px
+    width 26px
 
 .degreeAbbr
     font-family arialround
@@ -309,7 +359,7 @@ body, html
         padding-left 32px
 
 .rubric
-    color darkPurple
+    color offWhite
     font-family arialround
     font-size 9px
     padding 15px 5px
@@ -324,7 +374,7 @@ body, html
     white-space nowrap
     overflow hidden
     
-.rubric:nth-child(5)
+.rubric:nth-child(n+4)
     display none
     
 .rubricholder
@@ -355,6 +405,31 @@ body, html
 .dots
     margin-right 8px
     padding-left 3px
+
+// ############ NEW RUBRIC STYLING ################
+
+#newRubric
+    background-color offWhite
+    col(1/4)
+    border-radius 10px
+    margin 10%
+    margin-top 15%
+    padding 3%
+    border 2px solid
+    border-color darkPurple
+    input
+        margin 2%
+        width 80%
+        padding 2%
+    h1
+        margin 2%
+    button
+        margin 3%
+        background-color dinoblue
+        color offWhite
+        border-radius 5px
+    label
+        margin-left 5%
     
 //###########
 //mobile menu
@@ -404,7 +479,9 @@ body, html
     
 .usebody
     margin-left 155px
-    padding-top 200px
+    padding-top 210px
+    center(756px)
+    padding-right 160px
     
 .editrubric
     background-image url("../img/ui-background.png")
@@ -413,7 +490,117 @@ body, html
     
 .editbody
     margin-left 155px
-    padding-top 200px
+    padding-top 210px
+    center(756px)
+    padding-right 160px
+    
+.adddegree
+    background-image url("../img/ui-background.png")
+    background-repeat repeat
+    font-family arialround
+    
+.degreebody
+    margin-left 155px
+    padding-top 210px
+    center(300px)
+    padding-right 174px
+    min-height 800px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        padding-right 0px
+
+.degreediv
+    width 120%
+    background-color offWhite
+    border 2px solid darkPurple
+    border-radius 25px
+    padding 5%
+    input
+        margin 2%
+    h1
+        padding 5%
+        margin 5%
+        margin-left 25%
+        
+.coursebody
+    margin-left 155px
+    padding-top 210px
+    center(300px)
+    padding-right 174px
+    min-height 800px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        padding-right 0px
+
+.coursediv
+    background-color offWhite 
+    border 2px solid darkPurple
+    border-radius 25px
+    padding 5%
+    input
+        margin 2%
+    h1
+        margin 5%
+        margin-left 25%
+        
+.addrubricpage
+    background-image url("../img/ui-background.png")
+    background-repeat repeat
+    font-family arialround
+    
+.rubricbody
+    margin-left 155px
+    padding-top 210px
+    center(300px)
+    padding-right 174px
+    min-height 800px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        padding-right 0px
+
+.rubricdiv
+    width 120%
+    background-color offWhite
+    border 2px solid darkPurple
+    padding 10%
+    border-radius 25px
+    button
+        background-color dinoblue
+        border-radius 5px
+        color offWhite
+    h1
+        margin 5%
+        margin-left 35%
+    input
+        margin 2%
+        
+.additempage
+    background-image url("../img/ui-background.png")
+    background-repeat repeat
+    font-family arialround
+    
+.additembody
+    margin-left 155px
+    padding-top 210px
+    center(300px)
+    padding-right 174px
+    min-height 800px
+    @media screen and (min-width: 1px) and (max-width: 789px)
+        padding-right 0px
+    input
+        margin 2%
+
+.additemdiv
+    width 120%
+    background-color offWhite
+    border 2px solid darkPurple
+    padding 10%
+    border-radius 25px
+    button
+        background-color dinoblue
+        border-radius 5px
+        color offWhite
+    h1
+        margin 5%
+        margin-left 40%
+
 
 //containers
 
@@ -441,22 +628,69 @@ body, html
     background-repeat none !important
     max-width 755px
     min-height 128px
-    margin-top -9px
+    margin-top 0px
     margin-bottom 30px
     
 //parts
 
 .edit-button
+    position relative
+    top -90px
+    left 379px
+    
+.edit-button-text
+    color yellow
     position fixed
-    top 191px
-    right 247px
-
-.rubric-buttons
-    float right
-
+    top 283px
+    right 357px
+    
+.edit-button-container
+    position fixed
+    top 283px
+    right 357px
+    
+.edit-button-images-container
+    position fixed
+    top 283px
+    right 292px
+    
+.use-button
+    position fixed
+    top 239px
+    right 292px
+    
 .rubric-name
     font-size 42px
     margin-bottom 11px
+
+.rubric-name-edit
+    position relative
+    top -80px
+    left 379px
+    
+.rubric-name-edit-edit
+    top 0px
+    left 0px
+    
+.rubric-name-edit-done
+    top 53px
+    left 0px
+    
+.rubric-name-edit-input
+    margin-top -4px
+    
+.rubric-name-edit-input-input
+    color red
+    font-size 42px
+    padding 0px 0px
+    font-family arialround
+    outline none
+    background-color rgba(255,255,255,0)
+    border none
+    margin-bottom 7px
+    
+.rubric-buttons
+    float right
     
 .rubric-degree
     font-size 16px
@@ -481,10 +715,59 @@ body, html
     padding-bottom 0px
     font-size 25px
     
+.rubric-section-edit
+    font-size 16px
+    float right
+    
+.rubric-section-edit-edit
+    color green
+    margin-right 148px
+    margin-top -28px
+    
+.rubric-section-edit-done
+    color red
+    margin-top 2px
+    margin-right 76px
+    
+.rubric-section-edit-input
+    margin-top -4px
+    
+.rubric-section-edit-input-input
+    color red
+    font-family arialround
+    outline none
+    background-color rgba(255,255,255,0)
+    border none
+    margin-bottom 7px
+    padding-top 11px
+    padding-left 14px
+    padding-bottom 0px
+    font-size 25px
+    width 100%
+    
+.add-item
+    font-size: 16px;
+    padding-top: 16px;
+    padding-left: 29px;
+    padding-bottom: 8px;
+    
 .section-weight
     float right
     margin-top -21px
     margin-right 7px
+    
+//.rubric-section-edit
+//    background-color blue
+    
+.rubric-section-edit-edit
+    color green
+    margin-right 59px
+    margin-top -37px
+    
+.rubric-section-edit-done
+    color red
+    margin-top 16px
+    margin-right 50px
     
 //items
 
@@ -519,12 +802,86 @@ body, html
     height 25px
     margin-right 6px
     
+.score-button
+    text-align center
+    width 231px
+    height 111px
+    background-image url("../img/score-button.png")
+    background-repeat none
+    margin-left 325px
+    
+.score-button-actual
+    width 231px
+    height 111px
+    background-color rgba(255,255,255,0)
+    border none
+    outline none
+    font-family arialround
+    font-size 24px
+    color darkPurple
+
+
+// VIEW ALL RUBRICS 
+
+.allrubrics
+    width 120%
+    border 2px solid darkPurple
+    background-color offWhite
+    border-radius 15px
+    margin 15%
+    padding 3%
+    p
+        background-color dinoblue
+        color offWhite
+        padding 5%
+        margin 2%
+        border-radius 15px
+        text-align center
+        box-shadow 5px 5px 5px darkPurple
+    h1
+        margin-left 17%
+        width 80%
+
+// ADD ITEM TO RUBRIC
+
+
+    
+    
+    
 //############
 //util classes
 //############
 
+.addDegreeButton
+    position fixed
+    top 222px
+    right 13px
+    z-index 10
+    font-size 18px
+
+.addCourseButton
+    position fixed
+    top 250px
+    right 13px
+    z-index 10
+    font-size 18px
+
 .hideme
     display none
+    
+.rightme
+    position fixed
+    top 280px
+    right 4px
+    z-index 10
+    font-size 9px
+    
+.absolute
+    position absolute
+    
+.warning
+    color red
+    padding 5px 0px
     
 //.fixme
 //    display none

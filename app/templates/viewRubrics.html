@@ -1,4 +1,4 @@
-<div class="additempage">
+<div class="addrubricpage">
     <!--fixed interface-->
     <img class="bg mobile-top" src="img/mobile-top.png">
     <img class="bg mobile-right" src="img/mobile-right.png">
@@ -10,11 +10,12 @@
     <a href="#/dashboard"><img class="header headerlogo" src="img/header-logo.png"></a>
     <a class="logoutbutton" href="/logout">logout</a>
     <a class="dashboardbutton" href="#/dashboard">dashboard</a>
+
     <!--body-->
-    <div class="additembody">
-    <div class="additemdiv">
-        <h1>Add Item</h1>
-        <add-item data-model="newItem" data-callback="createItem()"></add-item>
+    <div class="rubricbody">
+    <div class="allrubrics">
+        <h1>All Rubrics In Course</h1>
+        <all-rubrics data-rubrics="rootRubrics" data-select="rubricSelect(rubric)" data-courseid='courseID'></all-rubrics>
     </div>
 </div>
 </div>
