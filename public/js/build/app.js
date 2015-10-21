@@ -260,7 +260,7 @@ var app = angular.module('app', ['ngRoute'])
 				callback: '&'
 			},
 			template: 
-				'<div>'+
+				'<div class="rightme">'+
 				'<ul ng-repeat="degree in payload.degree[0].degrees track by $index">'+
 					'<li>'+
 					'<p ng-click="callback({degree: degree})">{[{degree._id}]}</p>'+
