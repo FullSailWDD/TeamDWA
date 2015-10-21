@@ -280,6 +280,8 @@ var app = angular.module('app', ['ngRoute'])
             '<div class="dashresults">'+
                 '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
                     '<li>'+
+                        //delete button, needs ng-click to delete
+                        '<img class="delete-course-button" src="./img/x-button.png" />'+
                         '<p class="degreeAbbr">{[{course.degreeAbbr}]}<span class="degreeName">{[{course.degreeName}]}</span></p>'+
                         '<p id="courseAbbr" class="courseAbbr">{[{course.courseAbbr}]}<span id="courseName" class="courseName">{[{course.courseName}]}</span></p>'+
                         '<p class="rubricnumber">#</p>'+
