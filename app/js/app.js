@@ -270,31 +270,31 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
                             console.log(gradeThis);
                         };
                     };
-    //                for(j=0;j<gradeThis[i].scores.length;j++){
-    //                    console.log(j);
-    //                    console.log('should go 5 times');
-    //                    if(gradeThis[i].scores[j].id != itemId){
-    //                        console.log('item not found, incrementing counter', counterVar);
-    //                        counterVar++;
-    //                        //update score
-    //                        gradeThis[i].scores[j].score = itemScore;
-    //                        console.log(gradeThis);
-    //                    };
-    //                    if(gradeThis[i].scores[j].id != itemId && gradeThis[i].scores.length<counterVar){
-    //                        console.log('didnt find your score, adding it');
-    //                        //make a new score object to push
-    //                        var pushMe = {};
-    //                        //add all click data to it
-    //                        pushMe.id = itemId;
-    //                        pushMe.weight = itemWeight;
-    //                        pushMe.score = itemScore;
-    //                        //push it
-    //                        gradeThis[i].scores.push(pushMe);
-    //                        console.log(gradeThis);
-    //                        counterVar = 0;
-    //                    };
-    //                };
-    //            };
+                    for(j=0;j<gradeThis[i].scores.length;j++){
+                        console.log(j);
+                        console.log('should go 5 times');
+                        if(gradeThis[i].scores[j].id != itemId){
+                            console.log('item not found, incrementing counter', counterVar);
+                            counterVar++;
+                            //update score
+                            gradeThis[i].scores[j].score = itemScore;
+                            console.log(gradeThis);
+                        };
+                        if(gradeThis[i].scores[j].id != itemId && gradeThis[i].scores.length<counterVar){
+                            console.log('didnt find your score, adding it');
+                            //make a new score object to push
+                            var pushMe = {};
+                            //add all click data to it
+                            pushMe.id = itemId;
+                            pushMe.weight = itemWeight;
+                            pushMe.score = itemScore;
+                            //push it
+                            gradeThis[i].scores.push(pushMe);
+                            console.log(gradeThis);
+                            counterVar = 0;
+                        };
+                    };
+                };
 
             };
         };
