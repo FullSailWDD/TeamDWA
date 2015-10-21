@@ -71,7 +71,6 @@ var app = angular.module('app', ['ngRoute'])
 			$rootScope.theSession++;
 			if($rootScope.theSession != 2){
 				console.log('Refresh -- Solo If');
-					$rootScope.theSession = 0;
 					$location.path('/');
 			};
 			
@@ -150,7 +149,7 @@ var app = angular.module('app', ['ngRoute'])
 				var sections = $scope.newRubric.rubricSections.split(',');
 					console.log(sections);
 					for(i=1; i<=sections.length; i++){
-						sectionsWeight = Math.round(100/i);
+						sectionsWeight = Math.round((100/i),2);
 					}
 					console.log(sectionsWeight);
 					$scope.newRubric.sectionWeight = sectionsWeight;
@@ -165,6 +164,10 @@ var app = angular.module('app', ['ngRoute'])
 	}]);
 
 	app.controller('allRubrics', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
+			if($rootScope.theSession != 2){
+				console.log('Refresh -- Solo If');
+					$location.path('/');
+			};
 		console.log($scope.courseID);
 		console.log($scope.rootRubrics);
 		$scope.rootRubrics;
@@ -185,7 +188,7 @@ var app = angular.module('app', ['ngRoute'])
 					$location.path('/');
 			};
 		$scope.usedRubric = $scope.selectedRubric;
-		console.log($scope.usedRubric);
+		// console.log($scope.usedRubric._id);
 		$http.get('/rubricItems/'+$scope.usedRubric._id)
 				.then(function(res){
 					console.log(res.data);
@@ -196,6 +199,35 @@ var app = angular.module('app', ['ngRoute'])
 			$rootScope.editRubric = rubric;
 			$location.path('/editRubric');
 		}
+
+		var grade = [];
+		
+		$scope.gradeSelect = function(value){
+			var totalWeight = 0;
+			var totalItemwight = 0;
+			var sectionWeights = [];
+			var itemWeights = [];
+			for(var i = 0; i < $scope.usedRubric.rubricSections.length; i++){
+				var eachWeight = $scope.usedRubric.rubricSections[i].sectionWeight;
+				sectionWeights.push(eachWeight);
+				totalWeight += eachWeight;
+			}
+
+			for(var i = 0; i < $scope.rubricItems.items.length; i++){
+				var eachItem = $scope.rubricItems.items[i].itemWeight;
+				itemWeights.push(eachItem);
+				totalItemwight += eachItem;
+			}	
+			
+			grade.push(value);
+			console.log('Grade Clicked: ', grade);
+			console.log('Section Weight: ', sectionWeights);
+			console.log('Total Weight: ', totalWeight);
+			console.log('Item Weights: ', itemWeights);
+			console.log('Total Item Weights', totalItemwight);
+
+		}
+
 	}]);
 
 
@@ -210,6 +242,8 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.edit = true;
 			$scope.itemAdd = true;
 			console.log($scope.itemAdd, 'before Anything');
+
+
 
 		$scope.theEditRubric = function(rubric){
 			console.log(rubric);
@@ -229,8 +263,6 @@ var app = angular.module('app', ['ngRoute'])
 
 		}
 
-
-
 		$scope.useFromEditRubric = function(rubric){
 			console.log(rubric);
 			$rootScope.selectedRubric = rubric;
@@ -247,7 +279,10 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.newItem.selectedRubric = $scope.selectedRubric; 
 			$scope.newItem.selectedSectionID = $rootScope.selectedSection.sectionID
 			console.log('bloop');
-			console.log($scope.newItem.selectedSectionID);
+			console.log('2eac jwd cmz', $scope.newItem);
+
+
+
 			$location.path('/useRubric');
 			$http.post('/createRubricItem', $scope.newItem);
 			
@@ -391,7 +426,8 @@ var app = angular.module('app', ['ngRoute'])
 			scope: {
 				payload: '=',
 				items: "=",
-				callback: '&'
+				callback: '&',
+				grade: '&'
 			},
 			template:
 			'<p class="edit-button" ng-click="callback({rubric: payload})"><img src="./img/edit-button.png" class="absolute"/></p>'+
@@ -401,15 +437,15 @@ var app = angular.module('app', ['ngRoute'])
                 '<p class="rubric-name">{[{payload.rubricName}]}</p>'+
                 '<div class="rubric-section" ng-repeat="section in payload.rubricSections">'+
                     '<p class="rubric-section-title">{[{section.sectionName}]}<p>'+
-                    '<p class="section-weight">{[{section.sectionWeight}]}</p>'+
+                    '<p class="section-weight">{[{section.sectionWeight}]}%</p>'+
                     	'<div ng-repeat="item in items.items track by $index" ng-if="item.sectionID == section.sectionID" class="rubric-item">'+
                         '<div class="rubric-buttons">'+
                             '<ul class="button-list">'+
-                                '<li class="button-actual"><button type="button" onclick="">100</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="">75</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="">50</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="">25</button></li>'+
-                                '<li class="button-actual"><button type="button" onclick="">0</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:100})">100</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:75})">75</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:50})">50</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:25})">25</button></li>'+
+                                '<li class="button-actual"><button type="button" ng-click="grade({value:0})">0</button></li>'+
                             '</ul>'+
                         '</div>'+
                         '<p class="rubric-item ri-name">{[{item.itemName}]}</p>'+
@@ -438,7 +474,8 @@ var app = angular.module('app', ['ngRoute'])
 				editrubric: '&',
 				itemcreate: '&',
 				model: '=',
-				itemadd: '=' 
+				itemadd: '=',
+				delete: '&' 
 			},
 			template:
 
@@ -456,7 +493,7 @@ var app = angular.module('app', ['ngRoute'])
                 //course name (hardcoded for now)
                 '<p class="rubric-course">Course Name</p>'+
                 //rubric name
-                '<p class="rubric-name" ng-show="clicked">{[{payload.rubricName}]}</p>'+
+                '<p class="rubric-name" ng-show="clicked">{[{payload.rubricName}]}</p><p ng-click="delete({rubric: payload})">Delete</p>'+
                 //rubric name editing div
                 '<div class="rubric-name-edit" ng-click="editrubric({rubric: payload})">'+
                     //edit button
