@@ -214,9 +214,8 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
     //WORKING ON
   
     //define object to be passed into grade function
-    var gradeThis = [];
+ $scope.gradeThis = [];
     //simple counter var
-    var counterVar = 0;
 
     //for each section in the rubric, create a section object, fill it with info, and push it to gradeThis
     for(i=0;i<$scope.usedRubric.rubricSections.length;i++){
@@ -224,7 +223,7 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
         section.secID = $scope.usedRubric.rubricSections[i].sectionID;
         section.secWeight = $scope.usedRubric.rubricSections[i].sectionWeight;
         section.scores = []
-        gradeThis.push(section);
+        $scope.gradeThis.push(section);
     };
 
     //click fucntion
@@ -237,13 +236,13 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
             secWeight = section.sectionWeight;
         console.log(itemScore,itemWeight,itemId,secId,secWeight);
         //for all sections
-        for(i=0;i<gradeThis.length;i++){
-            console.log(gradeThis);
+        for(i=0;i<$scope.gradeThis.length;i++){
+            console.log($scope.gradeThis);
             //if section clicked matches section in gradeThis (it always should)
-            if(gradeThis[i].secID === secId){
+            if($scope.gradeThis[i].secID === secId){
                 console.log('right section');
                 //if no scores exist, push this one
-                if(gradeThis[i].scores.length === 0){
+                if($scope.gradeThis[i].scores.length === 0){
                     console.log('no scores, adding this one');
                     //make a new score object to push
                     var pushMe = {};
@@ -252,34 +251,34 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
                     pushMe.weight = itemWeight;
                     pushMe.score = itemScore;
                     //push it
-                    gradeThis[i].scores.push(pushMe);
+                    $scope.gradeThis[i].scores.push(pushMe);
                 }else{
                     console.log('found scores, looking for yours');
-                    for(j=0;j<gradeThis[i].scores.length;j++){
+                    for(j=0;j<$scope.gradeThis[i].scores.length;j++){
 
                         console.log(i);
                         console.log(j);
                         // console.log(gradeThis[i].scores);
                         //if score clicked matches
-                        if(gradeThis[i].scores[j].id != itemId){
+                        if($scope.gradeThis[i].scores[j].id != itemId){
                             var pushMe = {};
                     //add all click data to it
                             pushMe.id = itemId;
                             pushMe.weight = itemWeight;
                             pushMe.score = itemScore;
                     //push it
-                            gradeThis[i].scores.push(pushMe);
+                            $scope.gradeThis[i].scores.push(pushMe);
                             console.log('bloop');
-                            console.log(gradeThis);
-                            return gradeThis;
+                            console.log($scope.gradeThis);
+                            return $scope.gradeThis;
                         }
                         else{
     //                    if(gradeThis[i].scores[j].id === itemId){
                             console.log('found your item, updating score');
                             //update score
-                            gradeThis[i].scores[j].score = itemScore;
-                            console.log(gradeThis);
-                            return gradeThis;
+                            $scope.gradeThis[i].scores[j].score = itemScore;
+                            console.log($scope.gradeThis);
+                            return $scope.gradeThis;
                         };
                     };
                 };
@@ -289,18 +288,40 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
 
 
 
-    //function gradeRubric(gradeObj){
-    //    rubricScore = sectionValues.reduce(function(total,num){return total+num},0);
-    //    sectionValue = sectionScore * sectionWeight;
-    //    sectionScore = itemValues.reduce(function(total,num){return total+num},0);
-    //    itemValue = itemScore * itemWeight;
-    //    //return final rubric score
-    //    return rubricScore;
-    //};
+    $scope.gradeRubric = function(){
+        var gradeThis =  $scope.gradeThis,
+            secValues = [],
+            itemValues = [],
+            sectionScore = [],
+            sectionValue = [];
+            
+        
+        for(i=0;i<gradeThis.length;i++){
+            itemValues[i] = gradeThis[i].scores.weight / gradeThis[i].score;
+            sectionScore[i] = itemValues.reduce(function(total,num){return total+num},0);
+            sectionValue[i] = gradeThis[i].sectionWeights / sectionScore[i];
+            console.log(sectionValue);
+            var secValue = gradeThis[i].sectionScore * gradeThis[i].secWeight;
+            for(j=0;j<gradeThis[i].scores.length;j++){
+                var itemValues = [];
+                for(k=0;k<gradeThis[i].scores[j].score[k];k++){
+                    itemValues.push(gradeThis[i].scores[j].score[k] * gradeThis[i].scores[j].weight[k]);
+                };
+            };
+//            secValue.push(secValue);
+        };
+//        rubricScore = sectionValues.reduce(function(total,num){return total+num},0);
+//        sectionValue = sectionScore * sectionWeight;
+//        sectionScore = itemValues.reduce(function(total,num){return total+num},0);
+//        itemValue = itemScore * itemWeight;
+//        //return final rubric score
+        var rubricScore = secValues.reduce(function(total,num){return total+num},0);
+        return rubricScore;
+    };
 
-    //run function
-    //takes just section values
-    //$scope.gradeSelect(myRubric);
+//    run function
+//    takes just section values
+//    $scope.gradeSelect(myRubric);
         
     //WORKING ON
     //WORKING ON
@@ -400,7 +421,7 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
 			}, 
 			template: 
             '<div class="dashsearchcontainer">'+
-                '<input class="dashsearch" type="text" name="search" size="35" placeholder="Search for a Degree, Course or Rubric" ng-model="searchText">'+
+                '<input class="dashsearch" type="text" name="search" size="35" placeholder="Search for a degree or course" ng-model="searchText">'+
             '</div>'+
             '<div class="dashresults">'+
                 '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
@@ -591,7 +612,7 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
                 '<p class="rubric-degree">Degree Name</p>'+
                 //course name (hardcoded for now)
                 '<p class="rubric-course">Course Name</p>'+
-                '<p ng-click="delete({id: payload._id})">Delete</p>'+
+                '<p class="rubric-delete" ng-click="delete({id: payload._id})">Delete</p>'+
                 //rubric name
                 '<p class="rubric-name" ng-show="clicked">{[{payload.rubricName}]}</p>'+
                 //rubric name editing div
