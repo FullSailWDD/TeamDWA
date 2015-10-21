@@ -9,7 +9,6 @@ var 	express 	    = require('express'),
  	  	exphbs 		    = require('express-handlebars'),
  	  	sha1			= require('sha1'),
 	  	path 		    = require('path');
-	  	// master			= require('./models/masterModel.js');
 
 var app = express();
 
