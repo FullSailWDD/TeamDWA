@@ -648,6 +648,67 @@ h1 {
 .editbody:after {
   clear: both;
 }
+.adddegree {
+  background-image: url("../img/ui-background.png");
+  background-repeat: repeat;
+  font-family: arialround;
+}
+.degreebody {
+  margin-left: 155px;
+  padding-top: 210px;
+  *zoom: 1;
+  width: auto;
+  max-width: 300px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-right: 174px;
+  min-height: 800px;
+}
+.degreebody:before,
+.degreebody:after {
+  content: '';
+  display: table;
+}
+.degreebody:after {
+  clear: both;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .degreebody {
+    padding-right: 0px;
+  }
+}
+.coursebody {
+  margin-left: 155px;
+  padding-top: 210px;
+  *zoom: 1;
+  width: auto;
+  max-width: 300px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-right: 174px;
+  min-height: 800px;
+}
+.coursebody:before,
+.coursebody:after {
+  content: '';
+  display: table;
+}
+.coursebody:after {
+  clear: both;
+}
+@media screen and (min-width: 1px) and (max-width: 789px) {
+  .coursebody {
+    padding-right: 0px;
+  }
+}
 .sheet-top {
   background-image: url("../img/sheet-top.png");
   background-repeat: none;

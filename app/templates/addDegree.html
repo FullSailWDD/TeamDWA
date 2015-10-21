@@ -1,12 +1,30 @@
-    <form ng-submit='addDegree()'>
-        <div class="form-group">
-            <label>Degree Name</label>
-            <input type="text" class="form-control" name="courseTitle" ng-model="newDegree.degreeName">
-        </div>
-        <div class="form-group">
-            <label>Degree Abbreviation</label>
-            <input type="text" class="form-control" name="courseAbbr" ng-model="newDegree.degreeAbbr">
 
-        </div>
-        <button type="submit" class="btn btn-warning btn-lg">Add Degree</button>
-    </form>
+<div class="adddegree">
+    <!--fixed interface-->
+    <img class="bg mobile-top" src="img/mobile-top.png">
+    <img class="bg mobile-right" src="img/mobile-right.png">
+    <img class="bg mobile-left" src="img/mobile-left.png">
+    <img class="bg bgtop" src="img/bg-top-long.png">
+    <img class="bg bgcorner" src="img/bg-corner.png">
+    <img class="bg bgright" src="img/bg-right.png">
+    <!--header-->
+    <a href="#/dashboard"><img class="header headerlogo" src="img/header-logo.png"></a>
+    <a class="logoutbutton" href="/logout">logout</a>
+    <a class="dashboardbutton" href="#/dashboard">dashboard</a>
+
+    <!--body-->
+    <div class="degreebody">
+        <form ng-submit='addDegree()'>
+            <div class="form-group">
+                <label>Degree Name</label>
+                <input type="text" class="form-control" name="courseTitle" ng-model="newDegree.degreeName">
+            </div>
+            <div class="form-group">
+                <label>Degree Abbreviation</label>
+                <input type="text" class="form-control" name="courseAbbr" ng-model="newDegree.degreeAbbr">
+
+            </div>
+            <button type="submit" class="btn btn-warning btn-lg">Add Degree</button>
+        </form>
+    </div>
+</div>
