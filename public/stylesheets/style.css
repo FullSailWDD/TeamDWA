@@ -1,3 +1,25 @@
+body,
+html {
+  height: 100%;
+  color: #2c242f;
+  background-color: #838383;
+  font-family: 'Roboto Slab', serif;
+}
+h1 {
+  font-family: "Arial Rounded MT", Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #5b83c2;
+}
+label {
+  font-family: 'Roboto Slab', serif;
+}
+button {
+  font-family: 'Roboto Slab', serif;
+  background-color: #5b83c2;
+  color: #f8f8f8;
+  border-radius: 5px;
+}
 #homepage h1 {
   color: #5b83c2;
   font-size: 1.5em;
@@ -77,19 +99,6 @@
 @font-face {
   font-family: arialround;
   src: url("../fonts/arialround.ttf");
-}
-body,
-html {
-  height: 100%;
-  color: #2c242f;
-  background-color: #838383;
-  font-family: 'Roboto Slab', serif;
-}
-h1 {
-  font-family: "Arial Rounded MT", Arial, Helvetica, sans-serif;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #5b83c2;
 }
 .dashboard {
   background-image: url("../img/ui-background.png");
@@ -727,6 +736,21 @@ h1 {
     padding-right: 0px;
   }
 }
+.degreediv {
+  width: 120%;
+  background-color: #f8f8f8;
+  border: 2px solid #2c242f;
+  border-radius: 25px;
+  padding: 5%;
+}
+.degreediv input {
+  margin: 2%;
+}
+.degreediv h1 {
+  padding: 5%;
+  margin: 5%;
+  margin-left: 25%;
+}
 .coursebody {
   margin-left: 155px;
   padding-top: 210px;
@@ -754,6 +778,19 @@ h1 {
   .coursebody {
     padding-right: 0px;
   }
+}
+.coursediv {
+  background-color: #f8f8f8;
+  border: 2px solid #2c242f;
+  border-radius: 25px;
+  padding: 5%;
+}
+.coursediv input {
+  margin: 2%;
+}
+.coursediv h1 {
+  margin: 5%;
+  margin-left: 25%;
 }
 .addrubricpage {
   background-image: url("../img/ui-background.png");
@@ -788,6 +825,25 @@ h1 {
     padding-right: 0px;
   }
 }
+.rubricdiv {
+  width: 120%;
+  background-color: #f8f8f8;
+  border: 2px solid #2c242f;
+  padding: 10%;
+  border-radius: 25px;
+}
+.rubricdiv button {
+  background-color: #5b83c2;
+  border-radius: 5px;
+  color: #f8f8f8;
+}
+.rubricdiv h1 {
+  margin: 5%;
+  margin-left: 35%;
+}
+.rubricdiv input {
+  margin: 2%;
+}
 .additempage {
   background-image: url("../img/ui-background.png");
   background-repeat: repeat;
@@ -820,6 +876,25 @@ h1 {
   .additembody {
     padding-right: 0px;
   }
+}
+.additembody input {
+  margin: 2%;
+}
+.additemdiv {
+  width: 120%;
+  background-color: #f8f8f8;
+  border: 2px solid #2c242f;
+  padding: 10%;
+  border-radius: 25px;
+}
+.additemdiv button {
+  background-color: #5b83c2;
+  border-radius: 5px;
+  color: #f8f8f8;
+}
+.additemdiv h1 {
+  margin: 5%;
+  margin-left: 40%;
 }
 .sheet-top {
   background-image: url("../img/sheet-top.png");
@@ -1029,30 +1104,12 @@ h1 {
   color: #2c242f;
 }
 .allrubrics {
-  *zoom: 1;
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 31.33333333333333%;
-  margin-left: 0%;
-  margin-right: 3%;
+  width: 120%;
   border: 2px solid #2c242f;
   background-color: #f8f8f8;
   border-radius: 15px;
   margin: 15%;
-  margin-left: 25%;
   padding: 3%;
-}
-.allrubrics:before,
-.allrubrics:after {
-  content: '';
-  display: table;
-}
-.allrubrics:after {
-  clear: both;
-}
-.allrubrics:last-child {
-  margin-right: 0%;
 }
 .allrubrics p {
   background-color: #5b83c2;
@@ -1064,7 +1121,7 @@ h1 {
   box-shadow: 5px 5px 5px #2c242f;
 }
 .allrubrics h1 {
-  margin-left: 25%;
+  margin-left: 17%;
   width: 80%;
 }
 .addDegreeButton {
