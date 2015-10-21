@@ -413,7 +413,7 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
 			}, 
 			template: 
             '<div class="dashsearchcontainer">'+
-                '<input class="dashsearch" type="text" name="search" size="35" placeholder="Search for a Degree, Course or Rubric" ng-model="searchText">'+
+                '<input class="dashsearch" type="text" name="search" size="35" placeholder="Search for a degree or course" ng-model="searchText">'+
             '</div>'+
             '<div class="dashresults">'+
                 '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
