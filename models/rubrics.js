@@ -140,22 +140,7 @@ var _model = mongoose.model('rubrics', rubricSchema);
 			})
 			}
 		})
-		// 	if(err){
-		// 		fail(err);
-		// 	}else{
-		// 		console.log(doc);
-		// 		var newSections = [];
-
-		// 		for(x=0;x<doc[0].rubricSections.length;x++){
-		// 			if(doc[0].rubricSections[x].sectionID != sectionID){
-		// 				ne
-		// 			}
-		// 		}
-		// 		// _model.remove({})
-
-		// 		success(doc);
-		// 	}
-		// })
+	
 	}
 
 	_addSection = function(id,  success, fail){
