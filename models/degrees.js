@@ -23,10 +23,10 @@ var _model = mongoose.model('degree', degreeSchema);
 			// Save to Database
 			degree.save( function (err, doc){
 				if (err) {
-					console.log('You Suck');
+					
 					fail(err)
 				}else{
-					console.log('You are Awesome');
+					
 					success(doc);
 				};
     			

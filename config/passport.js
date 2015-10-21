@@ -132,7 +132,7 @@ module.exports = function(passport) {
 
                 // all is well, return user
                 else
-                    //console.log("logged in user", user);
+                    
                     return done(null, user);
             });
         });
