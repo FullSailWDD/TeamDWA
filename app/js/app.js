@@ -71,7 +71,6 @@ var app = angular.module('app', ['ngRoute'])
 			$rootScope.theSession++;
 			if($rootScope.theSession != 2){
 				console.log('Refresh -- Solo If');
-					$rootScope.theSession = 0;
 					$location.path('/');
 			};
 			
@@ -165,6 +164,10 @@ var app = angular.module('app', ['ngRoute'])
 	}]);
 
 	app.controller('allRubrics', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
+			if($rootScope.theSession != 2){
+				console.log('Refresh -- Solo If');
+					$location.path('/');
+			};
 		console.log($scope.courseID);
 		console.log($scope.rootRubrics);
 		$scope.rootRubrics;
@@ -240,6 +243,8 @@ var app = angular.module('app', ['ngRoute'])
 			$scope.itemAdd = true;
 			console.log($scope.itemAdd, 'before Anything');
 
+
+
 		$scope.theEditRubric = function(rubric){
 			console.log(rubric);
 			$scope.edit =! $scope.edit;
@@ -257,8 +262,6 @@ var app = angular.module('app', ['ngRoute'])
 			$location.path('/addItem');
 
 		}
-
-
 
 		$scope.useFromEditRubric = function(rubric){
 			console.log(rubric);
@@ -449,7 +452,7 @@ var app = angular.module('app', ['ngRoute'])
                         '<p class="rubric-item ri-wiki">{[{item.itemWiki}]}</p>'+
                         '<p class="rubric-item ri-desc">{[{item.itemDes}]}</p>'+
                         '<p class="rubric-item ri-comment">'+
-                        	'<div ng-show=""></div>'+
+                        	'<div></div>'+
             				'<label>Comment</label><br/>'+
            					'<input type="text" ng-model="item[]."class="form-control" name="sections" ng-model="model.itemComment">'+
            					'<span> Done</span>'+
@@ -471,7 +474,8 @@ var app = angular.module('app', ['ngRoute'])
 				editrubric: '&',
 				itemcreate: '&',
 				model: '=',
-				itemadd: '=' 
+				itemadd: '=',
+				delete: '&' 
 			},
 			template:
 
@@ -489,7 +493,7 @@ var app = angular.module('app', ['ngRoute'])
                 //course name (hardcoded for now)
                 '<p class="rubric-course">Course Name</p>'+
                 //rubric name
-                '<p class="rubric-name" ng-show="clicked">{[{payload.rubricName}]}</p>'+
+                '<p class="rubric-name" ng-show="clicked">{[{payload.rubricName}]}</p><p ng-click="delete({rubric: payload})">Delete</p>'+
                 //rubric name editing div
                 '<div class="rubric-name-edit" ng-click="editrubric({rubric: payload})">'+
                     //edit button
