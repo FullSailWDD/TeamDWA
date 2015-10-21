@@ -323,7 +323,7 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
             //     };
             // };
 //            secValue.push(secValue);
-        
+        // 
 //        rubricScore = sectionValues.reduce(function(total,num){return total+num},0);
 //        sectionValue = sectionScore * sectionWeight;
 //        sectionScore = itemValues.reduce(function(total,num){return total+num},0);
