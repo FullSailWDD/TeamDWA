@@ -1,6 +1,3 @@
-//##############
-//### App.js ###
-//##############
 
 var app = angular.module('app', ['ngRoute'])
 		app.config(['$interpolateProvider','$routeProvider', function ($interpolateProvider, $routeProvider){
@@ -50,11 +47,6 @@ var app = angular.module('app', ['ngRoute'])
             })
 	   }]);
 
-//###################
-//### Controllers ###
-//###################
-
-//get degrees controller
 	app.controller('getDegreesCtrl', ['$scope', '$rootScope', '$http', '$routeParams','$location', 'myService', function($scope, $rootScope, $http, $routeParams, $location, myService){
         $http.post('/getDegrees', $scope.allDegrees)
         .then(function(res){
@@ -64,7 +56,6 @@ var app = angular.module('app', ['ngRoute'])
         });
 	}]);
 
-//get rubrics controller
 	app.controller('getRubricsCtrl', ['$scope', '$rootScope', '$http','$location', function($scope, $rootScope, $http, $location){
         $rootScope.theSession ++;
         $http.post('/getRubrics', $scope.allRubrics)
@@ -73,7 +64,8 @@ var app = angular.module('app', ['ngRoute'])
             $location.path('/dashboard');
         });
 	}]);
-//dashboard controller
+
+
 	app.controller('dashboardCtrl', ['$scope','$rootScope', '$http', '$routeParams','$location', 'courseTileGenerator', 'degreeGenerator', 'myService', function($scope, $rootScope, $http, $routeParams, $location, courseTileGenerator, degreeGenerator, myService){
         $rootScope.theSession++;
         if($rootScope.reRouteItems == 0){
@@ -81,14 +73,11 @@ var app = angular.module('app', ['ngRoute'])
             $location.path('/useRubric')
         }
         if($rootScope.theSession != 2){
-            console.log('Refresh -- Solo If');
                 $location.path('/');
         };
         $scope.courses = {};
         $http.post('/getDashboard', $scope.allCourses)
         .then(function(res){
-            console.log($scope.rootRubrics);
-            console.log($scope.rootRubrics.rubrics);
             $scope.courseRubrics = $scope.rootRubrics.rubrics;
             $scope.degrees = myService.getItem();
             $scope.courses = res.data;
@@ -104,7 +93,6 @@ var app = angular.module('app', ['ngRoute'])
         		})
         }
         $scope.removeDegree = function(degreeID){
-            console.log(degreeID);
             $scope.degree = degreeID;
             $http.get('/removeDegree/'+$scope.degree)
             .then(function(res){
@@ -118,7 +106,6 @@ var app = angular.module('app', ['ngRoute'])
         $scope.rubricSelect = function(rubric){
             $rootScope.selectedRubric = rubric;
             $location.path('/useRubric');
-            console.log($rootScope.selectedRubric);
         }
         $scope.addRubric = function(course){
             $rootScope.test = course;
@@ -128,7 +115,7 @@ var app = angular.module('app', ['ngRoute'])
             $rootScope.test = degree;
         }
 	}]);
-//add course controller
+
 	app.controller('addCourseCtrl', ['$scope', '$rootScope', '$http', '$routeParams','$location', 'myService', function($scope, $rootScope, $http, $routeParams, $location, myService){
         $scope.newCourse = {};
         $scope.addCourse = function(){
@@ -140,7 +127,7 @@ var app = angular.module('app', ['ngRoute'])
             }
         }
 	}]);
-//add degree controller
+
 	app.controller('addDegreeCtrl', ['$scope', '$rootScope', '$http', '$routeParams','$location', 'myService', function($scope, $rootScope, $http, $routeParams, $location, myService){
         $scope.newDegree = {};
         $scope.addDegree = function(){
@@ -148,52 +135,46 @@ var app = angular.module('app', ['ngRoute'])
             $location.path('/');
         }
 	}]);
-//rubric controller
+
 	app.controller('rubricCtrl', ['$scope', '$rootScope', '$http', '$routeParams','$location', function($scope, $rootScope, $http, $routeParams, $location){
         $scope.newRubric = {};
         $scope.createRubric = function(){
             $scope.newRubric.courseID = $scope.test._id;
             var sections = $scope.newRubric.rubricSections.split(',');
-            console.log(sections);
+          
             for(i=1; i<=sections.length; i++){
                 sectionsWeight = Math.round((100/i),2);
             }
-            console.log(sectionsWeight);
+          
             $scope.newRubric.sectionWeight = sectionsWeight;
-            console.log($scope.newRubric.sectionWeight);
+          
             $scope.newRubric.rubricSections = sections;
             $http.post('/addRubric', $scope.newRubric);
             $location.path('/');
         }	
 	}]);
-//all rubrucs controller
+
 	app.controller('allRubrics', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
         if($rootScope.theSession != 2){
-            console.log('Refresh -- Solo If');
+            
             $location.path('/');
         };
-        console.log($scope.courseID);
-        console.log($scope.rootRubrics);
         $scope.rootRubrics;
         $scope.courseID;
         $scope.rubricSelect = function(rubric){
             $rootScope.selectedRubric = rubric;
             $location.path('/useRubric');
-            console.log($rootScope.selectedRubric);
+
         }
 	}]);
-//use rubric controller
+
 app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
-    //refresh goes back to path
     if($rootScope.theSession != 2){
-        console.log('Refresh -- Solo If');
         $location.path('/');
     }; 
     $scope.usedRubric = $scope.selectedRubric;
-    // console.log($scope.usedRubric._id); 
     $http.get('/rubricItems/'+$scope.usedRubric._id)
         .then(function(res){
-        console.log(res.data);
         $scope.rubricItems = res.data;
         })
     $scope.removeItem = function(id){
@@ -209,15 +190,10 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
         $location.path('/editRubric');
     }
     
-    //WORKING ON
-    //WORKING ON
-    //WORKING ON
-  
-    //define object to be passed into grade function
  $scope.gradeThis = [];
-    //simple counter var
 
-    //for each section in the rubric, create a section object, fill it with info, and push it to gradeThis
+
+    
     for(i=0;i<$scope.usedRubric.rubricSections.length;i++){
         var section = {};
         section.secID = $scope.usedRubric.rubricSections[i].sectionID;
@@ -226,58 +202,32 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
         $scope.gradeThis.push(section);
     };
 
-    //click fucntion
     $scope.gradeSelect = function(value, myWeight, item, section){
-        //more friendly variable names
         var itemScore = value,
             itemWeight = myWeight,
             itemId = item._id,
             secId = section.sectionID,
             secWeight = section.sectionWeight;
-        console.log(itemScore,itemWeight,itemId,secId,secWeight);
-        //for all sections
         for(i=0;i<$scope.gradeThis.length;i++){
-            console.log($scope.gradeThis);
-            //if section clicked matches section in gradeThis (it always should)
             if($scope.gradeThis[i].secID === secId){
-                console.log('right section');
-                //if no scores exist, push this one
                 if($scope.gradeThis[i].scores.length === 0){
-                    console.log('no scores, adding this one');
-                    //make a new score object to push
                     var pushMe = {};
-                    //add all click data to it
                     pushMe.id = itemId;
                     pushMe.weight = itemWeight;
                     pushMe.score = itemScore;
-                    //push it
                     $scope.gradeThis[i].scores.push(pushMe);
                 }else{
-                    console.log('found scores, looking for yours');
                     for(j=0;j<$scope.gradeThis[i].scores.length;j++){
-
-                        console.log(i);
-                        console.log(j);
-                        // console.log(gradeThis[i].scores);
-                        //if score clicked matches
                         if($scope.gradeThis[i].scores[j].id != itemId){
                             var pushMe = {};
-                    //add all click data to it
                             pushMe.id = itemId;
                             pushMe.weight = itemWeight;
                             pushMe.score = itemScore;
-                    //push it
                             $scope.gradeThis[i].scores.push(pushMe);
-                            console.log('bloop');
-                            console.log($scope.gradeThis);
                             return $scope.gradeThis;
                         }
                         else{
-    //                    if(gradeThis[i].scores[j].id === itemId){
-                            console.log('found your item, updating score');
-                            //update score
                             $scope.gradeThis[i].scores[j].score = itemScore;
-                            console.log($scope.gradeThis);
                             return $scope.gradeThis;
                         };
                     };
@@ -293,19 +243,15 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
             secValues = [],
             sectionScore = [],
             sectionValue = [];
-            console.log(gradeThis);
         
         for(i=0;i<gradeThis.length;i++){
         	itemValues = [];
         		for(x=0; x<gradeThis[i].scores.length;x++){
             		itemValues.push(  gradeThis[i].scores[x].weight/gradeThis[i].scores[x].score  );
-            		console.log(itemValues);
+
         		}
             sectionScore.push(itemValues.reduce(function(total,num){return total+num},0));
-            console.log(sectionScore);
             sectionValue.push((gradeThis[i].secWeight/(sectionScore[i]*100))*100  );
-            console.log(sectionValue);
-            
 
             };
             var total = 0;
@@ -314,53 +260,24 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
 
             }
             $scope.total = Math.round(total,2);
-            console.log($scope.total);
-            // var secValue = gradeThis[i].sectionScore * gradeThis[i].secWeight;
-            // for(j=0;j<gradeThis[i].scores.length;j++){
-            //     var itemValues = [];
-            //     for(k=0;k<gradeThis[i].scores[j].score[k];k++){
-            //         itemValues.push(gradeThis[i].scores[j].score[k] * gradeThis[i].scores[j].weight[k]);
-            //     };
-            // };
-//            secValue.push(secValue);
-        // 
-//        rubricScore = sectionValues.reduce(function(total,num){return total+num},0);
-//        sectionValue = sectionScore * sectionWeight;
-//        sectionScore = itemValues.reduce(function(total,num){return total+num},0);
-//        itemValue = itemScore * itemWeight;
-//        //return final rubric score
         var rubricScore = secValues.reduce(function(total,num){return total+num},0);
         return rubricScore;
     };
-
-//    run function
-//    takes just section values
-//    $scope.gradeSelect(myRubric);
-        
-    //WORKING ON
-    //WORKING ON
-    //WORKING ON
-
 }]);
 
 
 
 
-//rubric edit controller
 	app.controller('rubricEditCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
         if($rootScope.theSession != 2){
-            console.log('Refresh -- Solo If');
             $location.path('/');
         };
-        console.log($scope.editRubric);
+
         $scope.edit = true;
         $scope.itemAdd = true;
-        console.log($scope.itemAdd, 'before Anything');
         $scope.removeSection = function(rubricID, sectionID){
             $rootScope.reRouteItems = 0;
-            console.log(sectionID);
             $scope.rubricID = rubricID;
-            console.log($scope.rubricID);
             $http.get('/removeSection/'+$scope.rubricID+'/'+sectionID)
             .then(function(res){
                 $location.path('/');
@@ -369,7 +286,6 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
         $scope.addSection = function(id){
             $rootScope.reRouteItems = 0;
             $scope.rubricID = id;
-            console.log($scope.rubricID)
             $http.get('/addSection/'+$scope.rubricID)
             .then(function(res){
                 $location.path('/');
@@ -377,14 +293,12 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
         }
         $scope.deleteRubric = function(id){
             $scope.rubricID = id;
-            console.log($scope.rubricID);
             $http.get('/removeRubric/'+$scope.rubricID)
             .then(function(res){
                 $location.path('/');
             });
         }
         $scope.theEditRubric = function(rubric){
-            console.log(rubric);
             $scope.edit =! $scope.edit;
             $scope.sectionID = rubric.rubricSections[0].$$hashKey;
             $http.post('/editRubric', rubric);
@@ -393,8 +307,6 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
             $scope.itemAdd =! $scope.itemAdd;
             $rootScope.selectedRubric = rubric;
             $rootScope.selectedSection = rubricSection;
-            console.log($rootScope.selectedRubric);
-            console.log($rootScope.selectedSection);
             $scope.newItem ={};
             $location.path('/addItem');
         }
@@ -404,24 +316,17 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
             $location.path('/useRubric');
         }
 	}]);
-//add item controller
+
 	app.controller('addItemCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
         $scope.newItem = {};
         $scope.createItem = function(){
             $scope.newItem.selectedRubric = $scope.selectedRubric; 
             $scope.newItem.selectedSectionID = $rootScope.selectedSection.sectionID
-            console.log('bloop');
-            console.log('2eac jwd cmz', $scope.newItem);
             $location.path('/useRubric');
             $http.post('/createRubricItem', $scope.newItem);
         }
 	}]);
 
-//##################
-//### Directives ###
-//##################
-
-//course element directive
 	app.directive('courseElement', function(){
 		return {
 			restrict: 'E',
@@ -440,7 +345,6 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
             '<div class="dashresults">'+
                 '<ul ng-repeat="course in payload.course | filter:searchText track by $index">'+
                     '<li>'+
-                        //delete button, needs ng-click to delete
                         '<img class="delete-course-button" ng-click="remove({id:course._id})" src="./img/x-button.png" />'+
                         '<p class="degreeAbbr">{[{course.degreeAbbr}]}<span class="degreeName">{[{course.degreeName}]}</span></p>'+
                         '<p id="courseAbbr" class="courseAbbr">{[{course.courseAbbr}]}<span id="courseName" class="courseName">{[{course.courseName}]}</span></p>'+
@@ -459,7 +363,7 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
             '</div>'                 
 		}
 	})
-//degrees directive
+
 	app.directive('degrees', function(){
 		return{
 			restrict: 'E',
@@ -482,7 +386,7 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
 				'</div>'
 		}
 	})
-//all rubrics directive
+
 	app.directive('allRubrics', function(){
 		return{
 			restrict: 'E',
@@ -497,7 +401,7 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
 			'</div>'
 		}
 	})
-//add item directive
+
 	app.directive('addItem', function(){
 		return{
 			restrict: 'E',
@@ -529,7 +433,7 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
     					'</form>'
 		}
 	})
-//add rubrics directive
+
 	app.directive('addRubrics', function(){
 		return{
 			restrict: 'E',
@@ -552,7 +456,7 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
     			'</form>'
 		}
 	})
-//use rubric directive
+
 	app.directive('useRubric', function(){
 		return{
 			restrict: 'E',
@@ -597,7 +501,7 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
             '</div>'
 		}
 	})
-//edit rubric directive
+
 	app.directive('editRubric', function(){
 		return{
 			restrict: 'E',
@@ -617,66 +521,36 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
 			template:
             //edit button
 			'<p class="edit-button" ng-click="callback({rubric: payload})"><img src="./img/done-editing-button.png" class="absolute"/></p>'+
-//            //other edit buttons images
-//            '<div class="edit-button-images-container">'+
-//                '<img src="./img/view-button.png" />'+
-//                '<img src="./img/edit-edit-button.png" />'+
-//            '</div>'+
-            //rubric stuff
 			'<div class="rubric-stuff">'+
-                //degree name (hidden for now)
                 '<p class="rubric-degree">Degree Name</p>'+
-                //course name (hardcoded for now)
                 '<p class="rubric-course">Course Name</p>'+
                 '<p class="rubric-delete" ng-click="delete({id: payload._id})">Delete</p>'+
-                //rubric name
                 '<p class="rubric-name" ng-show="clicked">{[{payload.rubricName}]}</p>'+
-                //rubric name editing div
                 '<div class="rubric-name-edit" ng-click="editrubric({rubric: payload})">'+
-                    //edit button
                     '<img class="rubric-name-edit-edit absolute" src="./img/view-button.png" ng-if="clicked"/>'+
-                    //done button
                     '<img class="rubric-name-edit-done absolute" src="./img/edit-edit-button.png" ng-if="!clicked"/>'+
                 '</div>'+
-                //rubric name editing input
                 '<div class="rubric-name-edit-input" ng-hide="clicked">'+
-                    //actual input
                     '<input class="rubric-name-edit-input-input" type="text" ng-model="payload.rubricName" placeholder="{[{payload.rubricName}]}"/>'+
                 '</div>'+
-                //rubric section
                 '<div class="rubric-section" ng-repeat="section in payload.rubricSections track by $index">'+
-                    //rubric section title
                     '<p class="rubric-section-title" ng-show="clicked">{[{section.sectionName}]}</p>'+
-                    //section name editing div
                     '<div class="rubric-section-edit" ng-click="editrubric({rubric: payload})">'+
-                        //edit button
-                        // '<p class="rubric-section-edit-edit" ng-if="clicked">Edit</p>'+
-                        // //done button
-                        // '<p class="rubric-section-edit-done" ng-if="clicked">Done</p>'+
-                    '</div>'+
-                    //section name editing input
+                    '</div>'+    
                     '<div class="rubric-section-edit-input" ng-hide="clicked">'+
-                        //actual input
                         '<input class="rubric-section-edit-input-input" type="text" ng-model="section.sectionName" placeholder="{[{section.sectionName}]}"/>'+
                     '</div>'+
-                    //item container
                     '<div class="add-item-container" ng-show="itemadd">'+
-                        //add item thing
                         '<p class="add-item" ng-click="item({rubric: payload, rubricSection: section})">Add Item</p>'+
                     	'<div ng-click="removesection({rubricID: payload._id, sectionID: section.sectionID})"><p>-- Remove Section -- </p></div>'+
                     '</div>'+
-                    
                 '</div>'+
                 	'<div ng-click="section({rubricID: payload._id})"><p>-- Add Section -- </p></div>'+
 			'</div>'
 		}
 	})
 
-//################
-//### Services ###
-//################
-    
-//my service
+
 	app.service('myService', function(){
 		var itemArray = [];
 		this.getItem = function(){
@@ -690,27 +564,27 @@ app.controller('useRubricCtrl', ['$scope', '$rootScope', '$http', '$location', f
 		localStorage.setItem('data', str);
 		}
 	});
-//send data
+
 	app.service('sendData', function(){
 		var newData = function(args){
 		}
 		return newData;
 	})
-//rubric generator
+
 	app.service('rubricGenerator', function(){
 		var rubricGen = function(args){
 			this.rubric = args || [];
 		}
 		return rubricGen;
 	})
-//degree generator
+
 	app.service('degreeGenerator', function(){
 		var degreeGen = function(args){
 			this.degree = args || {};
 		}
 		return degreeGen;
 	})
-//course tile generator
+
 	app.service('courseTileGenerator', function(){
 		var courseTileGen = function(args){	
 			this.course = args || [];
