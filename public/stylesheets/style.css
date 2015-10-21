@@ -602,11 +602,24 @@ h1 {
 .usebody {
   margin-left: 155px;
   padding-top: 210px;
+  *zoom: 1;
+  width: auto;
+  max-width: 756px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-right: 160px;
 }
-@media screen and (min-width: 1px) and (max-width: 1070px) {
-  .usebody {
-    margin-left: 5px;
-  }
+.usebody:before,
+.usebody:after {
+  content: '';
+  display: table;
+}
+.usebody:after {
+  clear: both;
 }
 .editrubric {
   background-image: url("../img/ui-background.png");
@@ -616,11 +629,24 @@ h1 {
 .editbody {
   margin-left: 155px;
   padding-top: 210px;
+  *zoom: 1;
+  width: auto;
+  max-width: 756px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-right: 160px;
 }
-@media screen and (min-width: 1px) and (max-width: 1070px) {
-  .editbody {
-    margin-left: 5px;
-  }
+.editbody:before,
+.editbody:after {
+  content: '';
+  display: table;
+}
+.editbody:after {
+  clear: both;
 }
 .sheet-top {
   background-image: url("../img/sheet-top.png");
